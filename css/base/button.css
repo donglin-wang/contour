@@ -1,7 +1,7 @@
 @layer base {
     :root {
         --button-padding: 0.7em 1.2em;
-        --button-gap: 0.5em;
+        --button-gap: 0.7em;
         --button-flex-direction: row;
 
         --button-background-color: var(--color);
