@@ -105,10 +105,24 @@
                         <div class="menu-item-start"></div>
                         Nested
                     </summary>
-                    <menu class="menu menu--nested" data-menu-level=1>
+                    <menu class="menu menu--nested">
                         <li class="menu-item">
                             <div class="menu-item-start"></div>
-                            Sub-item 1
+                            Sub item level 1
+                        </li>
+                        <li>
+                            <details open="">
+                                <summary class="menu-item">
+                                    <div class="menu-item-start"></div>
+                                    Sub nested
+                                </summary>
+                                <menu class="menu menu--nested">
+                                    <li class="menu-item">
+                                        <div class="menu-item-start"></div>
+                                        Sub item level 2
+                                    </li>
+                                </menu>
+                            </details>
                         </li>
                     </menu>
                 </details>
