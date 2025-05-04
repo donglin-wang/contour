@@ -1,7 +1,5 @@
 @layer base {
     :root {
-        --menu-indent-step: 1.2em;
-
         --menu-padding-x: 0;
         --menu-padding-y: 0.7em;
         --menu-padding: var(--menu-padding-y) var(--menu-padding-x);
@@ -11,6 +9,7 @@
         --menu-item-padding-y: var(--menu-padding-y);
         --menu-item-padding: var(--menu-item-padding-y) var(--menu-item-padding-x);
 
+        --menu-indent-step: 1.2em;
         --menu-nested-padding-inline: var(--menu-indent-step) 0;
         --menu-nested-padding-y: 0;
         --menu-nested-marker-display: none;
@@ -18,26 +17,28 @@
         --menu-font-size: 1em;
         --menu-font-family: inherit;
         --menu-line-height: inherit;
-        --menu-text-color: inherit;
 
         --menu-background-color: var(--background-color-muted);
         --menu-color: var(--color);
+
         --menu-item-background-color: inherit;
         --menu-item-color: inherit;
-
         --menu-item-hover-background-color: var(--color-muted);
         --menu-item-hover-color: var(--background-color);
+
         --menu-item-hover-cursor: pointer;
 
         --menu-item-start-flex-basis: 1em;
 
         --menu-icon-size: calc(var(--menu-font-size) * 1.2);
+        --menu-icon-color: inherit;
     }
 
     .menu {
         list-style: none;
         padding: var(--menu-padding);
         background-color: var(--menu-background-color);
+        color: var(--menu-color);
     }
 
     .menu--nested {
@@ -67,5 +68,13 @@
     .menu-item-start {
         display: inline-flex;
         flex-basis: var(--menu-item-start-flex-basis);
+    }
+
+    .menu-icon {
+        height: var(--menu-icon-size);
+        width: auto;
+        flex: none;
+        color: var(--menu-icon-color);
+        line-height: var(--menu-line-height);
     }
 }
