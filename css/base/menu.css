@@ -23,7 +23,7 @@
 
         --menu-item-background-color: inherit;
         --menu-item-color: inherit;
-        --menu-item-hover-background-color: var(--color-muted);
+        --menu-item-hover-background-color: var(--color);
         --menu-item-hover-color: var(--background-color);
 
         --menu-item-hover-cursor: pointer;
