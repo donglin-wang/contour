@@ -1,0 +1,137 @@
+@layer base {
+    /*
+        TODO: having a file under variant folder that resides in the base
+        layer is weird, think of a better way
+    */
+
+    /*
+        Variable required by base:
+        --background-color
+        --background-color-muted
+        --color
+        --color-muted
+    */
+
+    :root {
+        --font-size-content-m: 1rem;
+        --font-size-content-xs: calc(var(--font-size-content-m) * 0.9 * 0.9);
+        --font-size-content-s: calc(var(--font-size-content-m) * 0.9);
+        --font-size-content-l: calc(var(--font-size-content-m) * 1.1);
+        --font-size-content-xl: calc(var(--font-size-content-m) * 1.1 * 1.1);
+        --font-size-content: var(--font-size-content-m);
+
+        --font-weight-heading: bolder;
+
+        --h1-font-size: calc(1.375rem + 1.5vw);
+        --h2-font-size: calc(1.325rem + 0.9vw);
+        --h3-font-size: calc(1.3rem + 0.6vw);
+        --h4-font-size: calc(1.275rem + 0.3vw);
+        --h5-font-size: 1.25rem;
+        --h6-font-size: 1rem;
+
+        --line-height: 1.5;
+
+        --color: #212529;
+        --color-muted: #343a40;
+        --background-color: #ffffff;
+        --background-color-muted: #efefef;
+        --primary-color: #22c55e;
+        --primary-color-muted: #22c55edf;
+        --code-color: #ef4444;
+
+        --border-radius: 6px;
+
+        --p-margin-bottom: 1rem;
+        --margin-bottom-heading: 0.7rem;
+    }
+    
+    @media (min-width: 1200px) {
+        body {
+            --h1-font-size: 2.5rem;
+            --h2-font-size: 2rem;
+            --h3-font-size: 1.75rem;
+            --h4-font-size: 1.5rem;
+            --h5-font-size: 1.25rem;
+            --h6-font-size: 1rem;
+        }
+    }
+
+    @font-face {
+        font-family: "Inter";
+        src: url(/asset/font/InterVariable.woff2) format("woff2");
+    }
+
+    body {
+        color: var(--color);
+        line-height: var(--line-height);
+        font-family: "Inter", sans-serif;
+        font-feature-settings: "ss02";
+        background-color: var(--background-color);
+    }
+
+    h6,
+    h5,
+    h4,
+    h3,
+    h2,
+    h1 {
+        margin-top: 0;
+        margin-bottom: var(--margin-bottom-heading);
+        font-weight: var(--font-weight-heading);
+        line-height: 1.2;
+    }
+
+    h1 {
+        font-size: var(--h1-font-size);
+    }
+
+    h2 {
+        font-size: var(--h2-font-size);
+    }
+
+    h3 {
+        font-size: var(--h3-font-size);
+    }
+
+    h4 {
+        font-size: var(--h4-font-size);
+    }
+
+    h5 {
+        font-size: var(--h5-font-size);
+    }
+
+    h6 {
+        font-size: var(--h6-font-size);
+    }
+
+    p {
+        font-size: var(--font-size-content);
+        margin-top: 0;
+        margin-bottom: var(--p-margin-bottom);
+        color: var(--color);
+    }
+
+    code,
+    kbd,
+    samp,
+    pre {
+        font-size: var(--font-size-content);
+    }
+
+    code {
+        color: var(--code-color);
+    }
+}
+
+@layer utilities {
+    .font-size-content-l {
+        font-size: var(--font-size-content-l);
+    }
+    .font-size-content-s {
+        font-size: var(--font-size-content-s);
+    }
+    .font-size-content-xs {
+        font-size: var(--font-size-content-xs);
+    }
+}

@@ -1,0 +1,74 @@
+@layer base {
+    :root {
+        --button-padding: 0.7em 1.2em;
+        --button-gap: 0.5em;
+        --button-flex-direction: row;
+
+        --button-background-color: var(--color);
+        --button-color: var(--background-color);
+        --button-hover-background-color: var(--color-muted);
+        --button-hover-color: var(--background-color);
+
+        --button-border-width: var(--border-width, 0);
+        --button-border-style: var(--border-style, solid);
+        --button-border-color: var(--border-color, --button-background-color);
+        --button-border: var(--button-border-width) var(--button-border-style) var(--button-border-color);
+        --button-border-radius: var(--border-radius, 0);
+
+        --button-font-size: 1em;
+        --button-font-family: inherit;
+        --button-line-height: inherit;
+
+        --button-icon-size: calc(var(--button-font-size) * 1.2);
+
+        --button-body-line-height: var(--line-height);
+        --button-body-flex-direction: column;
+        --button-body-gap: var(--button-gap);
+    }
+
+    .button {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--button-gap);
+        flex-direction: var(--button-flex-direction);
+
+        padding: var(--button-padding);
+
+        background: var(--button-background-color);
+        color: var(--button-color);
+
+        border: var(--button-border);
+        border-radius: var(--button-border-radius);
+
+        text-decoration: none;
+        font-family: var(--button-font-family);
+        font-weight: var(--button-font-weight);
+        font-size: var(--button-font-size);
+        line-height: var(--button-line-height);
+
+        cursor: pointer
+    }
+
+    .button-icon {
+        height: var(--button-icon-size);
+        width: auto;
+        flex: none;
+        color: inherit;
+    }
+
+    .button-body {
+        display: flex;
+        flex-direction: var(--button-body-flex-direction);
+        gap: var(--button-body-gap);
+        color: inherit;
+    }
+
+    .button-text {
+        color: inherit;
+    }
+
+    .button:hover {
+        background: var(--button-hover-background-color);
+        color: var(--button-hover-color);
+    }
+}

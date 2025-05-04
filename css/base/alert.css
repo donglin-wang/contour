@@ -1,0 +1,87 @@
+@layer base {
+    :root {
+        --alert-padding: 1em 1.2em;
+        --alert-button-padding: 0.3em 0.5em;
+        --alert-gap: 1em;
+
+        --alert-font-size: var(--font-size, 1em);
+        --alert-font-family: inherit;
+        --alert-line-height: inherit;
+
+        --alert-background-color: var(--background-color-muted);
+        --alert-color: var(--color);
+
+        --alert-border-top: none;
+        --alert-border-right: none;
+        --alert-border-bottom: none;
+        --alert-border-left: none;
+        --alert-border-radius: var(--border-radius, 0);
+
+        --alert-font-size: 1em;
+        --alert-font-family: inherit;
+        --alert-line-height: inherit;
+        --alert-text-color: inherit;
+
+        --alert-icon-size: calc(var(--alert-font-size) * 1.2);
+        --alert-close-hover-opacity: 0.5;
+
+        --alert-title-margin: 0 0 0 0;
+        --alert-content-gap: 0.3em;
+        --alert-control-gap: 0.3em;
+    }
+
+    .alert {
+        display: flex;
+        align-items: center;
+        border-top: var(--alert-border-top);
+        border-right: var(--alert-border-right);
+        border-bottom: var(--alert-border-bottom);
+        border-left: var(--alert-border-left);
+        border-radius: var(--alert-border-radius);
+        background-color: var(--alert-background-color);
+        color: var(--alert-color);
+        padding: var(--alert-padding);
+        gap: var(--alert-gap);
+    }
+
+    .alert-icon, .alert-close {
+        height: var(--alert-icon-size);
+        width: auto;
+        flex: none;
+        color: inherit;
+        line-height: var(--alert-line-height);
+    }
+
+    .alert-close {
+        align-self: flex-start;
+        cursor: pointer;
+    }
+
+    .alert-close:hover {
+        opacity: var(--alert-close-hover-opacity);
+    }
+
+    .alert-content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--alert-gap);
+    }
+
+    .alert-control {
+        display: flex;
+        gap: var(--alert-control-gap);
+    }
+
+    .alert-title {
+        margin: var(--alert-title-margin);
+    }
+
+    .alert-text {
+        color: var(--alert-text-color);
+    }
+
+    /* TODO: should I include this in base? */
+    .alert-button {
+        --button-padding: var(--alert-button-padding);
+    }
+}
