@@ -7,6 +7,7 @@
         --alert-font-size: var(--font-size, 1em);
         --alert-font-family: inherit;
         --alert-line-height: inherit;
+        --alert-description-color: inherit;
 
         --alert-background-color: var(--background-color-muted);
         --alert-color: var(--color);
@@ -16,11 +17,6 @@
         --alert-border-bottom: none;
         --alert-border-left: none;
         --alert-border-radius: var(--border-radius, 0);
-
-        --alert-font-size: 1em;
-        --alert-font-family: inherit;
-        --alert-line-height: inherit;
-        --alert-text-color: inherit;
 
         --alert-icon-size: calc(var(--alert-font-size) * 1.2);
         --alert-close-hover-opacity: 0.5;
@@ -76,8 +72,8 @@
         margin: var(--alert-title-margin);
     }
 
-    .alert-text {
-        color: var(--alert-text-color);
+    .alert-description {
+        color: var(--alert-description-color);
     }
 
     /* TODO: should I include this in base? */
