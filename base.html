@@ -11,16 +11,26 @@
             --color-muted: #343a40;
             --background-color: #ffffff;
             --background-color-muted: #efefef;
+
+            --article-max-width: 65ch;
+            --article-margin-block: 3rem;
+            --article-description-font-size: var(--font-size-content-xl);
         }
+
         body {
             font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+
+        #article {
+            width: 100%;
+            max-width: var(--article-max-width);
+            margin: auto;
+            margin-block: var(--article-margin-block);
         }
     </style>
     <style>
         @import url(css/reset.css);
         @import url(css/base/base.css);
-
-        @import url(css/variant/contour/layout.css);
     </style>
 </head>
 
