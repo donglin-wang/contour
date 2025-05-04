@@ -1,0 +1,71 @@
+@layer base {
+    :root {
+        --menu-indent-step: 1.2em;
+
+        --menu-padding-x: 0;
+        --menu-padding-y: 0.7em;
+        --menu-padding: var(--menu-padding-y) var(--menu-padding-x);
+
+        --menu-item-gap: 0.7em;
+        --menu-item-padding-x: 1.2em;
+        --menu-item-padding-y: var(--menu-padding-y);
+        --menu-item-padding: var(--menu-item-padding-y) var(--menu-item-padding-x);
+
+        --menu-nested-padding-inline: var(--menu-indent-step) 0;
+        --menu-nested-padding-y: 0;
+        --menu-nested-marker-display: none;
+
+        --menu-font-size: 1em;
+        --menu-font-family: inherit;
+        --menu-line-height: inherit;
+        --menu-text-color: inherit;
+
+        --menu-background-color: var(--background-color-muted);
+        --menu-color: var(--color);
+        --menu-item-background-color: inherit;
+        --menu-item-color: inherit;
+
+        --menu-item-hover-background-color: var(--color-muted);
+        --menu-item-hover-color: var(--background-color);
+        --menu-item-hover-cursor: pointer;
+
+        --menu-item-start-flex-basis: 1em;
+
+        --menu-icon-size: calc(var(--menu-font-size) * 1.2);
+    }
+
+    .menu {
+        list-style: none;
+        padding: var(--menu-padding);
+        background-color: var(--menu-background-color);
+    }
+
+    .menu--nested {
+        padding-inline: var(--menu-nested-padding-inline);
+        padding-top: var(--menu-nested-padding-y);
+        padding-bottom: var(--menu-nested-padding-y);
+    }
+
+    .menu-item::marker, .menu-item::-webkit-details-marker {
+        display: var(--menu-nested-marker-display);
+    }
+
+    .menu-item {
+        display: flex;
+        padding: var(--menu-item-padding);
+        color: var(--menu-item-color);
+        background-color: var(--menu-item-background-color);
+        gap: var(--menu-item-gap);
+    }
+
+    .menu-item:hover {
+        background-color: var(--menu-item-hover-background-color);
+        color: var(--menu-item-hover-color);
+        cursor: var(--menu-item-hover-cursor);
+    }
+
+    .menu-item-start {
+        display: inline-flex;
+        flex-basis: var(--menu-item-start-flex-basis);
+    }
+}
