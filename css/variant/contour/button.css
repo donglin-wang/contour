@@ -1,7 +1,13 @@
 @layer variant {
     :root {
-        --button-active-transform: scale(99%);
+        --button-active-transform: translate(1px, 1px);
+        --button-border-radius: var(--border-radius);
     }
+
+    .button {
+        box-shadow: 0 4px 6px -1px var(--box-shadow-color), 0 2px 4px -2px var(--box-shadow-color);
+    }
+
     .button:active {
         transform: var(--button-active-transform);
     }
@@ -10,11 +16,24 @@
         --button-padding: 0.5em 0.5em;
     }
 
-    .button[data-button-variant="primary"] {
-        --button-background-color: var(--primary-color);
-        --button-hover-background-color: var(--primary-color-muted);
-        --button-color: var(--color);
-        --button-hover-color: var(--color);
+    .button[data-button-variant*="success"] {
+        color: #000000;
+        background-color: var(--success);
+    }
+
+    .button[data-button-variant*="warning"] {
+        color: #000000;
+        background-color: var(--warning);
+    }
+
+    .button[data-button-variant*="info"] {
+        color: #000000;
+        background-color: var(--info);
+    }
+
+    .button[data-button-variant*="danger"] {
+        color: #000000;
+        background-color: var(--danger);
     }
 
     .button[data-button-variant="tiered"] {
@@ -22,7 +41,7 @@
         --button-body-gap: 0.1em;
     }
 
-    .button[data-button-variant="tiered"] > .button-body {
+    .button[data-button-variant="tiered"]>.button-body {
         align-items: start;
     }
 
@@ -43,7 +62,7 @@
         line-height: 1;
     }
 
-    .button[data-button-variant="top-bottom"] > .button-icon {
+    .button[data-button-variant="top-bottom"]>.button-icon {
         width: 100%;
         height: auto;
         max-height: 2em;

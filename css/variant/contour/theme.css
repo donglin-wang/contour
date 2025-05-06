@@ -12,7 +12,7 @@
         --color-muted
     */
 
-    :root {
+    :root, [data-theme="light"] {
         --font-size-content-m: 1rem;
         --font-size-content-xs: calc(var(--font-size-content-m) * 0.9 * 0.9);
         --font-size-content-s: calc(var(--font-size-content-m) * 0.9);
@@ -31,18 +31,49 @@
 
         --line-height: 1.5;
 
-        --color: #171717;
-        --color-muted: #3a3a3a;
-        --background-color: #e6e6e6;
-        --background-color-muted: #d5d5d5;
-        --primary-color: #22c55e;
-        --primary-color-muted: #22c55edf;
+        --color: #000000;
+        --color-muted: #474747;
+        --box-shadow-color: rgba(255, 255, 255, 0.1);
+        --background-color: #ffffff;
+        --background-color-muted: #efefef;
+
         --code-color: #ef4444;
+
+        --danger: #ef4444;
+        --warning: #ffc107;
+        --success: rgb(33, 196, 93);
+        --info: rgb(60, 131, 246);
 
         --border-radius: 6px;
 
         --p-margin-bottom: 1rem;
         --margin-bottom-heading: 0.7rem;
+    }
+
+    /* theme--dark on body tag doesn't work, why? */
+    /* .theme--dark {
+        --color: #ffffff;
+        --color-muted: #efefef;
+        --background-color: #13151b;
+        --background-color-muted: #20232d;
+        --box-shadow-color: rgba(113, 113, 113, 0.372);
+    } */
+
+    /* this also doesn't work if theme--dark is on body*/
+    /* html > .theme--dark {
+        --color: #ffffff;
+        --color-muted: #efefef;
+        --background-color: #13151b;
+        --background-color-muted: #20232d;
+        --box-shadow-color: rgba(113, 113, 113, 0.372);
+    } */
+
+    [data-theme="dark"] {
+        --color: #ffffff;
+        --color-muted: #efefef;
+        --background-color: #000000;
+        --background-color-muted: #1e1e1e;
+        --box-shadow-color: rgba(78, 77, 77, 0.675);
     }
     
     @media (min-width: 1200px) {
@@ -56,15 +87,10 @@
         }
     }
 
-    @font-face {
-        font-family: "Inter";
-        src: url(/asset/font/InterVariable.woff2) format("woff2");
-    }
-
     body {
         color: var(--color);
         line-height: var(--line-height);
-        font-family: "Inter", sans-serif;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif;
         font-feature-settings: "ss02";
         background-color: var(--background-color);
     }
