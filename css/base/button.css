@@ -9,11 +9,11 @@
         --button-hover-background-color: var(--color-muted);
         --button-hover-color: var(--background-color);
 
-        --button-border-width: var(--border-width, 0);
-        --button-border-style: var(--border-style, solid);
-        --button-border-color: var(--border-color, --button-background-color);
+        --button-border-width: 0;
+        --button-border-style: solid;
+        --button-border-color: var(--button-background-color);
         --button-border: var(--button-border-width) var(--button-border-style) var(--button-border-color);
-        --button-border-radius: var(--border-radius, 0);
+        --button-border-radius: 0;
 
         --button-font-size: 1em;
         --button-font-family: inherit;

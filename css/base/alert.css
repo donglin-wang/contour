@@ -1,13 +1,14 @@
 @layer base {
     :root {
-        --alert-padding: 1em 1.2em;
+        --alert-padding-x: 1.2em;
+        --alert-padding-y: 1em;
+        --alert-padding: var(--alert-padding-y) var(--alert-padding-x);
         --alert-button-padding: 0.3em 0.5em;
         --alert-gap: 1em;
 
         --alert-font-size: var(--font-size, 1em);
         --alert-font-family: inherit;
         --alert-line-height: inherit;
-        --alert-description-color: inherit;
 
         --alert-background-color: var(--background-color-muted);
         --alert-color: var(--color);
@@ -18,7 +19,13 @@
         --alert-border-left: none;
         --alert-border-radius: var(--border-radius, 0);
 
+        --alert-font-size: 1em;
+        --alert-font-family: inherit;
+        --alert-line-height: inherit;
+        --alert-text-color: inherit;
+
         --alert-icon-size: calc(var(--alert-font-size) * 1.2);
+        --alert-close-size: calc(var(--alert-font-size) * 1.2);
         --alert-close-hover-opacity: 0.5;
 
         --alert-title-margin: 0 0 0 0;
@@ -41,14 +48,18 @@
     }
 
     .alert-icon, .alert-close {
-        height: var(--alert-icon-size);
         width: auto;
         flex: none;
         color: inherit;
         line-height: var(--alert-line-height);
     }
 
+    .alert-icon {
+        height: var(--alert-icon-size);
+    }
+
     .alert-close {
+        height: var(--alert-close-size);
         align-self: flex-start;
         cursor: pointer;
     }
@@ -72,8 +83,8 @@
         margin: var(--alert-title-margin);
     }
 
-    .alert-description {
-        color: var(--alert-description-color);
+    .alert-text {
+        color: var(--alert-text-color);
     }
 
     /* TODO: should I include this in base? */
