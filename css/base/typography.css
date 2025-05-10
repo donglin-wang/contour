@@ -18,7 +18,6 @@
     h2,
     h1 {
         margin: 0;
-        color: var(--color);
         font-weight: var(--font-weight-heading);
     }
 
@@ -51,7 +50,6 @@
     samp,
     pre,
     p {
-        color: var(--color);
         margin: 0;
         font-size: var(--font-size-content);
     }

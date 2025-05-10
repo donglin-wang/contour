@@ -1,8 +1,8 @@
 @layer base {
     :root {
-        --alert-padding-x: 1.2em;
-        --alert-padding-y: 1em;
-        --alert-padding: var(--alert-padding-y) var(--alert-padding-x);
+        --alert-padding-inline: 1.2em;
+        --alert-padding-block: 1em;
+
         --alert-button-padding: 0.3em 0.5em;
         --alert-gap: 1em;
 
@@ -17,15 +17,15 @@
         --alert-border-right: none;
         --alert-border-bottom: none;
         --alert-border-left: none;
-        --alert-border-radius: var(--border-radius, 0);
+        --alert-border-radius: 0;
 
         --alert-font-size: 1em;
         --alert-font-family: inherit;
         --alert-line-height: inherit;
         --alert-text-color: inherit;
 
-        --alert-icon-size: calc(var(--alert-font-size) * 1.2);
-        --alert-close-size: calc(var(--alert-font-size) * 1.2);
+        --alert-icon-size: 1.2em;
+        --alert-close-size: 1.2em;
         --alert-close-hover-opacity: 0.5;
 
         --alert-title-margin: 0 0 0 0;
@@ -43,7 +43,8 @@
         border-radius: var(--alert-border-radius);
         background-color: var(--alert-background-color);
         color: var(--alert-color);
-        padding: var(--alert-padding);
+        padding-inline: var(--alert-padding-inline);
+        padding-block: var(--alert-padding-block);
         gap: var(--alert-gap);
     }
 

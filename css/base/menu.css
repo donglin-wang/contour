@@ -102,4 +102,10 @@
         color: var(--menu-icon-color);
         line-height: var(--menu-line-height);
     }
+
+    .menu-media {
+        display: block;
+        max-inline-size: 100%;
+        height: auto;
+    }
 }

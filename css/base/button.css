@@ -11,19 +11,18 @@
 
         --button-border-width: 0;
         --button-border-style: solid;
-        --button-border-color: var(--button-background-color);
-        --button-border: var(--button-border-width) var(--button-border-style) var(--button-border-color);
+        --button-border-color: var(--color);
         --button-border-radius: 0;
 
         --button-font-size: 1em;
         --button-font-family: inherit;
         --button-line-height: inherit;
 
-        --button-icon-size: calc(var(--button-font-size) * 1.2);
+        --button-icon-size: 1.2em;
 
-        --button-body-line-height: var(--line-height);
+        --button-body-line-height: inherit;
         --button-body-flex-direction: column;
-        --button-body-gap: var(--button-gap);
+        --button-body-gap: 0.7em;
     }
 
     .button {
@@ -37,7 +36,9 @@
         background: var(--button-background-color);
         color: var(--button-color);
 
-        border: var(--button-border);
+        border-width: var(--button-border-width);
+        border-color: var(--button-border-color);
+        border-style: var(--button-border-style);
         border-radius: var(--button-border-radius);
 
         text-decoration: none;
