@@ -1,0 +1,18 @@
+@layer base {
+    :root {
+        --color: #171717;
+        --color-muted: #3a3a3a;
+        --background-color: #e6e6e6;
+        --background-color-muted: #d5d5d5;
+
+        /* --background-color: #171717;
+        --background-color-muted: #3a3a3a;
+        --color: #dfdfdf;
+        --color-muted: #d0cfcf; */
+
+        --danger: #ef4444;
+        --warning: #ffc107;
+        --success: rgb(33, 196, 93);
+        --info: rgb(60, 131, 246);
+    }
+}

@@ -1,0 +1,58 @@
+@layer base {
+    :root {
+        --font-weight-heading: 700;
+        --h6-font-size: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+        --h5-font-size: clamp(1.35rem, 1.2978rem + 0.2609vw, 1.5rem);
+        --h4-font-size: clamp(1.62rem, 1.5574rem + 0.313vw, 1.8rem);
+        --h3-font-size: clamp(1.944rem, 1.8689rem + 0.3757vw, 2.16rem);
+        --h2-font-size: clamp(2.3328rem, 2.2426rem + 0.4508vw, 2.592rem);
+        --h1-font-size: clamp(2.7994rem, 2.6912rem + 0.5409vw, 3.1104rem);
+        
+        --font-size-content: 1rem;
+    }
+
+    h6,
+    h5,
+    h4,
+    h3,
+    h2,
+    h1 {
+        margin: 0;
+        color: var(--color);
+        font-weight: var(--font-weight-heading);
+    }
+
+    h1 {
+        font-size: var(--h1-font-size);
+    }
+
+    h2 {
+        font-size: var(--h2-font-size);
+    }
+
+    h3 {
+        font-size: var(--h3-font-size);
+    }
+
+    h4 {
+        font-size: var(--h4-font-size);
+    }
+
+    h5 {
+        font-size: var(--h5-font-size);
+    }
+
+    h6 {
+        font-size: var(--h6-font-size);
+    }
+
+    code,
+    kbd,
+    samp,
+    pre,
+    p {
+        color: var(--color);
+        margin: 0;
+        font-size: var(--font-size-content);
+    }
+}

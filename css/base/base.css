@@ -1,3 +1,9 @@
+@layer base, variant, utilities;
+
+@import url(reset.css);
+@import url(theme.css);
+@import url(typography.css);
+
 @import url(alert.css);
 @import url(button.css);
 @import url(menu.css);
