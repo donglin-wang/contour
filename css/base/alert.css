@@ -24,8 +24,8 @@
         --alert-line-height: inherit;
         --alert-text-color: inherit;
 
-        --alert-icon-size: 1.2em;
-        --alert-close-size: 1.2em;
+        --alert-icon-size: 1.5em;
+        --alert-close-size: 1em;
         --alert-close-hover-opacity: 0.5;
 
         --alert-title-margin: 0 0 0 0;

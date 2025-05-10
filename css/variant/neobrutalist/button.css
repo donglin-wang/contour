@@ -1,5 +1,0 @@
-@layer variant {
-    :root {
-        --button-border-radius: var(--border-radius);
-    }
-}
