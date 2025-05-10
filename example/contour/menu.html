@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/contour.css">
+    <title>Menu</title>
+</head>
+
+<body>
+    <article id="article">
+        <h1>Menu</h1>
+        <p class="article-description">
+            Menu is a list of items stacked in a vertical fashion. It can be nested with sub-menus.
+        </p>
+        <h2>Description</h2>
+        <p>Here is a plain nested menu</p>
+        <menu class="menu">
+            <li class="menu-item">
+                Item 1
+            </li>
+            <li>
+                <details open="">
+                    <summary class="menu-item">
+                        Nested
+                    </summary>
+                    <menu class="menu menu--nested">
+                        <li class="menu-item">
+                            Sub item level 1
+                        </li>
+                        <li>
+                            <details open="">
+                                <summary class="menu-item">
+                                    Sub nested
+                                </summary>
+                                <menu class="menu menu--nested">
+                                    <li class="menu-item">
+                                        Sub item level 2
+                                    </li>
+                                </menu>
+                            </details>
+                        </li>
+                    </menu>
+                </details>
+            </li>
+        </menu>
+        <p>Here is a version with guides</p>
+        <menu class="menu" data-menu-flavor="guided">
+            <li class="menu-item">
+                Item 1
+            </li>
+            <li>
+                <hr>
+            </li>
+            <li class="menu-item menu-title">
+                <strong>Contour basics</strong>
+            </li>
+            <li>
+                <menu class="menu menu--nested" data-menu-indent="10px">
+                    <li class="menu-item">
+                        Sub item level 1
+                    </li>
+                    <li>
+                        <details open="">
+                            <summary class="menu-item">
+                                Sub nested
+                            </summary>
+                            <menu class="menu menu--nested">
+                                <li class="menu-item">
+                                    Sub item level 2
+                                </li>
+                            </menu>
+                        </details>
+                    </li>
+                </menu>
+            </li>
+        </menu>
+        <p>Here is a nested menu with room for markers</p>
+        <menu class="menu">
+            <li class="menu-item">
+                <div class="menu-item-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="menu-icon"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0" />
+                    </svg>
+                </div>
+                Item 1
+            </li>
+            <li>
+                <details open="">
+                    <summary class="menu-item">
+                        <div class="menu-item-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
+                            </svg>
+                        </div>
+                        Nested
+                    </summary>
+                    <menu class="menu menu--nested">
+                        <li class="menu-item">
+                            <div class="menu-item-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-x-lg" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                                </svg>
+                            </div>
+                            Sub item level 1
+                        </li>
+                        <li>
+                            <details open="">
+                                <summary class="menu-item">
+                                    <div class="menu-item-start">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                            <path
+                                                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                                        </svg>
+                                    </div>
+                                    Sub nested
+                                </summary>
+                                <menu class="menu menu--nested">
+                                    <li class="menu-item">
+                                        <div class="menu-item-start">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                                            </svg>
+                                        </div>
+                                        Sub item level 2
+                                    </li>
+                                </menu>
+                            </details>
+                        </li>
+                    </menu>
+                </details>
+            </li>
+        </menu>
+        <menu class="menu">
+            <li class="menu-item menu-title">
+                <strong>Contour basics</strong>
+            </li>
+            <li class="menu-item">
+                <div class="menu-item-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-alarm" viewBox="0 0 16 16">
+                        <path
+                            d="M8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9z" />
+                        <path
+                            d="M6.5 0a.5.5 0 0 0 0 1H7v1.07a7.001 7.001 0 0 0-3.273 12.474l-.602.602a.5.5 0 0 0 .707.708l.746-.746A6.97 6.97 0 0 0 8 16a6.97 6.97 0 0 0 3.422-.892l.746.746a.5.5 0 0 0 .707-.708l-.601-.602A7.001 7.001 0 0 0 9 2.07V1h.5a.5.5 0 0 0 0-1zm1.038 3.018a6 6 0 0 1 .924 0 6 6 0 1 1-.924 0M0 3.5c0 .753.333 1.429.86 1.887A8.04 8.04 0 0 1 4.387 1.86 2.5 2.5 0 0 0 0 3.5M13.5 1c-.753 0-1.429.333-1.887.86a8.04 8.04 0 0 1 3.527 3.527A2.5 2.5 0 0 0 13.5 1" />
+                    </svg>
+                </div>
+                Item 1
+                <div class="menu-item-end">
+                    <kbd>Ctrl</kbd> + <kbd>Z</kbd>
+                </div>
+            </li>
+            <li class="menu-item">
+                <div class="menu-item-start">
+                </div>
+                Item 2
+                <div class="menu-item-end">
+                    <kbd>Ctrl</kbd> + <kbd>K</kbd>
+                </div>
+            </li>
+            <li class="menu-item">
+                <div class="menu-item-start">
+                </div>
+                Item 2
+                <div class="menu-item-end">
+                    <button class="button">
+                        <div class="menu-item-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-alarm" viewBox="0 0 16 16">
+                                <path
+                                    d="M8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9z" />
+                                <path
+                                    d="M6.5 0a.5.5 0 0 0 0 1H7v1.07a7.001 7.001 0 0 0-3.273 12.474l-.602.602a.5.5 0 0 0 .707.708l.746-.746A6.97 6.97 0 0 0 8 16a6.97 6.97 0 0 0 3.422-.892l.746.746a.5.5 0 0 0 .707-.708l-.601-.602A7.001 7.001 0 0 0 9 2.07V1h.5a.5.5 0 0 0 0-1zm1.038 3.018a6 6 0 0 1 .924 0 6 6 0 1 1-.924 0M0 3.5c0 .753.333 1.429.86 1.887A8.04 8.04 0 0 1 4.387 1.86 2.5 2.5 0 0 0 0 3.5M13.5 1c-.753 0-1.429.333-1.887.86a8.04 8.04 0 0 1 3.527 3.527A2.5 2.5 0 0 0 13.5 1" />
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </li>
+        </menu>
+        <menu class="menu" data-menu-flavor="nested-flat">
+            <li class="menu-item">
+                <div class="menu-item-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="menu-icon"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0" />
+                    </svg>
+                </div>
+                Item 1
+            </li>
+            <li>
+                <details open="">
+                    <summary class="menu-item">
+                        <div class="menu-item-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
+                            </svg>
+                        </div>
+                        Nested
+                    </summary>
+                    <menu class="menu menu--nested">
+                        <li class="menu-item">
+                            <div class="menu-item-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-x-lg" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                                </svg>
+                            </div>
+                            Sub item level 1
+                        </li>
+                        <li>
+                            <details open="">
+                                <summary class="menu-item">
+                                    <div class="menu-item-start">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                            <path
+                                                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                                        </svg>
+                                    </div>
+                                    Sub nested
+                                </summary>
+                                <menu class="menu menu--nested">
+                                    <li class="menu-item">
+                                        <div class="menu-item-start">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                                            </svg>
+                                        </div>
+                                        Sub item level 2
+                                    </li>
+                                </menu>
+                            </details>
+                        </li>
+                    </menu>
+                </details>
+            </li>
+        </menu>
+        <menu class="menu" data-menu-flavor="avatar">
+            <li class="menu-item menu-title">
+                <strong>Contour basics</strong>
+            </li>
+            <li class="menu-item">
+                <div class="menu-item-start">
+                    <img src="../../asset/image/linux.png" alt="Linux penguin avatar">
+                </div>
+                Item 1
+                <div class="menu-item-end">
+                    <kbd>Ctrl</kbd> + <kbd>Z</kbd>
+                </div>
+            </li>
+            <li class="menu-item">
+                <div class="menu-item-start">
+                </div>
+                Item 2
+                <div class="menu-item-end">
+                    <kbd>Ctrl</kbd> + <kbd>K</kbd>
+                </div>
+            </li>
+            <li class="menu-item">
+                <div class="menu-item-start">
+                </div>
+                Item 2
+                <div class="menu-item-end">
+                    <button class="button">
+                        <div class="menu-item-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-alarm" viewBox="0 0 16 16">
+                                <path
+                                    d="M8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9z" />
+                                <path
+                                    d="M6.5 0a.5.5 0 0 0 0 1H7v1.07a7.001 7.001 0 0 0-3.273 12.474l-.602.602a.5.5 0 0 0 .707.708l.746-.746A6.97 6.97 0 0 0 8 16a6.97 6.97 0 0 0 3.422-.892l.746.746a.5.5 0 0 0 .707-.708l-.601-.602A7.001 7.001 0 0 0 9 2.07V1h.5a.5.5 0 0 0 0-1zm1.038 3.018a6 6 0 0 1 .924 0 6 6 0 1 1-.924 0M0 3.5c0 .753.333 1.429.86 1.887A8.04 8.04 0 0 1 4.387 1.86 2.5 2.5 0 0 0 0 3.5M13.5 1c-.753 0-1.429.333-1.887.86a8.04 8.04 0 0 1 3.527 3.527A2.5 2.5 0 0 0 13.5 1" />
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </li>
+        </menu>
+        <menu class="menu" data-menu-flavor="tiered">
+            <li class="menu-item menu-title">
+                <strong>Contour basics</strong>
+            </li>
+            <li class="menu-item">
+                <div class="menu-item-start">
+                    <img src="../../asset/image/linux.png" alt="Linux penguin avatar">
+                </div>
+                <div class="menu-item-content">
+                    <strong>Title</strong>
+                    Description
+                </div>
+                <div class="menu-item-end">
+                    <kbd>Ctrl</kbd> + <kbd>Z</kbd>
+                </div>
+            </li>
+            <li class="menu-item">
+                <div class="menu-item-start">
+                </div>
+                Item 2
+                <div class="menu-item-end">
+                    <kbd>Ctrl</kbd> + <kbd>K</kbd>
+                </div>
+            </li>
+            <li class="menu-item">
+                <div class="menu-item-start">
+                </div>
+                Item 2
+                <div class="menu-item-end">
+                    <button class="button">
+                        <div class="menu-item-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-alarm" viewBox="0 0 16 16">
+                                <path
+                                    d="M8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9z" />
+                                <path
+                                    d="M6.5 0a.5.5 0 0 0 0 1H7v1.07a7.001 7.001 0 0 0-3.273 12.474l-.602.602a.5.5 0 0 0 .707.708l.746-.746A6.97 6.97 0 0 0 8 16a6.97 6.97 0 0 0 3.422-.892l.746.746a.5.5 0 0 0 .707-.708l-.601-.602A7.001 7.001 0 0 0 9 2.07V1h.5a.5.5 0 0 0 0-1zm1.038 3.018a6 6 0 0 1 .924 0 6 6 0 1 1-.924 0M0 3.5c0 .753.333 1.429.86 1.887A8.04 8.04 0 0 1 4.387 1.86 2.5 2.5 0 0 0 0 3.5M13.5 1c-.753 0-1.429.333-1.887.86a8.04 8.04 0 0 1 3.527 3.527A2.5 2.5 0 0 0 13.5 1" />
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </li>
+        </menu>
+    </article>
+</body>
+
+</html>

@@ -1,17 +1,19 @@
 @layer base {
     :root {
-        --menu-padding-x: 0;
-        --menu-padding-y: 0.7em;
-        --menu-padding: var(--menu-padding-y) var(--menu-padding-x);
+        --menu-gap: 0;
+        --menu-padding: 0.7em 0;
+
+        --menu-border: unset;
+        --menu-border-radius: 0;
+
+        --menu-item-border: unset;
+        --menu-border-radius: 0;
 
         --menu-item-gap: 0.7em;
-        --menu-item-padding-x: 1.2em;
-        --menu-item-padding-y: var(--menu-padding-y);
-        --menu-item-padding: var(--menu-item-padding-y) var(--menu-item-padding-x);
+        --menu-item-padding: 0.7em 1.2em;
 
-        --menu-indent-step: 1.2em;
-        --menu-nested-padding-inline: var(--menu-indent-step) 0;
-        --menu-nested-padding-y: 0;
+        --menu-nested-padding-inline: 1.2em 0;
+        --menu-nested-padding-block: 0;
         --menu-nested-marker-display: none;
 
         --menu-font-size: 1em;
@@ -30,21 +32,25 @@
 
         --menu-item-start-flex-basis: 1em;
 
-        --menu-icon-size: calc(var(--menu-font-size) * 1.2);
+        --menu-icon-size: 1.2em;
         --menu-icon-color: inherit;
     }
 
     .menu {
+        display: flex;
+        flex-direction: column;
         list-style: none;
         padding: var(--menu-padding);
         background-color: var(--menu-background-color);
         color: var(--menu-color);
+        border: var(--menu-border);
+        border-radius: var(--menu-border-radius);
+        gap: var(--menu-gap);
     }
 
     .menu--nested {
         padding-inline: var(--menu-nested-padding-inline);
-        padding-top: var(--menu-nested-padding-y);
-        padding-bottom: var(--menu-nested-padding-y);
+        padding-block: var(--menu-nested-padding-block);
     }
 
     .menu-item::marker, .menu-item::-webkit-details-marker {
@@ -53,10 +59,18 @@
 
     .menu-item {
         display: flex;
+        align-items: center;
         padding: var(--menu-item-padding);
         color: var(--menu-item-color);
         background-color: var(--menu-item-background-color);
         gap: var(--menu-item-gap);
+        border: var(--menu-item-border);
+        border-radius: var(--menu-item-border-radius);
+    }
+
+    .menu-item-content {
+        display: flex;
+        flex-direction: column;
     }
 
     .menu-item:hover {
@@ -65,9 +79,20 @@
         cursor: var(--menu-item-hover-cursor);
     }
 
+    .menu-title:hover {
+        background-color: var(--menu-background-color);
+        color: var(--menu-color);
+        cursor: initial;
+    }
+
     .menu-item-start {
         display: inline-flex;
         flex-basis: var(--menu-item-start-flex-basis);
+    }
+
+    .menu-item-end {
+        display: inline-flex;
+        margin-left: auto;
     }
 
     .menu-icon {

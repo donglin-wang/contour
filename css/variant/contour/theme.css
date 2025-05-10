@@ -33,7 +33,6 @@
 
         --color: #000000;
         --color-muted: #474747;
-        --box-shadow-color: rgba(255, 255, 255, 0.1);
         --background-color: #ffffff;
         --background-color-muted: #efefef;
 
@@ -56,7 +55,6 @@
         --color-muted: #efefef;
         --background-color: #13151b;
         --background-color-muted: #20232d;
-        --box-shadow-color: rgba(113, 113, 113, 0.372);
     } */
 
     /* this also doesn't work if theme--dark is on body*/
@@ -65,7 +63,6 @@
         --color-muted: #efefef;
         --background-color: #13151b;
         --background-color-muted: #20232d;
-        --box-shadow-color: rgba(113, 113, 113, 0.372);
     } */
 
     [data-theme="dark"] {
@@ -73,7 +70,6 @@
         --color-muted: #efefef;
         --background-color: #000000;
         --background-color-muted: #1e1e1e;
-        --box-shadow-color: rgba(78, 77, 77, 0.675);
     }
     
     @media (min-width: 1200px) {
@@ -147,6 +143,11 @@
 
     code {
         color: var(--code-color);
+    }
+
+    hr {
+        color: var(--color);
+        border-color: var(--color);
     }
 }
 

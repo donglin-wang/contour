@@ -1,0 +1,39 @@
+@layer variant {
+    :root {
+        --menu-indent-step: 1.2em;
+        --menu-border-radius: var(--border-radius);
+        --menu-padding-y: 0.5em;
+        --menu-padding-x: 0.5em;
+        --menu-item-padding-y: 0.7em;
+        --menu-item-padding-x: 2em;
+        --menu-item-border-radius: var(--border-radius);
+        --menu-item-gap: 1em;
+    }
+
+    .menu-item {
+        --button-padding: 0.3em 0.3em;
+    }
+
+    [data-menu-flavor="guided"] .menu--nested {
+        border-left: 1px solid var(--color);
+        padding-left: 0;
+        margin-left: var(--menu-indent-step);
+        border-radius: 0;
+    }
+
+    [data-menu-flavor="guided"] .menu--nested .menu-item {
+        --menu-item-border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        margin-left: -1px;
+    }
+
+    [data-menu-flavor="nested-flat"] .menu--nested {
+        --menu-nested-padding-inline: 0 0;
+    }
+
+    [data-menu-flavor="avatar"] .menu-item-start,
+    [data-menu-flavor="tiered"] .menu-item-start {
+        --menu-item-start-flex-basis: 2em;
+        aspect-ratio: 1 / 1;
+    }
+
+}

@@ -4,10 +4,6 @@
         --button-border-radius: var(--border-radius);
     }
 
-    .button {
-        box-shadow: 0 4px 6px -1px var(--box-shadow-color), 0 2px 4px -2px var(--box-shadow-color);
-    }
-
     .button:active {
         transform: var(--button-active-transform);
     }
