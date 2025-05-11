@@ -28,7 +28,7 @@
     }
 
     [data-button-section-variant="left-rounded-counter"] {
-        background-color: var(--background-color-muted);
+        background-color: var(--background-color);
         color: var(--color);
         border-radius: 999px;
         padding: 0.5em;
