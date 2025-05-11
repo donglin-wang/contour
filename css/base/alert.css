@@ -48,7 +48,8 @@
         gap: var(--alert-gap);
     }
 
-    .alert-icon, .alert-close {
+    .alert-icon,
+    .alert-close {
         width: auto;
         flex: none;
         color: inherit;

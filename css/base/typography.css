@@ -7,7 +7,7 @@
         --h3-font-size: clamp(1.944rem, 1.8689rem + 0.3757vw, 2.16rem);
         --h2-font-size: clamp(2.3328rem, 2.2426rem + 0.4508vw, 2.592rem);
         --h1-font-size: clamp(2.7994rem, 2.6912rem + 0.5409vw, 3.1104rem);
-        
+
         --font-size-xs: 0.64rem;
         --font-size-s: 0.8rem;
         --font-size: 1rem;

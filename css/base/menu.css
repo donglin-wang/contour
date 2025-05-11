@@ -53,7 +53,8 @@
         padding-block: var(--menu-nested-padding-block);
     }
 
-    .menu-item::marker, .menu-item::-webkit-details-marker {
+    .menu-item::marker,
+    .menu-item::-webkit-details-marker {
         display: var(--menu-nested-marker-display);
     }
 
