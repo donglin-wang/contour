@@ -26,6 +26,7 @@
 
         --alert-icon-size: 1.5em;
         --alert-close-size: 1em;
+        --alert-close-align-self: start;
         --alert-close-hover-opacity: 0.5;
 
         --alert-section-gap: 0.5em;
@@ -62,6 +63,7 @@
 
     .alert-close {
         height: var(--alert-close-size);
+        align-self: var(--alert-close-align-self);
         cursor: pointer;
     }
 
