@@ -1,7 +1,7 @@
 @layer base {
     :root {
         --menu-gap: 0;
-        --menu-padding: 0.7em 0;
+        --menu-padding: 0.5em 0;
 
         --menu-border: unset;
         --menu-border-radius: 0;
@@ -9,10 +9,10 @@
         --menu-item-border: unset;
         --menu-border-radius: 0;
 
-        --menu-item-gap: 0.7em;
-        --menu-item-padding: 0.7em 1.2em;
+        --menu-item-gap: 0.5em;
+        --menu-item-padding: 0.5em 1em;
 
-        --menu-nested-padding-inline: 1.2em 0;
+        --menu-nested-padding-inline: 1em 0;
         --menu-nested-padding-block: 0;
         --menu-nested-marker-display: none;
 
@@ -29,18 +29,19 @@
         --menu-item-hover-color: var(--background-color);
 
         --menu-item-hover-cursor: pointer;
+        --menu-item-divider-margin-block: 0.5em;
 
-        --menu-item-start-flex-basis: 1em;
+        --menu-item-section-spaced-flex-basis: 1em;
+        --menu-item-section-spaced-size: 1em;
 
-        --menu-icon-size: 1.2em;
-        --menu-icon-color: inherit;
+        --menu-media-size: 1em;
+        --menu-media-color: inherit;
     }
 
-    .menu {
+    .menu, .menu-nested {
         display: flex;
         flex-direction: column;
         list-style: none;
-        padding: var(--menu-padding);
         background-color: var(--menu-background-color);
         color: var(--menu-color);
         border: var(--menu-border);
@@ -48,7 +49,11 @@
         gap: var(--menu-gap);
     }
 
-    .menu--nested {
+    .menu {
+        padding: var(--menu-padding);
+    }
+
+    .menu-nested {
         padding-inline: var(--menu-nested-padding-inline);
         padding-block: var(--menu-nested-padding-block);
     }
@@ -69,44 +74,40 @@
         border-radius: var(--menu-item-border-radius);
     }
 
-    .menu-item-content {
-        display: flex;
-        flex-direction: column;
-    }
-
     .menu-item:hover {
         background-color: var(--menu-item-hover-background-color);
         color: var(--menu-item-hover-color);
         cursor: var(--menu-item-hover-cursor);
     }
 
-    .menu-title:hover {
+    [data-menu-item-variant="base-title"]:hover,
+    [data-menu-item-variant="base-divider"]:hover {
         background-color: var(--menu-background-color);
         color: var(--menu-color);
         cursor: initial;
     }
 
-    .menu-item-start {
-        display: inline-flex;
-        flex-basis: var(--menu-item-start-flex-basis);
+    [data-menu-item-variant="base-divider"]{
+        padding: 0;
+        width: 100%;
+        border-bottom: 1px solid var(--color);
+        margin-block: var(--menu-item-divider-margin-block);
     }
 
-    .menu-item-end {
-        display: inline-flex;
-        margin-left: auto;
+    .menu-item-section {
+        display: flex;
+        flex-direction: column;
     }
 
-    .menu-icon {
-        height: var(--menu-icon-size);
-        width: auto;
-        flex: none;
-        color: var(--menu-icon-color);
-        line-height: var(--menu-line-height);
+    [data-menu-item-section-variant="base-row"] {
+        flex-direction: row;
     }
 
-    .menu-media {
-        display: block;
-        max-inline-size: 100%;
-        height: auto;
+    [data-menu-item-section-variant="base-spaced"]{
+        flex-basis: var(--menu-item-section-spaced-flex-basis);
+    }
+
+    [data-menu-item-section-variant="base-body"] {
+        flex-grow: 1;
     }
 }

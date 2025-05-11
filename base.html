@@ -198,38 +198,6 @@
             <icon-x class="notice-close"></icon-x>
         </div>
 
-        <h2>
-            Menu
-        </h2>
-        <menu class="menu">
-            <li class="menu-item">
-                Item 1
-            </li>
-            <li>
-                <details open="">
-                    <summary class="menu-item">
-                        Nested
-                    </summary>
-                    <menu class="menu menu--nested">
-                        <li class="menu-item">
-                            Sub item level 1
-                        </li>
-                        <li>
-                            <details open="">
-                                <summary class="menu-item">
-                                    Sub nested
-                                </summary>
-                                <menu class="menu menu--nested">
-                                    <li class="menu-item">
-                                        Sub item level 2
-                                    </li>
-                                </menu>
-                            </details>
-                        </li>
-                    </menu>
-                </details>
-            </li>
-        </menu>
         <h1>Menu</h1>
         <p class="article-description">
             Menu is a list of items stacked in a vertical fashion. It can be nested with sub-menus.
@@ -237,101 +205,66 @@
         <h2>Description</h2>
         <p>Here is a plain nested menu</p>
         <menu class="menu">
+            <li class="menu-item" data-menu-item-variant="base-title">
+                <strong>Pages</strong>
+            </li>
             <li class="menu-item">
-                Item 1
+                <div class="menu-item-section" data-menu-item-section-variant="base-body">
+                    Profile
+                </div>
+                <div class="menu-item-section" data-menu-item-section-variant="base-row">
+                    <kbd>⌘P</kbd>
+                </div>
             </li>
-            <li>
-                <details open="">
-                    <summary class="menu-item">
-                        Nested
-                    </summary>
-                    <menu class="menu menu--nested">
-                        <li class="menu-item">
-                            Sub item level 1
-                        </li>
-                        <li>
-                            <details open="">
-                                <summary class="menu-item">
-                                    Sub nested
-                                </summary>
-                                <menu class="menu menu--nested">
-                                    <li class="menu-item">
-                                        Sub item level 2
-                                    </li>
-                                </menu>
-                            </details>
-                        </li>
-                    </menu>
-                </details>
-            </li>
-        </menu>
-        <p>Here is a version with guides</p>
-        <menu class="menu" data-menu-flavor="guided">
             <li class="menu-item">
-                Item 1
+                <div class="menu-item-section" data-menu-item-section-variant="base-body">
+                    Billing
+                </div>
+                <div class="menu-item-section" data-menu-item-section-variant="base-row">
+                    <kbd>⌘B</kbd>
+                </div>
             </li>
-            <li>
-                <hr>
+            <li class="menu-item" data-menu-item-variant="base-divider"></li>
+            <li class="menu-item" data-menu-item-variant="base-title">
+                <strong>Appearance</strong>
             </li>
-            <li class="menu-item menu-title">
-                <strong>Contour basics</strong>
-            </li>
-            <li>
-                <menu class="menu menu--nested" data-menu-indent="10px">
-                    <li class="menu-item">
-                        Sub item level 1
-                    </li>
-                    <li>
-                        <details open="">
-                            <summary class="menu-item">
-                                Sub nested
-                            </summary>
-                            <menu class="menu menu--nested">
-                                <li class="menu-item">
-                                    Sub item level 2
-                                </li>
-                            </menu>
-                        </details>
-                    </li>
-                </menu>
-            </li>
-        </menu>
-        <p>Here is a nested menu with room for markers</p>
-        <menu class="menu">
             <li class="menu-item">
-                <div class="menu-item-start">
+                <div class="menu-item-section" data-menu-item-section-variant="base-spaced">
                     <icon-check></icon-check>
                 </div>
+                Activity bar
+            </li>
+            <li class="menu-item">
+                <div class="menu-item-section" data-menu-item-section-variant="base-spaced">
+                </div>
+                Status bar
+            </li>
+            <li class="menu-item">
+                <div class="menu-item-section" data-menu-item-section-variant="base-spaced">
+                </div>
+                Panel
+            </li>
+        </menu>
+        <menu class="menu">
+            <li class="menu-item">
                 Item 1
             </li>
             <li>
                 <details open="">
                     <summary class="menu-item">
-                        <div class="menu-item-start">
-                            <icon-plus></icon-plus>
-                        </div>
                         Nested
                     </summary>
-                    <menu class="menu menu--nested">
+                    <menu class="menu-nested">
                         <li class="menu-item">
-                            <div class="menu-item-start">
-                                <icon-check></icon-check>
-                            </div>
                             Sub item level 1
                         </li>
                         <li>
                             <details open="">
                                 <summary class="menu-item">
-                                    <div class="menu-item-start">
-                                        <icon-check></icon-check>
-                                    </div>
                                     Sub nested
                                 </summary>
-                                <menu class="menu menu--nested">
+                                <menu class="menu-nested">
                                     <li class="menu-item">
-                                        <div class="menu-item-start">
-                                            <icon-check></icon-check>
-                                        </div>
                                         Sub item level 2
                                     </li>
                                 </menu>
@@ -342,72 +275,25 @@
             </li>
         </menu>
         <menu class="menu">
-            <li class="menu-item menu-title">
-                <strong>Contour basics</strong>
-            </li>
             <li class="menu-item">
-                <div class="menu-item-start">
-                    <icon-check></icon-check>
-                </div>
-                Item 1
-                <div class="menu-item-end">
-                    <kbd>Ctrl</kbd> + <kbd>Z</kbd>
-                </div>
-            </li>
-            <li class="menu-item">
-                <div class="menu-item-start">
-                </div>
-                Item 2
-                <div class="menu-item-end">
-                    <kbd>Ctrl</kbd> + <kbd>K</kbd>
-                </div>
-            </li>
-            <li class="menu-item">
-                <div class="menu-item-start">
-                </div>
-                Item 2
-                <div class="menu-item-end">
-                    <button class="button">
-                        <icon-alarm></icon-alarm>
-                    </button>
-                </div>
-            </li>
-        </menu>
-        <menu class="menu" data-menu-flavor="nested-flat">
-            <li class="menu-item">
-                <div class="menu-item-start">
-                    <icon-check></icon-check>
-                </div>
                 Item 1
             </li>
             <li>
                 <details open="">
                     <summary class="menu-item">
-                        <div class="menu-item-start">
-                            <icon-check></icon-check>
-                        </div>
                         Nested
                     </summary>
-                    <menu class="menu menu--nested">
-                        <li class="menu-item">
-                            <div class="menu-item-start">
-                                <icon-check></icon-check>
-                            </div>
+                    <menu class="menu-nested" data-menu-nested-variant="guided">
+                        <li class="menu-item" data-menu-item-variant="guided">
                             Sub item level 1
                         </li>
                         <li>
                             <details open="">
-                                <summary class="menu-item">
-                                    <div class="menu-item-start">
-                                        <icon-check></icon-check>
-                                    </div>
+                                <summary class="menu-item" data-menu-item-variant="guided">
                                     Sub nested
                                 </summary>
-                                <menu class="menu menu--nested">
-                                    <li class="menu-item">
-                                        <div class="menu-item-start">
-                                            <icon-check></icon-check>
-                                        </div>
+                                <menu class="menu-nested" data-menu-nested-variant="guided">
+                                    <li class="menu-item" data-menu-item-variant="guided">
                                         Sub item level 2
                                     </li>
                                 </menu>
@@ -417,74 +303,6 @@
                 </details>
             </li>
         </menu>
-        <menu class="menu" data-menu-flavor="avatar">
-            <li class="menu-item menu-title">
-                <strong>Contour basics</strong>
-            </li>
-            <li class="menu-item">
-                <div class="menu-item-start">
-                    <img src="../../asset/image/linux.png" alt="Linux penguin avatar" class="menu-media">
-                </div>
-                Item 1
-                <div class="menu-item-end">
-                    <kbd>Ctrl</kbd> + <kbd>Z</kbd>
-                </div>
-            </li>
-            <li class="menu-item">
-                <div class="menu-item-start">
-                </div>
-                Item 2
-                <div class="menu-item-end">
-                    <kbd>Ctrl</kbd> + <kbd>K</kbd>
-                </div>
-            </li>
-            <li class="menu-item">
-                <div class="menu-item-start">
-                </div>
-                Item 2
-                <div class="menu-item-end">
-                    <button class="button">
-                        <icon-alarm></icon-alarm>
-                    </button>
-                </div>
-            </li>
-        </menu>
-        <menu class="menu" data-menu-flavor="tiered">
-            <li class="menu-item menu-title">
-                <strong>Contour basics</strong>
-            </li>
-            <li class="menu-item">
-                <div class="menu-item-start">
-                    <img src="../../asset/image/linux.png" alt="Linux penguin avatar" class="menu-media">
-                </div>
-                <div class="menu-item-content">
-                    <strong>Title</strong>
-                    Description
-                </div>
-                <div class="menu-item-end">
-                    <kbd>Ctrl</kbd> + <kbd>Z</kbd>
-                </div>
-            </li>
-            <li class="menu-item">
-                <div class="menu-item-start">
-                </div>
-                Item 2
-                <div class="menu-item-end">
-                    <kbd>Ctrl</kbd> + <kbd>K</kbd>
-                </div>
-            </li>
-            <li class="menu-item">
-                <div class="menu-item-start">
-                </div>
-                Item 2
-                <div class="menu-item-end">
-                    <button class="button">
-                        <icon-alarm></icon-alarm>
-                    </button>
-                </div>
-            </li>
-        </menu>
-        <p><icon-alarm></icon-alarm> Do I work?</p>
     </article>
 </body>
 
