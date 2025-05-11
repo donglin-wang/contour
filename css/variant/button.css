@@ -8,6 +8,7 @@
     }
 
     [data-button-variant="tiered"]>[data-button-section-variant="tiered-body"] {
+        gap: 0.2em;
         align-items: start;
     }
 
