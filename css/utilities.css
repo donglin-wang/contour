@@ -18,4 +18,8 @@
     .font-size-xl {
         font-size: var(--font-size-xl);
     }
+
+    .margin-bottom-4 {
+        margin-bottom: calc(var(--space) * 4);
+    }
 }

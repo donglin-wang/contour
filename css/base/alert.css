@@ -1,9 +1,9 @@
 @layer base {
     :root {
-        --alert-padding-inline: 1.2em;
+        --alert-padding-inline: 1em;
         --alert-padding-block: 1em;
 
-        --alert-button-padding: 0.3em 0.5em;
+        --alert-button-padding: 0.5em 0.5em;
         --alert-gap: 1em;
 
         --alert-font-size: var(--font-size, 1em);
@@ -28,9 +28,9 @@
         --alert-close-size: 1em;
         --alert-close-hover-opacity: 0.5;
 
-        --alert-title-margin: 0 0 0 0;
-        --alert-content-gap: 0.3em;
-        --alert-control-gap: 0.3em;
+        --alert-section-gap: 0.5em;
+        --alert-section-content-gap: 1em;
+        --alert-section-control-gap: 0.5em;
     }
 
     .alert {
@@ -62,7 +62,6 @@
 
     .alert-close {
         height: var(--alert-close-size);
-        align-self: flex-start;
         cursor: pointer;
     }
 
@@ -70,26 +69,20 @@
         opacity: var(--alert-close-hover-opacity);
     }
 
-    .alert-content {
+    .alert-section {
         display: flex;
+        gap: var(--alert-section-gap);
+    }
+    
+    [data-alert-section-variant="content"] {
         flex-direction: column;
-        gap: var(--alert-gap);
+        gap: var(--alert-section-content-gap);
     }
 
-    .alert-control {
-        display: flex;
-        gap: var(--alert-control-gap);
+    [data-alert-section-variant="control"] {
+        gap: var(--alert-section-control-gap);
     }
 
-    .alert-title {
-        margin: var(--alert-title-margin);
-    }
-
-    .alert-text {
-        color: var(--alert-text-color);
-    }
-
-    /* TODO: should I include this in base? */
     .alert-button {
         --button-padding: var(--alert-button-padding);
     }

@@ -14,5 +14,7 @@
         --warning: #ffc107;
         --success: rgb(33, 196, 93);
         --info: rgb(60, 131, 246);
+
+        --space: 0.25rem;
     }
 }
