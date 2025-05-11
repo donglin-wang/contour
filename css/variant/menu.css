@@ -1,12 +1,21 @@
 @layer variant {
-    [data-menu-nested-variant="guided"]{
+    [data-menu-nested-variant="guided"] {
         border-left: 1px solid var(--color);
         padding-left: 0;
         margin-left: 1em;
-        border-radius: 0;
     }
 
     [data-menu-item-variant="guided"] .menu-item {
         margin-left: -1px;
+    }
+
+    [data-menu-nested-variant="flat"] {
+        border-radius: 0 0 5px 5px;
+        border: 1px dashed var(--color);
+        padding-left: 0;
+    }
+
+    [data-menu-nested-variant="flat"]:hover {
+        border-style: solid;
     }
 }
