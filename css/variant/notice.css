@@ -1,10 +1,10 @@
 @layer variant {
-    [data-alert-variant="close-separated"] {
+    [data-notice-variant="close-separated"] {
         padding-block: 0;
         padding-inline-end: 0;
     }
 
-    [data-alert-variant="close-separated"]>.alert-section {
+    [data-notice-variant="close-separated"]>.notice-section {
         padding-block: 1em;
     }
 
@@ -14,32 +14,32 @@
         If specificity is <= (0,2,0), anything is fine.
         If larger, then use custom properties.
     */
-    [data-alert-section-variant="close-separated-close"] {
-        --alert-close-align-self: center;
-        --alert-close-hover-opacity: initial;
+    [data-notice-section-variant="close-separated-close"] {
+        --notice-close-align-self: center;
+        --notice-close-hover-opacity: initial;
         justify-content: center;
         align-self: stretch;
         padding-inline: 1em;
     }
 
-    [data-alert-section-variant="close-separated-close"]:hover {
+    [data-notice-section-variant="close-separated-close"]:hover {
         background-color: var(--color);
         color: var(--background-color);
         cursor: pointer;
     }
 
-    [data-alert-variant="left-inclined"] {
+    [data-notice-variant="left-inclined"] {
         border-left: 5px solid var(--color);
         border-radius: 0 10px 10px 0;
     }
 
-    [data-alert-variant="icon-top"] {
+    [data-notice-variant="icon-top"] {
         position: relative;
         margin-top: 2.5em;
         padding-top: 2.5em;
     }
 
-    [data-alert-variant="icon-top"] .alert-icon {
+    [data-notice-variant="icon-top"] .notice-icon {
         width: 3em;
         height: 3em;
         position: absolute;
@@ -47,18 +47,18 @@
         color: var(--color);
     }
 
-    [data-alert-variant="icon-top"] .alert-close {
+    [data-notice-variant="icon-top"] .notice-close {
         position: relative;
         top: -1.5em;
     }
 
-    [data-alert-variant="icon-cornered"] {
+    [data-notice-variant="icon-cornered"] {
         position: relative;
         padding: 1.5em;
         margin-top: 2em;
     }
 
-    [data-alert-variant="icon-cornered"] .alert-icon {
+    [data-notice-variant="icon-cornered"] .notice-icon {
         width: 2em;
         height: 2em;
         position: absolute;
@@ -67,11 +67,11 @@
         color: var(--color);
     }
 
-    [data-alert-variant="button-linked"] [data-alert-section-variant="base-control"] {
+    [data-notice-variant="button-linked"] [data-notice-section-variant="base-control"] {
         gap: 1em;
     }
 
-    [data-alert-variant="button-linked"] .alert-button {
+    [data-notice-variant="button-linked"] .notice-button {
         padding-inline: 0;
         background-color: transparent;
         color: var(--color);

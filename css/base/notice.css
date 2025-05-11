@@ -1,0 +1,97 @@
+@layer base {
+    :root {
+        --notice-padding-inline: 1em;
+        --notice-padding-block: 1em;
+
+        --notice-button-padding: 0.5em 0.5em;
+        --notice-gap: 1em;
+
+        --notice-font-size: var(--font-size, 1em);
+        --notice-font-family: inherit;
+        --notice-line-height: inherit;
+
+        --notice-background-color: var(--background-color-muted);
+        --notice-color: var(--color);
+
+        --notice-border-top: none;
+        --notice-border-right: none;
+        --notice-border-bottom: none;
+        --notice-border-left: none;
+        --notice-border-radius: 0;
+
+        --notice-font-size: 1em;
+        --notice-font-family: inherit;
+        --notice-line-height: inherit;
+        --notice-text-color: inherit;
+
+        --notice-icon-size: 1.5em;
+        --notice-close-size: 1em;
+        --notice-close-align-self: start;
+        --notice-close-hover-opacity: 0.5;
+
+        --notice-section-gap: 0.5em;
+        --notice-section-content-gap: 1em;
+        --notice-section-control-gap: 0.5em;
+    }
+
+    .notice {
+        display: flex;
+        align-items: center;
+        border-top: var(--notice-border-top);
+        border-right: var(--notice-border-right);
+        border-bottom: var(--notice-border-bottom);
+        border-left: var(--notice-border-left);
+        border-radius: var(--notice-border-radius);
+        background-color: var(--notice-background-color);
+        color: var(--notice-color);
+        padding-inline: var(--notice-padding-inline);
+        padding-block: var(--notice-padding-block);
+        gap: var(--notice-gap);
+    }
+
+    /*
+        Why don't icon and close get their section variant?
+        Because they might have position absolute, which means
+        they don't factor into the box layout of the main notice.
+    */
+
+    .notice-icon,
+    .notice-close {
+        width: auto;
+        flex: none;
+        color: inherit;
+        line-height: var(--notice-line-height);
+    }
+
+    .notice-icon {
+        height: var(--notice-icon-size);
+    }
+
+    .notice-close {
+        height: var(--notice-close-size);
+        align-self: var(--notice-close-align-self);
+        cursor: pointer;
+    }
+
+    .notice-close:hover {
+        opacity: var(--notice-close-hover-opacity);
+    }
+
+    .notice-section {
+        display: flex;
+        gap: var(--notice-section-gap);
+    }
+    
+    [data-notice-section-variant="base-content"] {
+        flex-direction: column;
+        gap: var(--notice-section-content-gap);
+    }
+
+    [data-notice-section-variant="base-control"] {
+        gap: var(--notice-section-control-gap);
+    }
+
+    .notice-button {
+        --button-padding: var(--notice-button-padding);
+    }
+}
