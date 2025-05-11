@@ -1,11 +1,31 @@
 @layer variant {
-    [data-alert-section-variant="close-separated-close"] .alert-close {
-        align-self: center;
+    [data-alert-variant="close-separated"] {
+        padding-block: 0;
+        padding-inline-end: 0;
     }
 
+    [data-alert-variant="close-separated"]>.alert-section {
+        padding-block: 1em;
+    }
+
+    /* 
+        Note in the doc here that you avoided more specific
+        selectors by using custom properties.
+        If specificity is <= (0,2,0), anything is fine.
+        If larger, then use custom properties.
+    */
     [data-alert-section-variant="close-separated-close"] {
-        border-left: 1px solid var(--color);
-        padding: 0.5em;
+        --alert-close-align-self: center;
+        --alert-close-hover-opacity: initial;
+        justify-content: center;
+        align-self: stretch;
+        padding-inline: 1em;
+    }
+
+    [data-alert-section-variant="close-separated-close"]:hover {
+        background-color: var(--color);
+        color: var(--background-color);
+        cursor: pointer;
     }
 
     [data-alert-variant="left-inclined"] {
