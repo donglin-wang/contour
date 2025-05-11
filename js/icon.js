@@ -82,8 +82,19 @@ class IconCheck extends IconBase {
     }
 }
 
+class IconChevronRight extends IconBase {
+    getSVG(strokeWidth, fill) {
+        return /* html */`
+            <svg xmlns="http://www.w3.org/2000/svg" stroke-width="${strokeWidth}" fill="${fill}" viewBox="0 0 16 16" class="icon">
+                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+            </svg>
+        `
+    }
+}
+
 customElements.define('icon-exclamation-square-fill', IconExclamationSquareFill);
 customElements.define('icon-alarm', IconAlarm);
 customElements.define('icon-x', IconX);
 customElements.define('icon-plus', IconPlus);
 customElements.define('icon-check', IconCheck);
+customElements.define('icon-chevron-right', IconChevronRight)

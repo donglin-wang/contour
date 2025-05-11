@@ -20,7 +20,6 @@
 
             --article-max-width: 65ch;
             --article-margin-block: 3rem;
-            --article-description-font-size: var(--font-size-content-xl);
         }
 
         /* Bootstrap font family */
@@ -36,19 +35,64 @@
             margin: auto;
             margin-block: var(--article-margin-block);
         }
+
+        #article>h1,
+        #article>h2,
+        #article>h3,
+        #article>h4,
+        #article>h5,
+        #article>h6,
+        #article>p {
+            margin-block: 1rem;
+        }
     </style>
     <style>
         @import url(css/base/base.css);
         @import url(css/variant/menu.css);
+        @import url(css/variant/button.css);
+        @import url(css/utilities.css);
     </style>
 </head>
 
 <body>
     <article id="article">
-        <h2>Button</h2>
+        <h1>Button</h1>
+
         <p>
             <button class="button">Button</button>
         </p>
+        <p>
+            <button class="button" data-button-variant="icon"><icon-alarm></icon-alarm></button>
+            <button class="button font-size-l" data-button-variant="icon"><icon-alarm></icon-alarm></button>
+            <button class="button font-size-xl" data-button-variant="icon"><icon-alarm></icon-alarm></button>
+        </p>
+        <p>
+            <button class="button" data-button-variant="tiered">
+                <span class="button-section" data-button-section-variant="tiered-body">
+                    <strong class="font-size-l">Title</strong>
+                    <p>Next</p>
+                </span>
+                <span class="button-section">
+                    <icon-chevron-right></icon-chevron-right>
+                </span>
+            </button>
+        </p>
+        <p>
+            <button class="button" data-button-variant="top-down">
+                <icon-alarm class="button-icon"></icon-alarm>
+                Alarm
+            </button>
+        </p>
+        <p>
+            <button class="button" data-button-variant="left-rounded">
+                <span class="button-section" data-button-section-variant="left-rounded-counter">
+                    42
+                </span>
+                Left-rounded
+                <icon-chevron-right class="button-icon"></icon-chevron-right>
+            </button>
+        </p>
+
         <h2>Alert</h2>
         <p>
         <div class="alert">

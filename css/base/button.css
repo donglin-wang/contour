@@ -1,7 +1,7 @@
 @layer base {
     :root {
-        --button-padding: 0.7em 1.2em;
-        --button-gap: 0.7em;
+        --button-padding: 1em 1em;
+        --button-gap: 1em;
         --button-flex-direction: row;
 
         --button-background-color: var(--color);
@@ -18,11 +18,11 @@
         --button-font-family: inherit;
         --button-line-height: inherit;
 
-        --button-icon-size: 1.2em;
+        --button-icon-size: 1em;
 
-        --button-body-line-height: inherit;
-        --button-body-flex-direction: column;
-        --button-body-gap: 0.7em;
+        --button-section-line-height: inherit;
+        --button-section-flex-direction: column;
+        --button-section-gap: 0.5em;
     }
 
     .button {
@@ -50,21 +50,17 @@
         cursor: pointer
     }
 
+    .button-section {
+        display: flex;
+        flex-direction: var(--button-section-flex-direction);
+        line-height: var(--button-section-line-height);
+        gap: var(--button-section-gap)
+    }
+
     .button-icon {
         height: var(--button-icon-size);
         width: auto;
         flex: none;
-        color: inherit;
-    }
-
-    .button-body {
-        display: flex;
-        flex-direction: var(--button-body-flex-direction);
-        gap: var(--button-body-gap);
-        color: inherit;
-    }
-
-    .button-text {
         color: inherit;
     }
 

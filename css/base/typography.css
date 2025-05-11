@@ -8,7 +8,11 @@
         --h2-font-size: clamp(2.3328rem, 2.2426rem + 0.4508vw, 2.592rem);
         --h1-font-size: clamp(2.7994rem, 2.6912rem + 0.5409vw, 3.1104rem);
         
-        --font-size-content: 1rem;
+        --font-size-xs: 0.64rem;
+        --font-size-s: 0.8rem;
+        --font-size: 1rem;
+        --font-size-l: 1.2rem;
+        --font-size-xl: 1.44rem;
     }
 
     h6,
@@ -51,6 +55,6 @@
     pre,
     p {
         margin: 0;
-        font-size: var(--font-size-content);
+        font-size: var(--font-size);
     }
 }

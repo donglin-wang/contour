@@ -1,0 +1,37 @@
+@layer variant {
+    [data-button-variant="icon"] {
+        padding: 0.5rem;
+    }
+
+    [data-button-variant="tiered"] {
+        padding-block: 0.7em;
+    }
+
+    [data-button-variant="tiered"]>[data-button-section-variant="tiered-body"] {
+        align-items: start;
+    }
+
+    [data-button-variant="top-down"] {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    [data-button-variant="top-down"]>.button-icon {
+        width: 2em;
+        height: 2em;
+    }
+
+    [data-button-variant="left-rounded"] {
+        border-radius: 999px 0 0 999px;
+        padding: 0.5em;
+    }
+
+    [data-button-variant="left-rounded"]>[data-button-section-variant="left-rounded-counter"] {
+        background-color: var(--background-color-muted);
+        color: var(--color);
+        border-radius: 999px;
+        padding: 0.5em;
+    }
+
+    
+}
