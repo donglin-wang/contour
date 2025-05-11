@@ -7,7 +7,7 @@
         padding-block: 0.7em;
     }
 
-    [data-button-variant="tiered"]>[data-button-section-variant="tiered-body"] {
+    [data-button-section-variant="tiered-body"] {
         gap: 0.2em;
         align-items: start;
     }
@@ -27,7 +27,7 @@
         padding: 0.5em;
     }
 
-    [data-button-variant="left-rounded"]>[data-button-section-variant="left-rounded-counter"] {
+    [data-button-section-variant="left-rounded-counter"] {
         background-color: var(--background-color-muted);
         color: var(--color);
         border-radius: 999px;

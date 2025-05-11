@@ -76,12 +76,12 @@
         gap: var(--alert-section-gap);
     }
     
-    [data-alert-section-variant="content"] {
+    [data-alert-section-variant="base-content"] {
         flex-direction: column;
         gap: var(--alert-section-content-gap);
     }
 
-    [data-alert-section-variant="control"] {
+    [data-alert-section-variant="base-control"] {
         gap: var(--alert-section-control-gap);
     }
 
