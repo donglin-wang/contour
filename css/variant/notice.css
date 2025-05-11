@@ -1,4 +1,10 @@
 @layer variant {
+    /* 
+        NOTE: if it is a different variant, you should assume that
+        its HTML is slightly different. Don't try to apply close-
+        separated variant to icon-top variant. If you want a combination,
+        make a new variant.
+    */
     [data-notice-variant="close-separated"] {
         padding-block: 0;
         padding-inline-end: 0;
