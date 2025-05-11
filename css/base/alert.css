@@ -49,6 +49,12 @@
         gap: var(--alert-gap);
     }
 
+    /*
+        Why don't icon and close get their section variant?
+        Because they might have position absolute, which means
+        they don't factor into the box layout of the main alert.
+    */
+
     .alert-icon,
     .alert-close {
         width: auto;
