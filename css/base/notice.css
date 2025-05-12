@@ -57,7 +57,6 @@
 
     .notice-icon,
     .notice-close {
-        width: auto;
         flex: none;
         color: inherit;
         line-height: var(--notice-line-height);

@@ -59,7 +59,6 @@
 
     .button-icon {
         height: var(--button-icon-size);
-        width: auto;
         flex: none;
         color: inherit;
     }
