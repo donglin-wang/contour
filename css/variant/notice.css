@@ -60,7 +60,7 @@
 
     [data-notice-variant="icon-cornered"] {
         position: relative;
-        padding: 1.5em;
+        padding-inline-start: 1.5em;
         margin-top: 2em;
         margin-inline-start: 1em;
     }
