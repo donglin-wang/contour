@@ -1,0 +1,93 @@
+@layer variant {
+    :root {
+        --accordion-padding-inline: 1em;
+        --accordion-padding-block: 1em;
+        --accordion-flex-direction: row;
+        --accordion-gap: 1em;
+
+        --accordion-color: var(--color);
+        --accordion-background-color: var(--background-color);
+
+        --accordion-font-size: 1em;
+        --accordion-font-family: inherit;
+        --accordion-font-weight: initial;
+        --accordion-line-height: inherit;
+
+        --accordion-chevron-size: 1em;
+
+        --accordion-border-inline-width: initial;
+        --accordion-border-inline-style: initial;
+        --accordion-border-inline-color: initial;
+
+        --accordion-border-block-width: 1px;
+        --accordion-border-block-style: solid;
+        --accordion-border-block-color: var(--color);
+
+        --accordion-border-start-start-radius: initial;
+        --accordion-border-start-end-radius: initial;
+        --accordion-border-end-end-radius: initial;
+        --accordion-border-end-start-radius: initial;
+
+        --accordion-section-flex-direction: column;
+        --accordion-section-gap: 0.5em;
+
+        --accordion-control-marker-display: none;
+    }
+
+    .accordion {
+        background-color: var(--accordion-background-color);
+        color: var(--accordion-color);
+
+        font-weight: var(--accordion-font-weight);
+        font-size: var(--accordion-font-size);
+        font-family: var(--accordion-font-family);
+        line-height: var(--accordion-line-height);
+
+        border-inline-width: var(--accordion-border-inline-width);
+        border-inline-style: var(--accordion-border-inline-style);
+        border-inline-color: var(--accordion-border-inline-color);
+
+        border-block-width: var(--accordion-border-block-width);
+        border-block-style: var(--accordion-border-block-style);
+        border-block-color: var(--accordion-border-block-color);
+    }
+
+    .accordion-control {
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        gap: var(--accordion-gap);
+        padding-inline: var(--accordion-padding-inline);
+        padding-block: var(--accordion-padding-block);
+    }
+
+    .accordion-control::marker,
+    .accordion-control::-webkit-details-marker {
+        display: var(--accordion-control-marker-display);
+    }
+
+    .accordion-body {
+        display: flex;
+        padding-block-start: calc(var(--accordion-padding-block) / 2);
+        padding-block-end: var(--accordion-padding-block);
+        padding-inline: var(--accordion-padding-inline);
+    }
+
+    .accordion[open] .accordion-chevron {
+        rotate: 180deg;
+    }
+
+    .accordion-control-section {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25em;
+    }
+
+    .accordion-control-body {
+        flex-grow: 1;
+    }
+
+    .accordion-media {
+        display: flex;
+    }
+}

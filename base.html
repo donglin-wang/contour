@@ -34,6 +34,7 @@
         @import url(css/variant/menu.css);
         @import url(css/variant/button.css);
         @import url(css/variant/notice.css);
+        @import url(css/variant/accordion.css);
         @import url(css/utilities.css);
     </style>
 </head>
@@ -41,7 +42,6 @@
 <body>
     <article id="article">
         <h1>Button</h1>
-
         <p>
             <button class="button">Button</button>
         </p>
@@ -182,11 +182,6 @@
         </div>
 
         <h1>Menu</h1>
-        <p class="article-description">
-            Menu is a list of items stacked in a vertical fashion. It can be nested with sub-menus.
-        </p>
-        <h2>Description</h2>
-        <p>Here is a plain nested menu</p>
         <menu class="menu">
             <li class="menu-item" data-menu-item-variant="base-title">
                 <strong>Pages</strong>
@@ -365,6 +360,71 @@
                 Item 3
             </li>
         </menu>
+
+        <h1>Accordion</h1>
+        <details class="accordion margin-bottom-4">
+            <summary class="accordion-control">
+                <icon-chevron-down class="accordion-chevron"></icon-chevron-down>
+                Accordion
+            </summary>
+            <div class="accordion-body">
+                This is an accordion
+            </div>
+        </details>
+        <details class="accordion margin-bottom-4">
+            <summary class="accordion-control">
+                <icon-chevron-down class="accordion-chevron"></icon-chevron-down>
+                <div class="accordion-control-section">
+                    <icon-backpack></icon-backpack>
+                </div>
+                <div class="accordion-control-section accordion-control-body">
+                    Accordion
+                </div>
+            </summary>
+            <div class="accordion-body">
+                This is an accordion
+            </div>
+        </details>
+        <details class="accordion margin-bottom-4">
+            <summary class="accordion-control">
+                <div class="accordion-control-section">
+                    <icon-backpack></icon-backpack>
+                </div>
+                <div class="accordion-control-section accordion-control-body">
+                    Accordion
+                </div>
+                <icon-chevron-down class="accordion-chevron"></icon-chevron-down>
+            </summary>
+            <div class="accordion-body">
+                This is an accordion
+            </div>
+        </details>
+        <details class="accordion margin-bottom-4">
+            <summary class="accordion-control">
+                <img class="accordion-media" src="asset/image/traveler.svg" alt="" data-accordion-media-variant="avatar">
+                <div class="accordion-control-section accordion-control-body">
+                    <strong>Accordion title</strong>
+                    Accordion
+                </div>
+                <icon-chevron-down class="accordion-chevron"></icon-chevron-down>
+            </summary>
+            <div class="accordion-body">
+                This is an accordion
+            </div>
+        </details>
+        <details class="accordion margin-bottom-4">
+            <summary class="accordion-control">
+                <icon-chevron-down class="accordion-chevron"></icon-chevron-down>
+                <img class="accordion-media" src="asset/image/traveler.svg" alt="" data-accordion-media-variant="avatar">
+                <div class="accordion-control-section accordion-control-body">
+                    <strong>Accordion title</strong>
+                    Accordion
+                </div>
+            </summary>
+            <div class="accordion-body">
+                This is an accordion
+            </div>
+        </details>
     </article>
 </body>
 

@@ -1,0 +1,6 @@
+@layer variant {
+    [data-accordion-media-variant="avatar"] {
+        width: 3em;
+        height: 3em;
+    }
+}
