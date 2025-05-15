@@ -1,0 +1,28 @@
+@layer base {
+    .tab-list {
+        display: flex;
+        border-bottom: 2px solid var(--background-color-muted);
+    }
+
+    .tab-item {
+        color: var(--color);
+        padding-inline: 0.5em;
+        padding-block: 0.5em;
+        background-color: var(--background-color);
+        display: flex;
+        border: none;
+        border-bottom: 2px solid var(--background-color-muted);
+        font-size: var(--font-size);
+        cursor: pointer;
+        margin: none;
+        margin-bottom: -2px;
+    }
+
+    .tab-item[aria-selected="true"] {
+        border-bottom: 2px solid var(--color);
+    }
+
+    .tab-item:hover {
+        background-color: var(--background-color-muted);
+    }
+}

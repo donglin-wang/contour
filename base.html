@@ -36,6 +36,7 @@
         @import url(css/variant/notice.css);
         @import url(css/variant/accordion.css);
         @import url(css/utilities.css);
+        @import url(css/variant/tab.css);
     </style>
 </head>
 
@@ -425,6 +426,61 @@
                 This is an accordion
             </div>
         </details>
+
+        <h1>Tabs</h1>
+
+        <div class="tabs margin-bottom-4">
+            <div class="tab-list ">
+                <button class="tab-item" aria-selected="true">
+                    Tab 1
+                </button>
+                <button class="tab-item" aria-selected="false">
+                    Tab 2
+                </button>
+                <button class="tab-item" aria-selected="false">
+                    Tab 3
+                </button>
+            </div>
+        </div>
+        <div class="tabs margin-bottom-4">
+            <div class="tab-list" data-tab-list-variant="outline">
+                <button class="tab-item" data-tab-item-variant="outline" aria-selected="true">
+                    Tab 1
+                </button>
+                <button class="tab-item" data-tab-item-variant="outline" aria-selected="false">
+                    Tab 1
+                </button>
+                <button class="tab-item" data-tab-item-variant="outline" aria-selected="false">
+                    Tab 1
+                </button>
+            </div>
+        </div>
+        <div class="tabs margin-bottom-4">
+            <div class="tab-list" data-tab-list-variant="enclosed">
+                <button class="tab-item" data-tab-item-variant="enclosed" aria-selected="true">
+                    Tab 1
+                </button>
+                <button class="tab-item" data-tab-item-variant="enclosed" aria-selected="false">
+                    Tab 1
+                </button>
+                <button class="tab-item" data-tab-item-variant="enclosed" aria-selected="false">
+                    Tab 1
+                </button>
+            </div>
+        </div>
+        <div class="tabs margin-bottom-4">
+            <div class="tab-list" data-tab-list-variant="joint">
+                <button class="tab-item" data-tab-item-variant="joint" aria-selected="true">
+                    Tab 1
+                </button>
+                <button class="tab-item" data-tab-item-variant="joint" aria-selected="false">
+                    Tab 1
+                </button>
+                <button class="tab-item" data-tab-item-variant="joint" aria-selected="false">
+                    Tab 1
+                </button>
+            </div>
+        </div>
     </article>
 </body>
 
