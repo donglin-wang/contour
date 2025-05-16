@@ -40,7 +40,7 @@
     [data-tab-list-variant="joint"] {
         border: none;
     }
-    
+
     [data-tab-list-variant="joint"]>* {
         margin-inline-end: -1px;
         border-radius: 0;
@@ -56,13 +56,33 @@
         border-end-start-radius: 5px;
     }
 
-    [data-tab-item-variant="joint"] {
+    [data-tab-item-variant="joint"], [data-tab-item-variant="joint-tiered"] {
         gap: -1px;
         border: 1px solid var(--color);
     }
 
-    [data-tab-item-variant="joint"][aria-selected="true"] {
+    [data-tab-item-variant="joint-tiered"] {
+        flex-grow: 1;
+        flex-basis: 0;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    [data-tab-item-variant="joint"][aria-selected="true"],
+    [data-tab-item-variant="joint-tiered"][aria-selected="true"] {
         background-color: var(--color);
         color: var(--background-color);
+    }
+
+    [data-tab-item-variant="top-down"] {
+        flex-direction: column;
+        flex-basis: 8em;
+        flex-grow: 0;
+        align-items: center;
+    }
+
+    [data-tab-item-variant="top-down"] .tab-icon {
+        width: 2em;
+        height: 2em;
     }
 }
