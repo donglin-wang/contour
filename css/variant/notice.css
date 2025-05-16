@@ -20,7 +20,7 @@
         If specificity is <= (0,2,0), anything is fine.
         If larger, then use custom properties.
     */
-    [data-notice-section-variant="close-separated-close"] {
+    [data-notice-section-variant="close-separated"] {
         --notice-close-align-self: center;
         --notice-close-hover-opacity: initial;
         justify-content: center;
@@ -28,7 +28,7 @@
         padding-inline: 1em;
     }
 
-    [data-notice-section-variant="close-separated-close"]:hover {
+    [data-notice-section-variant="close-separated"]:hover {
         background-color: var(--color);
         color: var(--background-color);
         cursor: pointer;

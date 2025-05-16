@@ -22,12 +22,4 @@
     .margin-bottom-4 {
         margin-bottom: calc(var(--space) * 4);
     }
-
-    .width-8 {
-        width: calc(var(--space) * 8);
-    }
-
-    .height-8 {
-        height: calc(var(--space) * 8);
-    }
 }
