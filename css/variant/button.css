@@ -1,9 +1,9 @@
 @layer variant {
-    .button__icon {
+    .button--icon {
         padding: 0.5rem;
     }
 
-    .button__tiered {
+    .button--tiered {
         padding-block: 0.75em;
     }
 
@@ -12,22 +12,22 @@
         align-items: start;
     }
 
-    .button__top-down {
+    .button--top-down {
         flex-direction: column;
         gap: 0.5em;
     }
 
-    .button__top-down>.button--icon {
+    .button--top-down>.button__icon {
         width: 2em;
         height: 2em;
     }
 
-    .button__left-rounded {
+    .button--left-rounded {
         border-radius: 999px 0 0 999px;
         padding: 0.5em;
     }
 
-    .button--section__left-rounded {
+    .button__section--left-rounded {
         background-color: var(--background-color);
         color: var(--color);
         border-radius: 999px;
