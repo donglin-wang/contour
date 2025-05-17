@@ -55,44 +55,44 @@
         they don't factor into the box layout of the main notice.
     */
 
-    .notice--icon,
-    .notice--close {
+    .notice__icon,
+    .notice__close {
         flex: none;
         color: inherit;
         line-height: var(--notice-line-height);
     }
 
-    .notice--icon {
+    .notice__icon {
         width: var(--notice-icon-size);
         height: var(--notice-icon-size);
     }
 
-    .notice--close {
+    .notice__close {
         height: var(--notice-close-size);
         align-self: var(--notice-close-align-self);
         cursor: pointer;
     }
 
-    .notice--close:hover {
+    .notice__close:hover {
         opacity: var(--notice-close-hover-opacity);
     }
 
-    .notice--section {
+    .notice__section {
         display: flex;
         gap: var(--notice-section-gap);
     }
 
-    .notice--control {
+    .notice__control {
         display: flex;
         flex-direction: row;
         gap: var(--notice-section-control-gap);
     }
 
-    .notice--section__flex-column {
+    .notice__section--flex-column {
         flex-direction: column;
     }
 
-    .notice--button {
+    .notice__button {
         --button-padding: var(--notice-button-padding);
     }
 }

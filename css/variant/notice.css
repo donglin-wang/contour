@@ -1,18 +1,17 @@
 @layer variant {
-
     /* 
         NOTE: if it is a different variant, you should assume that
         its HTML is slightly different. Don't try to apply close-
         separated variant to icon-top variant. If you want a combination,
         make a new variant.
-    */
-    /* 
+
         Note in the doc here that you avoided more specific
         selectors by using custom properties.
         If specificity is <= (0,2,0), anything is fine.
         If larger, then use custom properties.
     */
-    .notice--section__close-separated-container {
+
+    .notice__section--close-separated-container {
         justify-content: center;
         align-self: stretch;
         align-items: center;
@@ -21,24 +20,24 @@
         padding-inline: calc(0.5 * var(--notice-padding-inline));
     }
 
-    .notice--section__close-separated-container:hover {
+    .notice__section--close-separated-container:hover {
         background-color: var(--color);
         color: var(--background-color);
         cursor: pointer;
     }
 
-    .notice__left-inclined {
+    .notice--left-inclined {
         border-left: 5px solid var(--color);
         border-radius: 0 10px 10px 0;
     }
 
-    .notice__icon-top {
+    .notice--icon-top {
         position: relative;
         margin-top: 2.5em;
         padding-top: 2.5em;
     }
 
-    .notice__icon-top .notice--icon {
+    .notice--icon-top .notice__icon {
         width: 3em;
         height: 3em;
         position: absolute;
@@ -46,7 +45,7 @@
         color: var(--color);
     }
 
-    .notice__icon-top .notice--close {
+    .notice--icon-top .notice__close {
         position: relative;
         top: -1.5em;
     }
@@ -57,7 +56,7 @@
         margin-inline-start: 1em;
     }
 
-    .notice__icon-cornered .notice--icon {
+    .notice__icon-cornered .notice__icon {
         width: 2em;
         height: 2em;
         position: absolute;
@@ -66,11 +65,11 @@
         color: var(--color);
     }
 
-    .notice__button-linked .notice--control {
+    .notice__button-linked .notice__control {
         gap: 1em;
     }
 
-    .notice__button-linked .notice--button {
+    .notice__button-linked .notice__button {
         padding-inline: 0;
         background-color: transparent;
         color: var(--color);
