@@ -63,6 +63,7 @@
     }
 
     .notice-icon {
+        width: var(--notice-icon-size);
         height: var(--notice-icon-size);
     }
 
