@@ -1,11 +1,11 @@
 @layer variant {
-    .menu--nested__guided {
+    .menu__nested--guided {
         border-left: 1px solid var(--color);
         padding-left: 0;
         margin-left: 1em;
     }
 
-    .menu--item__guided {
+    .menu__item--guided {
         margin-left: -1px;
     }
 }
