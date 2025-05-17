@@ -65,11 +65,11 @@
         color: var(--color);
     }
 
-    .notice__button-linked .notice__control {
+    .notice--button-linked .notice__control {
         gap: 1em;
     }
 
-    .notice__button-linked .notice__button {
+    .notice--button-linked .notice__button {
         padding-inline: 0;
         background-color: transparent;
         color: var(--color);
