@@ -52,7 +52,7 @@
         border-block-color: var(--accordion-border-block-color);
     }
 
-    .accordion-control {
+    .accordion__control {
         display: flex;
         cursor: pointer;
         align-items: center;
@@ -61,33 +61,34 @@
         padding-block: var(--accordion-padding-block);
     }
 
-    .accordion-control::marker,
-    .accordion-control::-webkit-details-marker {
+    .accordion__control::marker,
+    .accordion__control::-webkit-details-marker {
         display: var(--accordion-control-marker-display);
     }
 
-    .accordion-body {
+    .accordion__content {
         display: flex;
         padding-block-start: calc(var(--accordion-padding-block) / 2);
         padding-block-end: var(--accordion-padding-block);
         padding-inline: var(--accordion-padding-inline);
     }
 
-    .accordion[open] .accordion-chevron {
+    .accordion__chevron {
+        width: var(--accordion-chevron-size);
+        height: var(--accordion-chevron-size);
+    }
+
+    .accordion[open] .accordion__chevron {
         rotate: 180deg;
     }
 
-    .accordion-control-section {
+    .accordion__control-section {
         display: flex;
         flex-direction: column;
         gap: 0.25em;
     }
 
-    .accordion-control-body {
+    .accordion__control-section--body {
         flex-grow: 1;
-    }
-
-    .accordion-media {
-        display: flex;
     }
 }
