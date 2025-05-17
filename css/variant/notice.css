@@ -1,4 +1,5 @@
 @layer variant {
+
     /* 
         NOTE: if it is a different variant, you should assume that
         its HTML is slightly different. Don't try to apply close-
@@ -65,7 +66,7 @@
         color: var(--color);
     }
 
-    .notice__button-linked .notice--control{
+    .notice__button-linked .notice--control {
         gap: 1em;
     }
 
