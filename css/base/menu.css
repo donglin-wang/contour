@@ -31,14 +31,14 @@
         --menu-item-hover-cursor: pointer;
         --menu-item-divider-margin-block: 0.5em;
 
-        --menu-item-section-spaced-flex-basis: 1em;
+        --menu-item-section-icon-slot-flex-basis: 1em;
         --menu-item-section-spaced-size: 1em;
 
         --menu-media-size: 1em;
         --menu-media-color: inherit;
     }
 
-    .menu, .menu-nested {
+    .menu, .menu--nested {
         display: flex;
         flex-direction: column;
         list-style: none;
@@ -53,17 +53,17 @@
         padding: var(--menu-padding);
     }
 
-    .menu-nested {
+    .menu--nested {
         padding-inline: var(--menu-nested-padding-inline);
         padding-block: var(--menu-nested-padding-block);
     }
 
-    .menu-item::marker,
-    .menu-item::-webkit-details-marker {
+    .menu--item::marker,
+    .menu--item::-webkit-details-marker {
         display: var(--menu-nested-marker-display);
     }
 
-    .menu-item {
+    .menu--item {
         display: flex;
         align-items: center;
         padding: var(--menu-item-padding);
@@ -74,40 +74,41 @@
         border-radius: var(--menu-item-border-radius);
     }
 
-    .menu-item:hover {
+    .menu--item:hover {
         background-color: var(--menu-item-hover-background-color);
         color: var(--menu-item-hover-color);
         cursor: var(--menu-item-hover-cursor);
     }
 
-    [data-menu-item-variant="base-title"]:hover,
-    [data-menu-item-variant="base-divider"]:hover {
+    .menu--title {
+        display: flex;
+        align-items: center;
         background-color: var(--menu-background-color);
         color: var(--menu-color);
-        cursor: initial;
+        padding: var(--menu-item-padding);
     }
 
-    [data-menu-item-variant="base-divider"]{
+    .menu--divider{
         padding: 0;
         width: 100%;
         border-bottom: 1px solid var(--color);
         margin-block: var(--menu-item-divider-margin-block);
     }
 
-    .menu-item-section {
+    .menu--item-section {
         display: flex;
         flex-direction: column;
     }
 
-    [data-menu-item-section-variant="base-row"] {
+    .menu--item-section__flex-row {
         flex-direction: row;
     }
 
-    [data-menu-item-section-variant="base-spaced"]{
-        flex-basis: var(--menu-item-section-spaced-flex-basis);
+    .menu--item-section__icon-slot {
+        flex-basis: var(--menu-item-section-icon-slot-flex-basis);
     }
 
-    [data-menu-item-section-variant="base-body"] {
+    .menu--item-section__body {
         flex-grow: 1;
     }
 }
