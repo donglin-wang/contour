@@ -8,6 +8,10 @@
         border-bottom: 1px solid var(--color);
     }
 
+    [data-tab-item-variant="outline"]:hover {
+        background-color: var(--background-color);
+    }
+
     [data-tab-item-variant="outline"][aria-selected="true"] {
         border-top: 1px solid var(--color);
         border-bottom: none;
