@@ -50,14 +50,14 @@
         cursor: pointer
     }
 
-    .button-section {
+    .button--section {
         display: flex;
         flex-direction: var(--button-section-flex-direction);
         line-height: var(--button-section-line-height);
         gap: var(--button-section-gap)
     }
 
-    .button-icon {
+    .button--icon {
         height: var(--button-icon-size);
         flex: none;
         color: inherit;

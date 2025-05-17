@@ -1,33 +1,33 @@
 @layer variant {
-    [data-button-variant="icon"] {
+    .button__icon {
         padding: 0.5rem;
     }
 
-    [data-button-variant="tiered"] {
-        padding-block: 0.7em;
+    .button__tiered {
+        padding-block: 0.75em;
     }
 
-    [data-button-section-variant="tiered-body"] {
-        gap: 0.2em;
+    .button--section__tiered {
+        gap: 0.25em;
         align-items: start;
     }
 
-    [data-button-variant="top-down"] {
+    .button__top-down {
         flex-direction: column;
         gap: 0.5em;
     }
 
-    [data-button-variant="top-down"]>.button-icon {
+    .button__top-down>.button--icon {
         width: 2em;
         height: 2em;
     }
 
-    [data-button-variant="left-rounded"] {
+    .button__left-rounded {
         border-radius: 999px 0 0 999px;
         padding: 0.5em;
     }
 
-    [data-button-section-variant="left-rounded-counter"] {
+    .button--section__left-rounded {
         background-color: var(--background-color);
         color: var(--color);
         border-radius: 999px;
