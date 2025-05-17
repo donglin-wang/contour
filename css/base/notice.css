@@ -29,7 +29,7 @@
         --notice-close-align-self: start;
         --notice-close-hover-opacity: 0.5;
 
-        --notice-section-gap: 0.5em;
+        --notice-section-gap: 1em;
         --notice-section-content-gap: 1em;
         --notice-section-control-gap: 0.5em;
     }
@@ -55,43 +55,44 @@
         they don't factor into the box layout of the main notice.
     */
 
-    .notice-icon,
-    .notice-close {
+    .notice--icon,
+    .notice--close {
         flex: none;
         color: inherit;
         line-height: var(--notice-line-height);
     }
 
-    .notice-icon {
+    .notice--icon {
         width: var(--notice-icon-size);
         height: var(--notice-icon-size);
     }
 
-    .notice-close {
+    .notice--close {
         height: var(--notice-close-size);
         align-self: var(--notice-close-align-self);
         cursor: pointer;
     }
 
-    .notice-close:hover {
+    .notice--close:hover {
         opacity: var(--notice-close-hover-opacity);
     }
 
-    .notice-section {
+    .notice--section {
         display: flex;
         gap: var(--notice-section-gap);
     }
-    
-    [data-notice-section-variant="base-content"] {
-        flex-direction: column;
-        gap: var(--notice-section-content-gap);
-    }
 
-    [data-notice-section-variant="base-control"] {
+    .notice--control {
+        display: flex;
+        flex-direction: row;
         gap: var(--notice-section-control-gap);
     }
 
-    .notice-button {
+    .notice--section__flex-column {
+        flex-direction: column;
+    }
+
+    .notice--button {
         --button-padding: var(--notice-button-padding);
     }
 }

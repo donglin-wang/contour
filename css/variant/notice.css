@@ -5,47 +5,39 @@
         separated variant to icon-top variant. If you want a combination,
         make a new variant.
     */
-    [data-notice-variant="close-separated"] {
-        padding-block: 0;
-        padding-inline-end: 0;
-    }
-
-    [data-notice-variant="close-separated"]>.notice-section {
-        padding-block: 1em;
-    }
-
     /* 
         Note in the doc here that you avoided more specific
         selectors by using custom properties.
         If specificity is <= (0,2,0), anything is fine.
         If larger, then use custom properties.
     */
-    [data-notice-section-variant="close-separated"] {
-        --notice-close-align-self: center;
-        --notice-close-hover-opacity: initial;
+    .notice--section__close-separated-container {
         justify-content: center;
         align-self: stretch;
-        padding-inline: 1em;
+        align-items: center;
+        margin-block: calc(-1 * var(--notice-padding-block));
+        margin-inline-end: calc(-1 * var(--notice-padding-inline));
+        padding-inline: calc(0.5 * var(--notice-padding-inline));
     }
 
-    [data-notice-section-variant="close-separated"]:hover {
+    .notice--section__close-separated-container:hover {
         background-color: var(--color);
         color: var(--background-color);
         cursor: pointer;
     }
 
-    [data-notice-variant="left-inclined"] {
+    .notice__left-inclined {
         border-left: 5px solid var(--color);
         border-radius: 0 10px 10px 0;
     }
 
-    [data-notice-variant="icon-top"] {
+    .notice__icon-top {
         position: relative;
         margin-top: 2.5em;
         padding-top: 2.5em;
     }
 
-    [data-notice-variant="icon-top"] .notice-icon {
+    .notice__icon-top .notice--icon {
         width: 3em;
         height: 3em;
         position: absolute;
@@ -53,18 +45,18 @@
         color: var(--color);
     }
 
-    [data-notice-variant="icon-top"] .notice-close {
+    .notice__icon-top .notice--close {
         position: relative;
         top: -1.5em;
     }
 
-    [data-notice-variant="icon-cornered"] {
+    .notice__icon-cornered {
         position: relative;
         margin-top: 2em;
         margin-inline-start: 1em;
     }
 
-    [data-notice-variant="icon-cornered"] .notice-icon {
+    .notice__icon-cornered .notice--icon {
         width: 2em;
         height: 2em;
         position: absolute;
@@ -73,11 +65,11 @@
         color: var(--color);
     }
 
-    [data-notice-variant="button-linked"] [data-notice-section-variant="base-control"] {
+    .notice__button-linked .notice--control{
         gap: 1em;
     }
 
-    [data-notice-variant="button-linked"] .notice-button {
+    .notice__button-linked .notice--button {
         padding-inline: 0;
         background-color: transparent;
         color: var(--color);
