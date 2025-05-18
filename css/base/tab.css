@@ -1,10 +1,10 @@
 @layer base {
-    .tab-list {
+    .tab__control {
         display: flex;
         border-bottom: 2px solid var(--background-color-muted);
     }
 
-    .tab-item {
+    .tab__item {
         color: var(--color);
         padding-inline: 0.5em;
         padding-block: 0.5em;
@@ -19,20 +19,20 @@
         gap: 0.5em;
     }
 
-    .tab-item[aria-selected="true"] {
+    .tab__item[aria-selected="true"] {
         border-bottom: 2px solid var(--color);
     }
 
-    .tab-item:hover {
+    .tab__item:hover {
         background-color: var(--background-color-muted);
     }
 
-    .tab-icon, .tab-close {
+    .tab__icon, .tab__close {
         width: 1em;
         height: 1em;
     }
 
-    .tab-close:hover {
+    .tab__close:hover {
         opacity: 0.5;
     }
 }
