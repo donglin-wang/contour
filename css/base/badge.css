@@ -1,0 +1,35 @@
+@layer base {
+    .badge-group {
+        display: inline-flex;
+    }
+
+    .badge {
+        display: inline-flex;
+        gap: 0.5em;
+        padding-block: 0.25em;
+        padding-inline: 0.5em;
+        background-color: var(--color);
+        color: var(--background-color);
+        border-radius: 5px;
+    }
+
+    .badge__control,
+    .badge__icon {
+        height: 1em;
+        width: 1em;
+    }
+
+    .badge-group>.badge {
+        border-radius: 0;
+    }
+
+    .badge-group>.badge:last-child {
+        border-end-end-radius: 5px;
+        border-start-end-radius: 5px;
+    }
+
+    .badge-group>.badge:first-child {
+        border-start-start-radius: 5px;
+        border-end-start-radius: 5px;
+    }
+}
