@@ -11,7 +11,7 @@
         If larger, then use custom properties.
     */
 
-    .notice__section--close-separated-container {
+    .notice__section--close-separated {
         justify-content: center;
         align-self: stretch;
         align-items: center;
@@ -20,7 +20,7 @@
         padding-inline: calc(0.5 * var(--notice-padding-inline));
     }
 
-    .notice__section--close-separated-container:hover {
+    .notice__section--close-separated:hover {
         background-color: var(--color);
         color: var(--background-color);
         cursor: pointer;
@@ -50,13 +50,13 @@
         top: -1.5em;
     }
 
-    .notice__icon-cornered {
+    .notice--icon-cornered {
         position: relative;
         margin-top: 2em;
         margin-inline-start: 1em;
     }
 
-    .notice__icon-cornered .notice__icon {
+    .notice--icon-cornered .notice__icon {
         width: 2em;
         height: 2em;
         position: absolute;
