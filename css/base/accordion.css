@@ -23,13 +23,10 @@
         --accordion-border-block-style: solid;
         --accordion-border-block-color: var(--color);
 
-        --accordion-border-start-start-radius: initial;
-        --accordion-border-start-end-radius: initial;
-        --accordion-border-end-end-radius: initial;
-        --accordion-border-end-start-radius: initial;
+        --accordion-border-radius: initial;
 
-        --accordion-section-flex-direction: column;
-        --accordion-section-gap: 0.5em;
+        --accordion-control-section-flex-direction: column;
+        --accordion-control-section-gap: 0.25em;
 
         --accordion-control-marker-display: none;
     }
@@ -50,6 +47,8 @@
         border-block-width: var(--accordion-border-block-width);
         border-block-style: var(--accordion-border-block-style);
         border-block-color: var(--accordion-border-block-color);
+
+        border-radius: var(--accordion-border-radius);
     }
 
     .accordion__control {
@@ -84,8 +83,8 @@
 
     .accordion__control-section {
         display: flex;
-        flex-direction: column;
-        gap: 0.25em;
+        flex-direction: var(--accordion-control-section-flex-direction);
+        gap: var(--accordion-control-section-gap);
     }
 
     .accordion__control-section--body {
