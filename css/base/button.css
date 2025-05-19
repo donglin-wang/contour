@@ -3,6 +3,7 @@
         --button-padding: 1em 1em;
         --button-gap: 1em;
         --button-flex-direction: row;
+        --button-width: fit-content;
 
         --button-background-color: var(--color);
         --button-color: var(--background-color);
@@ -29,6 +30,8 @@
         display: inline-flex;
         align-items: center;
         gap: var(--button-gap);
+        width: var(--button-width);
+
         flex-direction: var(--button-flex-direction);
 
         padding: var(--button-padding);
