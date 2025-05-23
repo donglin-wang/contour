@@ -3,6 +3,9 @@
         --menu-gap: 0;
         --menu-padding: 0.5em 0;
 
+        --menu-margin-block: 0;
+        --menu-margin-inline: 0;
+
         --menu-border: unset;
         --menu-border-radius: 0;
 
@@ -42,6 +45,8 @@
         display: flex;
         flex-direction: column;
         list-style: none;
+        margin-block: var(--menu-margin-block);
+        margin-inline: var(--menu-margin-inline);
         background-color: var(--menu-background-color);
         color: var(--menu-color);
         border: var(--menu-border);
@@ -67,8 +72,6 @@
         display: flex;
         align-items: center;
         padding: var(--menu-item-padding);
-        color: var(--menu-item-color);
-        background-color: var(--menu-item-background-color);
         gap: var(--menu-item-gap);
         border: var(--menu-item-border);
         border-radius: var(--menu-item-border-radius);
@@ -83,8 +86,6 @@
     .menu__title {
         display: flex;
         align-items: center;
-        background-color: var(--menu-background-color);
-        color: var(--menu-color);
         padding: var(--menu-item-padding);
     }
 
