@@ -75,6 +75,7 @@
         gap: var(--menu-item-gap);
         border: var(--menu-item-border);
         border-radius: var(--menu-item-border-radius);
+        text-decoration: none;
     }
 
     .menu__item:hover {
