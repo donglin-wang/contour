@@ -1,20 +1,19 @@
 @layer base {
     :root {
-        --color: hsl(0, 0%, 10%);
-        --color-muted: hsl(0, 0%, 20%);
-        --background-color: hsl(0, 0%, 90%);
-        --background-color-muted: hsl(0, 0%, 80%);
+        /* --color: hsl(0deg 0% 10%);
+        --color-muted: hsl(0deg 0% 20%);
+        --background-color: hsl(0deg 0% 100%);
+        --background-color-muted: hsl(0deg 0% 95%); */
 
-        /* --color: hsl(0, 0%, 90%);
-        --color-muted: hsl(0, 0%, 80%);
-        --background-color: hsl(0, 0%, 10%);
-        --background-color-muted: hsl(0, 0%, 20%); */
+        --color: hsl(0deg 0% 90%);
+        --color-muted: hsl(0deg 0% 80%);
+        --background-color: hsl(0deg 0% 10%);
+        --background-color-muted: hsl(0deg 0% 20%);
 
-        --danger: hsl(0, 85%, 60%);
-        --warning: hsl(45, 100%, 50%);
-        --success: hsl(145, 75%, 45%);
-        --info: hsl(215, 95%, 60%);
-
+        --danger: hsl(0deg 85% 60%);
+        --warning: hsl(45deg 100% 50%);
+        --success: hsl(145deg 75% 45%);
+        --info: hsl(215deg 95% 60%);
         --space: 0.25rem;
     }
 }

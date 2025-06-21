@@ -7,7 +7,7 @@
         padding-block: 0.75em;
     }
 
-    .button--section__tiered {
+    .button__section--tiered {
         gap: 0.25em;
         align-items: start;
     }
@@ -17,7 +17,7 @@
         gap: 0.5em;
     }
 
-    .button--top-down>.button__icon {
+    .button--top-down > .button__icon {
         width: 2em;
         height: 2em;
     }

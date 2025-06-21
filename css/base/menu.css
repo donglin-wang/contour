@@ -2,41 +2,29 @@
     :root {
         --menu-gap: 0;
         --menu-padding: 0.5em 0;
-
         --menu-margin-block: 0;
         --menu-margin-inline: 0;
-
         --menu-border: unset;
         --menu-border-radius: 0;
-
         --menu-item-border: unset;
-        --menu-border-radius: 0;
-
         --menu-item-gap: 0.5em;
         --menu-item-padding: 0.5em 1em;
-
         --menu-nested-padding-inline: 1em 0;
         --menu-nested-padding-block: 0;
         --menu-nested-marker-display: none;
-
         --menu-font-size: 1em;
         --menu-font-family: inherit;
         --menu-line-height: inherit;
-
         --menu-background-color: var(--background-color-muted);
         --menu-color: var(--color);
-
         --menu-item-background-color: inherit;
         --menu-item-color: inherit;
         --menu-item-hover-background-color: var(--color);
         --menu-item-hover-color: var(--background-color);
-
         --menu-item-hover-cursor: pointer;
         --menu-item-divider-margin-block: 0.5em;
-
         --menu-item-section-icon-slot-flex-basis: 1em;
         --menu-item-section-spaced-size: 1em;
-
         --menu-media-size: 1em;
         --menu-media-color: inherit;
     }
@@ -76,6 +64,7 @@
         border: var(--menu-item-border);
         border-radius: var(--menu-item-border-radius);
         text-decoration: none;
+        color: inherit;
     }
 
     .menu__item:hover {

@@ -2,6 +2,7 @@
     :root {
         --avatar-4: calc(var(--space) * 4);
         --avatar-8: calc(var(--space) * 8);
+        --avatar-12: calc(var(--space) * 12);
         --avatar-16: calc(var(--space) * 16);
         --avatar-32: calc(var(--space) * 32);
     }
@@ -13,6 +14,11 @@
 
     .avatar-8 {
         width: var(--avatar-8);
+        aspect-ratio: 1 / 1;
+    }
+
+    .avatar-12 {
+        width: var(--avatar-12);
         aspect-ratio: 1 / 1;
     }
 

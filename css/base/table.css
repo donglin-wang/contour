@@ -33,13 +33,16 @@
         z-index: 1;
     }
 
-    .table--row-bordered thead>tr,
-    .table--row-bordered tbody>tr:not(:last-child) {
+    .table--row-bordered thead>tr {
         border-bottom: 1px solid black;
     }
 
     .table--row-bordered tfoot>tr {
         border-top: 1px solid black;
+    }
+
+    .table--row-bordered tbody>tr:not(:last-child) {
+        border-bottom: 1px solid black;
     }
 
     .table--col-bordered td:not(:last-child),

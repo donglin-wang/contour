@@ -4,50 +4,34 @@
         --accordion-padding-block: 1em;
         --accordion-flex-direction: row;
         --accordion-gap: 1em;
-
         --accordion-color: var(--color);
         --accordion-background-color: var(--background-color);
-
         --accordion-font-size: 1em;
         --accordion-font-family: inherit;
         --accordion-font-weight: initial;
         --accordion-line-height: inherit;
-
         --accordion-chevron-size: 1em;
-
         --accordion-border-inline-width: initial;
         --accordion-border-inline-style: initial;
         --accordion-border-inline-color: initial;
-
         --accordion-border-block-width: 1px;
         --accordion-border-block-style: solid;
         --accordion-border-block-color: var(--color);
-
         --accordion-border-radius: initial;
-
         --accordion-control-section-flex-direction: column;
         --accordion-control-section-gap: 0.25em;
-
         --accordion-control-marker-display: none;
     }
 
     .accordion {
         background-color: var(--accordion-background-color);
         color: var(--accordion-color);
-
         font-weight: var(--accordion-font-weight);
         font-size: var(--accordion-font-size);
         font-family: var(--accordion-font-family);
         line-height: var(--accordion-line-height);
-
-        border-inline-width: var(--accordion-border-inline-width);
-        border-inline-style: var(--accordion-border-inline-style);
-        border-inline-color: var(--accordion-border-inline-color);
-
-        border-block-width: var(--accordion-border-block-width);
-        border-block-style: var(--accordion-border-block-style);
-        border-block-color: var(--accordion-border-block-color);
-
+        border-inline: var(--accordion-border-inline-width) var(--accordion-border-inline-style) var(--accordion-border-inline-color);
+        border-block: var(--accordion-border-block-width) var(--accordion-border-block-style) var(--accordion-border-block-color);
         border-radius: var(--accordion-border-radius);
     }
 
@@ -67,8 +51,7 @@
 
     .accordion__content {
         display: flex;
-        padding-block-start: calc(var(--accordion-padding-block) / 2);
-        padding-block-end: var(--accordion-padding-block);
+        padding-block: calc(var(--accordion-padding-block) / 2) var(--accordion-padding-block);
         padding-inline: var(--accordion-padding-inline);
     }
 
