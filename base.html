@@ -4,6 +4,19 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="js/icon.js"></script>
+        <script>
+            window.onload = () => {
+                const accordionControls = document.querySelectorAll(
+                    "div.accordion__control"
+                );
+                for (control of accordionControls.values()) {
+                    const accordion = control.parentElement;
+                    control.addEventListener("click", (event) => {
+                        accordion.toggleAttribute("open");
+                    });
+                }
+            };
+        </script>
         <title>Contour</title>
         <style>
             :root {
@@ -49,6 +62,7 @@
             @import url(css/variant/notice.css);
             @import url(css/variant/tab.css);
             @import url(css/variant/badge.css);
+            @import url(css/variant/accordion.css);
 
             @import url(css/utilities.css);
         </style>
@@ -459,12 +473,12 @@
             </details>
             <details class="accordion accordion--enclosed margin-bottom-4">
                 <summary class="accordion__control">
-                    <IconChevronDown
+                    <icon-chevron-down
                         class="accordion__chevron"
-                    ></IconChevronDown>
+                    ></icon-chevron-down>
                     <img
                         class="avatar-16"
-                        src="@/asset/image/traveler.svg"
+                        src="asset/image/traveler.svg"
                         alt="A traveler"
                     />
                     <div
@@ -478,15 +492,14 @@
             </details>
             <div
                 class="accordion accordion--enclosed accordion--animated margin-bottom-4"
-                :open="isOpen ? true : null"
             >
-                <div class="accordion__control" @click="toggleOpen">
-                    <IconChevronDown
+                <div class="accordion__control">
+                    <icon-chevron-down
                         class="accordion__chevron"
-                    ></IconChevronDown>
+                    ></icon-chevron-down>
                     <img
                         class="avatar-16"
-                        src="@/asset/image/traveler.svg"
+                        src="asset/image/traveler.svg"
                         alt="A traveler"
                     />
                     <div

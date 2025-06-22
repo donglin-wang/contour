@@ -1,12 +1,12 @@
 @layer variant {
     .accordion--enclosed {
-        border: 1px solid black;
+        border: 1px solid var(--color);
         border-radius: 5px;
         overflow: hidden;
     }
 
     .accordion--enclosed .accordion__content {
-        border-block-start: 1px solid black;
+        border-block-start: 1px solid var(--color);
         padding-block-start: 1em;
         margin-block-end: -1px;
     }
