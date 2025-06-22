@@ -1,0 +1,20 @@
+@layer base {
+    .divider {
+        border: none;
+        border-top: 5px double var(--color);
+        color: var(--color);
+        overflow: visible;
+        text-align: center;
+        height: 5px;
+        max-width: 8rem;
+        margin-block: 4rem;
+    }
+
+    .divider::after {
+        background: var(--background-color);
+        content: "§";
+        padding: 0 4px;
+        position: relative;
+        top: -13px;
+    }
+}

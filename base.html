@@ -20,19 +20,27 @@
         <title>Contour</title>
         <style>
             :root {
-                --article-max-width: 65ch;
+                --article-max-width: 40rem;
                 --article-margin-block: 3rem;
+            }
+
+            #masthead {
+                display: flex;
+                flex-direction: column;
+                gap: 2.5rem;
+                margin-block: 4rem;
             }
 
             #article {
                 display: block;
                 width: 100%;
                 max-width: var(--article-max-width);
+                padding-inline: 0.5rem;
                 margin: auto;
                 margin-block: var(--article-margin-block);
             }
 
-            #article > h1,
+            #article > h2,
             #article > h2,
             #article > h3,
             #article > h4,
@@ -56,6 +64,7 @@
             @import url(css/base/breadcrumb.css);
             @import url(css/base/badge.css);
             @import url(css/base/table.css);
+            @import url(css/base/divider.css);
 
             @import url(css/variant/menu.css);
             @import url(css/variant/button.css);
@@ -69,8 +78,19 @@
     </head>
 
     <body>
+        
+        
         <article id="article">
-            <h1>Button</h1>
+            <div id="masthead">
+                <h1>
+                    Contour is a styling system with examples
+                </h1>
+                <p class="font-size-xl">
+                    It aims to provide semantic styling for developers while maintaining customizability and adaptability
+                </p>
+            </div>
+            <hr class="divider" />
+            <h2>Button</h2>
             <p>
                 <button class="button">Button</button>
             </p>
@@ -240,7 +260,7 @@
                 <icon-x class="notice__close"></icon-x>
             </div>
 
-            <h1>Menu</h1>
+            <h2>Menu</h2>
             <menu class="menu">
                 <li class="menu__title">
                     <strong>Pages</strong>
@@ -391,7 +411,7 @@
                 </li>
             </menu>
 
-            <h1>Accordion</h1>
+            <h2>Accordion</h2>
             <details class="accordion margin-bottom-4">
                 <summary class="accordion__control">
                     <icon-chevron-down
@@ -520,7 +540,7 @@
                 </div>
             </div>
 
-            <h1>Tabs</h1>
+            <h2>Tabs</h2>
             <div class="tabs margin-bottom-4">
                 <div class="tab__control">
                     <button class="tab__item" aria-selected="true">
@@ -683,7 +703,7 @@
                 </div>
             </div>
 
-            <h1>Breadcrumb</h1>
+            <h2>Breadcrumb</h2>
             <ol class="breadcrumb">
                 <li class="breadcrumb__item"><a href="#">Home</a></li>
                 <li class="breadcrumb__item"><a href="#">...</a></li>
@@ -691,7 +711,7 @@
                 <li class="breadcrumb__item"><a href="#">Section</a></li>
             </ol>
 
-            <h1>Badge</h1>
+            <h2>Badge</h2>
             <span class="badge">badge</span>
             <span class="badge-group">
                 <span class="badge">npm</span>
@@ -701,7 +721,7 @@
                 ><icon-alarm></icon-alarm> alarm <icon-x></icon-x
             ></span>
 
-            <h1>Table</h1>
+            <h2>Table</h2>
 
             <div
                 class="table-container table-container--bordered"
