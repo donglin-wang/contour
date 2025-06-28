@@ -30,8 +30,12 @@
         font-size: var(--accordion-font-size);
         font-family: var(--accordion-font-family);
         line-height: var(--accordion-line-height);
-        border-inline: var(--accordion-border-inline-width) var(--accordion-border-inline-style) var(--accordion-border-inline-color);
-        border-block: var(--accordion-border-block-width) var(--accordion-border-block-style) var(--accordion-border-block-color);
+        border-inline: var(--accordion-border-inline-width)
+            var(--accordion-border-inline-style)
+            var(--accordion-border-inline-color);
+        border-block: var(--accordion-border-block-width)
+            var(--accordion-border-block-style)
+            var(--accordion-border-block-color);
         border-radius: var(--accordion-border-radius);
     }
 
@@ -51,7 +55,8 @@
 
     .accordion__content {
         display: flex;
-        padding-block: calc(var(--accordion-padding-block) / 2) var(--accordion-padding-block);
+        padding-block: calc(var(--accordion-padding-block) / 2)
+            var(--accordion-padding-block);
         padding-inline: var(--accordion-padding-inline);
     }
 

@@ -19,7 +19,7 @@
         padding: 1em;
     }
 
-    .table--pin-row>thead>tr {
+    .table--pin-row > thead > tr {
         background-color: var(--background-color);
         position: sticky;
         top: 0;
@@ -33,15 +33,15 @@
         z-index: 1;
     }
 
-    .table--row-bordered thead>tr {
+    .table--row-bordered thead > tr {
         border-bottom: 1px solid black;
     }
 
-    .table--row-bordered tfoot>tr {
+    .table--row-bordered tfoot > tr {
         border-top: 1px solid black;
     }
 
-    .table--row-bordered tbody>tr:not(:last-child) {
+    .table--row-bordered tbody > tr:not(:last-child) {
         border-bottom: 1px solid black;
     }
 

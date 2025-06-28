@@ -1,14 +1,14 @@
 @layer base {
     :root {
-        /* --color: hsl(0deg 0% 10%);
+        --color: hsl(0deg 0% 10%);
         --color-muted: hsl(0deg 0% 20%);
         --background-color: hsl(0deg 0% 100%);
-        --background-color-muted: hsl(0deg 0% 95%); */
+        --background-color-muted: hsl(0deg 0% 95%);
 
-        --color: hsl(0deg 0% 90%);
+        /* --color: hsl(0deg 0% 90%);
         --color-muted: hsl(0deg 0% 80%);
         --background-color: hsl(0deg 0% 10%);
-        --background-color-muted: hsl(0deg 0% 20%);
+        --background-color-muted: hsl(0deg 0% 20%); */
 
         --danger: hsl(0deg 85% 60%);
         --warning: hsl(45deg 100% 50%);

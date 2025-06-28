@@ -1,7 +1,7 @@
 @layer base {
     :root {
         --breadcrumb-separator-padding-inline: 0.5em;
-        --breadcrumb-separator: '/'
+        --breadcrumb-separator: "/";
     }
 
     .breadcrumb {
@@ -10,12 +10,12 @@
         list-style: none;
     }
 
-    .breadcrumb>.breadcrumb__item::before {
+    .breadcrumb > .breadcrumb__item::before {
         content: var(--breadcrumb-separator);
         padding-inline: var(--breadcrumb-separator-padding-inline);
     }
 
-    .breadcrumb>.breadcrumb__item:first-child::before {
+    .breadcrumb > .breadcrumb__item:first-child::before {
         display: none;
     }
 }

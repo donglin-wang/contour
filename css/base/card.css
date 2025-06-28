@@ -25,11 +25,13 @@
         width: 100%;
     }
 
-    .card__body, .card__section {
+    .card__body,
+    .card__section {
         flex-direction: column;
     }
 
-    .card__body--row, .card__section--row {
+    .card__body--row,
+    .card__section--row {
         flex-direction: row;
     }
 

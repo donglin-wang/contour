@@ -39,18 +39,18 @@
         font-weight: var(--button-font-weight);
         font-size: var(--button-font-size);
         line-height: var(--button-line-height);
-        cursor: pointer
+        cursor: pointer;
     }
 
     .button__section {
         display: flex;
         flex-direction: var(--button-section-flex-direction);
         line-height: var(--button-section-line-height);
-        gap: var(--button-section-gap)
+        gap: var(--button-section-gap);
     }
 
     .button__icon {
-        width: var(--button-icon-size);;
+        width: var(--button-icon-size);
         height: var(--button-icon-size);
         flex: none;
         color: inherit;

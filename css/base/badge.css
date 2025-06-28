@@ -20,16 +20,16 @@
         width: 1em;
     }
 
-    .badge-group>.badge {
+    .badge-group > .badge {
         border-radius: 0;
     }
 
-    .badge-group>.badge:last-child {
+    .badge-group > .badge:last-child {
         border-end-end-radius: 5px;
         border-start-end-radius: 5px;
     }
 
-    .badge-group>.badge:first-child {
+    .badge-group > .badge:first-child {
         border-start-start-radius: 5px;
         border-end-start-radius: 5px;
     }

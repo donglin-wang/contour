@@ -1,6 +1,6 @@
 @layer variant {
     .button--icon {
-        padding: 0.5rem;
+        --button-padding: 0.5em;
     }
 
     .button--tiered {
