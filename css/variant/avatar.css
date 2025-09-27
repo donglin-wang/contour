@@ -1,0 +1,5 @@
+@layer variant {
+    .avatar--rounded{
+        border-radius: 99999px;
+    }
+}
