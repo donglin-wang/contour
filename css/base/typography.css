@@ -67,4 +67,9 @@
         margin: 0;
         line-height: 1.25;
     }
+
+    p {
+        font-size: var(--font-size-l);
+        color: var(--color);
+    }
 }
