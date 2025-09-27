@@ -17,11 +17,6 @@
         gap: 0.5em;
     }
 
-    .button--top-down > .button__icon {
-        width: 2em;
-        height: 2em;
-    }
-
     .button--left-rounded {
         border-radius: 999px 0 0 999px;
         padding: 0.5em;

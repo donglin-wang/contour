@@ -49,13 +49,6 @@
         gap: var(--button-section-gap);
     }
 
-    .button__icon {
-        width: var(--button-icon-size);
-        height: var(--button-icon-size);
-        flex: none;
-        color: inherit;
-    }
-
     .button:hover {
         background: var(--button-hover-background-color);
         color: var(--button-hover-color);

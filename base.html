@@ -80,13 +80,37 @@
 
     <body>
         <article id="article">
-            <div id="masthead">
+            <section id="masthead">
                 <h1>Contour is a styling convention with variations</h1>
                 <p class="font-size-xl">
                     It aims to provide semantic styling while maintaining
                     customizability and adaptability
                 </p>
-            </div>
+            </section>
+
+            <hr class="divider" />
+
+            <h2>Foreword</h2>
+            <p>
+                Contour was conceived to be an alternative to both utility-first
+                and component based libraries. It aims to provide flexibility to
+                the UI implementors while maintaining a clear separation between
+                style and content.
+            </p>
+            <p>
+                Instead of providing the a set of opinionated implementation or
+                atomic classes, Contour provide a flexible foundation that
+                allows rich customizability and a list of reference variantions
+                based on this foundation. It then makes this foundation scalable
+                by using CSS layers to manage specificity and CSS custom
+                properties to reinforce consistency.
+            </p>
+            <h2>Convention</h2>
+            <p>
+                On the surface, the naming of classes follows the BEM convetion.
+                In Contour, however, the convetion is given new meaning:
+            </p>
+            <code>component__element--variation</code>
             <hr class="divider" />
             <h2>Button</h2>
             <p>
@@ -99,11 +123,7 @@
                 <button class="button">Button</button>
                 <a href="#" class="button">Link</a>
             </p>
-            <details
-                class="accordion accordion--enclosed"
-                style="--accordion-padding-block: 0.5em"
-                open
-            >
+            <details class="accordion accordion--enclosed" open>
                 <summary class="accordion__control font-size-xs">
                     <icon-chevron-down
                         class="accordion__chevron"
@@ -113,11 +133,6 @@
                     >
                         HTML
                     </div>
-                    <div class="accordion__control-section">
-                        <div class="button button--icon rounded">
-                            <icon-copy></icon-copy>
-                        </div>
-                    </div>
                 </summary>
                 <pre
                     class="accordion__content"
@@ -125,14 +140,40 @@
                 ></pre>
             </details>
             <h4>Base style</h4>
+            <p>
+                Button consists of one or more sections, each containing either
+                icons or text. Sections can be horizontally or vertically
+                spanning
+            </p>
             <details class="accordion accordion--enclosed" open>
-                <summary class="accordion__control font-size-xs">CSS</summary>
+                <summary class="accordion__control font-size-xs">
+                    <icon-chevron-down
+                        class="accordion__chevron"
+                    ></icon-chevron-down>
+                    CSS
+                </summary>
                 <pre
                     class="accordion__content"
                     data-src="./css/base/button.css"
                 ></pre>
             </details>
             <h4>Variantions</h4>
+            <p>
+                Below are the built-in variations provided by Contour out of the
+                box. It shows the various usage of base classes.
+            </p>
+            <details class="accordion accordion--enclosed" open>
+                <summary class="accordion__control font-size-xs">
+                    <icon-chevron-down
+                        class="accordion__chevron"
+                    ></icon-chevron-down>
+                    CSS
+                </summary>
+                <pre
+                    class="accordion__content"
+                    data-src="./css/variant/button.css"
+                ></pre>
+            </details>
             <p>
                 <button class="button button--icon">
                     <icon-alarm></icon-alarm>
@@ -144,9 +185,25 @@
                     <icon-alarm></icon-alarm>
                 </button>
             </p>
+            <details class="accordion accordion--enclosed" open>
+                <summary class="accordion__control font-size-xs">
+                    <icon-chevron-down
+                        class="accordion__chevron"
+                    ></icon-chevron-down>
+                    <div
+                        class="accordion__control-section accordion__control-section--body"
+                    >
+                        HTML
+                    </div>
+                </summary>
+                <pre
+                    class="accordion__content"
+                    data-src="./asset/snippet/button/button-icon.html"
+                ></pre>
+            </details>
             <p>
                 <button class="button button--tiered">
-                    <span class="button__section button--section__tiered">
+                    <span class="button__section button__section--tiered">
                         <strong class="font-size-l">Title</strong>
                         <p>Next</p>
                     </span>
@@ -155,12 +212,44 @@
                     </span>
                 </button>
             </p>
+            <details class="accordion accordion--enclosed" open>
+                <summary class="accordion__control font-size-xs">
+                    <icon-chevron-down
+                        class="accordion__chevron"
+                    ></icon-chevron-down>
+                    <div
+                        class="accordion__control-section accordion__control-section--body"
+                    >
+                        HTML
+                    </div>
+                </summary>
+                <pre
+                    class="accordion__content"
+                    data-src="./asset/snippet/button/button-tiered.html"
+                ></pre>
+            </details>
             <p>
                 <button class="button button--top-down">
-                    <icon-alarm class="button__icon"></icon-alarm>
+                    <icon-alarm class="icon font-size-2xl"></icon-alarm>
                     Alarm
                 </button>
             </p>
+            <details class="accordion accordion--enclosed" open>
+                <summary class="accordion__control font-size-xs">
+                    <icon-chevron-down
+                        class="accordion__chevron"
+                    ></icon-chevron-down>
+                    <div
+                        class="accordion__control-section accordion__control-section--body"
+                    >
+                        HTML
+                    </div>
+                </summary>
+                <pre
+                    class="accordion__content"
+                    data-src="./asset/snippet/button/button-top-down.html"
+                ></pre>
+            </details>
             <p>
                 <button class="button button--left-rounded">
                     <span class="button__section button__section--left-rounded">
@@ -172,6 +261,22 @@
                     ></icon-chevron-right>
                 </button>
             </p>
+            <details class="accordion accordion--enclosed" open>
+                <summary class="accordion__control font-size-xs">
+                    <icon-chevron-down
+                        class="accordion__chevron"
+                    ></icon-chevron-down>
+                    <div
+                        class="accordion__control-section accordion__control-section--body"
+                    >
+                        HTML
+                    </div>
+                </summary>
+                <pre
+                    class="accordion__content"
+                    data-src="./asset/snippet/button/button-left-rounded.html"
+                ></pre>
+            </details>
 
             <h2>Notice</h2>
             <div class="notice margin-bottom-4">
@@ -751,7 +856,7 @@
             </ol>
 
             <h2>Badge</h2>
-            <div style="display: flex; gap: 5px;">
+            <div style="display: flex; gap: 5px">
                 <span class="badge">badge</span>
                 <span class="badge-group">
                     <span class="badge">npm</span>

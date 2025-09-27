@@ -27,6 +27,10 @@
         font-size: var(--font-size-xl);
     }
 
+    .font-size-2xl {
+        font-size: var(--font-size-2xl);
+    }
+
     .margin-bottom-4 {
         margin-bottom: calc(var(--space) * 4);
     }
