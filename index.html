@@ -122,12 +122,52 @@
                 </p>
                 <h2>Convention</h2>
                 <p>
+                    Contour is as much about the implemntation as it is about
+                    setting up a convention for creating styling system. Any
+                    styling system, no matter how well designed, requires
+                    certain discipline, structure, and mutual understanding
+                    between members of the group using the system.
+                </p>
+                <h4>BEM but different</h4>
+                <p>
                     On the surface, the naming of classes follows the BEM
                     convetion. In Contour, however, the convetion is given new
                     meaning:
                 </p>
                 <p>
-                    <code>component__element--variation</code>
+                    <code class="inline">component__element--variation</code>
+                </p>
+                <p>
+                    Component are the root-level reusable parts such as buttons
+                    and notices. Elements are parts that make up these
+                    components. Like BEM, elements can only exist within its
+                    component. In other word, you cannot use
+                    <code class="inline">button__section</code> within
+                    <code class="inline">notice</code>
+                </p>
+                <h4>Manage Specificity</h4>
+                <p>We limit the specificity elevation by doing 2 things:</p>
+                <ol>
+                    <li>
+                        keeping things that are "custom" and can get messy in a
+                        higher layer, such as
+                        <code class="inline">@layer variant</code>.
+                    </li>
+                    <li>
+                        use child and nested selectors only in higher layers,
+                        not base For example, if you want a universal variant of
+                        a base component or a element, do so in the variant
+                        layer.
+                    </li>
+                </ol>
+                <p>
+                    If you want to override things in the variant layer for a
+                    specific page, simply create a new layer called
+                    <code class="inline">page</code> and do it there.
+                </p>
+                <h4>Custom property propagation</h4>
+                <p>
+                    
                 </p>
             </section>
             <section>
@@ -135,9 +175,10 @@
                 <h2>Button</h2>
                 <p>
                     The button selector decorates either
-                    <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code>. Use
-                    the former if you want it to lead to another page. Use the
-                    latter if you want it to perform certain actions.
+                    <code class="inline">&lt;a&gt;</code> or
+                    <code class="inline">&lt;button&gt;</code>. Use the former
+                    if you want it to lead to another page. Use the latter if
+                    you want it to perform certain actions.
                 </p>
                 <section>
                     <button class="button">Button</button>

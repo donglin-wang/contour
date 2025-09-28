@@ -68,8 +68,15 @@
         line-height: 1.25;
     }
 
-    p {
+    p, li {
         font-size: var(--font-size-l);
         color: var(--color);
+    }
+
+    code.inline {
+        color: var(--danger);
+        padding: 2px;
+        border-radius: 2px;
+        background-color: var(--background-color-muted);
     }
 }
