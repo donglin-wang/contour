@@ -43,6 +43,26 @@
             #article section {
                 margin-block: 1rem;
             }
+
+            @font-face {
+                font-family: "Recursive";
+                src: local("Recursive"),
+                    url("asset/font/Recursive.woff2") format("woff2");
+            }
+
+            .logo {
+                font-family: "Recursive";
+                font-variation-settings: "MONO" 1;
+                font-weight: 1000;
+                font-size: 5rem;
+                padding-inline: 1rem;
+                padding-block: 0.5rem;
+                line-height: 1;
+                display: inline-block;
+                background-color: var(--color);
+                color: var(--background-color);
+                border-radius: 5px;
+            }
         </style>
         <style>
             @import url(css/base/reset.css);
@@ -76,7 +96,8 @@
     <body>
         <article id="article">
             <section>
-                <h1>Contour is a styling convention with variations</h1>
+                <span class="logo">Contour</span>
+                <h1>is a different take on CSS libraries</h1>
             </section>
 
             <hr class="divider" />
