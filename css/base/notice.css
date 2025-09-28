@@ -15,7 +15,6 @@
         --notice-font-family: inherit;
         --notice-line-height: inherit;
         --notice-text-color: inherit;
-        --notice-icon-size: 1.5em;
         --notice-close-size: 1em;
         --notice-close-align-self: start;
         --notice-close-hover-opacity: 0.5;
@@ -39,25 +38,10 @@
         gap: var(--notice-gap);
     }
 
-    /*
-        Why don't icon and close get their section variant?
-        Because they might have position absolute, which means
-        they don't factor into the box layout of the main notice.
-    */
-
-    .notice__icon,
     .notice__close {
         flex: none;
         color: inherit;
         line-height: var(--notice-line-height);
-    }
-
-    .notice__icon {
-        width: var(--notice-icon-size);
-        height: var(--notice-icon-size);
-    }
-
-    .notice__close {
         height: var(--notice-close-size);
         align-self: var(--notice-close-align-self);
         cursor: pointer;

@@ -69,6 +69,7 @@
             @import url(css/base/theme.css);
             @import url(css/base/typography.css);
 
+            @import url(css/base/icon.css);
             @import url(css/base/notice.css);
             @import url(css/base/button.css);
             @import url(css/base/menu.css);
@@ -114,7 +115,7 @@
                     Instead of providing the a set of opinionated implementation
                     or atomic classes, Contour provide a flexible foundation
                     that allows rich customizability and a list of reference
-                    variantions based on this foundation. It then makes this
+                    Variants based on this foundation. It then makes this
                     foundation scalable by using CSS layers to manage
                     specificity and CSS custom properties to reinforce
                     consistency.
@@ -176,7 +177,7 @@
                         data-src="./css/base/button.css"
                     ></pre>
                 </details>
-                <h4>Variantions</h4>
+                <h4>Variants</h4>
                 <p>
                     Below are the built-in variations provided by Contour out of
                     the box. It shows the various usage of base classes.
@@ -301,45 +302,47 @@
             </section>
             <section>
                 <h2>Notice</h2>
-                <div class="notice margin-bottom-4">
-                    <div class="notice__section notice__section--flex-column">
-                        This is a very long notice aiming to demonstrate
-                        messages that span across multiple lines.
-                    </div>
-                    <div class="notice__control">
-                        <button class="notice__button button">Confirm</button>
-                        <button class="notice__button button">Cancel</button>
-                    </div>
-                    <icon-x class="notice__close"></icon-x>
-                </div>
-                <div class="notice margin-bottom-4">
-                    <div class="notice__section notice__section--flex-column">
-                        This is a very long notice aiming to demonstrate
-                        messages that span across multiple lines.
-                    </div>
-                    <div class="notice__control">
-                        <button class="notice__button button">Confirm</button>
-                        <button class="notice__button button">Cancel</button>
-                    </div>
-                    <div
-                        class="notice__section notice__section--close-separated"
-                    >
-                        <icon-x class="notice-close"></icon-x>
-                    </div>
-                </div>
-                <div class="notice margin-bottom-4">
-                    <icon-exclamation-square-fill
-                        class="notice__icon"
-                        background-color="var(--background-color)"
-                    ></icon-exclamation-square-fill>
-                    <div class="notice__section notice__section--flex-column">
-                        <strong class="font-size-xl">Notice title</strong>
-                        <span class="notice-description">
-                            Take note how the ordering of notice-button and
-                            button does not change the outcome. Similarly,
-                            changing the import order of the two style sheets
-                            also doesn't change the outcome
-                        </span>
+                <p>
+                    Notice encapsulates a variety of components found in other
+                    CSS libraries, such as Alert, Shoutout, etc. Use it to
+                    display emphasized content that is optionally dismissable.
+                    It consists of sections, a close button, and a control
+                    section for options.
+                </p>
+                <h3>Base Style</h3>
+                <details class="accordion accordion--enclosed" open>
+                    <summary class="accordion__control font-size-xs">
+                        <icon-chevron-down
+                            class="accordion__chevron"
+                        ></icon-chevron-down>
+                        CSS
+                    </summary>
+                    <pre
+                        class="accordion__content"
+                        data-src="./css/base/notice.css"
+                    ></pre>
+                </details>
+                <h3>Variations</h3>
+                <details class="accordion accordion--enclosed" open>
+                    <summary class="accordion__control font-size-xs">
+                        <icon-chevron-down
+                            class="accordion__chevron"
+                        ></icon-chevron-down>
+                        CSS
+                    </summary>
+                    <pre
+                        class="accordion__content"
+                        data-src="./css/variant/notice.css"
+                    ></pre>
+                </details>
+                <section>
+                    <div class="notice">
+                        <div
+                            class="notice__section notice__section--flex-column"
+                        >
+                            This is a very long notice aiming to demonstrate
+                            messages that span across multiple lines.
+                        </div>
                         <div class="notice__control">
                             <button class="notice__button button">
                                 Confirm
@@ -348,22 +351,33 @@
                                 Cancel
                             </button>
                         </div>
+                        <icon-x class="notice__close"></icon-x>
                     </div>
-                    <icon-x class="notice__close"></icon-x>
-                </div>
-                <div class="notice notice--button-linked margin-bottom-4">
-                    <icon-exclamation-square-fill
-                        class="notice__icon"
-                        background-color="var(--background-color)"
-                    ></icon-exclamation-square-fill>
-                    <div class="notice__section notice__section--flex-column">
-                        <strong class="font-size-xl">Notice title</strong>
-                        <span class="notice-description">
-                            Take note how the ordering of notice-button and
-                            button does not change the outcome. Similarly,
-                            changing the import order of the two style sheets
-                            also doesn't change the outcome
-                        </span>
+                </section>
+                <details class="accordion accordion--enclosed" open>
+                    <summary class="accordion__control font-size-xs">
+                        <icon-chevron-down
+                            class="accordion__chevron"
+                        ></icon-chevron-down>
+                        <div
+                            class="accordion__control-section accordion__control-section--body"
+                        >
+                            HTML
+                        </div>
+                    </summary>
+                    <pre
+                        class="accordion__content"
+                        data-src="./asset/snippet/notice/notice-base.html"
+                    ></pre>
+                </details>
+                <section>
+                    <div class="notice">
+                        <div
+                            class="notice__section notice__section--flex-column"
+                        >
+                            This is a very long notice aiming to demonstrate
+                            messages that span across multiple lines.
+                        </div>
                         <div class="notice__control">
                             <button class="notice__button button">
                                 Confirm
@@ -372,81 +386,167 @@
                                 Cancel
                             </button>
                         </div>
-                    </div>
-                    <icon-x class="notice__close"></icon-x>
-                </div>
-                <div class="notice notice--left-inclined margin-bottom-4">
-                    <icon-exclamation-square-fill
-                        class="notice__icon"
-                        background-color="var(--background-color)"
-                    ></icon-exclamation-square-fill>
-                    <div class="notice__section notice__section--flex-column">
-                        <strong class="font-size-xl">Notice title</strong>
-                        <span class="notice-description">
-                            Take note how the ordering of notice-button and
-                            button does not change the outcome. Similarly,
-                            changing the import order of the two style sheets
-                            also doesn't change the outcome
-                        </span>
-                        <div class="notice__control">
-                            <button class="notice__button button">
-                                Confirm
-                            </button>
-                            <button class="notice__button button">
-                                Cancel
-                            </button>
+                        <div
+                            class="notice__section notice__section--close-separated"
+                        >
+                            <icon-x class="notice-close"></icon-x>
                         </div>
                     </div>
-                    <icon-x class="notice__close"></icon-x>
-                </div>
-                <div class="notice notice--icon-top margin-bottom-4">
-                    <icon-exclamation-square-fill
-                        class="notice__icon"
-                        background-color="var(--background-color)"
-                    ></icon-exclamation-square-fill>
-                    <div class="notice__section notice__section--flex-column">
-                        <strong class="font-size-xl">Notice title</strong>
-                        <span class="notice-description">
-                            Take note how the ordering of notice-button and
-                            button does not change the outcome. Similarly,
-                            changing the import order of the two style sheets
-                            also doesn't change the outcome
-                        </span>
-                        <div class="notice__control">
-                            <button class="notice__button button">
-                                Confirm
-                            </button>
-                            <button class="notice__button button">
-                                Cancel
-                            </button>
+                </section>
+                <details class="accordion accordion--enclosed" open>
+                    <summary class="accordion__control font-size-xs">
+                        <icon-chevron-down
+                            class="accordion__chevron"
+                        ></icon-chevron-down>
+                        <div
+                            class="accordion__control-section accordion__control-section--body"
+                        >
+                            HTML
                         </div>
-                    </div>
-                    <icon-x class="notice__close"></icon-x>
-                </div>
-                <div class="notice notice--icon-cornered margin-bottom-4">
-                    <icon-exclamation-square-fill
-                        class="notice__icon"
-                        background-color="var(--background-color)"
-                    ></icon-exclamation-square-fill>
-                    <div class="notice__section notice__section--flex-column">
-                        <strong class="font-size-xl">Notice title</strong>
-                        <span class="notice-description">
-                            Take note how the ordering of notice-button and
-                            button does not change the outcome. Similarly,
-                            changing the import order of the two style sheets
-                            also doesn't change the outcome
-                        </span>
-                        <div class="notice__control">
-                            <button class="notice__button button">
-                                Confirm
-                            </button>
-                            <button class="notice__button button">
-                                Cancel
-                            </button>
+                    </summary>
+                    <pre
+                        class="accordion__content"
+                        data-src="./asset/snippet/notice/notice-close-separated.html"
+                    ></pre>
+                </details>
+                <section>
+                    <div class="notice">
+                        <icon-exclamation-square-fill
+                            class="icon font-size-xl"
+                            background-color="var(--background-color)"
+                        ></icon-exclamation-square-fill>
+                        <div
+                            class="notice__section notice__section--flex-column"
+                        >
+                            <strong class="font-size-xl">Notice title</strong>
+                            <span class="notice-description">
+                                Take note how the ordering of notice-button and
+                                button does not change the outcome. Similarly,
+                                changing the import order of the two style
+                                sheets also doesn't change the outcome
+                            </span>
+                            <div class="notice__control">
+                                <button class="notice__button button">
+                                    Confirm
+                                </button>
+                                <button class="notice__button button">
+                                    Cancel
+                                </button>
+                            </div>
                         </div>
+                        <icon-x class="notice__close"></icon-x>
                     </div>
-                    <icon-x class="notice__close"></icon-x>
-                </div>
+                </section>
+                <section>
+                    <div class="notice notice--button-linked">
+                        <icon-exclamation-square-fill
+                            class="icon font-size-xl"
+                        ></icon-exclamation-square-fill>
+                        <div
+                            class="notice__section notice__section--flex-column"
+                        >
+                            <strong class="font-size-xl">Notice title</strong>
+                            <span class="notice-description">
+                                Take note how the ordering of notice-button and
+                                button does not change the outcome. Similarly,
+                                changing the import order of the two style
+                                sheets also doesn't change the outcome
+                            </span>
+                            <div class="notice__control">
+                                <button class="notice__button button">
+                                    Confirm
+                                </button>
+                                <button class="notice__button button">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                        <icon-x class="notice__close"></icon-x>
+                    </div>
+                </section>
+                <section>
+                    <div class="notice notice--left-inclined">
+                        <icon-exclamation-square-fill
+                            class="icon font-size-xl"
+                        ></icon-exclamation-square-fill>
+                        <div
+                            class="notice__section notice__section--flex-column"
+                        >
+                            <strong class="font-size-xl">Notice title</strong>
+                            <span class="notice-description">
+                                Take note how the ordering of notice-button and
+                                button does not change the outcome. Similarly,
+                                changing the import order of the two style
+                                sheets also doesn't change the outcome
+                            </span>
+                            <div class="notice__control">
+                                <button class="notice__button button">
+                                    Confirm
+                                </button>
+                                <button class="notice__button button">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                        <icon-x class="notice__close"></icon-x>
+                    </div>
+                </section>
+                <section>
+                    <div class="notice notice--icon-top">
+                        <icon-exclamation-square-fill
+                            class="icon"
+                            background-color="var(--background-color)"
+                        ></icon-exclamation-square-fill>
+                        <div
+                            class="notice__section notice__section--flex-column"
+                        >
+                            <strong class="font-size-xl">Notice title</strong>
+                            <span class="notice-description">
+                                Take note how the ordering of notice-button and
+                                button does not change the outcome. Similarly,
+                                changing the import order of the two style
+                                sheets also doesn't change the outcome
+                            </span>
+                            <div class="notice__control">
+                                <button class="notice__button button">
+                                    Confirm
+                                </button>
+                                <button class="notice__button button">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                        <icon-x class="notice__close"></icon-x>
+                    </div>
+                </section>
+                <section>
+                    <div class="notice notice--icon-cornered">
+                        <icon-exclamation-square-fill
+                            class="icon"
+                            background-color="var(--background-color)"
+                        ></icon-exclamation-square-fill>
+                        <div
+                            class="notice__section notice__section--flex-column"
+                        >
+                            <strong class="font-size-xl">Notice title</strong>
+                            <span class="notice-description">
+                                Take note how the ordering of notice-button and
+                                button does not change the outcome. Similarly,
+                                changing the import order of the two style
+                                sheets also doesn't change the outcome
+                            </span>
+                            <div class="notice__control">
+                                <button class="notice__button button">
+                                    Confirm
+                                </button>
+                                <button class="notice__button button">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                        <icon-x class="notice__close"></icon-x>
+                    </div>
+                </section>
             </section>
             <section>
                 <h2>Menu</h2>
