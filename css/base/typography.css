@@ -68,7 +68,9 @@
         line-height: 1.25;
     }
 
-    p, li {
+    ol.content > li,
+    ul.content > li,
+    p {
         font-size: var(--font-size-l);
         color: var(--color);
     }
