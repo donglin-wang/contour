@@ -19,52 +19,6 @@
         </script>
         <title>Contour</title>
         <style>
-            :root {
-                --article-max-width: 40rem;
-                --article-margin-block: 3rem;
-            }
-
-            #article {
-                display: block;
-                width: 100%;
-                max-width: var(--article-max-width);
-                padding-inline: 0.5rem;
-                margin: auto;
-                margin-block: var(--article-margin-block);
-            }
-
-            #article h1,
-            #article h2,
-            #article h3,
-            #article h4,
-            #article h5,
-            #article h6,
-            #article p,
-            #article section {
-                margin-block: 1rem;
-            }
-
-            @font-face {
-                font-family: "Recursive";
-                src: local("Recursive"),
-                    url("asset/font/Recursive.woff2") format("woff2");
-            }
-
-            .logo {
-                font-family: "Recursive";
-                font-variation-settings: "MONO" 1;
-                font-weight: 1000;
-                font-size: 5rem;
-                padding-inline: 1rem;
-                padding-block: 0.5rem;
-                line-height: 1;
-                display: inline-block;
-                background-color: var(--color);
-                color: var(--background-color);
-                border-radius: 5px;
-            }
-        </style>
-        <style>
             @import url(css/base/reset.css);
             @import url(css/base/theme.css);
             @import url(css/base/typography.css);
@@ -88,6 +42,8 @@
             @import url(css/variant/badge.css);
             @import url(css/variant/accordion.css);
             @import url(css/variant/avatar.css);
+
+            @import url(css/page/index.css);
 
             @import url(css/utilities.css);
             @import url(css/prism.css);
@@ -128,7 +84,7 @@
                     certain discipline, structure, and mutual understanding
                     between members of the group using the system.
                 </p>
-                <h4>BEM but different</h4>
+                <h3>BEM but different</h3>
                 <p>
                     On the surface, the naming of classes follows the BEM
                     convetion. In Contour, however, the convetion is given new
@@ -145,7 +101,7 @@
                     <code class="inline">button__section</code> within
                     <code class="inline">notice</code>
                 </p>
-                <h4>Manage Specificity</h4>
+                <h3>Manage Specificity</h3>
                 <p>We limit the specificity elevation by doing 2 things:</p>
                 <ol class="content">
                     <li>
@@ -165,7 +121,7 @@
                     specific page, simply create a new layer called
                     <code class="inline">page</code> and do it there.
                 </p>
-                <h4>Custom property propagation</h4>
+                <h3>Custom property propagation</h3>
                 <p>
                     
                 </p>
@@ -200,7 +156,7 @@
                         data-src="./asset/snippet/button/button-base.html"
                     ></pre>
                 </details>
-                <h4>Base style</h4>
+                <h3>Base style</h3>
                 <p>
                     Button consists of one or more sections, each containing
                     either icons or text. Sections can be horizontally or
@@ -218,7 +174,7 @@
                         data-src="./css/base/button.css"
                     ></pre>
                 </details>
-                <h4>Variants</h4>
+                <h3>Variants</h3>
                 <p>
                     Below are the built-in variations provided by Contour out of
                     the box. It shows the various usage of base classes.

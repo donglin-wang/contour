@@ -1,0 +1,46 @@
+@layer page {
+    :root {
+        --article-max-width: 40rem;
+        --article-margin-block: 3rem;
+    }
+
+    #article {
+        display: block;
+        width: 100%;
+        max-width: var(--article-max-width);
+        padding-inline: 0.5rem;
+        margin: auto;
+        margin-block: var(--article-margin-block);
+    }
+
+    #article h1,
+    #article h2,
+    #article h3,
+    #article h3,
+    #article h5,
+    #article h6,
+    #article p,
+    #article section {
+        margin-block: 1.5rem;
+    }
+
+    @font-face {
+        font-family: "Recursive";
+        src: local("Recursive"),
+            url("/asset/font/Recursive.woff2") format("woff2");
+    }
+
+    .logo {
+        font-family: "Recursive";
+        font-variation-settings: "MONO" 1;
+        font-weight: 1000;
+        font-size: 5rem;
+        padding-inline: 1rem;
+        padding-block: 0.5rem;
+        line-height: 1;
+        display: inline-block;
+        background-color: var(--color);
+        color: var(--background-color);
+        border-radius: 5px;
+    }
+}
