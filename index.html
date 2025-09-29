@@ -19,6 +19,8 @@
         </script>
         <title>Contour</title>
         <style>
+            @layer base, variant, page;
+
             @import url(css/base/reset.css);
             @import url(css/base/theme.css);
             @import url(css/base/typography.css);
@@ -121,9 +123,26 @@
                     specific page, simply create a new layer called
                     <code class="inline">page</code> and do it there.
                 </p>
-                <h3>Custom property propagation</h3>
+                <h3>Custom Property</h3>
                 <p>
-                    
+                    One of the most defining feature of Contour is its liberal
+                    use of CSS custom properties. Custom properties, like many
+                    properties such as <code class="inline">color</code> for
+                    <code class="inline">font-size</code>, are inherited by
+                    default. If you want to change a certain component in the
+                    context of a larger parent component, simply do:
+                </p>
+                <pre
+                    data-src="/asset/snippet/introduction/custom-property.css"
+                ></pre>
+                <p>
+                    instead of:
+                </p>
+                <pre
+                    data-src="/asset/snippet/introduction/elevation.css"
+                ></pre>
+                <p>
+                    This avoids specificity elevation.
                 </p>
             </section>
             <section>

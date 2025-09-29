@@ -19,6 +19,7 @@
         --button-section-line-height: inherit;
         --button-section-flex-direction: column;
         --button-section-gap: 0.5em;
+        --button-text-decoration: none;
     }
 
     .button {
@@ -34,7 +35,7 @@
         border-color: var(--button-border-color);
         border-style: var(--button-border-style);
         border-radius: var(--button-border-radius);
-        text-decoration: none;
+        text-decoration: var(--button-text-decoration);
         font-family: var(--button-font-family);
         font-weight: var(--button-font-weight);
         font-size: var(--button-font-size);
