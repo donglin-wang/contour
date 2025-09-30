@@ -21,7 +21,7 @@
     #article h6,
     #article p,
     #article section {
-        margin-block: 1.5rem;
+        margin-block: 1.728rem;
     }
 
     @font-face {
