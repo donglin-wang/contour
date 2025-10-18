@@ -10,8 +10,8 @@
 
     .table {
         position: relative;
-        border-collapse: collapse;
         text-align: left;
+        border-spacing: 0;
     }
 
     .table th,
@@ -33,20 +33,20 @@
         z-index: 1;
     }
 
-    .table--row-bordered thead > tr {
-        border-bottom: 1px solid black;
+    .table--row-bordered td,
+    .table--row-bordered th {
+        border-block-start: 1px solid var(--color);
     }
 
-    .table--row-bordered tfoot > tr {
-        border-top: 1px solid black;
+    .table--row-bordered thead th,
+    .table--row-bordered thead td,
+    .table--row-bordered tbody:first-child td,
+    .table--row-bordered tbody:first-child th {
+        border-block-start: none;
     }
 
-    .table--row-bordered tbody > tr:not(:last-child) {
-        border-bottom: 1px solid black;
-    }
-
-    .table--col-bordered td:not(:last-child),
-    .table--col-bordered th:not(:last-child) {
-        border-right: 1px solid black;
+    .table--col-bordered td:not(:first-child),
+    .table--col-bordered th:not(:first-child) {
+        border-inline-start: 1px solid black;
     }
 }
