@@ -1,10 +1,9 @@
-import van from "./van.js";
+import van from "vanjs-core";
 import { faker, fakerEN_CA } from "@faker-js/faker";
 
 const {
     table,
     thead,
-    tfoot,
     tr,
     tbody,
     th,
