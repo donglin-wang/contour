@@ -1,0 +1,49 @@
+@layer base {
+    .card {
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        border: 1px solid var(--color);
+    }
+
+    .card,
+    .card__footer,
+    .card__body,
+    .card__header,
+    .card__section {
+        display: flex;
+    }
+
+    .card__footer,
+    .card__body,
+    .card__header {
+        gap: 1em;
+        padding: 1em;
+    }
+
+    .card__image {
+        width: 100%;
+    }
+
+    .card__body,
+    .card__section {
+        flex-direction: column;
+    }
+
+    .card__body--row,
+    .card__section--row {
+        flex-direction: row;
+    }
+
+    .card__header {
+        border-block-end: 1px solid var(--color);
+    }
+
+    .card__footer {
+        border-block-start: 1px solid var(--color);
+    }
+
+    .card__button {
+        --button-padding: 0.5em;
+    }
+}

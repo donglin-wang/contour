@@ -1,0 +1,88 @@
+@layer base {
+    :root {
+        --bar-padding: 1em 1em;
+        --bar-height: 4em;
+        --bar-width: 100%;
+        --bar-background-color: var(--background-color);
+        --bar-color: var(--color);
+        --bar-z-index: 1000;
+        --bar-gap: 2em;
+        --bar-flex-direction: row;
+        --bar-justify-content: space-between;
+        --bar-border-bottom: 1px solid var(--color-muted);
+
+        --bar-section-flex: 1;
+
+        --bar-brand-font-size: 1.25em;
+        --bar-brand-font-weight: bold;
+        --bar-brand-color: currentColor;
+
+        --bar-items-gap: 1em;
+        --bar-item-padding: 0.5em;
+        --bar-item-color: currentColor;
+        --bar-item-hover-color: var(--color-muted);
+        --bar-item-active-color: var(--color-accent);
+        --bar-item-text-decoration: none;
+    }
+
+    .bar {
+        display: flex;
+        align-items: center;
+        gap: var(--bar-gap);
+        flex-direction: var(--bar-flex-direction);
+        width: var(--bar-width);
+        height: var(--bar-height);
+        padding: var(--bar-padding);
+        background: var(--bar-background-color);
+        color: var(--bar-color);
+        position: var(--bar-position);
+        z-index: var(--bar-z-index);
+        border-bottom: var(--bar-border-bottom);
+    }
+
+    .bar__section {
+        display: flex;
+        align-items: center;
+        gap: var(--bar-items-gap);
+        flex: var(--bar-section-flex);
+    }
+
+    .bar__section--start {
+        justify-content: start;
+    }
+
+    .bar__section--middle {
+        justify-content: center;
+    }
+
+    .bar__section--end {
+        justify-content: end;
+    }
+
+    .bar__brand {
+        font-size: var(--bar-brand-font-size);
+        font-weight: var(--bar-brand-font-weight);
+        color: var(--bar-brand-color);
+        text-decoration: var(--bar-item-text-decoration);
+    }
+
+    .bar__item {
+        padding: var(--bar-item-padding);
+        color: var(--bar-item-color);
+        text-decoration: var(--bar-item-text-decoration);
+    
+        --button-background-color: var(--background-color);
+        --button-color: var(--color);
+        --button-hover-color: var(--color);
+        --button-hover-background-color: var(--background-color-muted);
+        --button-padding: 0.5em;
+    }
+
+    .bar__item:hover {
+        color: var(--bar-item-hover-color);
+    }
+
+    .bar__item--active {
+        color: var(--bar-item-active-color);
+    }
+}

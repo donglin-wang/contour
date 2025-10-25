@@ -1,0 +1,39 @@
+@layer base {
+    .tab__control {
+        display: flex;
+        border-bottom: 2px solid var(--background-color-muted);
+    }
+
+    .tab__item {
+        color: var(--color);
+        padding-inline: 0.5em;
+        padding-block: 0.5em;
+        background-color: var(--background-color);
+        display: flex;
+        border: none;
+        border-bottom: 2px solid var(--background-color-muted);
+        font-size: var(--font-size);
+        cursor: pointer;
+        margin: 0;
+        margin-bottom: -2px;
+        gap: 0.5em;
+    }
+
+    .tab__item[aria-selected="true"] {
+        border-bottom: 2px solid var(--color);
+    }
+
+    .tab__item:hover {
+        background-color: var(--background-color-muted);
+    }
+
+    .tab__icon,
+    .tab__close {
+        width: 1em;
+        height: 1em;
+    }
+
+    .tab__close:hover {
+        opacity: 0.5;
+    }
+}

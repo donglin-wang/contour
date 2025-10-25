@@ -1,0 +1,13 @@
+@layer element {
+    :root {
+        --icon-width: 1em;
+        --icon-height: 1em;
+    }
+
+    .icon {
+        flex: none;
+        width: var(--icon-width);
+        height: var(--icon-height);
+        display: inline-block;
+    }
+}

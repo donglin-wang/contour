@@ -1,0 +1,52 @@
+@layer base {
+    .table-container {
+        display: block;
+        overflow-x: scroll;
+    }
+
+    .table-container--bordered {
+        border: 1px solid black;
+    }
+
+    .table {
+        position: relative;
+        text-align: left;
+        border-spacing: 0;
+    }
+
+    .table th,
+    .table td {
+        padding: 1em;
+    }
+
+    .table--pin-row > thead > tr {
+        background-color: var(--background-color);
+        position: sticky;
+        top: 0;
+        z-index: 2;
+    }
+
+    .table--pin-column tr th {
+        background-color: var(--background-color);
+        position: sticky;
+        left: 0;
+        z-index: 1;
+    }
+
+    .table--row-bordered td,
+    .table--row-bordered th {
+        border-block-start: 1px solid var(--color);
+    }
+
+    .table--row-bordered thead th,
+    .table--row-bordered thead td,
+    .table--row-bordered tbody:first-child td,
+    .table--row-bordered tbody:first-child th {
+        border-block-start: none;
+    }
+
+    .table--col-bordered td:not(:first-child),
+    .table--col-bordered th:not(:first-child) {
+        border-inline-start: 1px solid black;
+    }
+}
