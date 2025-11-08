@@ -38,6 +38,7 @@
             @import url(css/element/divider.css);
             @import url(css/element/icon.css);
             @import url(css/element/typography.css);
+            @import url(css/element/tooltip.css);
 
             @import url(css/variant/menu.css);
             @import url(css/variant/button.css);
@@ -772,463 +773,478 @@
                     </menu>
                 </section>
             </section>
-
-            <h2>Accordion</h2>
-            <details class="accordion margin-bottom-4">
-                <summary class="accordion__control">
-                    <icon-chevron-down
-                        class="accordion__chevron"
-                    ></icon-chevron-down>
-                    Accordion
-                </summary>
-                <div class="accordion__content">This is an accordion</div>
-            </details>
-            <details class="accordion margin-bottom-4">
-                <summary class="accordion__control">
-                    <icon-chevron-down
-                        class="accordion__chevron"
-                    ></icon-chevron-down>
-                    <div class="accordion__control-section">
-                        <icon-backpack></icon-backpack>
-                    </div>
-                    <div
-                        class="accordion__control-section accordion__control-section--body"
-                    >
+            <section>
+                <h2>Accordion</h2>
+                <details class="accordion margin-bottom-4">
+                    <summary class="accordion__control">
+                        <icon-chevron-down
+                            class="accordion__chevron"
+                        ></icon-chevron-down>
                         Accordion
-                    </div>
-                </summary>
-                <div class="accordion__content">This is an accordion</div>
-            </details>
-            <details class="accordion margin-bottom-4">
-                <summary class="accordion__control">
-                    <div class="accordion__control-section">
-                        <icon-backpack></icon-backpack>
-                    </div>
-                    <div
-                        class="accordion__control-section accordion__control-section--body"
-                    >
-                        Accordion
-                    </div>
-                    <icon-chevron-down
-                        class="accordion__chevron"
-                    ></icon-chevron-down>
-                </summary>
-                <div class="accordion__content">This is an accordion</div>
-            </details>
-            <details class="accordion margin-bottom-4">
-                <summary class="accordion__control">
-                    <img
-                        class="avatar-16 avatar--rounded"
-                        src="asset/image/linux.jpg"
-                        alt="Linux penguin"
-                    />
-                    <div
-                        class="accordion__control-section accordion__control-section--body"
-                    >
-                        <strong>Accordion title</strong>
-                        Accordion
-                    </div>
-                    <icon-chevron-down
-                        class="accordion__chevron"
-                    ></icon-chevron-down>
-                </summary>
-                <div class="accordion__content">This is an accordion</div>
-            </details>
-            <details class="accordion margin-bottom-4">
-                <summary class="accordion__control">
-                    <icon-chevron-down
-                        class="accordion__chevron"
-                    ></icon-chevron-down>
-                    <img
-                        class="avatar-16 avatar--rounded"
-                        src="asset/image/linux.jpg"
-                        alt="Linux penguin"
-                    />
-                    <div
-                        class="accordion__control-section accordion__control-section--body"
-                    >
-                        <strong>Accordion title</strong>
-                        Accordion
-                    </div>
-                </summary>
-                <div class="accordion__content">This is an accordion</div>
-            </details>
-            <details class="accordion accordion--enclosed margin-bottom-4">
-                <summary class="accordion__control">
-                    <icon-chevron-down
-                        class="accordion__chevron"
-                    ></icon-chevron-down>
-                    <img
-                        class="avatar-16 avatar--rounded"
-                        src="asset/image/linux.jpg"
-                        alt="Linux penguin"
-                    />
-                    <div
-                        class="accordion__control-section accordion__control-section--body"
-                    >
-                        <strong>Accordion title</strong>
-                        Accordion
-                    </div>
-                </summary>
-                <div class="accordion__content">This is an accordion</div>
-            </details>
-            <div
-                class="accordion accordion--enclosed accordion--animated margin-bottom-4"
-            >
-                <div class="accordion__control">
-                    <icon-chevron-down
-                        class="accordion__chevron"
-                    ></icon-chevron-down>
-                    <img
-                        class="avatar-16 avatar--rounded"
-                        src="asset/image/linux.jpg"
-                        alt="Linux penguin"
-                    />
-                    <div
-                        class="accordion__control-section accordion__control-section--body"
-                    >
-                        <strong>Accordion title</strong>
-                        Accordion
-                    </div>
-                </div>
-                <div class="accordion__content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    sed fringilla sem. Aliquam scelerisque lectus eget dapibus
-                    ullamcorper. Aliquam faucibus quis ante id fringilla. Nunc
-                    augue turpis, varius ut velit at, mattis accumsan enim.
-                    Maecenas id dui odio. Curabitur gravida diam sed velit
-                    vestibulum, malesuada molestie risus aliquet. Vivamus eget
-                    eros ac massa lacinia vestibulum.
-                </div>
-            </div>
-
-            <h2>Tabs</h2>
-            <div class="tabs margin-bottom-4">
-                <div class="tab__control">
-                    <button class="tab__item" aria-selected="true">
-                        Tab 1
-                    </button>
-                    <button class="tab__item" aria-selected="false">
-                        Tab 2
-                    </button>
-                    <button class="tab__item" aria-selected="false">
-                        Tab 3
-                    </button>
-                </div>
-            </div>
-            <div class="tabs margin-bottom-4">
-                <div class="tab__control tab__control--outlined">
-                    <button
-                        class="tab__item tab__item--outlined"
-                        aria-selected="true"
-                    >
-                        Tab 1
-                    </button>
-                    <button
-                        class="tab__item tab__item--outlined"
-                        aria-selected="false"
-                    >
-                        Tab 2
-                    </button>
-                    <button
-                        class="tab__item tab__item--outlined"
-                        aria-selected="false"
-                    >
-                        Tab 3
-                    </button>
-                </div>
-            </div>
-            <div class="tabs margin-bottom-4">
-                <div class="tab__control tab__control--enclosed">
-                    <button
-                        class="tab__item tab__item--enclosed"
-                        aria-selected="true"
-                    >
-                        Tab 1
-                    </button>
-                    <button
-                        class="tab__item tab__item--enclosed"
-                        aria-selected="false"
-                    >
-                        Tab 2
-                    </button>
-                    <button
-                        class="tab__item tab__item--enclosed"
-                        aria-selected="false"
-                    >
-                        Tab 3
-                    </button>
-                </div>
-            </div>
-            <div class="tabs margin-bottom-4">
-                <div class="tab__control tab__control--joint">
-                    <button
-                        class="tab__item tab__item--joint"
-                        aria-selected="true"
-                    >
-                        Tab 1
-                    </button>
-                    <button
-                        class="tab__item tab__item--joint"
-                        aria-selected="false"
-                    >
-                        Tab 2
-                    </button>
-                    <button
-                        class="tab__item tab__item--joint"
-                        aria-selected="false"
-                    >
-                        Tab 3
-                    </button>
-                </div>
-            </div>
-            <div class="tabs margin-bottom-4">
-                <div class="tab__control">
-                    <button class="tab__item" aria-selected="true">
-                        <icon-backpack class="tab__icon"></icon-backpack>
-                        Tools
-                    </button>
-                    <button class="tab__item" aria-selected="false">
-                        <icon-alarm class="tab__icon"></icon-alarm>
-                        Schedules
-                    </button>
-                    <button class="tab__item" aria-selected="false">
-                        <icon-git class="tab__icon"></icon-git>
-                        Source
-                    </button>
-                </div>
-            </div>
-            <div class="tabs margin-bottom-4">
-                <div class="tab__control">
-                    <button
-                        class="tab__item tab__item--top-down"
-                        aria-selected="true"
-                    >
-                        <icon-backpack class="tab__icon"></icon-backpack>
-                        Tools
-                    </button>
-                    <button
-                        class="tab__item tab__item--top-down"
-                        aria-selected="false"
-                    >
-                        <icon-alarm class="tab__icon"></icon-alarm>
-                        Schedules
-                    </button>
-                    <button
-                        class="tab__item tab__item--top-down"
-                        aria-selected="false"
-                    >
-                        <icon-git class="tab__icon"></icon-git>
-                        Source
-                    </button>
-                </div>
-            </div>
-            <div class="tabs margin-bottom-4">
-                <div class="tab__control tab__control--joint">
-                    <button
-                        class="tab__item tab__item--joint tab__item--tiered"
-                        aria-selected="true"
-                    >
-                        <strong>Bookmarks</strong>
-                        32
-                    </button>
-                    <button
-                        class="tab__item tab__item--joint tab__item--tiered"
-                        aria-selected="false"
-                    >
-                        <strong>Pins</strong>
-                        12
-                    </button>
-                    <button
-                        class="tab__item tab__item--joint tab__item--tiered"
-                        aria-selected="false"
-                    >
-                        <strong>Tasks</strong>
-                        5
-                    </button>
-                </div>
-            </div>
-            <div class="tabs margin-bottom-4">
-                <div class="tab__control">
-                    <button class="tab__item" aria-selected="true">
-                        Tab 1
-                        <icon-x class="tab__close"></icon-x>
-                    </button>
-                    <button class="tab__item" aria-selected="false">
-                        Tab 2
-                        <icon-x class="tab__close"></icon-x>
-                    </button>
-                    <button class="tab__item" aria-selected="false">
-                        Tab 3
-                        <icon-x class="tab__close"></icon-x>
-                    </button>
-                </div>
-            </div>
-
-            <h2>Breadcrumb</h2>
-            <ol class="breadcrumb">
-                <li class="breadcrumb__item"><a href="#">Home</a></li>
-                <li class="breadcrumb__item"><a href="#">...</a></li>
-                <li class="breadcrumb__item"><a href="#">Article</a></li>
-                <li class="breadcrumb__item"><a href="#">Section</a></li>
-            </ol>
-
-            <h2>Badge</h2>
-            <div style="display: flex; gap: 5px">
-                <span class="badge">badge</span>
-                <span class="badge-group">
-                    <span class="badge">npm</span>
-                    <span class="badge badge--success">passing</span>
-                </span>
-                <span class="badge"> <icon-x></icon-x>alarm </span>
-            </div>
-
-            <h2>Table</h2>
-
-            <div
-                class="table-container table-container--bordered"
-                style="height: 300px"
-            >
-                <table
-                    class="table table--row-bordered table--col-bordered table--pin-row table--pin-column"
+                    </summary>
+                    <div class="accordion__content">This is an accordion</div>
+                </details>
+                <details class="accordion margin-bottom-4">
+                    <summary class="accordion__control">
+                        <icon-chevron-down
+                            class="accordion__chevron"
+                        ></icon-chevron-down>
+                        <div class="accordion__control-section">
+                            <icon-backpack></icon-backpack>
+                        </div>
+                        <div
+                            class="accordion__control-section accordion__control-section--body"
+                        >
+                            Accordion
+                        </div>
+                    </summary>
+                    <div class="accordion__content">This is an accordion</div>
+                </details>
+                <details class="accordion margin-bottom-4">
+                    <summary class="accordion__control">
+                        <div class="accordion__control-section">
+                            <icon-backpack></icon-backpack>
+                        </div>
+                        <div
+                            class="accordion__control-section accordion__control-section--body"
+                        >
+                            Accordion
+                        </div>
+                        <icon-chevron-down
+                            class="accordion__chevron"
+                        ></icon-chevron-down>
+                    </summary>
+                    <div class="accordion__content">This is an accordion</div>
+                </details>
+                <details class="accordion margin-bottom-4">
+                    <summary class="accordion__control">
+                        <img
+                            class="avatar-16 avatar--rounded"
+                            src="asset/image/linux.jpg"
+                            alt="Linux penguin"
+                        />
+                        <div
+                            class="accordion__control-section accordion__control-section--body"
+                        >
+                            <strong>Accordion title</strong>
+                            Accordion
+                        </div>
+                        <icon-chevron-down
+                            class="accordion__chevron"
+                        ></icon-chevron-down>
+                    </summary>
+                    <div class="accordion__content">This is an accordion</div>
+                </details>
+                <details class="accordion margin-bottom-4">
+                    <summary class="accordion__control">
+                        <icon-chevron-down
+                            class="accordion__chevron"
+                        ></icon-chevron-down>
+                        <img
+                            class="avatar-16 avatar--rounded"
+                            src="asset/image/linux.jpg"
+                            alt="Linux penguin"
+                        />
+                        <div
+                            class="accordion__control-section accordion__control-section--body"
+                        >
+                            <strong>Accordion title</strong>
+                            Accordion
+                        </div>
+                    </summary>
+                    <div class="accordion__content">This is an accordion</div>
+                </details>
+                <details class="accordion accordion--enclosed margin-bottom-4">
+                    <summary class="accordion__control">
+                        <icon-chevron-down
+                            class="accordion__chevron"
+                        ></icon-chevron-down>
+                        <img
+                            class="avatar-16 avatar--rounded"
+                            src="asset/image/linux.jpg"
+                            alt="Linux penguin"
+                        />
+                        <div
+                            class="accordion__control-section accordion__control-section--body"
+                        >
+                            <strong>Accordion title</strong>
+                            Accordion
+                        </div>
+                    </summary>
+                    <div class="accordion__content">This is an accordion</div>
+                </details>
+                <div
+                    class="accordion accordion--enclosed accordion--animated margin-bottom-4"
                 >
-                    <thead>
-                        <tr>
-                            <th>Person</th>
-                            <td>Most</td>
-                            <td>Most</td>
-                            <td>Most</td>
-                            <td>Most</td>
-                            <td>Most</td>
-                            <td>Most</td>
-                            <td>Most</td>
-                            <td>Most</td>
-                            <td>Most</td>
-                            <td>Most</td>
-                            <td>Most</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Sarah</th>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Sarah</th>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Sarah</th>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Sarah</th>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Sarah</th>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Sarah</th>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                            <td>JavaScript frameworks</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <display>
-                <display-element></display-element>
-                <display-control>
-                    <display-tab-item> HTML </display-tab-item>
-                    <display-tab-item> CSS </display-tab-item>
-                </display-control>
-                <display-source>
-                    <display-tab-content>
-                        Inner HTML of the element
-                    </display-tab-content>
-                    <display></display>
-                </display-source>
-            </display>
-
-            <h2>Bar</h2>
-            <div class="bar">
-                <div class="bar__section bar__section--start">
-                    <a href="#" class="bar__brand">Logo</a>
-                    <a href="#" class="bar__item">Home</a>
+                    <div class="accordion__control">
+                        <icon-chevron-down
+                            class="accordion__chevron"
+                        ></icon-chevron-down>
+                        <img
+                            class="avatar-16 avatar--rounded"
+                            src="asset/image/linux.jpg"
+                            alt="Linux penguin"
+                        />
+                        <div
+                            class="accordion__control-section accordion__control-section--body"
+                        >
+                            <strong>Accordion title</strong>
+                            Accordion
+                        </div>
+                    </div>
+                    <div class="accordion__content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Sed sed fringilla sem. Aliquam scelerisque lectus eget
+                        dapibus ullamcorper. Aliquam faucibus quis ante id
+                        fringilla. Nunc augue turpis, varius ut velit at, mattis
+                        accumsan enim. Maecenas id dui odio. Curabitur gravida
+                        diam sed velit vestibulum, malesuada molestie risus
+                        aliquet. Vivamus eget eros ac massa lacinia vestibulum.
+                    </div>
                 </div>
+            </section>
 
-                <div class="bar__section bar__section--middle">
-                    <a href="#" class="bar__item">Products</a>
-                    <a href="#" class="bar__item">Services</a>
+            <section>
+                <h2>Tabs</h2>
+                <div class="tabs margin-bottom-4">
+                    <div class="tab__control">
+                        <button class="tab__item" aria-selected="true">
+                            Tab 1
+                        </button>
+                        <button class="tab__item" aria-selected="false">
+                            Tab 2
+                        </button>
+                        <button class="tab__item" aria-selected="false">
+                            Tab 3
+                        </button>
+                    </div>
                 </div>
+                <div class="tabs margin-bottom-4">
+                    <div class="tab__control tab__control--outlined">
+                        <button
+                            class="tab__item tab__item--outlined"
+                            aria-selected="true"
+                        >
+                            Tab 1
+                        </button>
+                        <button
+                            class="tab__item tab__item--outlined"
+                            aria-selected="false"
+                        >
+                            Tab 2
+                        </button>
+                        <button
+                            class="tab__item tab__item--outlined"
+                            aria-selected="false"
+                        >
+                            Tab 3
+                        </button>
+                    </div>
+                </div>
+                <div class="tabs margin-bottom-4">
+                    <div class="tab__control tab__control--enclosed">
+                        <button
+                            class="tab__item tab__item--enclosed"
+                            aria-selected="true"
+                        >
+                            Tab 1
+                        </button>
+                        <button
+                            class="tab__item tab__item--enclosed"
+                            aria-selected="false"
+                        >
+                            Tab 2
+                        </button>
+                        <button
+                            class="tab__item tab__item--enclosed"
+                            aria-selected="false"
+                        >
+                            Tab 3
+                        </button>
+                    </div>
+                </div>
+                <div class="tabs margin-bottom-4">
+                    <div class="tab__control tab__control--joint">
+                        <button
+                            class="tab__item tab__item--joint"
+                            aria-selected="true"
+                        >
+                            Tab 1
+                        </button>
+                        <button
+                            class="tab__item tab__item--joint"
+                            aria-selected="false"
+                        >
+                            Tab 2
+                        </button>
+                        <button
+                            class="tab__item tab__item--joint"
+                            aria-selected="false"
+                        >
+                            Tab 3
+                        </button>
+                    </div>
+                </div>
+                <div class="tabs margin-bottom-4">
+                    <div class="tab__control">
+                        <button class="tab__item" aria-selected="true">
+                            <icon-backpack class="tab__icon"></icon-backpack>
+                            Tools
+                        </button>
+                        <button class="tab__item" aria-selected="false">
+                            <icon-alarm class="tab__icon"></icon-alarm>
+                            Schedules
+                        </button>
+                        <button class="tab__item" aria-selected="false">
+                            <icon-git class="tab__icon"></icon-git>
+                            Source
+                        </button>
+                    </div>
+                </div>
+                <div class="tabs margin-bottom-4">
+                    <div class="tab__control">
+                        <button
+                            class="tab__item tab__item--top-down"
+                            aria-selected="true"
+                        >
+                            <icon-backpack class="tab__icon"></icon-backpack>
+                            Tools
+                        </button>
+                        <button
+                            class="tab__item tab__item--top-down"
+                            aria-selected="false"
+                        >
+                            <icon-alarm class="tab__icon"></icon-alarm>
+                            Schedules
+                        </button>
+                        <button
+                            class="tab__item tab__item--top-down"
+                            aria-selected="false"
+                        >
+                            <icon-git class="tab__icon"></icon-git>
+                            Source
+                        </button>
+                    </div>
+                </div>
+                <div class="tabs margin-bottom-4">
+                    <div class="tab__control tab__control--joint">
+                        <button
+                            class="tab__item tab__item--joint tab__item--tiered"
+                            aria-selected="true"
+                        >
+                            <strong>Bookmarks</strong>
+                            32
+                        </button>
+                        <button
+                            class="tab__item tab__item--joint tab__item--tiered"
+                            aria-selected="false"
+                        >
+                            <strong>Pins</strong>
+                            12
+                        </button>
+                        <button
+                            class="tab__item tab__item--joint tab__item--tiered"
+                            aria-selected="false"
+                        >
+                            <strong>Tasks</strong>
+                            5
+                        </button>
+                    </div>
+                </div>
+                <div class="tabs margin-bottom-4">
+                    <div class="tab__control">
+                        <button class="tab__item" aria-selected="true">
+                            Tab 1
+                            <icon-x class="tab__close"></icon-x>
+                        </button>
+                        <button class="tab__item" aria-selected="false">
+                            Tab 2
+                            <icon-x class="tab__close"></icon-x>
+                        </button>
+                        <button class="tab__item" aria-selected="false">
+                            Tab 3
+                            <icon-x class="tab__close"></icon-x>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>Breadcrumb</h2>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb__item"><a href="#">Home</a></li>
+                    <li class="breadcrumb__item"><a href="#">...</a></li>
+                    <li class="breadcrumb__item"><a href="#">Article</a></li>
+                    <li class="breadcrumb__item"><a href="#">Section</a></li>
+                </ol>
+            </section>
+            <section>
+                <h2>Badge</h2>
+                <div style="display: flex; gap: 5px">
+                    <span class="badge">badge</span>
+                    <span class="badge-group">
+                        <span class="badge">npm</span>
+                        <span class="badge badge--success">passing</span>
+                    </span>
+                    <span class="badge"> <icon-x></icon-x>alarm </span>
+                </div>
+            </section>
+            <section>
+                <h2>Table</h2>
 
-                <div class="bar__section bar__section--end">
-                    <a href="#" class="bar__item">Login</a>
-                    <button class="bar__item button">Sign Up</button>
+                <div
+                    class="table-container table-container--bordered"
+                    style="height: 300px"
+                >
+                    <table
+                        class="table table--row-bordered table--col-bordered table--pin-row table--pin-column"
+                    >
+                        <thead>
+                            <tr>
+                                <th>Person</th>
+                                <td>Most</td>
+                                <td>Most</td>
+                                <td>Most</td>
+                                <td>Most</td>
+                                <td>Most</td>
+                                <td>Most</td>
+                                <td>Most</td>
+                                <td>Most</td>
+                                <td>Most</td>
+                                <td>Most</td>
+                                <td>Most</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Sarah</th>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Sarah</th>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Sarah</th>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Sarah</th>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Sarah</th>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Sarah</th>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                                <td>JavaScript frameworks</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </div>
+            </section>
+            <section>
+                <h2>Bar</h2>
+                <div class="bar">
+                    <div class="bar__section bar__section--start">
+                        <a href="#" class="bar__brand">Logo</a>
+                        <a href="#" class="bar__item">Home</a>
+                    </div>
+
+                    <div class="bar__section bar__section--middle">
+                        <a href="#" class="bar__item">Products</a>
+                        <a href="#" class="bar__item">Services</a>
+                    </div>
+
+                    <div class="bar__section bar__section--end">
+                        <a href="#" class="bar__item">Login</a>
+                        <button class="bar__item button">Sign Up</button>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>Tooltip</h2>
+                <div style="position: relative; height: 200px">
+                    <span class="tooltip">
+                        Some tooltip text
+                        <div
+                            class="tooltip__arrow tooltip__arrow--start-start"
+                        ></div>
+                        <div
+                            class="tooltip__arrow tooltip__arrow--start-end"
+                        ></div>
+                        <div
+                            class="tooltip__arrow tooltip__arrow--end-end"
+                        ></div>
+                        <div
+                            class="tooltip__arrow tooltip__arrow--end-start"
+                        ></div>
+                    </span>
+                </div>
+            </section>
+            <section style="margin: 2em"></section>
         </article>
         <script src="js/prism.js"></script>
+        <script type="module"></script>
     </body>
 </html>
