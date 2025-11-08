@@ -8,4 +8,20 @@
     .menu__item--guided {
         margin-left: -1px;
     }
+
+    .menu__item--tiered {
+        flex-direction: column;
+        gap: 0.25rem;
+        align-items: start;
+    }
+
+    .menu__item-text--main {
+        display: block;
+    }
+
+    .menu__item-text--sub {
+        color: grey;
+        display: block;
+        font-size: var(--font-size-s);
+    }
 }

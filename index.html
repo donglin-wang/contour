@@ -136,15 +136,9 @@
                 <pre
                     data-src="/asset/snippet/introduction/custom-property.css"
                 ></pre>
-                <p>
-                    instead of:
-                </p>
-                <pre
-                    data-src="/asset/snippet/introduction/elevation.css"
-                ></pre>
-                <p>
-                    This avoids specificity elevation.
-                </p>
+                <p>instead of:</p>
+                <pre data-src="/asset/snippet/introduction/elevation.css"></pre>
+                <p>This avoids specificity elevation.</p>
             </section>
             <section>
                 <hr class="divider" />
@@ -729,6 +723,54 @@
                         </li>
                     </menu>
                 </section>
+                <section>
+                    <menu class="menu">
+                        <li class="menu__item menu__item--tiered">
+                            <span class="menu__item-text--main"> Item 1 </span>
+                            <span class="menu__item-text--sub">
+                                Item 1 subtitle
+                            </span>
+                        </li>
+                        <li>
+                            <details open="">
+                                <summary class="menu__item">Nested</summary>
+                                <menu class="menu__nested">
+                                    <li class="menu__item menu__item--tiered">
+                                        <span class="menu__item-text--main"
+                                            >Sub item 1</span
+                                        >
+                                        <span class="menu__item-text--sub"
+                                            >Sub item 1 subtitle</span
+                                        >
+                                    </li>
+                                    <li>
+                                        <details open="">
+                                            <summary class="menu__item">
+                                                Sub nested
+                                            </summary>
+                                            <menu class="menu__nested">
+                                                <li
+                                                    class="menu__item menu__item--tiered"
+                                                >
+                                                    <span
+                                                        class="menu__item-text--main"
+                                                    >
+                                                        Sub item level 2
+                                                    </span>
+                                                    <span
+                                                        class="menu__item-text--sub"
+                                                    >
+                                                        Sub item 2 subtitle
+                                                    </span>
+                                                </li>
+                                            </menu>
+                                        </details>
+                                    </li>
+                                </menu>
+                            </details>
+                        </li>
+                    </menu>
+                </section>
             </section>
 
             <h2>Accordion</h2>
@@ -1175,12 +1217,12 @@
                     <a href="#" class="bar__brand">Logo</a>
                     <a href="#" class="bar__item">Home</a>
                 </div>
-                
+
                 <div class="bar__section bar__section--middle">
                     <a href="#" class="bar__item">Products</a>
                     <a href="#" class="bar__item">Services</a>
                 </div>
-                
+
                 <div class="bar__section bar__section--end">
                     <a href="#" class="bar__item">Login</a>
                     <button class="bar__item button">Sign Up</button>
