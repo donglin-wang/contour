@@ -4,6 +4,7 @@
     "vite": "^7.1.9"
   },
   "dependencies": {
+    "@floating-ui/dom": "^1.7.4",
     "vanjs-core": "^1.6.0"
   }
 }

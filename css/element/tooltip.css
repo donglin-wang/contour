@@ -1,0 +1,64 @@
+@layer element {
+    :root {
+        --tooltip-border-width: 5px;
+        --tooltip-border-radius: 30px;
+        --tooltip-arrow-height: 15px;
+        --tooltip-arrow-width: 30px;
+    }
+
+    .tooltip {
+        height: 200px;
+        background-color: black;
+        color: #ffffff;
+        text-align: center;
+        padding: 5px 0;
+        border-radius: var(--tooltip-border-radius);
+        position: absolute;
+        z-index: 1;
+        font-size: 2em;
+        padding: 1em;
+        border: var(--tooltip-border-width) solid pink;
+        border-radius: var(--tooltip-border-radius);
+    }
+
+    .tooltip__arrow {
+        position: absolute;
+        background: red;
+    }
+
+    .tooltip__arrow--start-start {
+        width: 30px;
+        height: 15px;
+        inset-block-start: calc(-1 * var(--tooltip-arrow-height) - var(--tooltip-border-width));
+        inset-inline-start: var(--tooltip-border-radius);
+        clip-path: path("M7.5 14C4.61904 17.2925 0 15 0 20H33C33 16 29.5 17 26 14C22.2037 10.746 22 5.5 20.5 3C19 0.5 17.5 0 16.5 0C15.5 0 14.5 0.5 13 3C11.5 5.5 11 10 7.5 14Z");
+    }
+
+    .tooltip__arrow--start-end {
+        width: 15px;
+        height: 30px;
+        inset-block-start: var(--tooltip-border-radius);
+        inset-inline-end: calc(-1 * var(--tooltip-arrow-height) - var(--tooltip-border-width));
+        clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    }
+
+    .tooltip__arrow--end-end {
+        width: 30px;
+        height: 15px;
+        inset-block-end: calc(-1 * var(--tooltip-arrow-height) - var(--tooltip-border-width));
+        inset-inline-end: var(--tooltip-border-radius);
+        clip-path: polygon(0 0, 50% 100%, 100% 0);
+    }
+
+    .tooltip__arrow--end-start {
+        width: 15px;
+        height: 30px;
+        inset-block-end: var(--tooltip-border-radius);
+        inset-inline-start: calc(-1 * var(--tooltip-arrow-height) - var(--tooltip-border-width));
+        clip-path: polygon(0 50%, 100% 100%, 100% 0);
+    }
+
+    .tooltip:hover .tooltip__content {
+        visibility: visible;
+    }
+}
