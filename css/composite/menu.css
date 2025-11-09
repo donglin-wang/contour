@@ -7,8 +7,10 @@
         --menu-border: unset;
         --menu-border-radius: 0;
         --menu-item-border: unset;
+        --menu-item-border-radius: 0;
         --menu-item-gap: 0.5em;
         --menu-item-padding: 0.5em 1em;
+        --menu-title-padding: 0.5em 1em;
         --menu-nested-padding-inline: 1em 0;
         --menu-nested-padding-block: 0;
         --menu-nested-marker-display: none;
@@ -77,7 +79,7 @@
     .menu__title {
         display: flex;
         align-items: center;
-        padding: var(--menu-item-padding);
+        padding: var(--menu-title-padding);
     }
 
     .menu__divider {

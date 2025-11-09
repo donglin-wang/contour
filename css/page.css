@@ -1,0 +1,17 @@
+@layer page {
+    #side-menu {
+        max-width: 15rem;
+        --menu-background-color: var(--background-color);
+        --menu-item-padding: 0.5rem 2.5rem;
+        --menu-item-border-radius: 0 0.5rem 0.5rem 0;
+    }
+
+    #side-menu__control {
+        --button-padding: 0.25rem;
+        --button-border-radius: 0.125rem;
+    }
+
+    #main-nav {
+        --bar-padding: 0.5rem 0.75rem;
+    }
+}

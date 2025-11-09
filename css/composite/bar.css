@@ -1,7 +1,6 @@
 @layer base {
     :root {
         --bar-padding: 1em 1em;
-        --bar-height: 4em;
         --bar-width: 100%;
         --bar-background-color: var(--background-color);
         --bar-color: var(--color);
@@ -31,7 +30,6 @@
         gap: var(--bar-gap);
         flex-direction: var(--bar-flex-direction);
         width: var(--bar-width);
-        height: var(--bar-height);
         padding: var(--bar-padding);
         background: var(--bar-background-color);
         color: var(--bar-color);

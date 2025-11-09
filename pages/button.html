@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Button</title>
+        <style>
+            @layer base, composite, element, variant, page;
+
+            @import url(/css/base/reset.css);
+            @import url(/css/base/theme.css);
+
+            @import url(/css/element/button.css);
+            @import url(/css/element/typography.css);
+            @import url(/css/element/icon.css);
+
+            @import url(/css/composite/menu.css);
+            @import url(/css/composite/bar.css);
+
+            @import url(/css/variant/menu.css);
+            @import url(/css/variant/button.css);
+
+            @import url(/css/utilities.css);
+            @import url(/css/prism.css);
+            @import url(/css/page.css);
+        </style>
+    </head>
+    <body>
+        <global-nav></global-nav>
+        <script src="/js/globalNav.js" type="module"></script>
+    </body>
+</html>

@@ -1,4 +1,4 @@
-@layer utilities {
+@layer page {
     code[class*="language-"],
     pre[class*="language-"] {
         color: var(--color);

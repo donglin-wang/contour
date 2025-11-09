@@ -1,1 +1,0 @@
-class Tab extends HTMLElement {}

@@ -1,4 +1,4 @@
-@layer utilities {
+@layer page {
     .rounded {
         border-radius: 5px;
     }

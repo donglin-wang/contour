@@ -28,4 +28,10 @@
         border-radius: 999px;
         padding: 0.5em;
     }
+
+    .button--ghost {
+        --button-background-color: var(--background-color);
+        --button-hover-background-color: var(--background-color-muted);
+        color: var(--color);
+    }
 }
