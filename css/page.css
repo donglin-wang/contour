@@ -1,6 +1,15 @@
 @layer page {
+    #main {
+        display: flex;
+        width: 100%;
+    }
+
+    #main__content {
+        flex: 1;
+    }
+
     #side-menu {
-        max-width: 15rem;
+        width: 15rem;
         --menu-background-color: var(--background-color);
         --menu-item-padding: 0.5rem 2.5rem;
         --menu-item-border-radius: 0 0.5rem 0.5rem 0;

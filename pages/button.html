@@ -6,27 +6,126 @@
         <title>Button</title>
         <style>
             @layer base, composite, element, variant, page;
-
-            @import url(/css/base/reset.css);
-            @import url(/css/base/theme.css);
-
-            @import url(/css/element/button.css);
-            @import url(/css/element/typography.css);
-            @import url(/css/element/icon.css);
-
-            @import url(/css/composite/menu.css);
-            @import url(/css/composite/bar.css);
-
-            @import url(/css/variant/menu.css);
-            @import url(/css/variant/button.css);
-
-            @import url(/css/utilities.css);
-            @import url(/css/prism.css);
-            @import url(/css/page.css);
         </style>
+        <link rel="stylesheet" href="/css/base/reset.css" />
+        <link rel="stylesheet" href="/css/base/theme.css" />
+
+        <link rel="stylesheet" href="/css/element/button.css" />
+        <link rel="stylesheet" href="/css/element/typography.css" />
+        <link rel="stylesheet" href="/css/element/icon.css" />
+
+        <link rel="stylesheet" href="/css/composite/menu.css" />
+        <link rel="stylesheet" href="/css/composite/bar.css" />
+        <link rel="stylesheet" href="/css/composite/accordion.css" />
+
+        <link rel="stylesheet" href="/css/variant/menu.css" />
+        <link rel="stylesheet" href="/css/variant/button.css" />
+        <link rel="stylesheet" href="/css/variant/accordion.css" />
+
+        <link rel="stylesheet" href="/css/utilities.css" />
+        <link rel="stylesheet" href="/css/prism.css" />
+        <link rel="stylesheet" href="/css/page.css" />
+        <link rel="stylesheet" href="/css/prism.css" />
     </head>
     <body>
-        <global-nav></global-nav>
-        <script src="/js/globalNav.js" type="module"></script>
+        <global-nav> </global-nav>
+        <template id="main__content">
+            <article id="article">
+                <section>
+                    <h2>Button</h2>
+                    <p>
+                        The button selector decorates either
+                        <code class="inline">&lt;a&gt;</code> or
+                        <code class="inline">&lt;button&gt;</code>. Use the
+                        former if you want it to lead to another page. Use the
+                        latter if you want it to perform certain actions.
+                    </p>
+                    <section>
+                        <button class="button">Button</button>
+                        <a href="#" class="button">Link</a>
+                    </section>
+                    <pre
+                        data-src="/asset/snippet/button/button-base.html"
+                    ></pre>
+                    <h3>Base style</h3>
+                    <p>
+                        Button consists of one or more sections, each containing
+                        either icons or text. Sections can be horizontally or
+                        vertically spanning
+                    </p>
+
+                    <pre data-src="/css/element/button.css"></pre>
+                    <h3>Variants</h3>
+                    <p>
+                        Below are the built-in variations provided by Contour
+                        out of the box. It shows the various usage of base
+                        classes.
+                    </p>
+                    <pre data-src="/css/variant/button.css"></pre>
+                    <section>
+                        <button class="button button--icon">
+                            <icon-alarm></icon-alarm>
+                        </button>
+                        <button class="button button--icon font-size-l">
+                            <icon-alarm></icon-alarm>
+                        </button>
+                        <button class="button button--icon font-size-xl">
+                            <icon-alarm></icon-alarm>
+                        </button>
+                    </section>
+
+                    <pre
+                        data-src="/asset/snippet/button/button-icon.html"
+                    ></pre>
+                    <section>
+                        <button class="button button--tiered">
+                            <span
+                                class="button__section button__section--tiered"
+                            >
+                                <strong class="font-size-l">Title</strong>
+                                Next
+                            </span>
+                            <span class="button__section">
+                                <icon-chevron-right></icon-chevron-right>
+                            </span>
+                        </button>
+                    </section>
+
+                    <pre
+                        data-src="/asset/snippet/button/button-tiered.html"
+                    ></pre>
+                    <section>
+                        <button class="button button--top-down">
+                            <icon-alarm class="icon font-size-2xl"></icon-alarm>
+                            Alarm
+                        </button>
+                    </section>
+
+                    <pre
+                        data-src="/asset/snippet/button/button-top-down.html"
+                    ></pre>
+
+                    <section>
+                        <button class="button button--left-rounded">
+                            <span
+                                class="button__section button__section--left-rounded"
+                            >
+                                42
+                            </span>
+                            Left-rounded
+                            <icon-chevron-right
+                                class="button__icon"
+                            ></icon-chevron-right>
+                        </button>
+                    </section>
+
+                    <pre
+                        data-src="/asset/snippet/button/button-left-rounded.html"
+                    ></pre>
+                </section>
+            </article>
+        </template>
+        <script src="/js/main.js" type="module"></script>
+        <script src="/js/prism.js"></script>
     </body>
 </html>

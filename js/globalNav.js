@@ -1,7 +1,7 @@
-import van from "./van.js";
+import van from "/js/van.js";
+import { createPanelLeftClose, createPanelLeftOpen } from "/js/icon.js";
 
-const { div, nav, button, aside, li, strong } = van.tags;
-const { rect, path, svg } = van.tags("http://www.w3.org/2000/svg");
+const { div, nav, button, aside, li, strong, main } = van.tags;
 
 class GlobalNav extends HTMLElement {
     menuItems = [
@@ -76,44 +76,16 @@ class GlobalNav extends HTMLElement {
     constructor() {
         super();
 
-        const panelCloseIcon = svg(
-            {
-                xmlns: "http://www.w3.org/2000/svg",
-                viewBox: "0 0 24 24",
-                class: "icon",
-                fill: "none",
-                stroke: "currentColor",
-                "stroke-width": "2",
-                "stroke-linecap": "round",
-                "stroke-linejoin": "round",
-            },
-            rect({ width: "18", height: "18", x: "3", y: "3", rx: "2" }),
-            path({ d: "M9 3v18" }),
-            path({ d: "m16 15-3-3 3-3" })
-        );
-
-        const panelOpenIcon = svg(
-            {
-                xmlns: "http://www.w3.org/2000/svg",
-                class: "icon",
-                viewBox: "0 0 24 24",
-                fill: "none",
-                stroke: "currentColor",
-                "stroke-width": "2",
-                "stroke-linecap": "round",
-                "stroke-linejoin": "round",
-            },
-            rect({ width: "18", height: "18", x: "3", y: "3", rx: "2" }),
-            path({ d: "M15 3v18" }),
-            path({ d: "m8 9 3 3-3 3" })
-        );
+        const panelLeftCloseIcon = createPanelLeftClose();
+        const panelLeftOpenIcon = createPanelLeftOpen();
 
         const sideNavControl = button(
             {
                 class: "button button--ghost",
                 id: "side-menu__control",
             },
-            () => this.isSideNavOpen.val ? panelCloseIcon : panelOpenIcon
+            () =>
+                this.isSideNavOpen.val ? panelLeftCloseIcon : panelLeftOpenIcon
         );
 
         const topNav = nav(
@@ -141,12 +113,17 @@ class GlobalNav extends HTMLElement {
         sideNavControl.addEventListener("click", () => {
             this.isSideNavOpen.val = !this.isSideNavOpen.val;
             sideNav.style.display = this.isSideNavOpen.val ? "flex" : "none";
-
         });
 
+        const mainContainer = main(
+            { id: "main" },
+            sideNav,
+            document.getElementById("main__content").content
+        );
+
         this.appendChild(topNav);
-        this.appendChild(sideNav);
+        this.appendChild(mainContainer);
     }
 }
 
-customElements.define("global-nav", GlobalNav);
+export default GlobalNav;

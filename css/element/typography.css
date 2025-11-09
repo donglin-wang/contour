@@ -92,8 +92,7 @@
         width: 100%;
         max-width: var(--article-max-width);
         padding-inline: 0.5rem;
-        margin: auto;
-        margin-block: var(--article-margin-block);
+        margin-inline: auto;
     }
 
     #article h1,
