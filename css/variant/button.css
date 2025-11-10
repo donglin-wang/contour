@@ -1,6 +1,7 @@
 @layer variant {
     .button--icon {
-        --button-padding: 0.5em;
+        padding-block: calc(2 * var(--space));
+        padding-inline: calc(2 * var(--space));
     }
 
     .button--tiered {
@@ -30,8 +31,9 @@
     }
 
     .button--ghost {
-        --button-background-color: var(--background-color);
-        --button-hover-background-color: var(--background-color-muted);
+        --button-background: var(--background-color);
+        --button-hover-background: var(--background-color-muted);
+
         color: var(--color);
     }
 }

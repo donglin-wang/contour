@@ -1,57 +1,51 @@
 @layer element {
-    :root {
-        --button-padding: 1em 1em;
-        --button-gap: 1em;
-        --button-flex-direction: row;
-        --button-width: fit-content;
-        --button-background-color: var(--color);
-        --button-color: var(--background-color);
-        --button-hover-background-color: var(--color-muted);
-        --button-hover-color: var(--background-color);
-        --button-border-width: 0;
-        --button-border-style: solid;
-        --button-border-color: var(--color);
-        --button-border-radius: 0;
-        --button-font-size: 1em;
-        --button-font-family: inherit;
-        --button-line-height: inherit;
-        --button-icon-size: 1em;
-        --button-section-line-height: inherit;
-        --button-section-flex-direction: column;
-        --button-section-gap: 0.5em;
-        --button-text-decoration: none;
-    }
-
     .button {
+        --button-background: var(--color);
+        --button-color: var(--background-color);
+        --button-padding-block: calc(3 * var(--space));
+        --button-padding-inline: calc(3 * var(--space));
+        --button-border-block: none;
+        --button-border-inline: none;
+        --button-border-start-start-radius: 0;
+        --button-border-start-end-radius: 0;
+        --button-border-end-end-radius: 0;
+        --button-border-end-start-radius: 0;
+        --button-gap: calc(4 * var(--space));
+
+        --button-hover-background: var(--color-muted);
+        --button-hover-color: var(--background-color);
+
         display: inline-flex;
         align-items: center;
-        gap: var(--button-gap);
-        width: var(--button-width);
-        flex-direction: var(--button-flex-direction);
-        padding: var(--button-padding);
-        background: var(--button-background-color);
-        color: var(--button-color);
-        border-width: var(--button-border-width);
-        border-color: var(--button-border-color);
-        border-style: var(--button-border-style);
-        border-radius: var(--button-border-radius);
-        text-decoration: var(--button-text-decoration);
-        font-family: var(--button-font-family);
-        font-weight: var(--button-font-weight);
-        font-size: var(--button-font-size);
-        line-height: var(--button-line-height);
+        width: fit-content;
+        flex-direction: row;
         cursor: pointer;
+        text-decoration: none; /* Resets anchor element text decoration */
+        font-size: var(--font-size); /* Resets button element font size */
+
+        background: var(--button-background);
+        color: var(--button-color);
+        padding-block: var(--button-padding-block);
+        padding-inline: var(--button-padding-inline);
+        gap: var(--button-gap);
+        border-block: var(--button-border-block);
+        border-inline: var(--button-border-inline);
+        border-start-start-radius: var(--button-border-start-start-radius);
+        border-start-end-radius: var(--button-border-start-end-radius);
+        border-end-end-radius: var(--button-border-end-end-radius);
+        border-end-start-radius: var(--button-border-end-start-radius);
     }
 
     .button__section {
+        --button-section-gap: calc(2 * var(--space));
+
         display: flex;
-        flex-direction: var(--button-section-flex-direction);
-        line-height: var(--button-section-line-height);
+        flex-direction: column;
         gap: var(--button-section-gap);
     }
 
     .button:hover {
-        background: var(--button-hover-background-color);
+        background: var(--button-hover-background);
         color: var(--button-hover-color);
     }
 }

@@ -14,6 +14,8 @@
         --warning: hsl(45deg 100% 50%);
         --success: hsl(145deg 75% 45%);
         --info: hsl(215deg 95% 60%);
-        --space: 0.25rem;
+
+        --space: 0.25em;
+        --size: 0.25rem;
     }
 }

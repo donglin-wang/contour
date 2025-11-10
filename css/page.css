@@ -16,8 +16,8 @@
     }
 
     #side-menu__control {
-        --button-padding: 0.25rem;
-        --button-border-radius: 0.125rem;
+        --button-padding-block: var(--space);
+        --button-padding-inline: var(--space);
     }
 
     #main-nav {
