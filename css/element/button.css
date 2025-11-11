@@ -36,16 +36,16 @@
         border-end-start-radius: var(--button-border-end-start-radius);
     }
 
+    .button:hover {
+        background: var(--button-hover-background);
+        color: var(--button-hover-color);
+    }
+
     .button__section {
         --button-section-gap: calc(2 * var(--space));
 
         display: flex;
         flex-direction: column;
         gap: var(--button-section-gap);
-    }
-
-    .button:hover {
-        background: var(--button-hover-background);
-        color: var(--button-hover-color);
     }
 }
