@@ -10,9 +10,10 @@
         <link rel="stylesheet" href="/css/base/reset.css" />
         <link rel="stylesheet" href="/css/base/theme.css" />
 
-        <link rel="stylesheet" href="/css/element/button.css" />
+        <link rel="stylesheet" href="/css/component/button.css" />
         <link rel="stylesheet" href="/css/element/typography.css" />
         <link rel="stylesheet" href="/css/element/icon.css" />
+        <link rel="stylesheet" href="/css/element/avatar.css" />
 
         <link rel="stylesheet" href="/css/composite/menu.css" />
         <link rel="stylesheet" href="/css/composite/bar.css" />
@@ -33,57 +34,106 @@
             <article id="article">
                 <section>
                     <h2>Button</h2>
+                    <p>Button can be used on:</p>
+                    <ul class="content">
+                        <li>
+                            <code class="inline">&lt;a&gt;</code>
+                        </li>
+                        <li>
+                            <code class="inline">&lt;button&gt;</code>
+                        </li>
+                        <li>
+                            <code class="inline"
+                                >&lt;input type="submit"&gt;</code
+                            >
+                        </li>
+                        <li>
+                            <code class="inline"
+                                >&lt;input type="reset"&gt;</code
+                            >
+                        </li>
+                    </ul>
+                    <p>It may contain elements with the following classes:</p>
+                    <ul class="content">
+                        <li>
+                            <code class="inline">button__section</code> to organize and customize elements
+                        </li>
+                        <li>
+                            <code class="inline">button--symbol</code> to
+                            annotate the symbol representing the effect
+                            of the button
+                        </li>
+                    </ul>
                     <p>
-                        The button selector decorates either
-                        <code class="inline">&lt;a&gt;</code> or
-                        <code class="inline">&lt;button&gt;</code>. Use the
-                        former if you want it to lead to another page. Use the
-                        latter if you want it to perform certain actions.
+                        As seen in the examples below,
+                        <code class="inline">button__section</code> can be
+                        nested to create complex layouts.
                     </p>
+
                     <section>
                         <button class="button">Button</button>
                         <a href="#" class="button">Link</a>
+                        <input type="submit" class="button" />
+                        <input type="reset" class="button" />
                     </section>
                     <pre
                         data-src="/asset/snippet/button/button-base.html"
                     ></pre>
-                    <h3>Base style</h3>
-                    <p>
-                        Button consists of one or more sections, each containing
-                        either icons or text. Sections can be horizontally or
-                        vertically spanning
-                    </p>
 
-                    <pre data-src="/css/element/button.css"></pre>
-                    <h3>Variants</h3>
-                    <p>
-                        Below are the built-in variations provided by Contour
-                        out of the box. It shows the various usage of base
-                        classes.
-                    </p>
-                    <pre data-src="/css/variant/button.css"></pre>
+                    <h3>Color variants</h3>
+
                     <section>
-                        <button class="button button--icon">
-                            <icon-alarm></icon-alarm>
-                        </button>
-                        <button class="button button--icon font-size-l">
-                            <icon-alarm></icon-alarm>
-                        </button>
-                        <button class="button button--icon font-size-xl">
-                            <icon-alarm></icon-alarm>
-                        </button>
+                        <button class="button is-warning">Warning</button>
+                        <button class="button is-info">Info</button>
+                        <button class="button is-danger">Danger</button>
+                        <button class="button is-success">Success</button>
                     </section>
 
                     <pre
                         data-src="/asset/snippet/button/button-icon.html"
                     ></pre>
+
+                    <h3>Using sections</h3>
+
+                    <p>
+                        You can create variants for
+                        <code class="inline">button__section</code> to create
+                        more complex buttons. By default,
+                        <code class="inline">button__section</code> has column
+                        as its flex direction:
+                    </p>
+
                     <section>
-                        <button class="button button--tiered">
+                        <button class="button" data-variant="top-down">
+                            <icon-alarm class="icon font-size-2xl"></icon-alarm>
+                            Alarm
+                        </button>
+                    </section>
+
+                    <p>HTML:</p>
+
+                    <pre
+                        data-src="/asset/snippet/button/button-top-down.html"
+                    ></pre>
+
+                    <p>CSS:</p>
+
+                    <pre
+                        data-src="/asset/snippet/button/button-top-down.css"
+                    ></pre>
+
+                    <p>
+                        You can go a step further to create this button with
+                        primary and secondary text:
+                    </p>
+
+                    <section>
+                        <button class="button" data-variant="tiered">
                             <span
-                                class="button__section button__section--tiered"
+                                class="button__section" data-variant="tiered"
                             >
                                 <strong class="font-size-l">Title</strong>
-                                Next
+                                <span class="font-size-s">Next</span>
                             </span>
                             <span class="button__section">
                                 <icon-chevron-right></icon-chevron-right>
@@ -91,36 +141,57 @@
                         </button>
                     </section>
 
+                    <p>HTML:</p>
+
                     <pre
                         data-src="/asset/snippet/button/button-tiered.html"
                     ></pre>
-                    <section>
-                        <button class="button button--top-down">
-                            <icon-alarm class="icon font-size-2xl"></icon-alarm>
-                            Alarm
-                        </button>
-                    </section>
+
+                    <p>CSS:</p>
 
                     <pre
-                        data-src="/asset/snippet/button/button-top-down.html"
+                        data-src="/asset/snippet/button/button-tiered.css"
                     ></pre>
 
+                    <p>
+                        Although we do not recommend creating a button this
+                        complex, the world is your oyster when it comes to
+                        customizing sections to fit your needs:
+                    </p>
+
                     <section>
-                        <button class="button button--left-rounded">
+                        <button class="button" data-variant="too-much">
+                            <img
+                                src="/asset/image/linux.jpg"
+                                alt="Linux penguin avatar"
+                                class="button--symbol avatar-12"
+                                data-variant="too-much"
+                            />
+
                             <span
-                                class="button__section button__section--left-rounded"
+                                class="button__section" data-variant="too-much"
                             >
-                                42
+                                <strong class="font-size-l">
+                                    Join stream
+                                </strong>
+                                <span class="font-size-s">
+                                    This is too much</span
+                                >
                             </span>
-                            Left-rounded
-                            <icon-chevron-right
-                                class="button__icon"
-                            ></icon-chevron-right>
+                            <icon-chevron-right></icon-chevron-right>
                         </button>
                     </section>
 
+                    <p>HTML:</p>
+
                     <pre
-                        data-src="/asset/snippet/button/button-left-rounded.html"
+                        data-src="/asset/snippet/button/button-too-much.html"
+                    ></pre>
+
+                    <p>CSS:</p>
+
+                    <pre
+                        data-src="/asset/snippet/button/button-too-much.css"
                     ></pre>
                 </section>
             </article>

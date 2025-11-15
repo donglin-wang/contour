@@ -7,6 +7,26 @@
         flex-grow: 1;
     }
 
+    .flex-row {
+        flex-direction: row;
+    }
+
+    .flex-col {
+        flex-direction: column;
+    }
+
+    .flex-row-reverse {
+        flex-direction: row-reverse;
+    }
+
+    .flex-col-reverse {
+        flex-direction: column-reverse;
+    }
+
+    .rounded {
+        border-radius: 9999px;
+    }
+
     .font-size-xs {
         font-size: var(--font-size-xs);
     }

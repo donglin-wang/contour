@@ -1,33 +1,56 @@
 @layer variant {
-    .button--icon {
-        padding-block: calc(2 * var(--space));
-        padding-inline: calc(2 * var(--space));
+    .button.is-warning {
+        --button-background: var(--warning);
+        --button-hover-background: var(--warning);
+        --button-color: var(--color);
     }
 
-    .button--tiered {
-        padding-block: 0.75em;
+    .button.is-info {
+        --button-background: var(--info);
+        --button-hover-background: var(--info);
+        --button-color: var(--color);
     }
 
-    .button__section--tiered {
-        gap: 0.25em;
-        align-items: start;
+    .button.is-danger {
+        --button-background: var(--danger);
+        --button-hover-background: var(--danger);
+        --button-color: var(--color);
     }
 
-    .button--top-down {
+    .button.is-success {
+        --button-background: var(--success);
+        --button-hover-background: var(--success);
+        --button-color: var(--color);
+    }
+
+    .button[data-variant="top-down"] {
         flex-direction: column;
         gap: 0.5em;
     }
 
-    .button--left-rounded {
-        border-radius: 999px 0 0 999px;
-        padding: 0.5em;
+    .button[data-variant="tiered"] {
+        padding-block: 0.75em;
     }
 
-    .button__section--left-rounded {
-        background-color: var(--background-color);
-        color: var(--color);
+    .button__section[data-variant="tiered"] {
+        gap: 0.25em;
+        align-items: start;
+    }
+
+    .button[data-variant="too-much"] {
+        border-radius: 999px 0 0 999px;
+        padding: calc(2 * var(--space));
+        gap: calc(5 * var(--space));   
+    }
+
+    .button__section[data-variant="too-much"] {
+        flex-direction: column;
+        gap: var(--space);
+        align-items: start;
+    }
+
+    .button--symbol[data-variant="too-much"] {
         border-radius: 999px;
-        padding: 0.5em;
     }
 
     .button--ghost {

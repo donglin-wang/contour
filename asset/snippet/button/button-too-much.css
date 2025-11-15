@@ -1,0 +1,15 @@
+.button--too-much {
+    border-radius: 999px 0 0 999px;
+    padding: calc(3 * var(--space));
+    gap: calc(5 * var(--space));
+}
+
+.button__symbol--too-much {
+    border-radius: 999px;
+}
+
+.button__section--too-much {
+    flex-direction: column;
+    gap: calc(var(--space));
+    align-items: start;
+}

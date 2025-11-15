@@ -1,0 +1,4 @@
+.button--top-down {
+    flex-direction: column;
+    gap: 0.5em;
+}

@@ -1,4 +1,4 @@
-@layer element {
+@layer base {
     .button {
         --button-background: var(--color);
         --button-color: var(--background-color);
@@ -6,14 +6,11 @@
         --button-padding-inline: calc(3 * var(--space));
         --button-border-block: none;
         --button-border-inline: none;
-        --button-border-start-start-radius: 0;
-        --button-border-start-end-radius: 0;
-        --button-border-end-end-radius: 0;
-        --button-border-end-start-radius: 0;
+        --button-border-radius: 0;
+        --button-box-shadow: none;
         --button-gap: calc(4 * var(--space));
 
         --button-hover-background: var(--color-muted);
-        --button-hover-color: var(--background-color);
 
         display: inline-flex;
         align-items: center;
@@ -30,15 +27,13 @@
         gap: var(--button-gap);
         border-block: var(--button-border-block);
         border-inline: var(--button-border-inline);
-        border-start-start-radius: var(--button-border-start-start-radius);
-        border-start-end-radius: var(--button-border-start-end-radius);
-        border-end-end-radius: var(--button-border-end-end-radius);
-        border-end-start-radius: var(--button-border-end-start-radius);
+        border-radius: var(--button-border-radius);
+        box-shadow: var(--button-box-shadow);
     }
 
     .button:hover {
+        color: var(--button-color);
         background: var(--button-hover-background);
-        color: var(--button-hover-color);
     }
 
     .button__section {
