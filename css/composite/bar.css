@@ -67,13 +67,7 @@
     .bar__item {
         padding: var(--bar-item-padding);
         color: var(--bar-item-color);
-        text-decoration: var(--bar-item-text-decoration);
-    
-        --button-background-color: var(--background-color);
-        --button-color: var(--color);
-        --button-hover-color: var(--color);
-        --button-hover-background-color: var(--background-color-muted);
-        --button-padding: 0.5em;
+        text-decoration: var(--bar-item-text-decoration); 
     }
 
     .bar__item:hover {
