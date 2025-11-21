@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mutex</title>
+        <style>
+            @layer base, composite, element, variant, page;
+        </style>
+        <link rel="stylesheet" href="/css/base/reset.css" />
+        <link rel="stylesheet" href="/css/base/theme.css" />
+
+        <link rel="stylesheet" href="/css/component/mutex.css" />
+        <link rel="stylesheet" href="/css/variant/mutex.css" />
+
+        <link rel="stylesheet" href="/css/component/icon.css" />
+
+        <link rel="stylesheet" href="/css/element/typography.css" />
+
+        <link rel="stylesheet" href="/css/composite/menu.css" />
+
+        <link rel="stylesheet" href="/css/variant/menu.css" />
+
+        <link rel="stylesheet" href="/css/variant/accordion.css" />
+
+        <link rel="stylesheet" href="/css/utilities.css" />
+        <link rel="stylesheet" href="/css/prism.css" />
+        <link rel="stylesheet" href="/css/page.css" />
+        <link rel="stylesheet" href="/css/prism.css" />
+    </head>
+    <body>
+        <global-nav></global-nav>
+        <template id="main__content">
+            <article id="article">
+                <h2>Mutex</h2>
+                <h3>Without indicators</h3>
+                <section>
+                    <div class="mutex">
+                        <div class="mutex__item" aria-selected>Tab 1</div>
+                        <div class="mutex__item">Tab 2</div>
+                        <div class="mutex__item">Tab 3</div>
+                    </div>
+                </section>
+                <section>
+                    <div class="mutex" data-variant="line">
+                        <div
+                            class="mutex__item"
+                            data-variant="line"
+                            aria-selected
+                        >
+                            Tab 1
+                        </div>
+                        <div class="mutex__item" data-variant="line">Tab 2</div>
+                        <div class="mutex__item" data-variant="line">Tab 3</div>
+                    </div>
+                </section>
+                <section>
+                    <div class="mutex">
+                        <div
+                            class="mutex__item"
+                            data-variant="backdrop"
+                            aria-selected
+                        >
+                            Tab 1
+                        </div>
+                        <div class="mutex__item" data-variant="backdrop">
+                            Tab 2
+                        </div>
+                        <div class="mutex__item" data-variant="backdrop">
+                            Tab 3
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="mutex" data-variant="enclosed">
+                        <div
+                            class="mutex__item"
+                            data-variant="enclosed"
+                            aria-selected
+                        >
+                            Tab 1
+                        </div>
+                        <div class="mutex__item" data-variant="enclosed">
+                            Tab 2
+                        </div>
+                        <div class="mutex__item" data-variant="enclosed">
+                            Tab 3
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="mutex" data-variant="outlined">
+                        <div
+                            class="mutex__item"
+                            data-variant="outlined"
+                            aria-selected
+                        >
+                            Tab 1
+                        </div>
+                        <div class="mutex__item" data-variant="outlined">
+                            Tab 2
+                        </div>
+                        <div class="mutex__item" data-variant="outlined">
+                            Tab 3
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="mutex" data-variant="joint">
+                        <div
+                            class="mutex__item"
+                            data-variant="joint"
+                            aria-selected
+                        >
+                            Tab 1
+                        </div>
+                        <div class="mutex__item" data-variant="joint">
+                            Tab 2
+                        </div>
+                        <div class="mutex__item" data-variant="joint">
+                            Tab 3
+                        </div>
+                    </div>
+                </section>
+                <h3>With indicators</h3>
+                <section>
+                    <div class="mutex" data-variant="line">
+                        <div class="mutex__indicator" data-variant="line"></div>
+                        <div class="mutex__item" aria-selected>Tab 1</div>
+                        <div class="mutex__item">Tab 2</div>
+                        <div class="mutex__item">Tab 3</div>
+                    </div>
+                </section>
+                <section>
+                    <div class="mutex">
+                        <div
+                            class="mutex__indicator"
+                            data-variant="backdrop"
+                        ></div>
+                        <div class="mutex__item" aria-selected>Tab 1</div>
+                        <div class="mutex__item">Tab 2</div>
+                        <div class="mutex__item">Tab 3</div>
+                    </div>
+                </section>
+                <section>
+                    <div class="mutex" data-variant="enclosed">
+                        <div
+                            class="mutex__indicator"
+                            data-variant="enclosed"
+                        ></div>
+                        <div class="mutex__item" aria-selected>Tab 1</div>
+                        <div class="mutex__item">Tab 2</div>
+                        <div class="mutex__item">Tab 3</div>
+                    </div>
+                </section>
+                <section>
+                    <div class="mutex" data-variant="outlined">
+                        <div
+                            class="mutex__indicator"
+                            data-variant="outlined"
+                        ></div>
+                        <div class="mutex__item" aria-selected>Tab 1</div>
+                        <div class="mutex__item">Tab 2</div>
+                        <div class="mutex__item">Tab 3</div>
+                    </div>
+                </section>
+                <h3>With symbol and close</h3>
+                <section>
+                    <div class="mutex" data-variant="outlined">
+                        <div
+                            class="mutex__indicator"
+                            data-variant="outlined"
+                        ></div>
+                        <div class="mutex__item" aria-selected>
+                            <icon-file-code
+                                class="icon mutex--symbol"
+                            ></icon-file-code>
+                            index.html
+                            <span class="mutex--close" data-variant="backdrop">
+                                <icon-x
+                                    class="icon"
+                                ></icon-x>
+                            </span>
+                        </div>
+                        <div class="mutex__item">
+                            <icon-square-terminal
+                                class="icon mutex--symbol"
+                            ></icon-square-terminal>
+                            script.sh
+
+                            <span class="mutex--close" data-variant="backdrop">
+                                <icon-x
+                                    class="icon"
+                                ></icon-x>
+                            </span>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="mutex" data-variant="enclosed">
+                        <div
+                            class="mutex__indicator"
+                            data-variant="enclosed"
+                        ></div>
+                        <div class="mutex__item" aria-selected>
+                            <icon-file-code
+                                class="icon mutex--symbol"
+                            ></icon-file-code>
+                            index.html
+                            <icon-x
+                                class="icon mutex--close"
+                                data-variant="subtle"
+                            ></icon-x>
+                        </div>
+                        <div class="mutex__item">
+                            <icon-square-terminal
+                                class="icon mutex--symbol"
+                            ></icon-square-terminal>
+                            script.sh
+                            <icon-x
+                                class="icon mutex--close"
+                                data-variant="subtle"
+                            ></icon-x>
+                        </div>
+                    </div>
+                </section>
+                <h3>Using sections</h3>
+                <section>
+                    <div class="mutex" data-variant="line">
+                        <div class="mutex__indicator" data-variant="line"></div>
+                        <div class="mutex__item" aria-selected>
+                            <div class="mutex__section items-center">
+                                <span>
+                                    <icon-alarm
+                                        data-variant="top-down"
+                                        class="icon mutex--symbol"
+                                    ></icon-alarm>
+                                </span>
+                                <span> Alerts </span>
+                            </div>
+                        </div>
+                        <div class="mutex__item">
+                            <div class="mutex__section items-center">
+                                <span>
+                                    <icon-git-pull-request
+                                        data-variant="top-down"
+                                        class="icon mutex--symbol"
+                                    ></icon-git-pull-request>
+                                </span>
+                                <span> Pull requests </span>
+                            </div>
+                        </div>
+                        <div class="mutex__item">
+                            <div class="mutex__section items-center">
+                                <span>
+                                    <icon-telescope
+                                        data-variant="top-down"
+                                        class="icon mutex--symbol"
+                                    ></icon-telescope>
+                                </span>
+                                <span> Telemetry </span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="mutex" data-variant="outlined">
+                        <div
+                            class="mutex__indicator"
+                            data-variant="outlined"
+                        ></div>
+                        <div class="mutex__item" aria-selected>
+                            <div class="mutex__section items-center">
+                                <span>
+                                    <icon-alarm
+                                        data-variant="top-down"
+                                        class="icon mutex--symbol"
+                                    ></icon-alarm>
+                                </span>
+                                <span> Alerts </span>
+                            </div>
+                        </div>
+                        <div class="mutex__item">
+                            <div class="mutex__section items-center">
+                                <span>
+                                    <icon-git-pull-request
+                                        data-variant="top-down"
+                                        class="icon mutex--symbol"
+                                    ></icon-git-pull-request>
+                                </span>
+                                <span> Pull requests </span>
+                            </div>
+                        </div>
+                        <div class="mutex__item">
+                            <div class="mutex__section items-center">
+                                <span>
+                                    <icon-telescope
+                                        data-variant="top-down"
+                                        class="icon mutex--symbol"
+                                    ></icon-telescope>
+                                </span>
+                                <span> Telemetry </span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="mutex" data-variant="enclosed">
+                        <div
+                            class="mutex__indicator"
+                            data-variant="enclosed"
+                        ></div>
+                        <div class="mutex__item" aria-selected>
+                            <div class="mutex__section items-center">
+                                <span>
+                                    <icon-alarm
+                                        data-variant="top-down"
+                                        class="icon mutex--symbol"
+                                    ></icon-alarm>
+                                </span>
+                                <span> Alerts </span>
+                            </div>
+                        </div>
+                        <div class="mutex__item">
+                            <div class="mutex__section items-center">
+                                <span>
+                                    <icon-git-pull-request
+                                        data-variant="top-down"
+                                        class="icon mutex--symbol"
+                                    ></icon-git-pull-request>
+                                </span>
+                                <span> Pull requests </span>
+                            </div>
+                        </div>
+                        <div class="mutex__item">
+                            <div class="mutex__section items-center">
+                                <span>
+                                    <icon-telescope
+                                        data-variant="top-down"
+                                        class="icon mutex--symbol"
+                                    ></icon-telescope>
+                                </span>
+                                <span> Telemetry </span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="mutex" data-variant="joint">
+                        <div
+                            class="mutex__item is-equal"
+                            data-variant="joint"
+                            aria-selected
+                        >
+                            <div class="mutex__section">
+                                <strong>Alerts</strong>
+                                42
+                            </div>
+                        </div>
+                        <div class="mutex__item is-equal" data-variant="joint">
+                            <div class="mutex__section">
+                                <strong>Pull requests</strong>
+                                12
+                            </div>
+                        </div>
+                        <div class="mutex__item is-equal" data-variant="joint">
+                            <div class="mutex__section">
+                                <strong>Telemetry</strong>
+                                99+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </template>
+        <script src="/js/main.js" type="module"></script>
+        <script src="/js/prism.js"></script>
+        <script defer>
+            window.onload = () => {
+                for (const mutex of document.getElementsByClassName("mutex")) {
+                    let indicator = null;
+                    let items = [];
+                    let selected = null;
+                    let mutexRect = mutex.getBoundingClientRect();
+
+                    for (const child of mutex.children) {
+                        if (child.classList.contains("mutex__indicator")) {
+                            indicator = child;
+                        } else if (child.classList.contains("mutex__item")) {
+                            items.push(child);
+                            if (child.hasAttribute("aria-selected")) {
+                                selected = child;
+                            }
+                        }
+                    }
+
+                    if (!indicator) {
+                        continue;
+                    }
+
+                    const firstItemRect = items[0].getBoundingClientRect();
+
+                    indicator.style.width = `${firstItemRect.width}px`;
+                    indicator.style.left = `${
+                        firstItemRect.left - mutexRect.left
+                    }px`;
+
+                    for (const item of items) {
+                        item.addEventListener("click", () => {
+                            mutexRect = mutex.getBoundingClientRect();
+                            const itemRect = item.getBoundingClientRect();
+                            const left = itemRect.left - mutexRect.left;
+                            const width = itemRect.width;
+                            const height = itemRect.height;
+                            indicator.style.left = `${left}px`;
+                            indicator.style.width = `${width}px`;
+
+                            item.toggleAttribute("aria-selected");
+                            selected.toggleAttribute("aria-selected");
+                            selected = item;
+                        });
+                    }
+                }
+            };
+        </script>
+    </body>
+</html>

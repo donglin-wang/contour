@@ -6,7 +6,19 @@ const { div, nav, button, aside, li, strong, main } = van.tags;
 class GlobalNav extends HTMLElement {
     menuItems = [
         {
-            name: "Elements",
+            name: "Conventions",
+            type: "title",
+        },
+        {
+            name: "Overview",
+            type: "item",
+        },
+        {
+            name: "Rules",
+            type: "item",
+        },
+        {
+            name: "Components",
             type: "title",
         },
         {
@@ -32,10 +44,6 @@ class GlobalNav extends HTMLElement {
         {
             name: "Tooltip",
             type: "item",
-        },
-        {
-            name: "Composites",
-            type: "title",
         },
         {
             name: "Accordion",

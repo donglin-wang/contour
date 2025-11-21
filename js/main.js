@@ -18,7 +18,6 @@ for (const [key, createElement] of Object.entries(icon)) {
         class extends HTMLElement {
             constructor() {
                 super();
-                this.classList.add("icon");
                 this.appendChild(createElement());
             }
         }
