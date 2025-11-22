@@ -1,31 +1,40 @@
 @layer variant {
-    .notice__section--close-separated {
+    .notice__section[data-variant="control"] {
+        margin-top: 1rem;
+    }
+
+    .notice__section[data-variant="close-segmented"] {
+        flex-direction: row;
         justify-content: center;
         align-self: stretch;
-        align-items: center;
+        align-items: stretch;
         margin-block: calc(-1 * var(--notice-padding-block));
         margin-inline-end: calc(-1 * var(--notice-padding-inline));
-        padding-inline: calc(0.5 * var(--notice-padding-inline));
     }
 
-    .notice__section--close-separated:hover {
-        background-color: var(--color);
-        color: var(--background-color);
-        cursor: pointer;
+    .notice[data-variant="icon-cornered"] {
+        position: relative;
+        margin-top: calc(8 * var(--space));
+        margin-inline-start: calc(4 * var(--space));
+        padding-inline-start: calc(8 * var(--space));
     }
 
-    .notice--left-inclined {
-        border-left: 5px solid var(--color);
-        border-radius: 0 10px 10px 0;
+    .icon[data-variant="icon-cornered"] {
+        width: 2rem;
+        height: 2rem;
+        position: absolute;
+        top: -1em;
+        left: -1em;
+        color: var(--color);
     }
 
-    .notice--icon-top {
+    .notice[data-variant="icon-top"] {
         position: relative;
         margin-top: 2.5em;
         padding-top: 2.5em;
     }
 
-    .notice--icon-top .icon {
+    .icon[data-variant="icon-top"] {
         width: 3em;
         height: 3em;
         position: absolute;
@@ -33,35 +42,30 @@
         color: var(--color);
     }
 
-    .notice--icon-top .notice__close {
-        position: relative;
-        top: -1.5em;
+    .notice[data-variant="title-segmented"] {
+        padding: 0;
+        flex-direction: column;
+        align-items: start;
+        border-radius: 5px;
+        overflow: hidden;
+        gap: 0;
+        border: 1px solid var(--color);
+        background: transparent;
     }
 
-    .notice--icon-cornered {
-        position: relative;
-        margin-top: 2em;
-        margin-inline-start: 1em;
-        padding: 1.2em;
+    .notice__title[data-variant="title-segmented"] {
+        gap: calc(2 * var(--space));
+        display: flex;
+        background: var(--color);
+        color: var(--background-color);
+        flex-direction: row;
+        align-items: center;
+        align-self: stretch;
+        padding-block: calc(2 * var(--space)) calc(2 * var(--space));
+        padding-inline: calc(2 * var(--space)) calc(2 * var(--space));
     }
 
-    .notice--icon-cornered .icon {
-        width: 2em;
-        height: 2em;
-        position: absolute;
-        top: -1em;
-        left: -1em;
-        color: var(--color);
-    }
-
-    .notice--button-linked .notice__control {
-        gap: 1em;
-    }
-
-    .notice--button-linked .notice__button {
-        padding-inline: 0;
-        background-color: transparent;
-        color: var(--color);
-        text-decoration: underline;
+    .notice__section[data-variant="title-segmented"] {
+        padding: calc(4 * var(--space));
     }
 }

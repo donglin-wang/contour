@@ -1,0 +1,14 @@
+@layer variant {
+    .icon[data-variant="l"] {
+        width: var(--font-size-l);
+        height: var(--font-size-);
+    }
+    .icon[data-variant="xl"] {
+        width: var(--font-size-xl);
+        height: var(--font-size-xl);
+    }
+    .icon[data-variant="2xl"] {
+        width: var(--font-size-2xl);
+        height: var(--font-size-2xl);
+    }
+}

@@ -11,6 +11,8 @@
         --button-gap: calc(4 * var(--space));
 
         --button-hover-background: var(--color-muted);
+        --button-hover-opacity: 1;
+        --button-hover-color: var(--background-color);
 
         display: inline-flex;
         align-items: center;
@@ -32,8 +34,9 @@
     }
 
     .button:hover {
-        color: var(--button-color);
+        color: var(--button-hover-color);
         background: var(--button-hover-background);
+        opacity: var(--button-hover-opacity);
     }
 
     .button__section {

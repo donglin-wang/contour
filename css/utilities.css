@@ -18,6 +18,10 @@
         justify-content: space-evenly;
     }
 
+    .margin-inline-start-auto {
+        margin-inline-start: auto;
+    }
+
     .items-start {
         align-items: flex-start;
     }

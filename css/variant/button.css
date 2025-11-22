@@ -53,10 +53,28 @@
         border-radius: 999px;
     }
 
-    .button--ghost {
-        --button-background: var(--background-color);
-        --button-hover-background: var(--background-color-muted);
+    .button[data-variant="icon"],
+    .button[data-variant="icon-ghost"] {
+        --button-padding-block: calc(1 * var(--space));
+        --button-padding-inline: calc(1 * var(--space));
+        --button-border-radius: 2px;
+    }
 
+    .button[data-variant="icon-ghost"] {
+        --button-background: transparent;
+        --button-hover-background: transparent;
+        --button-hover-opacity: 0.3;
         color: var(--color);
+    }
+
+    .button[data-variant="flat"] {
+        --button-padding-block: calc(2 * var(--space));
+    }
+
+    .button[data-variant="close-segmented"] {
+        --button-background: transparent;
+        --button-hover-background: var(--color);
+        --button-color: var(--color);
+        --button-hover-color: var(--background-color);
     }
 }
