@@ -33,8 +33,8 @@
     }
 
     .notice__title {
-        --notice-title-font-weight: 500;
-        --notice-title-font-size: var(--font-size);
+        --notice-title-font-weight: var(--font-bold, 700);
+        --notice-title-font-size: var(--font-size, 1rem);
         --notice-title-color: inherit;
         --notice-title-margin: 0;
         --notice-title-line-height: 1;
