@@ -1,6 +1,6 @@
 @layer variant {
     .notice__section[data-variant="control"] {
-        margin-top: 1rem;
+        margin-top: var(--space-2);
     }
 
     .notice__section[data-variant="close-segmented"] {
