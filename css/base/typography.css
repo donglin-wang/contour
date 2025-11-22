@@ -1,0 +1,87 @@
+@layer base {
+    @font-face {
+        font-family: InterVariable;
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url("/asset/font/InterVariable.woff2") format("woff2");
+        font-feature-settings: "ss20" 1;
+    }
+
+    @font-face {
+        font-family: InterVariable;
+        font-style: italic;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url("InterVariable-Italic.woff2") format("woff2");
+    }
+
+    html {
+        font-family: InterVariable, Inter, Roboto, "Helvetica Neue",
+            "Arial Nova", "Nimbus Sans", Arial, sans-serif;
+    }
+
+    p.is-content {
+        font-size: var(--font-size);
+        margin-block: var(--space-6) var(--space-4);
+        line-height: 1.5;
+    }
+
+    ul.is-content {
+        margin-block: var(--space-6);
+    }
+
+    li.is-content {
+        margin-block: var(--space-3);   
+    }
+
+    h1.is-content {
+        font-size: var(--font-size-5xl);
+        margin-block: var(--space-6);
+    }
+
+    h2.is-content {
+        font-size: var(--font-size-4xl);
+        margin-block: var(--space-6);
+    }
+
+    h3.is-content {
+        font-size: var(--font-size-3xl);
+        margin-block: var(--space-6);
+    }
+
+    h4.is-content {
+        font-size: var(--font-size-2xl);
+        margin-block: var(--space-6);
+    }
+
+    h5.is-content {
+        font-size: var(--font-size-xl);
+        margin-block: var(--space-6);
+    }
+
+    h6.is-content {
+        font-size: var(--font-size-lg);
+        margin-block: var(--space-6);
+    }
+
+    section.is-content {
+        margin-block: var(--space-6);
+    }
+
+    .article {
+        display: block;
+        width: 100%;
+        max-width: 40rem;
+        padding-inline: var(--space-2);
+        margin-inline: auto;
+    }
+
+    code.is-inline {
+        color: var(--danger);
+        padding: 2px;
+        border-radius: 2px;
+        background-color: var(--background-color-muted);
+        font-size: var(--font-size);
+    }
+}

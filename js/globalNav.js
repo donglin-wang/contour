@@ -84,23 +84,6 @@ class GlobalNav extends HTMLElement {
     constructor() {
         super();
 
-        const panelLeftCloseIcon = createPanelLeftClose();
-        const panelLeftOpenIcon = createPanelLeftOpen();
-
-        const sideNavControl = button(
-            {
-                class: "button button--ghost",
-                id: "side-menu__control",
-            },
-            () =>
-                this.isSideNavOpen.val ? panelLeftCloseIcon : panelLeftOpenIcon
-        );
-
-        const topNav = nav(
-            { class: "bar", id: "main-nav" },
-            div({ class: "bar__section bar__section--start" }, sideNavControl)
-        );
-
         const sideNavItems = [];
 
         for (const item of this.menuItems) {
@@ -118,18 +101,12 @@ class GlobalNav extends HTMLElement {
             ...sideNavItems
         );
 
-        sideNavControl.addEventListener("click", () => {
-            this.isSideNavOpen.val = !this.isSideNavOpen.val;
-            sideNav.style.display = this.isSideNavOpen.val ? "flex" : "none";
-        });
-
         const mainContainer = main(
             { id: "main" },
             sideNav,
             document.getElementById("main__content").content
         );
 
-        this.appendChild(topNav);
         this.appendChild(mainContainer);
     }
 }

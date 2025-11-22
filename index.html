@@ -96,15 +96,15 @@
                     meaning:
                 </p>
                 <p>
-                    <code class="inline">component__element--variation</code>
+                    <code class="is-inline">component__element--variation</code>
                 </p>
                 <p>
                     Component are the root-level reusable parts such as buttons
                     and notices. Elements are parts that make up these
                     components. Like BEM, elements can only exist within its
                     component. In other word, you cannot use
-                    <code class="inline">button__section</code> within
-                    <code class="inline">notice</code>
+                    <code class="is-inline">button__section</code> within
+                    <code class="is-inline">notice</code>
                 </p>
                 <h3>Manage Specificity</h3>
                 <p>We limit the specificity elevation by doing 2 things:</p>
@@ -112,7 +112,7 @@
                     <li>
                         keeping things that are "custom" and can get messy in a
                         higher layer, such as
-                        <code class="inline">@layer variant</code>.
+                        <code class="is-inline">@layer variant</code>.
                     </li>
                     <li>
                         use child and nested selectors only in higher layers,
@@ -124,14 +124,14 @@
                 <p>
                     If you want to override things in the variant layer for a
                     specific page, simply create a new layer called
-                    <code class="inline">page</code> and do it there.
+                    <code class="is-inline">page</code> and do it there.
                 </p>
                 <h3>Custom Property</h3>
                 <p>
                     One of the most defining feature of Contour is its liberal
                     use of CSS custom properties. Custom properties, like many
-                    properties such as <code class="inline">color</code> for
-                    <code class="inline">font-size</code>, are inherited by
+                    properties such as <code class="is-inline">color</code> for
+                    <code class="is-inline">font-size</code>, are inherited by
                     default. If you want to change a certain component in the
                     context of a larger parent component, simply do:
                 </p>
@@ -147,8 +147,8 @@
                 <h2>Button</h2>
                 <p>
                     The button selector decorates either
-                    <code class="inline">&lt;a&gt;</code> or
-                    <code class="inline">&lt;button&gt;</code>. Use the former
+                    <code class="is-inline">&lt;a&gt;</code> or
+                    <code class="is-inline">&lt;button&gt;</code>. Use the former
                     if you want it to lead to another page. Use the latter if
                     you want it to perform certain actions.
                 </p>

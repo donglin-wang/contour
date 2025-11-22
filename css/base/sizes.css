@@ -1,0 +1,27 @@
+@layer base {
+    :root {
+        --space: 0.25rem;
+        --font-size: 0.25rem;
+
+        --space-1: calc(var(--space) * 1);
+        --space-2: calc(var(--space) * 2);
+        --space-3: calc(var(--space) * 3);
+        --space-4: calc(var(--space) * 4);
+        --space-5: calc(var(--space) * 6);
+        --space-6: calc(var(--space) * 8);
+        --space-7: calc(var(--space) * 12);
+        --space-8: calc(var(--space) * 16);
+        --space-9: calc(var(--space) * 24);
+        --space-10: calc(var(--space) * 32);
+
+        --font-size-xs: 0.75rem;
+        --font-size-s: 0.875rem;
+        --font-size: 1rem;
+        --font-size-l: 1.125rem;
+        --font-size-xl: 1.25rem;
+        --font-size-2xl: 1.5rem;
+        --font-size-3xl: 1.875rem;
+        --font-size-4xl: 2.25rem;
+        --font-size-5xl: 3rem;
+    }
+}
