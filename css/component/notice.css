@@ -3,8 +3,8 @@
         --notice-gap: calc(4 * var(--space));
         --notice-color: var(--color);
         --notice-background: var(--background-color-muted);
-        --notice-padding-inline: calc(4 * var(--space));
-        --notice-padding-block: calc(4 * var(--space));
+        --notice-padding-inline: var(--space-4);
+        --notice-padding-block: var(--space-4);
         --notice-margin-inline: 0;
         --notice-margin-block: 0;
         --notice-border-radius: 0;
@@ -37,7 +37,7 @@
         --notice-title-font-size: var(--font-size, 1rem);
         --notice-title-color: inherit;
         --notice-title-margin: 0;
-        --notice-title-line-height: 1;
+        --notice-title-line-height: 1.2;
 
         font-weight: var(--notice-title-font-weight);
         font-size: var(--notice-title-font-size);
@@ -47,15 +47,17 @@
     }
 
     .notice__description {
-        --notice-description-font-weight: 500;
+        --notice-description-font-weight: 400;
         --notice-description-font-size: var(--font-size);
         --notice-description-color: inherit;
         --notice-description-margin: 0;
+        --notice-description-line-height: 1.5;
 
         font-weight: var(--notice-description-font-weight);
         font-size: var(--notice-description-font-size);
         color: var(--notice-description-color);
         margin: var(--notice-description-margin);
+        line-height: var(--notice-description-line-height);
     }
 
     .notice__section {
