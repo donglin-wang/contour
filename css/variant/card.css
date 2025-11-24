@@ -1,9 +1,0 @@
-@layer variant {
-    .card__image--horizontal {
-        max-width: 35%;
-    }
-
-    .card__section--bottom {
-        margin-top: auto;
-    }
-}

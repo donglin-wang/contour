@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Menu</title>
+        <link rel="stylesheet" href="/css/base/reset.css" />
+        <link rel="stylesheet" href="/css/base/theme.css" />
+        <link rel="stylesheet" href="/css/base/sizes.css" />
+        <link rel="stylesheet" href="/css/base/typography.css" />
+
+        <link rel="stylesheet" href="/css/component/icon.css" />
+        <link rel="stylesheet" href="/css/component/notice.css" />
+        <link rel="stylesheet" href="/css/component/list.css" />
+        <link rel="stylesheet" href="/css/component/button.css" />
+        <link rel="stylesheet" href="/css/component/avatar.css" />
+
+        <link rel="stylesheet" href="/css/variant/icon.css" />
+        <link rel="stylesheet" href="/css/variant/notice.css" />
+        <link rel="stylesheet" href="/css/variant/list.css" />
+        <link rel="stylesheet" href="/css/variant/button.css" />
+
+        <link rel="stylesheet" href="/css/utilities.css" />
+        <link rel="stylesheet" href="/css/prism.css" />
+        <link rel="stylesheet" href="/css/page.css" />
+    </head>
+    <body>
+        <article class="article">
+            <h1 class="is-content">List</h1>
+            <section class="is-content">
+                <div class="list">
+                    <b class="list__label"> Pages </b>
+                    <div class="list__item is-indented" data-variant="shortcut">
+                        <span>Profile</span>
+                        <span class="margin-inline-start-auto"
+                            ><kbd>⌘P</kbd></span
+                        >
+                    </div>
+                    <div class="list__item is-indented" data-variant="shortcut">
+                        <span>Info</span>
+                        <span class="margin-inline-start-auto"
+                            ><kbd>⌘B</kbd></span
+                        >
+                    </div>
+                    <div class="list__divider"></div>
+                    <b class="list__label"> Appearance </b>
+                    <div class="list__item is-indented">Activity bar</div>
+                    <div class="list__item is-indented">Status bar</div>
+                    <div class="list__item is-indented">Panel</div>
+                </div>
+            </section>
+            <section class="is-content">
+                <div class="list">
+                    <b class="list__label"> Users </b>
+                    <div class="list__item" data-variant="user-display">
+                        <img
+                            class="avatar"
+                            src="/asset/image/linux.jpg"
+                            alt="Linux penguin"
+                            data-variant="user-display"
+                        />
+                        <b class="list__text" data-variant="user-display-title"
+                            >User 1</b
+                        >
+                        <span
+                            class="list__text is-secondary"
+                            data-variant="user-display-description"
+                            >A typical Linux user</span
+                        >
+                    </div>
+                </div>
+            </section>
+
+            <section class="is-content">
+                <div class="list">
+                    <div class="list__item" data-variant="with-description">
+                        <span>Item 1 title</span>
+                        <span class="list__text is-secondary"
+                            >A brief description of item 1</span
+                        >
+                    </div>
+                    <div class="list__item" data-variant="with-description">
+                        <span>Item 2 title</span>
+                        <span class="list__text is-secondary"
+                            >A brief description of item 2</span
+                        >
+                    </div>
+                    <div class="list__item" data-variant="with-description">
+                        <span>Item 3 title</span>
+                        <span class="list__text is-secondary"
+                            >A brief description of item 3</span
+                        >
+                    </div>
+                </div>
+            </section>
+            <section class="is-content">
+                <div class="list">
+                    <div class="list__item" data-variant="singer-preview">
+                        <img
+                            class="avatar"
+                            src="/asset/image/linux.jpg"
+                            alt="Linux penguin"
+                            data-variant="singer-preview-avatar"
+                        />
+                        <span
+                            class="list__text"
+                            data-variant="singer-preview-index"
+                            >01</span
+                        >
+                        <span
+                            class="list__text"
+                            data-variant="singer-preview-title"
+                            >Ellie Beilish</span
+                        >
+                        <span
+                            class="list__text"
+                            data-variant="singer-preview-description"
+                            >Bears of a fever</span
+                        >
+                        <button
+                            class="button"
+                            data-variant="singer-preview-control"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="icon"
+                            >
+                                <path
+                                    d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <script src="/js/main.js" type="module"></script>
+        <script src="/js/prism.js"></script>
+    </body>
+</html>

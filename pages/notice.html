@@ -14,180 +14,151 @@
 
         <link rel="stylesheet" href="/css/component/icon.css" />
         <link rel="stylesheet" href="/css/component/notice.css" />
-        <link rel="stylesheet" href="/css/component/menu.css" />
         <link rel="stylesheet" href="/css/component/button.css" />
 
         <link rel="stylesheet" href="/css/variant/icon.css" />
         <link rel="stylesheet" href="/css/variant/notice.css" />
-        <link rel="stylesheet" href="/css/variant/menu.css" />
         <link rel="stylesheet" href="/css/variant/button.css" />
 
         <link rel="stylesheet" href="/css/utilities.css" />
         <link rel="stylesheet" href="/css/prism.css" />
         <link rel="stylesheet" href="/css/page.css" />
-        <link rel="stylesheet" href="/css/prism.css" />
     </head>
     <body>
-        <global-nav></global-nav>
-        <template id="main__content">
-            <article class="article">
-                <h1 class="is-content">Notice</h1>
-                <section class="is-content">
-                    <div class="notice">
-                        <div class="notice__section">
-                            <icon-info
-                                class="icon"
-                                data-variant="l"
-                            ></icon-info>
+        <article class="article">
+            <h1 class="is-content">Notice</h1>
+            <section class="is-content">
+                <div class="notice">
+                    <div class="notice__section">
+                        <icon-info class="icon" data-variant="l"></icon-info>
+                    </div>
+                    <div class="notice__section">
+                        <strong class="notice__title"
+                            >We notify you that</strong
+                        >
+                        <p class="notice__description">
+                            You are obligated to give Contour a star on GitHub
+                        </p>
+                    </div>
+                    <button
+                        class="button margin-inline-start-auto"
+                        data-variant="icon-ghost"
+                    >
+                        <icon-x class="icon"></icon-x>
+                    </button>
+                </div>
+            </section>
+            <section class="is-content">
+                <div class="notice">
+                    <div class="notice__section">
+                        <icon-info class="icon" data-variant="l"></icon-info>
+                    </div>
+                    <div class="notice__section">
+                        <strong class="notice__title"
+                            >We notify you that</strong
+                        >
+                        <p class="notice__description">
+                            You are obligated to give Contour a star on GitHub
+                        </p>
+                    </div>
+                    <div
+                        class="notice__section margin-inline-start-auto"
+                        data-variant="close-segmented"
+                    >
+                        <button class="button" data-variant="close-segmented">
+                            <icon-x class="icon"></icon-x>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section class="is-content">
+                <div class="notice items-stretch">
+                    <div class="notice__section">
+                        <icon-info class="icon" data-variant="l"></icon-info>
+                    </div>
+                    <div class="notice__section">
+                        <strong class="notice__title">Server ready</strong>
+                        <p class="notice__description">
+                            The server you requested has been provisioned.
+                        </p>
+                        <div class="notice__section" data-variant="control">
+                            <button class="button" data-variant="flat">
+                                View server
+                            </button>
                         </div>
-                        <div class="notice__section">
-                            <strong class="notice__title"
-                                >We notify you that</strong
-                            >
-                            <p class="notice__description">
-                                You are obligated to give Contour a star on
-                                GitHub
-                            </p>
-                        </div>
+                    </div>
+                    <div class="notice__section margin-inline-start-auto">
                         <button
-                            class="button margin-inline-start-auto"
+                            class="button notice--close"
                             data-variant="icon-ghost"
                         >
                             <icon-x class="icon"></icon-x>
                         </button>
                     </div>
-                </section>
-                <section class="is-content">
-                    <div class="notice">
-                        <div class="notice__section">
-                            <icon-info
-                                class="icon"
-                                data-variant="l"
-                            ></icon-info>
-                        </div>
-                        <div class="notice__section">
-                            <strong class="notice__title"
-                                >We notify you that</strong
-                            >
-                            <p class="notice__description">
-                                You are obligated to give Contour a star on
-                                GitHub
-                            </p>
-                        </div>
-                        <div
-                            class="notice__section margin-inline-start-auto"
-                            data-variant="close-segmented"
-                        >
-                            <button
-                                class="button"
-                                data-variant="close-segmented"
-                            >
-                                <icon-x class="icon"></icon-x>
-                            </button>
-                        </div>
-                    </div>
-                </section>
-                <section class="is-content">
-                    <div class="notice items-stretch">
-                        <div class="notice__section">
-                            <icon-info
-                                class="icon"
-                                data-variant="l"
-                            ></icon-info>
-                        </div>
-                        <div class="notice__section">
-                            <strong class="notice__title">Server ready</strong>
-                            <p class="notice__description">
-                                The server you requested has been provisioned.
-                            </p>
-                            <div class="notice__section" data-variant="control">
-                                <button class="button" data-variant="flat">
-                                    View server
-                                </button>
-                            </div>
-                        </div>
-                        <div class="notice__section margin-inline-start-auto">
-                            <button
-                                class="button notice--close"
-                                data-variant="icon-ghost"
-                            >
-                                <icon-x class="icon"></icon-x>
-                            </button>
-                        </div>
-                    </div>
-                </section>
-                <section class="is-content">
-                    <div
-                        class="notice items-stretch"
+                </div>
+            </section>
+            <section class="is-content">
+                <div class="notice items-stretch" data-variant="icon-cornered">
+                    <icon-info-square-fill
+                        class="icon"
                         data-variant="icon-cornered"
-                    >
-                        <icon-info-square-fill
-                            class="icon"
-                            data-variant="icon-cornered"
-                        ></icon-info-square-fill>
-                        <div class="notice__section">
-                            <strong class="notice__title">Server ready</strong>
-                            <p class="notice__description">
-                                The server you requested has been provisioned.
-                            </p>
+                    ></icon-info-square-fill>
+                    <div class="notice__section">
+                        <strong class="notice__title">Server ready</strong>
+                        <p class="notice__description">
+                            The server you requested has been provisioned.
+                        </p>
 
-                            <div class="notice__section" data-variant="control">
-                                <button class="button" data-variant="flat">
-                                    View server
-                                </button>
-                            </div>
-                        </div>
-                        <div class="notice__section margin-inline-start-auto">
-                            <button
-                                class="button notice--close"
-                                data-variant="icon-ghost"
-                            >
-                                <icon-x class="icon"></icon-x>
+                        <div class="notice__section" data-variant="control">
+                            <button class="button" data-variant="flat">
+                                View server
                             </button>
                         </div>
                     </div>
-                </section>
-                <section class="is-content">
-                    <div class="notice items-stretch" data-variant="icon-top">
-                        <icon-info-square-fill
-                            class="icon"
-                            data-variant="icon-top"
-                        ></icon-info-square-fill>
-                        <div class="notice__section">
-                            <strong class="notice__title">Server ready</strong>
-                            The server you requested has been provisioned.
-                            <div class="notice__section" data-variant="control">
-                                <button class="button" data-variant="flat">
-                                    View server
-                                </button>
-                            </div>
+                    <div class="notice__section margin-inline-start-auto">
+                        <button
+                            class="button notice--close"
+                            data-variant="icon-ghost"
+                        >
+                            <icon-x class="icon"></icon-x>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section class="is-content">
+                <div class="notice items-stretch" data-variant="icon-top">
+                    <icon-info-square-fill
+                        class="icon"
+                        data-variant="icon-top"
+                    ></icon-info-square-fill>
+                    <div class="notice__section">
+                        <strong class="notice__title">Server ready</strong>
+                        The server you requested has been provisioned.
+                        <div class="notice__section" data-variant="control">
+                            <button class="button" data-variant="flat">
+                                View server
+                            </button>
                         </div>
                     </div>
-                </section>
-                <section class="is-content">
-                    <div class="notice" data-variant="title-segmented">
-                        <div
-                            class="notice__title"
-                            data-variant="title-segmented"
-                        >
-                            <icon-info class="icon"></icon-info>
-                            Server ready
-                        </div>
-                        <div
-                            class="notice__section"
-                            data-variant="title-segmented"
-                        >
-                            The server you requested has been provisioned.
-                            <div class="notice__section" data-variant="control">
-                                <button class="button" data-variant="flat">
-                                    View server
-                                </button>
-                            </div>
+                </div>
+            </section>
+            <section class="is-content">
+                <div class="notice" data-variant="title-segmented">
+                    <div class="notice__title" data-variant="title-segmented">
+                        <icon-info class="icon"></icon-info>
+                        Server ready
+                    </div>
+                    <div class="notice__section" data-variant="title-segmented">
+                        The server you requested has been provisioned.
+                        <div class="notice__section" data-variant="control">
+                            <button class="button" data-variant="flat">
+                                View server
+                            </button>
                         </div>
                     </div>
-                </section>
-            </article>
-        </template>
+                </div>
+            </section>
+        </article>
         <script src="/js/main.js" type="module"></script>
         <script src="/js/prism.js"></script>
     </body>

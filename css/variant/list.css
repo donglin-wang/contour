@@ -1,0 +1,91 @@
+@layer variant {
+    .list__item[data-variant="shortcut"] {
+        grid-template-columns: min-content 1fr;
+        grid-template-rows: min-content min-content;
+    }
+
+    .list__item[data-variant="user-display"] {
+        grid-template-columns: min-content 1fr;
+        grid-template-rows: min-content min-content;
+        column-gap: var(--space-4);
+        row-gap: var(--space-1);
+        align-items: center;
+    }
+
+    .avatar[data-variant="user-display"] {
+        grid-column: 1 / 2;
+        grid-row: 1 / span 2;
+        width: var(--space-6);
+        height: var(--space-6);
+    }
+
+    .list__text[data-variant="user-display-title"] {
+        grid-row: 1 / span 1;
+    }
+
+    .list__text[data-variant="user-display-description"] {
+        grid-row: 2 / span 1;
+    }
+
+    .list__item[data-variant="singer-preview"] {
+        --list-item-hover-background: var(--background-color-muted);
+        --list-item-hover-color: var(--color);
+
+        grid-template-columns: min-content min-content 1fr min-content;
+        grid-template-rows: min-content min-content;
+        column-gap: var(--space-4);
+        align-items: center;
+    }
+
+    .list__text[data-variant="singer-preview-index"] {
+        grid-column: 1 / 2;
+        grid-row: 1 / span 2;
+        font-weight: var(--font-thin);
+        font-size: var(--font-size-4xl);
+        letter-spacing: var(--space-1);
+    }
+
+    .list__text[data-variant="singer-preview-title"] {
+        grid-row: 1 / span 1;
+        font-weight: var(--font-bold);
+    }
+
+    .list__text[data-variant="singer-preview-description"] {
+        grid-row: 2 / span 1;
+        text-transform: uppercase;
+        color: grey;
+        font-size: var(--font-size-s);
+    }
+
+    .avatar[data-variant="singer-preview-avatar"] {
+        grid-column: 2 / 3;
+        grid-row: 1 / span 2;
+        width: var(--space-7);
+        height: var(--space-7);
+    }
+
+    .button[data-variant="singer-preview-control"] {
+        grid-row: 1 / span 2;
+        --button-background: transparent;
+        --button-color: var(--color);
+        --button-hover-background: transparent;
+        --button-hover-color: var(--color);
+        --button-hover-opacity: 0.2;
+        --button-padding: var(--space-2);
+        border-radius: 5px;
+    }
+
+    .list__item[data-variant="with-description"] {
+        gap: var(--space-2);
+    }
+
+    .list__item.is-indented {
+        padding-inline-start: var(--space-7);
+    }
+
+    .list__text.is-secondary {
+        font-size: var(--font-size-s);
+        color: grey;
+        line-height: 1;
+    }
+}
