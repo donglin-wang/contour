@@ -114,6 +114,10 @@
         font-size: var(--font-size-s);
     }
 
+    .list__text[data-variant="kdb"] {
+        margin-inline-start: auto;
+    }
+
     .button[data-variant="singer-detail-control"] {
         grid-row: 1 / span 2;
         --button-background: transparent;

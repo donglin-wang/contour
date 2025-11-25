@@ -18,10 +18,8 @@
 
         <link rel="stylesheet" href="/css/variant/button.css" />
 
-        <link rel="stylesheet" href="/css/utilities.css" />
         <link rel="stylesheet" href="/css/prism.css" />
         <link rel="stylesheet" href="/css/page.css" />
-        <link rel="stylesheet" href="/css/prism.css" />
     </head>
     <body>
         <article class="article">
@@ -97,7 +95,10 @@
 
                 <section class="is-content">
                     <button class="button" data-variant="top-down">
-                        <icon-alarm class="icon font-size-2xl"></icon-alarm>
+                        <icon-alarm
+                            class="icon"
+                            data-variant="top-down"
+                        ></icon-alarm>
                         Alarm
                     </button>
                 </section>
@@ -120,8 +121,8 @@
                 <section class="is-content">
                     <button class="button" data-variant="tiered">
                         <span class="button__section" data-variant="tiered">
-                            <strong class="font-size-l">Title</strong>
-                            <span class="font-size-s">Next</span>
+                            <strong class="button__text" data-variant="tiered-primary">Title</strong>
+                            <span class="button__text" data-variant="tiered-secondary">Next</span>
                         </span>
                         <span class="button__section">
                             <icon-chevron-right></icon-chevron-right>
@@ -153,8 +154,18 @@
                         />
 
                         <span class="button__section" data-variant="too-much">
-                            <strong class="font-size-l"> Join stream </strong>
-                            <span class="font-size-s"> This is too much</span>
+                            <strong
+                                class="button__text"
+                                data-variant="too-much-primary"
+                            >
+                                Join stream
+                            </strong>
+                            <span
+                                class="button__text"
+                                data-variant="too-much-secondary"
+                            >
+                                This is too much</span
+                            >
                         </span>
                         <icon-chevron-right></icon-chevron-right>
                     </button>
