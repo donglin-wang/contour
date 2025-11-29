@@ -48,7 +48,7 @@
 
     .notice__description {
         --notice-description-font-weight: 400;
-        --notice-description-font-size: var(--font-size);
+        --notice-description-font-size: var(--font-size-base);
         --notice-description-color: inherit;
         --notice-description-margin: 0;
         --notice-description-line-height: 1.5;

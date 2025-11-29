@@ -124,7 +124,7 @@
         --mutex-item-active-color: var(--color);
 
         --mutex-item-active-font-weight: normal;
-        --mutex-item-active-font-size: var(--font-size);
+        --mutex-item-active-font-size: var(--font-size-base);
 
         border-inline-start: var(--mutex-item-active-border-inline-start);
         border-inline-end: var(--mutex-item-active-border-inline-end);
@@ -168,7 +168,7 @@
         --mutex-indicator-color: var(--color);
 
         --mutex-indicator-font-weight: normal;
-        --mutex-indicator-font-size: var(--font-size);
+        --mutex-indicator-font-size: var(--font-size-base);
 
         --mutex-indicator-margin-block: 0;
         --mutex-indicator-margin-inline: 0;
@@ -197,22 +197,6 @@
         font-size: var(--mutex-indicator-font-size);
 
         z-index: 10;
-    }
-
-    .mutex__item[data-disabled] {
-        --mutex-disabled-box-shadow: none;
-
-        --mutex-item-disabled-background: none;
-        --mutex-item-disabled-color: none;
-
-        --mutex-item-disabled-font-weight: none;
-
-        box-shadow: var(--mutex-disabled-box-shadow);
-
-        background: var(--mutex-item-disabled-background);
-        color: var(--mutex-item-disabled-color);
-
-        font-weight: var(--mutex-item-disabled-font-weight);
     }
 
     .mutex__section {

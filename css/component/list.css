@@ -34,7 +34,7 @@
         --list-item-border-block: none;
         --list-item-border-inline: none;
 
-        --list-item-font-size: var(--font-size);
+        --list-item-font-size: var(--font-size-base);
         --list-item-font-weight: var(--font-normal);
         --list-item-line-height: 1;
 
@@ -71,7 +71,7 @@
         --list-label-border-block: none;
         --list-label-border-inline: none;
 
-        --list-label-font-size: var(--font-size);
+        --list-label-font-size: var(--font-size-base);
         --list-label-font-weight: var(--font-bold);
         --list-label-line-height: 1;
 

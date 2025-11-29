@@ -20,7 +20,7 @@
         flex-direction: row;
         cursor: pointer;
         text-decoration: none; /* Resets anchor element text decoration */
-        font-size: var(--font-size); /* Resets button element font size */
+        font-size: var(--font-size-base); /* Resets button element font size */
 
         background: var(--button-background);
         color: var(--button-color);
