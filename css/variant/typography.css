@@ -1,0 +1,16 @@
+@layer variant {
+    .typography[data-variant="p"],
+    .typography[data-variant="h1"],
+    .typography[data-variant="list"] {
+        margin-block: var(--space-5);
+    }
+
+    .typography[data-variant="h1"] {
+        font-size: var(--font-size-5xl);
+        font-weight: var(--font-bold);
+    }
+
+    .has-no-margin {
+        margin: 0;
+    }
+}

@@ -1,0 +1,44 @@
+@layer base {
+    @font-face {
+        font-family: InterVariable;
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url("/asset/font/InterVariable.woff2") format("woff2");
+        font-feature-settings: "ss02" 1;
+    }
+
+    @font-face {
+        font-family: InterVariable;
+        font-style: italic;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url("InterVariable-Italic.woff2") format("woff2");
+        font-feature-settings: "ss02" 1;
+    }
+
+    body {
+        font-family: InterVariable, Inter, Roboto, "Helvetica Neue",
+            "Arial Nova", "Nimbus Sans", Arial, sans-serif;
+    }
+
+    .typography {
+        --typography-color: var(--color);
+        --typography-text-decoration: none;
+        --typography-text-overflow: clip;
+        --typography-font-size: var(--font-size-base);
+        --typography-font-weight: var(--font-normal);
+        --typography-line-height: 1.5;
+        --typography-margin-inline: 0;
+        --typography-margin-block: 0;
+
+        color: var(--typography-color);
+        text-decoration: var(--typography-text-decoration);
+        text-overflow: var(--typography-text-overflow);
+        font-size: var(--typography-font-size);
+        font-weight: var(--typography-font-weight);
+        line-height: var(--typography-line-height);
+        margin-inline: var(--typography-margin-inline);
+        margin-block: var(--typography-margin-block);
+    }
+}
