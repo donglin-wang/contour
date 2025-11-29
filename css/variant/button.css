@@ -1,40 +1,19 @@
 @layer variant {
-    .button.is-warning {
-        --button-background: var(--warning);
-        --button-hover-background: var(--warning);
-        --button-color: var(--color);
-    }
-
-    .button.is-info {
-        --button-background: var(--info);
-        --button-hover-background: var(--info);
-        --button-color: var(--color);
-    }
-
-    .button.is-danger {
-        --button-background: var(--danger);
-        --button-hover-background: var(--danger);
-        --button-color: var(--color);
-    }
-
-    .button.is-success {
-        --button-background: var(--success);
-        --button-hover-background: var(--success);
-        --button-color: var(--color);
-    }
-
     .button[data-variant="top-down"] {
+        padding-inline: var(--space-4);
+        padding-block: var(--space-4);
         flex-direction: column;
         gap: 0.5em;
     }
 
     .icon[data-variant="top-down"] {
-        --icon-width: var(--space-5);
-        --icon-height: var(--space-5);
+        --icon-width: var(--space-6);
+        --icon-height: var(--space-6);
     }
 
     .button[data-variant="tiered"] {
-        padding-block: 0.75em;
+        padding-inline: var(--space-4);
+        padding-block: var(--space-4);
     }
 
     .button__section[data-variant="tiered"] {

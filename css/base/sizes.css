@@ -14,15 +14,16 @@
         --space-9: calc(var(--space) * 24);
         --space-10: calc(var(--space) * 32);
 
-        --font-size-xs: 0.75rem;
-        --font-size-s: 0.875rem;
-        --font-size: 1rem;
-        --font-size-l: 1.125rem;
-        --font-size-xl: 1.25rem;
-        --font-size-2xl: 1.5rem;
-        --font-size-3xl: 1.875rem;
-        --font-size-4xl: 2.25rem;
-        --font-size-5xl: 3rem;
+        --font-size-xs: clamp(0.7813rem, 0.7736rem + 0.0341vw, 0.8rem);
+        --font-size-s: clamp(0.9375rem, 0.9119rem + 0.1136vw, 1rem);
+        --font-size: clamp(1.125rem, 1.0739rem + 0.2273vw, 1.25rem);
+        --font-size-l: clamp(1.35rem, 1.2631rem + 0.3864vw, 1.5625rem);
+        --font-size-xl: clamp(1.62rem, 1.4837rem + 0.6057vw, 1.9531rem);
+        --font-size-2xl: clamp(1.944rem, 1.7405rem + 0.9044vw, 2.4414rem);
+        --font-size-3xl: clamp(2.3328rem, 2.0387rem + 1.3072vw, 3.0518rem);
+        --font-size-4xl: clamp(2.7994rem, 2.384rem + 1.8461vw, 3.8147rem);
+        --font-size-5xl: clamp(3.3592rem, 2.7828rem + 2.5621vw, 4.7684rem);
+        --font-size-6xl: clamp(4.0311rem, 3.2418rem + 3.508vw, 5.9605rem);
 
         --font-thin: 100;
         --font-extralight: 200;
