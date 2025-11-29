@@ -90,28 +90,36 @@ const produceTextVariables = (prefix, states) => {
     }
 };
 
+// const prefixes = [
+//     {
+//         name: "card",
+//         producer: (name, states) => {
+//             produceCommonVariables(name, states);
+//             produceTextVariables(name, states);
+//         },
+//         states: [],
+//     },
+//     {
+//         name: "card-section",
+//         producer: produceCommonVariables,
+//         states: [],
+//     },
+//     {
+//         name: "button",
+//         producer: (name, states) => {
+//             produceCommonVariables(name, states);
+//             produceTextVariables(name, states);
+//         },
+//         states: ["active", "hover", "focus"],
+//     },
+// ];
+
 const prefixes = [
     {
-        name: "card",
-        producer: (name, states) => {
-            produceCommonVariables(name, states);
-            produceTextVariables(name, states);
-        },
+        name: "notice",
+        producer: produceTextVariables,
         states: [],
-    },
-    {
-        name: "card-section",
-        producer: produceCommonVariables,
-        states: [],
-    },
-    {
-        name: "button",
-        producer: (name, states) => {
-            produceCommonVariables(name, states);
-            produceTextVariables(name, states);
-        },
-        states: ["active", "hover", "focus"],
-    },
+    }
 ];
 
 const produceVariables = () => {

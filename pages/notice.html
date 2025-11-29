@@ -8,9 +8,13 @@
             @layer base, composite, element, variant, page;
         </style>
         <link rel="stylesheet" href="/css/base/reset.css" />
-        <link rel="stylesheet" href="/css/base/theme.css" />
-        <link rel="stylesheet" href="/css/base/sizes.css" />
-        <link rel="stylesheet" href="/css/base/typography.css" />
+        <link rel="stylesheet" href="/css/base/variables.css" />
+
+        <link rel="stylesheet" href="/css/component/typography.css" />
+        <link rel="stylesheet" href="/css/component/container.css" />
+
+        <link rel="stylesheet" href="/css/variant/typography.css" />
+        <link rel="stylesheet" href="/css/variant/container.css" />
 
         <link rel="stylesheet" href="/css/component/icon.css" />
         <link rel="stylesheet" href="/css/component/notice.css" />
@@ -21,20 +25,18 @@
         <link rel="stylesheet" href="/css/variant/button.css" />
     </head>
     <body>
-        <article class="article">
-            <h1 class="is-content">Notice</h1>
-            <section class="is-content">
+        <article class="container" data-variant="article">
+            <h1 class="typography" data-variant="h1">Notice</h1>
+            <section class="container" data-variant="article-section">
                 <div class="notice">
                     <div class="notice__section">
                         <icon-info class="icon" data-variant="l"></icon-info>
                     </div>
                     <div class="notice__section">
-                        <strong class="notice__title"
-                            >We notify you that</strong
+                        <b class="typography" data-variant="notice-title"
+                            >We notify you that</b
                         >
-                        <p class="notice__description">
-                            You are obligated to give Contour a star on GitHub
-                        </p>
+                        You are obligated to give Contour a star on GitHub
                     </div>
                     <button
                         class="button margin-inline-start-auto"
@@ -44,18 +46,16 @@
                     </button>
                 </div>
             </section>
-            <section class="is-content">
+            <section class="container" data-variant="article-section">
                 <div class="notice">
                     <div class="notice__section">
                         <icon-info class="icon" data-variant="l"></icon-info>
                     </div>
                     <div class="notice__section">
-                        <strong class="notice__title"
-                            >We notify you that</strong
+                        <b class="typography" data-variant="notice-title"
+                            >We notify you that</b
                         >
-                        <p class="notice__description">
-                            You are obligated to give Contour a star on GitHub
-                        </p>
+                        You are obligated to give Contour a star on GitHub
                     </div>
                     <div
                         class="notice__section margin-inline-start-auto"
@@ -67,16 +67,16 @@
                     </div>
                 </div>
             </section>
-            <section class="is-content">
+            <section class="container" data-variant="article-section">
                 <div class="notice items-stretch">
                     <div class="notice__section">
                         <icon-info class="icon" data-variant="l"></icon-info>
                     </div>
                     <div class="notice__section">
-                        <strong class="notice__title">Server ready</strong>
-                        <p class="notice__description">
-                            The server you requested has been provisioned.
-                        </p>
+                        <b class="typography" data-variant="notice-title"
+                            >Server ready</b
+                        >
+                        The server you requested has been provisioned.
                         <div class="notice__section" data-variant="control">
                             <button class="button" data-variant="flat">
                                 View server
@@ -93,17 +93,18 @@
                     </div>
                 </div>
             </section>
-            <section class="is-content">
+            <section class="container" data-variant="article-section">
                 <div class="notice items-stretch" data-variant="icon-cornered">
                     <icon-info-square-fill
                         class="icon"
                         data-variant="icon-cornered"
                     ></icon-info-square-fill>
                     <div class="notice__section">
-                        <strong class="notice__title">Server ready</strong>
-                        <p class="notice__description">
-                            The server you requested has been provisioned.
-                        </p>
+                        <b class="typography" data-variant="notice-title"
+                            >Server ready</b
+                        >
+
+                        The server you requested has been provisioned.
 
                         <div class="notice__section" data-variant="control">
                             <button class="button" data-variant="flat">
@@ -121,14 +122,16 @@
                     </div>
                 </div>
             </section>
-            <section class="is-content">
+            <section class="container" data-variant="article-section">
                 <div class="notice items-stretch" data-variant="icon-top">
                     <icon-info-square-fill
                         class="icon"
                         data-variant="icon-top"
                     ></icon-info-square-fill>
                     <div class="notice__section">
-                        <strong class="notice__title">Server ready</strong>
+                        <b class="typography" data-variant="notice-title"
+                            >Server ready</b
+                        >
                         The server you requested has been provisioned.
                         <div class="notice__section" data-variant="control">
                             <button class="button" data-variant="flat">
@@ -138,13 +141,15 @@
                     </div>
                 </div>
             </section>
-            <section class="is-content">
+            <section class="container" data-variant="article-section">
                 <div class="notice" data-variant="title-segmented">
-                    <div class="notice__title" data-variant="title-segmented">
+                    <div class="notice__section" data-variant="title-segmented-header">
                         <icon-info class="icon"></icon-info>
-                        Server ready
+                        <b class="typography" data-variant="notice-title-inverted"
+                            >Server ready</b
+                        >
                     </div>
-                    <div class="notice__section" data-variant="title-segmented">
+                    <div class="notice__section" data-variant="title-segmented-body">
                         The server you requested has been provisioned.
                         <div class="notice__section" data-variant="control">
                             <button class="button" data-variant="flat">

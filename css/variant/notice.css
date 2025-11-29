@@ -1,4 +1,13 @@
 @layer variant {
+    .typography[data-variant="notice-title"] {
+        font-weight: var(--font-bold);
+    }
+
+    .typography[data-variant="notice-title-inverted"] {
+        font-weight: var(--font-bold);
+        color: var(--background-color);
+    }
+
     .notice__section[data-variant="control"] {
         margin-top: var(--space-2);
     }
@@ -26,6 +35,7 @@
         top: -1em;
         left: -1em;
         color: var(--color);
+        z-index: 1;
     }
 
     .notice[data-variant="icon-top"] {
@@ -53,7 +63,7 @@
         background: transparent;
     }
 
-    .notice__title[data-variant="title-segmented"] {
+    .notice__section[data-variant="title-segmented-header"] {
         gap: calc(2 * var(--space));
         display: flex;
         background: var(--color);
@@ -61,11 +71,11 @@
         flex-direction: row;
         align-items: center;
         align-self: stretch;
-        padding-block: calc(2 * var(--space)) calc(2 * var(--space));
-        padding-inline: calc(2 * var(--space)) calc(2 * var(--space));
+        padding-block: var(--space-2);
+        padding-inline: var(--space-2);
     }
 
-    .notice__section[data-variant="title-segmented"] {
+    .notice__section[data-variant="title-segmented-body"] {
         padding: calc(4 * var(--space));
     }
 }
