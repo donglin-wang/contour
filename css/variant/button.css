@@ -42,7 +42,7 @@
     .button[data-variant="too-much"] {
         border-radius: 999px 0 0 999px;
         padding: calc(2 * var(--space));
-        gap: calc(5 * var(--space));   
+        gap: calc(5 * var(--space));
     }
 
     .button__section[data-variant="too-much"] {
@@ -64,8 +64,10 @@
         height: var(--space-5);
     }
 
-    .button--symbol[data-variant="too-much"] {
+    .avatar[data-variant="too-much"] {
         border-radius: 999px;
+        width: var(--space-7);
+        height: var(--space-7);
     }
 
     .button[data-variant="icon"],
