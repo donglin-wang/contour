@@ -3,119 +3,193 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Menu</title>
+        <title>List</title>
+        <!-- common styles -->
         <link rel="stylesheet" href="/css/base/reset.css" />
-        <link rel="stylesheet" href="/css/base/theme.css" />
-        <link rel="stylesheet" href="/css/base/sizes.css" />
-        <link rel="stylesheet" href="/css/base/typography.css" />
+        <link rel="stylesheet" href="/css/base/variables.css" />
 
+        <link rel="stylesheet" href="/css/component/typography.css" />
+        <link rel="stylesheet" href="/css/component/container.css" />
+
+        <link rel="stylesheet" href="/css/variant/typography.css" />
+        <link rel="stylesheet" href="/css/variant/container.css" />
+
+        <!-- page-specific styles -->
         <link rel="stylesheet" href="/css/component/icon.css" />
-        <link rel="stylesheet" href="/css/component/notice.css" />
         <link rel="stylesheet" href="/css/component/list.css" />
         <link rel="stylesheet" href="/css/component/button.css" />
         <link rel="stylesheet" href="/css/component/avatar.css" />
 
         <link rel="stylesheet" href="/css/variant/icon.css" />
-        <link rel="stylesheet" href="/css/variant/notice.css" />
         <link rel="stylesheet" href="/css/variant/list.css" />
         <link rel="stylesheet" href="/css/variant/button.css" />
     </head>
     <body>
-        <article class="article">
-            <h1 class="is-content">List</h1>
-            <section class="is-content">
-                <div class="list">
-                    <b class="list__label"> Pages </b>
-                    <div class="list__item is-indented" data-variant="shortcut">
-                        <span>Profile</span>
-                        <span class="list__text" data-variant="kdb"
+        <article class="container" data-variant="article">
+            <h1 class="typography" data-variant="h1">List</h1>
+            <section class="container" data-variant="article-section">
+                <div class="list" data-variant="menu">
+                    <b class="typography" data-variant="menu-label"> Pages </b>
+                    <div class="list__item" data-variant="menu-item">
+                        <span class="typography">Profile</span>
+                        <span class="typography" data-variant="menu-kdb"
                             ><kbd>⌘P</kbd></span
                         >
                     </div>
-                    <div class="list__item is-indented" data-variant="shortcut">
-                        <span>Info</span>
-                        <span class="list__text" data-variant="kdb"
-                            ><kbd>⌘B</kbd></span
+                    <div class="list__item" data-variant="menu-item">
+                        <span class="typography">Info</span>
+                        <span class="typography" data-variant="menu-kdb"
+                            ><kbd>⌘P</kbd></span
                         >
                     </div>
-                    <div class="list__divider"></div>
-                    <b class="list__label"> Appearance </b>
-                    <div class="list__item is-indented">Activity bar</div>
-                    <div class="list__item is-indented">Status bar</div>
-                    <div class="list__item is-indented">Panel</div>
-                </div>
-            </section>
-            <section class="is-content">
-                <div class="list">
-                    <b class="list__label"> Users </b>
-                    <div class="list__item" data-variant="user-display">
+                    <b class="typography" data-variant="menu-label">
+                        Appearance
+                    </b>
+                    <div class="list__item" data-variant="menu-item">
+                        Activity bar
+                    </div>
+                    <div class="list__item" data-variant="menu-item">
+                        Status bar
+                    </div>
+                    <div class="list__item" data-variant="menu-item">Panel</div>
+                    <b class="typography" data-variant="menu-label"> Users </b>
+                    <div class="list__item" data-variant="menu-user">
                         <img
                             class="avatar"
                             src="/asset/image/linux.jpg"
                             alt="Linux penguin"
-                            data-variant="user-display"
+                            data-variant="menu-user"
                         />
-                        <b class="list__text" data-variant="user-display-title"
-                            >User 1</b
+                        <b class="typography" data-variant="menu-user">User 1</b>
+                        <span class="typography" data-variant="menu-secondary"
+                            >A typical Linux user</span
                         >
-                        <span
-                            class="list__text is-secondary"
-                            data-variant="user-display-description"
+                    </div>
+                    <div class="list__item" data-variant="menu-user">
+                        <img
+                            class="avatar"
+                            src="/asset/image/linux.jpg"
+                            alt="Linux penguin"
+                            data-variant="menu-user"
+                        />
+                        <b class="typography" data-variant="menu-user">User 2</b>
+                        <span class="typography" data-variant="menu-secondary"
                             >A typical Linux user</span
                         >
                     </div>
                 </div>
             </section>
-
-            <section class="is-content">
+            <section class="container" data-variant="article-section">
                 <div class="list">
-                    <div class="list__item" data-variant="with-description">
-                        <span>Item 1 title</span>
-                        <span class="list__text is-secondary"
-                            >A brief description of item 1</span
-                        >
-                    </div>
-                    <div class="list__item" data-variant="with-description">
-                        <span>Item 2 title</span>
-                        <span class="list__text is-secondary"
-                            >A brief description of item 2</span
-                        >
-                    </div>
-                    <div class="list__item" data-variant="with-description">
-                        <span>Item 3 title</span>
-                        <span class="list__text is-secondary"
-                            >A brief description of item 3</span
-                        >
-                    </div>
-                </div>
-            </section>
-            <section class="is-content">
-                <div class="list">
-                    <div class="list__item" data-variant="singer-preview">
+                    <div class="list__item" data-variant="song-ranking">
                         <span
-                            class="list__text"
-                            data-variant="singer-preview-index"
+                            class="typography"
+                            data-variant="song-ranking-index"
                             >01</span
                         >
                         <img
                             class="avatar"
                             src="/asset/image/linux.jpg"
                             alt="Linux penguin"
-                            data-variant="singer-preview-avatar"
+                            data-variant="song-ranking-avatar"
                         />
                         <span
-                            class="list__text"
-                            data-variant="singer-preview-name"
+                            class="typography"
+                            data-variant="song-ranking-name"
                             >Ellie Beilish</span
                         >
                         <span
-                            class="list__text"
-                            data-variant="singer-preview-song"
+                            class="typography"
+                            data-variant="song-ranking-song"
                             >Bears of a fever</span
                         >
                         <button
                             class="button"
-                            data-variant="singer-preview-control"
+                            data-variant="song-ranking-control"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="icon"
+                            >
+                                <path
+                                    d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="list__item" data-variant="song-ranking">
+                        <span
+                            class="typography"
+                            data-variant="song-ranking-index"
+                            >02</span
+                        >
+                        <img
+                            class="avatar"
+                            src="/asset/image/linux.jpg"
+                            alt="Linux penguin"
+                            data-variant="song-ranking-avatar"
+                        />
+                        <span
+                            class="typography"
+                            data-variant="song-ranking-name"
+                            >Dio Lupa</span
+                        >
+                        <span
+                            class="typography"
+                            data-variant="song-ranking-song"
+                            >Remaining Reason</span
+                        >
+                        <button
+                            class="button"
+                            data-variant="song-ranking-control"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="icon"
+                            >
+                                <path
+                                    d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="list__item" data-variant="song-ranking">
+                        <span
+                            class="typography"
+                            data-variant="song-ranking-index"
+                            >03</span
+                        >
+                        <img
+                            class="avatar"
+                            src="/asset/image/linux.jpg"
+                            alt="Linux penguin"
+                            data-variant="song-ranking-avatar"
+                        />
+                        <span
+                            class="typography"
+                            data-variant="song-ranking-name"
+                            >Sabrino Gardener</span
+                        >
+                        <span
+                            class="typography"
+                            data-variant="song-ranking-song"
+                            >Cappuccino</span
+                        >
+                        <button
+                            class="button"
+                            data-variant="song-ranking-control"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -135,28 +209,144 @@
                     </div>
                 </div>
             </section>
-            <section class="is-content">
+            <section class="container" data-variant="article-section">
                 <div class="list">
-                    <div class="list__item" data-variant="singer-detail">
+                    <div class="list__item" data-variant="song-detail">
                         <img
                             class="avatar"
                             src="/asset/image/linux.jpg"
                             alt="Linux penguin"
-                            data-variant="singer-detail-avatar"
+                            data-variant="song-detail-avatar"
                         />
-                        <span
-                            class="list__text"
-                            data-variant="singer-detail-name"
+                        <span class="typography" data-variant="song-detail-name"
                             >Ellie Beilish</span
                         >
-                        <span
-                            class="list__text"
-                            data-variant="singer-detail-song"
+                        <span class="typography" data-variant="song-detail-song"
                             >Bears of a fever</span
                         >
                         <span
-                            class="list__text"
-                            data-variant="singer-detail-description"
+                            class="typography"
+                            data-variant="song-detail-description"
+                            >"Bears of a Fever" captivated audiences with its
+                            intense energy and mysterious lyrics. Its popularity
+                            skyrocketed after fans shared it widely online,
+                            earning Ellie critical acclaim.</span
+                        >
+                        <button
+                            class="button"
+                            data-variant="song-detail-control"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="icon"
+                            >
+                                <path
+                                    d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"
+                                />
+                            </svg>
+                        </button>
+                        <button
+                            class="button"
+                            data-variant="song-detail-control"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="icon"
+                            >
+                                <path
+                                    d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="list__item" data-variant="song-detail">
+                        <img
+                            class="avatar"
+                            src="/asset/image/linux.jpg"
+                            alt="Linux penguin"
+                            data-variant="song-detail-avatar"
+                        />
+                        <span class="typography" data-variant="song-detail-name"
+                            >Sabrino Gardener</span
+                        >
+                        <span class="typography" data-variant="song-detail-song"
+                            >Cappuccino</span
+                        >
+                        <span
+                            class="typography"
+                            data-variant="song-detail-description"
+                            >"Cappuccino" quickly gained attention for its
+                            smooth melody and relatable themes. The song's
+                            success propelled Sabrino into the spotlight,
+                            solidifying their status as a rising star.</span
+                        >
+                        <button
+                            class="button"
+                            data-variant="song-detail-control"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="icon"
+                            >
+                                <path
+                                    d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"
+                                />
+                            </svg>
+                        </button>
+                        <button
+                            class="button"
+                            data-variant="song-detail-control"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="icon"
+                            >
+                                <path
+                                    d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="list__item" data-variant="song-detail">
+                        <img
+                            class="avatar"
+                            src="/asset/image/linux.jpg"
+                            alt="Linux penguin"
+                            data-variant="song-detail-avatar"
+                        />
+                        <span class="typography" data-variant="song-detail-name"
+                            >Dio Lupa</span
+                        >
+                        <span class="typography" data-variant="song-detail-song"
+                            >Remaining Reason</span
+                        >
+                        <span
+                            class="typography"
+                            data-variant="song-detail-description"
                             >"Remaining Reason" became an instant hit, praised
                             for its haunting sound and emotional depth. A viral
                             performance brought it widespread recognition,
@@ -165,7 +355,7 @@
                         >
                         <button
                             class="button"
-                            data-variant="singer-detail-control"
+                            data-variant="song-detail-control"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -184,7 +374,7 @@
                         </button>
                         <button
                             class="button"
-                            data-variant="singer-detail-control"
+                            data-variant="song-detail-control"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"

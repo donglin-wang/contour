@@ -23,12 +23,12 @@
     }
 
     .typography {
-        --typography-color: var(--color);
-        --typography-text-decoration: none;
-        --typography-text-overflow: clip;
-        --typography-font-size: var(--font-size-base);
-        --typography-font-weight: var(--font-normal);
-        --typography-line-height: 1.5;
+        --typography-color: inherit;
+        --typography-text-decoration: inherit;
+        --typography-text-overflow: inherit;
+        --typography-font-size: inherit;
+        --typography-font-weight: inherit;
+        --typography-line-height: inherit;
         --typography-margin-inline: 0;
         --typography-margin-block: 0;
 

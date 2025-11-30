@@ -1,33 +1,54 @@
 @layer variant {
-    .list__item[data-variant="shortcut"] {
-        grid-template-columns: min-content 1fr;
-        grid-template-rows: min-content min-content;
+    .list__item[data-variant="menu-item"] {
+        cursor: pointer;
+        grid-template-columns: 1fr max-content;
+        padding-inline-start: var(--space-7);
     }
 
-    .list__item[data-variant="user-display"] {
-        grid-template-columns: min-content 1fr;
+    .list__item[data-variant="menu-user"] {
+        grid-template-columns: max-content max-content;
         grid-template-rows: min-content min-content;
-        column-gap: var(--space-4);
-        row-gap: var(--space-1);
+        gap: var(--space-1) var(--space-2);
         align-items: center;
+        cursor: pointer;
+        padding-inline-start: var(--space-7);
     }
 
-    .avatar[data-variant="user-display"] {
+    .list__item[data-variant="menu-item"]:hover,
+    .list__item[data-variant="menu-user"]:hover {
+        background-color: var(--color);
+        color: var(--background-color);
+    }
+
+    .avatar[data-variant="menu-user"] {
         grid-column: 1 / 2;
         grid-row: 1 / span 2;
-        width: var(--space-6);
-        height: var(--space-6);
+        width: var(--space-7);
+        height: var(--space-7);
     }
 
-    .list__text[data-variant="user-display-title"] {
-        grid-row: 1 / span 1;
+    .typography[data-variant="menu-label"] {
+        display: block;
+        padding-inline: var(--list-item-padding-inline);
+        padding-block: var(--list-item-padding-block);
+        font-weight: var(--font-bold);
     }
 
-    .list__text[data-variant="user-display-description"] {
-        grid-row: 2 / span 1;
+    .typography[data-variant="menu-kdb"] {
+        display: inline-block;
+        font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
     }
 
-    .list__item[data-variant="singer-preview"] {
+    .typography[data-variant="menu-user"] {
+        font-weight: var(--font-medium);
+    }
+
+    .typography[data-variant="menu-secondary"] {
+        color: grey;
+        font-size: var(--font-size-s);
+    }
+
+    .list__item[data-variant="song-ranking"] {
         --list-item-hover-background: var(--background-color-muted);
         --list-item-hover-color: var(--color);
 
@@ -37,34 +58,34 @@
         align-items: center;
     }
 
-    .list__text[data-variant="singer-preview-index"] {
+    .typography[data-variant="song-ranking-index"] {
         grid-column: 1 / 2;
         grid-row: 1 / span 2;
         font-weight: var(--font-thin);
         font-size: var(--font-size-4xl);
-        letter-spacing: var(--space-1);
+        font-variant-numeric: tabular-nums;
     }
 
-    .list__text[data-variant="singer-preview-name"] {
+    .typography[data-variant="song-ranking-name"] {
         grid-row: 1 / span 1;
         font-weight: var(--font-bold);
     }
 
-    .list__text[data-variant="singer-preview-song"] {
+    .typography[data-variant="song-ranking-song"] {
         grid-row: 2 / span 1;
         text-transform: uppercase;
         color: grey;
         font-size: var(--font-size-s);
     }
 
-    .avatar[data-variant="singer-preview-avatar"] {
+    .avatar[data-variant="song-ranking-avatar"] {
         grid-column: 2 / 3;
         grid-row: 1 / span 2;
         width: var(--space-7);
         height: var(--space-7);
     }
 
-    .button[data-variant="singer-preview-control"] {
+    .button[data-variant="song-ranking-control"] {
         grid-row: 1 / span 2;
         --button-background: transparent;
         --button-color: var(--color);
@@ -75,7 +96,7 @@
         border-radius: 5px;
     }
 
-    .list__item[data-variant="singer-detail"] {
+    .list__item[data-variant="song-detail"] {
         --list-item-hover-background: var(--background-color-muted);
         --list-item-hover-color: var(--color);
 
@@ -86,20 +107,20 @@
         padding: var(--space-5);
     }
 
-    .avatar[data-variant="singer-detail-avatar"] {
+    .avatar[data-variant="song-detail-avatar"] {
         grid-column: 1 / 2;
         grid-row: 1 / span 2;
         width: var(--space-7);
         height: var(--space-7);
     }
 
-    .list__text[data-variant="singer-detail-name"] {
+    .typography[data-variant="song-detail-name"] {
         grid-column: 2 / span 1;
         grid-row: 1 / span 1;
         font-weight: var(--font-bold);
     }
 
-    .list__text[data-variant="singer-detail-song"] {
+    .typography[data-variant="song-detail-song"] {
         grid-column: 2 / span 1;
         grid-row: 2 / span 1;
         text-transform: uppercase;
@@ -107,18 +128,14 @@
         font-size: var(--font-size-s);
     }
 
-    .list__text[data-variant="singer-detail-description"] {
+    .typography[data-variant="song-detail-description"] {
         grid-column: 2 / span 1;
         grid-row: 3 / span 1;
         margin-block-start: var(--space-4);
         font-size: var(--font-size-s);
     }
 
-    .list__text[data-variant="kdb"] {
-        margin-inline-start: auto;
-    }
-
-    .button[data-variant="singer-detail-control"] {
+    .button[data-variant="song-detail-control"] {
         grid-row: 1 / span 2;
         --button-background: transparent;
         --button-color: var(--color);
@@ -127,19 +144,5 @@
         --button-hover-opacity: 0.2;
         --button-padding: var(--space-2);
         border-radius: 5px;
-    }
-
-    .list__item[data-variant="with-description"] {
-        gap: var(--space-2);
-    }
-
-    .list__item.is-indented {
-        padding-inline-start: var(--space-7);
-    }
-
-    .list__text.is-secondary {
-        font-size: var(--font-size-s);
-        color: grey;
-        line-height: 1;
     }
 }

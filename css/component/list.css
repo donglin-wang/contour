@@ -1,5 +1,4 @@
 @layer base {
-
     .list {
         --list-background: var(--background-color-muted);
         --list-padding-block: 0;
@@ -10,21 +9,17 @@
         --list-border-block: none;
         --list-border-inline: none;
 
-        background-color: var(--list-background);
-        padding-block: var(--list-padding-block);
-        padding-inline: var(--list-padding-inline);
-        margin-block: var(--list-margin-block);
-        margin-inline: var(--list-margin-inline);
-        border-radius: var(--list-border-radius);
-        border-block: var(--list-border-block);
-        border-inline: var(--list-border-inline);
-    }
+        --list-color: inherit;
+        --list-text-decoration: inherit;
+        --list-text-overflow: inherit;
+        --list-font-size: var(--font-size-base);
+        --list-font-weight: var(--font-normal);
+        --list-line-height: 1;
 
-    .list__item {
         --list-item-color: var(--color);
         --list-item-background: transparent;
-        --list-item-hover-color: var(--background-color);
-        --list-item-hover-background: var(--color);
+        --list-item-hover-color: inherit;
+        --list-item-hover-background: transparent;
 
         --list-item-padding-block: var(--space-3);
         --list-item-padding-inline: var(--space-3);
@@ -34,14 +29,25 @@
         --list-item-border-block: none;
         --list-item-border-inline: none;
 
-        --list-item-font-size: var(--font-size-base);
-        --list-item-font-weight: var(--font-normal);
-        --list-item-line-height: 1;
+        background-color: var(--list-background);
+        padding-block: var(--list-padding-block);
+        padding-inline: var(--list-padding-inline);
+        margin-block: var(--list-margin-block);
+        margin-inline: var(--list-margin-inline);
+        border-radius: var(--list-border-radius);
+        border-block: var(--list-border-block);
+        border-inline: var(--list-border-inline);
 
-        --list-item-cursor: auto;
+        color: var(--list-color);
+        text-decoration: var(--list-text-decoration);
+        text-overflow: var(--list-text-overflow);
+        font-size: var(--list-font-size);
+        font-weight: var(--list-font-weight);
+        line-height: var(--list-line-height);
+    }
 
+    .list__item {
         display: grid;
-
         color: var(--list-item-color);
         background-color: var(--list-item-background);
         padding-block: var(--list-item-padding-block);
@@ -51,51 +57,10 @@
         border-radius: var(--list-item-border-radius);
         border-block: var(--list-item-border-block);
         border-inline: var(--list-item-border-inline);
-        font-size: var(--list-item-font-size);
-        font-weight: var(--list-item-font-weight);
-        line-height: var(--list-item-line-height);
-        cursor: var(--list-item-cursor);
-    }
-
-    .list__label {
-        --list-label-color: var(--color);
-        --list-label-background: transparent;
-        --list-label-hover-color: var(--background-color);
-        --list-label-hover-background: var(--color);
-
-        --list-label-padding-block: var(--space-3);
-        --list-label-padding-inline: var(--space-3);
-        --list-label-margin-block: 0;
-        --list-label-margin-inline: 0;
-        --list-label-border-radius: 0;
-        --list-label-border-block: none;
-        --list-label-border-inline: none;
-
-        --list-label-font-size: var(--font-size-base);
-        --list-label-font-weight: var(--font-bold);
-        --list-label-line-height: 1;
-
-        --list-label-cursor: auto;
-
-        display: block;
-        color: var(--list-label-color);
-        background-color: var(--list-label-background);
-        padding-block: var(--list-label-padding-block);
-        padding-inline: var(--list-label-padding-inline);
-        margin-block: var(--list-label-margin-block);
-        margin-inline: var(--list-label-margin-inline);
-        border-radius: var(--list-label-border-radius);
-        border-block: var(--list-label-border-block);
-        border-inline: var(--list-label-border-inline);
-        font-size: var(--list-label-font-size);
-        font-weight: var(--list-label-font-weight);
-        line-height: var(--list-label-line-height);
-        cursor: var(--list-label-cursor);
     }
 
     .list__section {
         display: flex;
-        flex-direction: column;
     }
 
     .list__item:hover {
