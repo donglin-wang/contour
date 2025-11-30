@@ -14,19 +14,29 @@
     .button[data-variant="tiered"] {
         padding-inline: var(--space-4);
         padding-block: var(--space-4);
+        width: 50%;
     }
 
     .button__section[data-variant="tiered"] {
-        gap: 0.25em;
+        flex-direction: column;
+        gap: var(--space-1);
         align-items: start;
     }
 
-    .button__text[data-variant="tiered-primary"] {
-        font-size: var(--font-size-l);
+    .typography[data-variant="tiered-primary"] {
+        font-size: var(--font-size-base);
+        font-weight: bold;
     }
 
-    .button__text[data-variant="tiered-secondary"] {
+    .typography[data-variant="tiered-secondary"] {
         font-size: var(--font-size-s);
+        font-weight: var(--font-extralight);
+        color: var(--background-color-muted);
+    }
+    .icon[data-variant="tiered-chevron"] {
+        margin-inline-start: auto;
+        width: var(--space-5);
+        height: var(--space-5);
     }
 
     .button[data-variant="too-much"] {
@@ -37,16 +47,21 @@
 
     .button__section[data-variant="too-much"] {
         flex-direction: column;
-        gap: var(--space);
         align-items: start;
     }
 
-    .button__text[data-variant="too-much-primary"] {
-        font-size: var(--font-size-l);
+    .typography[data-variant="too-much-primary"] {
+        font-size: var(--font-size-base);
+        font-weight: bold;
     }
 
-    .button__text[data-variant="too-much-secondary"] {
+    .typography[data-variant="too-much-secondary"] {
         font-size: var(--font-size-s);
+    }
+
+    .icon[data-variant="too-much-chevron"] {
+        width: var(--space-5);
+        height: var(--space-5);
     }
 
     .button--symbol[data-variant="too-much"] {

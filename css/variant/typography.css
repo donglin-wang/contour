@@ -21,7 +21,9 @@
         font-weight: var(--font-bold);
     }
 
-    .has-no-margin {
-        margin: 0;
+    .typography[data-variant="inline-code"] {
+        background-color: var(--background-color-muted);
+        border-radius: 2px;
+        color: var(--danger);
     }
 }

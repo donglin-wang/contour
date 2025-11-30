@@ -29,66 +29,82 @@
         <link rel="stylesheet" href="/css/variant/button.css" />
     </head>
     <body>
-        <article class="article">
-            <section class="is-content">
-                <h1 class="is-content">Button</h1>
-                <p class="is-content">Button can be used on:</p>
-                <ul class="is-content">
-                    <li class="is-content">
-                        <code class="is-inline">&lt;a&gt;</code>
+        <article class="container" data-variant="article">
+            <section class="container" data-variant="article-section">
+                <h1 class="typography" data-variant="h1">Button</h1>
+                <p class="typography" data-variant="p">
+                    Button can be used on:
+                </p>
+                <ul class="typography" data-variant="list">
+                    <li class="typography" data-variant="list-item">
+                        <code class="typography" data-variant="inline-code"
+                            >&lt;a&gt;</code
+                        >
                     </li>
-                    <li class="is-content">
-                        <code class="is-inline">&lt;button&gt;</code>
+                    <li class="typography" data-variant="list-item">
+                        <code class="typography" data-variant="inline-code"
+                            >&lt;button&gt;</code
+                        >
                     </li>
-                    <li class="is-content">
-                        <code class="is-inline"
+                    <li class="typography" data-variant="list-item">
+                        <code class="typography" data-variant="inline-code"
                             >&lt;input type="submit"&gt;</code
                         >
                     </li>
-                    <li class="is-content">
-                        <code class="is-inline"
+                    <li class="typography" data-variant="list-item">
+                        <code class="typography" data-variant="inline-code"
                             >&lt;input type="reset"&gt;</code
                         >
                     </li>
                 </ul>
-                <p class="is-content">
+                <p class="typography" data-variant="p">
                     It may contain elements with the following classes:
                 </p>
-                <ul class="is-content">
-                    <li class="is-content">
-                        <code class="is-inline">button__section</code> to
-                        organize and customize elements
+                <ul class="typography" data-variant="list">
+                    <li class="typography" data-variant="list-item">
+                        <code class="typography" data-variant="inline-code"
+                            >button__section</code
+                        >
+                        to organize and customize elements
                     </li>
-                    <li class="is-content">
-                        <code class="is-inline">button--symbol</code> to
-                        annotate the symbol representing the effect of the
+                    <li class="typography" data-variant="list-item">
+                        <code class="typography" data-variant="inline-code"
+                            >button--symbol</code
+                        >
+                        to annotate the symbol representing the effect of the
                         button
                     </li>
                 </ul>
-                <p class="is-content">
+                <p class="typography" data-variant="p">
                     As seen in the examples below,
-                    <code class="is-inline">button__section</code> can be nested
-                    to create complex layouts.
+                    <code class="typography" data-variant="inline-code"
+                        >button__section</code
+                    >
+                    can be nested to create complex layouts.
                 </p>
 
-                <section class="is-content">
+                <section class="container" data-variant="article-section">
                     <button class="button">Button</button>
                     <a href="#" class="button">Link</a>
                     <input type="submit" class="button" />
                     <input type="reset" class="button" />
                 </section>
 
-                <h2 class="is-content">Variants</h2>
+                <h2 class="typography" data-variant="h2">Variants</h2>
 
-                <p class="is-content">
+                <p class="typography" data-variant="p">
                     You can create variants for
-                    <code class="is-inline">button__section</code> to create
-                    more complex buttons. By default,
-                    <code class="is-inline">button__section</code> has column as
-                    its flex direction:
+                    <code class="typography" data-variant="inline-code"
+                        >button__section</code
+                    >
+                    to create more complex buttons. By default,
+                    <code class="typography" data-variant="inline-code"
+                        >button__section</code
+                    >
+                    has column as its flex direction:
                 </p>
 
-                <section class="is-content">
+                <section class="container" data-variant="article-section">
                     <button class="button" data-variant="top-down">
                         <icon-alarm
                             class="icon"
@@ -98,38 +114,36 @@
                     </button>
                 </section>
 
-                <p class="is-content">
+                <p class="typography" data-variant="p">
                     You can go a step further to create this button with primary
                     and secondary text:
                 </p>
 
-                <section class="is-content">
+                <section class="container" data-variant="article-section">
                     <button class="button" data-variant="tiered">
                         <span class="button__section" data-variant="tiered">
-                            <strong
-                                class="button__text"
+                            <b
+                                class="typography"
                                 data-variant="tiered-primary"
-                                >Title</strong
+                                >Title</b
                             >
                             <span
-                                class="button__text"
+                                class="typography"
                                 data-variant="tiered-secondary"
                                 >Next</span
                             >
                         </span>
-                        <span class="button__section">
-                            <icon-chevron-right></icon-chevron-right>
-                        </span>
+                        <icon-chevron-right class="icon" data-variant="tiered-chevron"></icon-chevron-right>
                     </button>
                 </section>
 
-                <p class="is-content">
+                <p class="typography" data-variant="p">
                     Although we do not recommend creating a button this complex,
                     the world is your oyster when it comes to customizing
                     sections to fit your needs:
                 </p>
 
-                <section class="is-content">
+                <section class="container" data-variant="article-section">
                     <button class="button" data-variant="too-much">
                         <img
                             src="/asset/image/linux.jpg"
@@ -140,19 +154,19 @@
 
                         <span class="button__section" data-variant="too-much">
                             <strong
-                                class="button__text"
+                                class="typography"
                                 data-variant="too-much-primary"
                             >
                                 Join stream
                             </strong>
                             <span
-                                class="button__text"
+                                class="typography"
                                 data-variant="too-much-secondary"
                             >
                                 This is too much</span
                             >
                         </span>
-                        <icon-chevron-right></icon-chevron-right>
+                        <icon-chevron-right class="icon" data-variant="too-much-chevron"></icon-chevron-right>
                     </button>
                 </section>
             </section>

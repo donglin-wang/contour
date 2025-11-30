@@ -14,16 +14,26 @@
         --button-hover-opacity: 1;
         --button-hover-color: var(--background-color);
 
+        --button-text-decoration: none;
+        --button-text-overflow: inherit;
+        --button-font-size: var(--font-size-base);
+        --button-font-weight: var(--font-normal);
+        --button-line-height: 1.5;
+
         display: inline-flex;
         align-items: center;
         width: fit-content;
         flex-direction: row;
         cursor: pointer;
-        text-decoration: none; /* Resets anchor element text decoration */
-        font-size: var(--font-size-base); /* Resets button element font size */
+
+        color: var(--button-color);
+        text-decoration: var(--button-text-decoration);
+        text-overflow: var(--button-text-overflow);
+        font-size: var(--button-font-size);
+        font-weight: var(--button-font-weight);
+        line-height: var(--button-line-height);
 
         background: var(--button-background);
-        color: var(--button-color);
         padding-block: var(--button-padding-block);
         padding-inline: var(--button-padding-inline);
         gap: var(--button-gap);
@@ -40,10 +50,6 @@
     }
 
     .button__section {
-        --button-section-gap: calc(2 * var(--space));
-
         display: flex;
-        flex-direction: column;
-        gap: var(--button-section-gap);
     }
 }
