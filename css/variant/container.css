@@ -4,6 +4,7 @@
         max-width: 50rem;
         padding-inline: var(--space-2);
         margin-inline: auto;
+        font-size: var(--font-size-base);
     }
 
     .container[data-variant="article-section"] {

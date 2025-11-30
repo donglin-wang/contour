@@ -5,6 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>List</title>
         <!-- common styles -->
+        <style>
+            @layer base, component, variant;
+        </style>
         <link rel="stylesheet" href="/css/base/reset.css" />
         <link rel="stylesheet" href="/css/base/variables.css" />
 
@@ -14,15 +17,18 @@
         <link rel="stylesheet" href="/css/variant/typography.css" />
         <link rel="stylesheet" href="/css/variant/container.css" />
 
-        <!-- page-specific styles -->
-        <link rel="stylesheet" href="/css/component/icon.css" />
-        <link rel="stylesheet" href="/css/component/list.css" />
-        <link rel="stylesheet" href="/css/component/button.css" />
+        <!-- dependencies -->
         <link rel="stylesheet" href="/css/component/avatar.css" />
+        <link rel="stylesheet" href="/css/component/button.css" />
+        <link rel="stylesheet" href="/css/component/icon.css" />
 
-        <link rel="stylesheet" href="/css/variant/icon.css" />
-        <link rel="stylesheet" href="/css/variant/list.css" />
         <link rel="stylesheet" href="/css/variant/button.css" />
+        <link rel="stylesheet" href="/css/variant/icon.css" />
+
+        <!-- page-specific styles -->
+        <link rel="stylesheet" href="/css/component/list.css" />
+
+        <link rel="stylesheet" href="/css/variant/list.css" />
     </head>
     <body>
         <article class="container" data-variant="article">
@@ -60,7 +66,9 @@
                             alt="Linux penguin"
                             data-variant="menu-user"
                         />
-                        <b class="typography" data-variant="menu-user">User 1</b>
+                        <b class="typography" data-variant="menu-user"
+                            >User 1</b
+                        >
                         <span class="typography" data-variant="menu-secondary"
                             >A typical Linux user</span
                         >
@@ -72,7 +80,9 @@
                             alt="Linux penguin"
                             data-variant="menu-user"
                         />
-                        <b class="typography" data-variant="menu-user">User 2</b>
+                        <b class="typography" data-variant="menu-user"
+                            >User 2</b
+                        >
                         <span class="typography" data-variant="menu-secondary"
                             >A typical Linux user</span
                         >

@@ -1,77 +1,109 @@
 @layer base {
     .mutex {
         --mutex-background: var(--background-color);
-
         --mutex-padding-block: 0;
         --mutex-padding-inline: 0;
-
         --mutex-margin-block: 0;
         --mutex-margin-inline: 0;
-
         --mutex-border-inline-start: 0;
         --mutex-border-inline-end: 0;
         --mutex-border-block-start: 0;
         --mutex-border-block-end: 0;
-
         --mutex-border-start-start-radius: 0;
         --mutex-border-start-end-radius: 0;
         --mutex-border-end-end-radius: 0;
         --mutex-border-end-start-radius: 0;
-
         --mutex-box-shadow: none;
         --mutex-gap: calc(4 * var(--space));
+        --mutex-color: inherit;
+        --mutex-text-decoration: inherit;
+        --mutex-text-overflow: inherit;
+        --mutex-font-size: var(--font-size-base);
+        --mutex-font-weight: var(--font-normal);
+        --mutex-line-height: inherit;
+
+        --mutex-item-padding-inline: calc(4 * var(--space));
+        --mutex-item-padding-block: calc(3 * var(--space));
+        --mutex-item-border-inline-start: 0;
+        --mutex-item-border-inline-end: 0;
+        --mutex-item-border-block-start: 0;
+        --mutex-item-border-block-end: 0;
+        --mutex-item-border-start-start-radius: 0;
+        --mutex-item-border-start-end-radius: 0;
+        --mutex-item-border-end-end-radius: 0;
+        --mutex-item-border-end-start-radius: 0;
+        --mutex-item-margin-block: 0;
+        --mutex-item-margin-inline: 0;
+        --mutex-item-box-shadow: none;
+        --mutex-item-background: none;
+        --mutex-item-color: grey;
+
+        --mutex-item-active-border-inline-start: 0;
+        --mutex-item-active-border-inline-end: 0;
+        --mutex-item-active-border-block-start: 0;
+        --mutex-item-active-border-block-end: 0;
+        --mutex-item-active-border-start-start-radius: 0;
+        --mutex-item-active-border-start-end-radius: 0;
+        --mutex-item-active-border-end-end-radius: 0;
+        --mutex-item-active-border-end-start-radius: 0;
+        --mutex-item-active-box-shadow: none;
+        --mutex-item-active-background: transparent;
+        --mutex-item-active-color: var(--color);
+        --mutex-item-active-font-weight: normal;
+        --mutex-item-active-font-size: var(--font-size-base);
+
+        --mutex-item-hover-background: none;
+        --mutex-item-hover-color: var(--color);
+        --mutex-item-hover-font-weight: normal;
+
+        --mutex-indicator-border-inline-start: 0;
+        --mutex-indicator-border-inline-end: 0;
+        --mutex-indicator-border-block-start: 0;
+        --mutex-indicator-border-block-end: 0;
+        --mutex-indicator-border-start-start-radius: 0;
+        --mutex-indicator-border-start-end-radius: 0;
+        --mutex-indicator-border-end-end-radius: 0;
+        --mutex-indicator-border-end-start-radius: 0;
+        --mutex-indicator-box-shadow: none;
+        --mutex-indicator-background: transparent;
+        --mutex-indicator-color: var(--color);
+        --mutex-indicator-font-weight: normal;
+        --mutex-indicator-font-size: var(--font-size-base);
+        --mutex-indicator-margin-block: 0;
+        --mutex-indicator-margin-inline: 0;
 
         display: flex;
         position: relative;
         gap: var(--mutex-gap);
         box-shadow: var(--mutex-box-shadow);
-
         background: var(--mutex-background);
-
         padding-block: var(--mutex-padding-block);
         padding-inline: var(--mutex-padding-inline);
-
         margin-block: var(--mutex-margin-block);
         margin-block: var(--mutex-margin-inline);
-
         border-block-start: var(--mutex-border-block-start);
         border-block-end: var(--mutex-border-block-end);
         border-inline-start: var(--mutex-border-inline-start);
         border-inline-end: var(--mutex-border-inline-end);
-
         border-start-start-radius: var(--mutex-border-start-start-radius);
         border-start-end-radius: var(--mutex-border-start-end-radius);
         border-end-end-radius: var(--mutex-border-end-end-radius);
         border-end-start-radius: var(--mutex-border-end-start-radius);
+
+        color: var(--mutex-color);
+        text-decoration: var(--mutex-text-decoration);
+        text-overflow: var(--mutex-text-overflow);
+        font-size: var(--mutex-font-size);
+        font-weight: var(--mutex-font-weight);
+        line-height: var(--mutex-line-height);
     }
 
     .mutex__item {
-        --mutex-item-padding-inline: calc(4 * var(--space));
-        --mutex-item-padding-block: calc(3 * var(--space));
-
-        --mutex-item-border-inline-start: 0;
-        --mutex-item-border-inline-end: 0;
-        --mutex-item-border-block-start: 0;
-        --mutex-item-border-block-end: 0;
-
-        --mutex-item-border-start-start-radius: 0;
-        --mutex-item-border-start-end-radius: 0;
-        --mutex-item-border-end-end-radius: 0;
-        --mutex-item-border-end-start-radius: 0;
-
-        --mutex-item-margin-block: 0;
-        --mutex-item-margin-inline: 0;
-
-        --mutex-item-box-shadow: none;
-
-        --mutex-item-background: none;
-        --mutex-item-color: grey;
-
         display: flex;
         align-items: center;
-        gap: calc(2 * var(--space));
 
         cursor: pointer;
+        z-index: 20;
 
         margin-inline: var(--mutex-item-margin-inline);
         margin-block: var(--mutex-item-margin-block);
@@ -93,39 +125,15 @@
 
         background: var(--mutex-item-background);
         color: var(--mutex-item-color);
-
-        z-index: 20
     }
 
     .mutex__item:hover {
-        --mutex-item-hover-background: none;
-        --mutex-item-hover-color: var(--color);
-        --mutex-item-hover-font-weight: normal;
-
         background: var(--mutex-item-hover-background);
         color: var(--mutex-item-hover-color);
         font-weight: var(--mutex-item-hover-font-weight);
     }
 
     .mutex__item[aria-selected] {
-        --mutex-item-active-border-inline-start: 0;
-        --mutex-item-active-border-inline-end: 0;
-        --mutex-item-active-border-block-start: 0;
-        --mutex-item-active-border-block-end: 0;
-
-        --mutex-item-active-border-start-start-radius: 0;
-        --mutex-item-active-border-start-end-radius: 0;
-        --mutex-item-active-border-end-end-radius: 0;
-        --mutex-item-active-border-end-start-radius: 0;
-
-        --mutex-item-active-box-shadow: none;
-
-        --mutex-item-active-background: transparent;
-        --mutex-item-active-color: var(--color);
-
-        --mutex-item-active-font-weight: normal;
-        --mutex-item-active-font-size: var(--font-size-base);
-
         border-inline-start: var(--mutex-item-active-border-inline-start);
         border-inline-end: var(--mutex-item-active-border-inline-end);
         border-block-start: var(--mutex-item-active-border-block-start);
@@ -152,28 +160,8 @@
     }
 
     .mutex__indicator {
-        --mutex-indicator-border-inline-start: 0;
-        --mutex-indicator-border-inline-end: 0;
-        --mutex-indicator-border-block-start: 0;
-        --mutex-indicator-border-block-end: 0;
-
-        --mutex-indicator-border-start-start-radius: 0;
-        --mutex-indicator-border-start-end-radius: 0;
-        --mutex-indicator-border-end-end-radius: 0;
-        --mutex-indicator-border-end-start-radius: 0;
-
-        --mutex-indicator-box-shadow: none;
-
-        --mutex-indicator-background: transparent;
-        --mutex-indicator-color: var(--color);
-
-        --mutex-indicator-font-weight: normal;
-        --mutex-indicator-font-size: var(--font-size-base);
-
-        --mutex-indicator-margin-block: 0;
-        --mutex-indicator-margin-inline: 0;
-
         position: absolute;
+        z-index: 10;
 
         margin-inline: var(--mutex-indicator-margin-inline);
         margin-block: var(--mutex-indicator-margin-block);
@@ -183,7 +171,9 @@
         border-block-start: var(--mutex-indicator-border-block-start);
         border-block-end: var(--mutex-indicator-border-block-end);
 
-        border-start-start-radius: var(--mutex-indicator-border-start-start-radius);
+        border-start-start-radius: var(
+            --mutex-indicator-border-start-start-radius
+        );
         border-start-end-radius: var(--mutex-indicator-border-start-end-radius);
         border-end-end-radius: var(--mutex-indicator-border-end-end-radius);
         border-end-start-radius: var(--mutex-indicator-border-end-start-radius);
@@ -195,15 +185,9 @@
 
         font-weight: var(--mutex-indicator-font-weight);
         font-size: var(--mutex-indicator-font-size);
-
-        z-index: 10;
     }
 
     .mutex__section {
-        --mutex-section-gap: calc(2 * var(--space));
-
         display: flex;
-        flex-direction: column;
-        gap: var(--mutex-section-gap);
     }
 }

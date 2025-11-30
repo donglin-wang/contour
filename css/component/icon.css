@@ -1,7 +1,7 @@
-@layer element {
+@layer component {
     :root {
-        --icon-width: 1em;
-        --icon-height: 1em;
+        --icon-width: var(--space-4);
+        --icon-height: var(--space-4);
     }
 
     .icon {

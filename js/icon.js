@@ -13,7 +13,6 @@ export const createPanelLeftOpen = () =>
             viewBox: "0 0 24 24",
             fill: "none",
             stroke: "currentColor",
-            class: "icon",
             "stroke-width": "2",
             "stroke-linecap": "round",
             "stroke-linejoin": "round",
@@ -30,7 +29,6 @@ export const createPanelLeftClose = () =>
             viewBox: "0 0 24 24",
             fill: "none",
             stroke: "currentColor",
-            class: "icon",
             "stroke-width": "2",
             "stroke-linecap": "round",
             "stroke-linejoin": "round",
@@ -47,7 +45,6 @@ export const createAlarm = () =>
             viewBox: "0 0 24 24",
             fill: "none",
             stroke: "currentColor",
-            class: "icon",
             "stroke-width": "2",
             "stroke-linecap": "round",
             "stroke-linejoin": "round",
@@ -64,7 +61,6 @@ export const createChevronRight = () =>
     svg(
         {
             xmlns: "http://www.w3.org/2000/svg",
-            class: "icon",
             viewBox: "0 0 24 24",
             fill: "none",
             stroke: "currentColor",

@@ -4,17 +4,27 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Button</title>
+        <!-- common styles -->
         <style>
-            @layer base, composite, element, variant, page;
+            @layer base, component, variant;
         </style>
         <link rel="stylesheet" href="/css/base/reset.css" />
-        <link rel="stylesheet" href="/css/base/theme.css" />
-        <link rel="stylesheet" href="/css/base/sizes.css" />
-        <link rel="stylesheet" href="/css/base/typography.css" />
+        <link rel="stylesheet" href="/css/base/variables.css" />
 
-        <link rel="stylesheet" href="/css/component/button.css" />
-        <link rel="stylesheet" href="/css/component/icon.css" />
+        <link rel="stylesheet" href="/css/component/typography.css" />
+        <link rel="stylesheet" href="/css/component/container.css" />
+
+        <link rel="stylesheet" href="/css/variant/typography.css" />
+        <link rel="stylesheet" href="/css/variant/container.css" />
+
+        <!-- dependencies -->
         <link rel="stylesheet" href="/css/component/avatar.css" />
+        <link rel="stylesheet" href="/css/component/icon.css" />
+
+        <link rel="stylesheet" href="/css/variant/icon.css" />
+
+        <!-- page-specific styles -->
+        <link rel="stylesheet" href="/css/component/button.css" />
 
         <link rel="stylesheet" href="/css/variant/button.css" />
     </head>
@@ -96,8 +106,16 @@
                 <section class="is-content">
                     <button class="button" data-variant="tiered">
                         <span class="button__section" data-variant="tiered">
-                            <strong class="button__text" data-variant="tiered-primary">Title</strong>
-                            <span class="button__text" data-variant="tiered-secondary">Next</span>
+                            <strong
+                                class="button__text"
+                                data-variant="tiered-primary"
+                                >Title</strong
+                            >
+                            <span
+                                class="button__text"
+                                data-variant="tiered-secondary"
+                                >Next</span
+                            >
                         </span>
                         <span class="button__section">
                             <icon-chevron-right></icon-chevron-right>

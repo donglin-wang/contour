@@ -4,10 +4,10 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Notice</title>
-        <style>
-            @layer base, composite, element, variant, page;
-        </style>
         <!-- common styles -->
+        <style>
+            @layer base, component, variant;
+        </style>
         <link rel="stylesheet" href="/css/base/reset.css" />
         <link rel="stylesheet" href="/css/base/variables.css" />
 
@@ -17,14 +17,17 @@
         <link rel="stylesheet" href="/css/variant/typography.css" />
         <link rel="stylesheet" href="/css/variant/container.css" />
 
-        <!-- page-specific styles -->
-        <link rel="stylesheet" href="/css/component/icon.css" />
-        <link rel="stylesheet" href="/css/component/notice.css" />
+        <!-- dependencies -->
         <link rel="stylesheet" href="/css/component/button.css" />
+        <link rel="stylesheet" href="/css/component/icon.css" />
 
-        <link rel="stylesheet" href="/css/variant/icon.css" />
-        <link rel="stylesheet" href="/css/variant/notice.css" />
         <link rel="stylesheet" href="/css/variant/button.css" />
+        <link rel="stylesheet" href="/css/variant/icon.css" />
+
+        <!-- page-specific styles -->
+        <link rel="stylesheet" href="/css/component/notice.css" />
+
+        <link rel="stylesheet" href="/css/variant/notice.css" />
     </head>
     <body>
         <article class="container" data-variant="article">
