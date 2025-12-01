@@ -1,10 +1,15 @@
 @layer variant {
     .typography[data-variant="p"],
     .typography[data-variant="h1"],
-    .typography[data-variant="h2"]
+    .typography[data-variant="h2"],
     .typography[data-variant="list"] {
         margin-block: var(--space-5);
         line-height: 1.5;
+    }
+    
+    .typography[data-variant="p"],
+    .typography[data-variant="list"] {
+        color: var(--color-2);
     }
 
     .typography[data-variant="list-item"] {
@@ -12,7 +17,7 @@
     }
 
     .typography[data-variant="h1"] {
-        font-size: var(--font-size-5xl);
+        font-size: var(--font-size-4xl);
         font-weight: var(--font-bold);
     }
 
@@ -24,6 +29,7 @@
     .typography[data-variant="inline-code"] {
         background-color: var(--background-color-muted);
         border-radius: 2px;
+        padding-inline: var(--space-1);
         color: var(--danger);
     }
 }

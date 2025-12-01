@@ -10,4 +10,10 @@
     .container[data-variant="article-section"] {
         margin-block: var(--space-5);
     }
+
+    .container[data-variant="button-display"] {
+        display: flex;
+        gap: var(--space-3);
+        margin-block: var(--space-5);
+    }
 }

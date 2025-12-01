@@ -1,28 +1,28 @@
 @layer base {
     .button {
-        --button-background: var(--color);
-        --button-color: var(--background-color);
-        --button-padding-block: calc(3 * var(--space));
-        --button-padding-inline: calc(3 * var(--space));
-        --button-border-block: none;
-        --button-border-inline: none;
-        --button-border-radius: 0;
+        --button-background: var(--background-color);
+        --button-color: var(--color-1);
+        --button-padding-block: var(--space-4);
+        --button-padding-inline: var(--space-4);
+        --button-border-block: 1px solid var(--background-color-3);
+        --button-border-inline: 1px solid var(--background-color-3);
+        --button-border-radius: 5px;
         --button-box-shadow: none;
         --button-gap: calc(4 * var(--space));
 
-        --button-hover-background: var(--color-muted);
+        --button-hover-background: var(--background-color-2);
         --button-hover-opacity: 1;
-        --button-hover-color: var(--background-color);
+        --button-hover-color: inherit;
 
         --button-text-decoration: none;
         --button-text-overflow: inherit;
         --button-font-size: var(--font-size-base);
         --button-font-weight: var(--font-normal);
-        --button-line-height: 1.5;
+        --button-line-height: 1;
 
         display: inline-flex;
         align-items: center;
-        width: fit-content;
+        width: max-content;
         flex-direction: row;
         cursor: pointer;
 

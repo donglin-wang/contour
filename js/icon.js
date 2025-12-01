@@ -57,9 +57,11 @@ export const createAlarm = () =>
         path({ d: "M17.64 18.67 20 21" })
     );
 
-export const createChevronRight = () =>
-    svg(
+export const ChevronRight = (variant, className = "icon") =>
+    svg( 
         {
+            class: className,
+            "data-variant": variant,
             xmlns: "http://www.w3.org/2000/svg",
             viewBox: "0 0 24 24",
             fill: "none",

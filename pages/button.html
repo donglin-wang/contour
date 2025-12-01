@@ -1,177 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Button</title>
-        <!-- common styles -->
-        <style>
-            @layer base, component, variant;
-        </style>
-        <link rel="stylesheet" href="/css/base/reset.css" />
-        <link rel="stylesheet" href="/css/base/variables.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button</title>
+    <!-- common styles -->
+    <style>
+        @layer base, component, variant;
+    </style>
+    <link rel="stylesheet" href="/css/base/reset.css" />
+    <link rel="stylesheet" href="/css/base/variables.css" />
 
-        <link rel="stylesheet" href="/css/component/typography.css" />
-        <link rel="stylesheet" href="/css/component/container.css" />
+    <link rel="stylesheet" href="/css/component/typography.css" />
+    <link rel="stylesheet" href="/css/component/container.css" />
 
-        <link rel="stylesheet" href="/css/variant/typography.css" />
-        <link rel="stylesheet" href="/css/variant/container.css" />
+    <link rel="stylesheet" href="/css/variant/typography.css" />
+    <link rel="stylesheet" href="/css/variant/container.css" />
 
-        <!-- dependencies -->
-        <link rel="stylesheet" href="/css/component/avatar.css" />
-        <link rel="stylesheet" href="/css/component/icon.css" />
+    <!-- component-specific -->
+    <link rel="stylesheet" href="/css/component/avatar.css" />
+    <link rel="stylesheet" href="/css/component/icon.css" />
+    <link rel="stylesheet" href="/css/component/button.css" />
+    <link rel="stylesheet" href="/css/component/notice.css" />
+    <link rel="stylesheet" href="/css/component/mutex.css" />
+    <link rel="stylesheet" href="/css/component/list.css" />
 
-        <link rel="stylesheet" href="/css/variant/icon.css" />
+    <link rel="stylesheet" href="/css/shj.css" />
 
-        <!-- page-specific styles -->
-        <link rel="stylesheet" href="/css/component/button.css" />
-
-        <link rel="stylesheet" href="/css/variant/button.css" />
-    </head>
-    <body>
-        <article class="container" data-variant="article">
-            <section class="container" data-variant="article-section">
-                <h1 class="typography" data-variant="h1">Button</h1>
-                <p class="typography" data-variant="p">
-                    Button can be used on:
-                </p>
-                <ul class="typography" data-variant="list">
-                    <li class="typography" data-variant="list-item">
-                        <code class="typography" data-variant="inline-code"
-                            >&lt;a&gt;</code
-                        >
-                    </li>
-                    <li class="typography" data-variant="list-item">
-                        <code class="typography" data-variant="inline-code"
-                            >&lt;button&gt;</code
-                        >
-                    </li>
-                    <li class="typography" data-variant="list-item">
-                        <code class="typography" data-variant="inline-code"
-                            >&lt;input type="submit"&gt;</code
-                        >
-                    </li>
-                    <li class="typography" data-variant="list-item">
-                        <code class="typography" data-variant="inline-code"
-                            >&lt;input type="reset"&gt;</code
-                        >
-                    </li>
-                </ul>
-                <p class="typography" data-variant="p">
-                    It may contain elements with the following classes:
-                </p>
-                <ul class="typography" data-variant="list">
-                    <li class="typography" data-variant="list-item">
-                        <code class="typography" data-variant="inline-code"
-                            >button__section</code
-                        >
-                        to organize and customize elements
-                    </li>
-                    <li class="typography" data-variant="list-item">
-                        <code class="typography" data-variant="inline-code"
-                            >button--symbol</code
-                        >
-                        to annotate the symbol representing the effect of the
-                        button
-                    </li>
-                </ul>
-                <p class="typography" data-variant="p">
-                    As seen in the examples below,
-                    <code class="typography" data-variant="inline-code"
-                        >button__section</code
-                    >
-                    can be nested to create complex layouts.
-                </p>
-
-                <section class="container" data-variant="article-section">
-                    <button class="button">Button</button>
-                    <a href="#" class="button">Link</a>
-                    <input type="submit" class="button" />
-                    <input type="reset" class="button" />
-                </section>
-
-                <h2 class="typography" data-variant="h2">Variants</h2>
-
-                <p class="typography" data-variant="p">
-                    You can create variants for
-                    <code class="typography" data-variant="inline-code"
-                        >button__section</code
-                    >
-                    to create more complex buttons. By default,
-                    <code class="typography" data-variant="inline-code"
-                        >button__section</code
-                    >
-                    has column as its flex direction:
-                </p>
-
-                <section class="container" data-variant="article-section">
-                    <button class="button" data-variant="top-down">
-                        <icon-alarm
-                            class="icon"
-                            data-variant="top-down"
-                        ></icon-alarm>
-                        Alarm
-                    </button>
-                </section>
-
-                <p class="typography" data-variant="p">
-                    You can go a step further to create this button with primary
-                    and secondary text:
-                </p>
-
-                <section class="container" data-variant="article-section">
-                    <button class="button" data-variant="tiered">
-                        <span class="button__section" data-variant="tiered">
-                            <b
-                                class="typography"
-                                data-variant="tiered-primary"
-                                >Title</b
-                            >
-                            <span
-                                class="typography"
-                                data-variant="tiered-secondary"
-                                >Next</span
-                            >
-                        </span>
-                        <icon-chevron-right class="icon" data-variant="tiered-chevron"></icon-chevron-right>
-                    </button>
-                </section>
-
-                <p class="typography" data-variant="p">
-                    Although we do not recommend creating a button this complex,
-                    the world is your oyster when it comes to customizing
-                    sections to fit your needs:
-                </p>
-
-                <section class="container" data-variant="article-section">
-                    <button class="button" data-variant="too-much">
-                        <img
-                            src="/asset/image/linux.jpg"
-                            alt="Linux penguin avatar"
-                            class="avatar"
-                            data-variant="too-much"
-                        />
-
-                        <span class="button__section" data-variant="too-much">
-                            <strong
-                                class="typography"
-                                data-variant="too-much-primary"
-                            >
-                                Join stream
-                            </strong>
-                            <span
-                                class="typography"
-                                data-variant="too-much-secondary"
-                            >
-                                This is too much</span
-                            >
-                        </span>
-                        <icon-chevron-right class="icon" data-variant="too-much-chevron"></icon-chevron-right>
-                    </button>
-                </section>
-            </section>
-        </article>
-        <script src="/js/main.js" type="module"></script>
-        <script src="/js/prism.js"></script>
-    </body>
+    <script src="/js/docs/button.js" type="module"></script>
+</head>
+<body>
+    
+</body>
 </html>
