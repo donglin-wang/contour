@@ -222,6 +222,12 @@ const ArticleControl = (variantSuffix, title) =>
         ChevronRight(`article-control-chevron-${variantSuffix}`)
     );
 
+const articleControls = div(
+    { class: "container", "data-variant": "button-display" },
+    ArticleControl("prev", "Notice"),
+    ArticleControl("next", "Typography")
+);
+
 const article = Article(
     H1("Button"),
     P("Button can be used on: "),
@@ -282,11 +288,8 @@ const article = Article(
     P(
         "Below are two buttons commonly found in documentations. Let's implement them: "
     ),
-    div(
-        { class: "container", "data-variant": "button-display" },
-        ArticleControl("prev", "Notice"),
-        ArticleControl("next", "Typography")
-    ),
+    articleControls,
+    highlightHTML(articleControls, true),
     highlightCSS(articleControlStyle)
 );
 
