@@ -270,9 +270,9 @@ const article = Article(
         " property directly. This is because both the normal and hover state share the same color, but not the same background."
     ),
     highlightCSS(buttonColoredStyle),
-    H2("Common modifiers"),
+    H2("Modifiers"),
     P(
-        "You can apply one or more modifiers to your button. Keep in mind that any new modifier needs to widely applicable across variants and composable with other modifiers."
+        "You can apply one or more modifiers to your button as long as it is not a variant. Keep in mind that any new modifier needs to widely applicable across variants and composable with other modifiers."
     ),
     modifiedButtons,
     highlightHTML(modifiedButtons, true),
