@@ -92,7 +92,6 @@ const buttonModifierStyle = registerStyle(/*css*/ `
 
     .button.is-full {
         width: 100%;
-        justify-content: center;
     }
 }`);
 
@@ -272,7 +271,7 @@ const article = Article(
     highlightCSS(buttonColoredStyle),
     H2("Modifiers"),
     P(
-        "You can apply one or more modifiers to your button as long as it is not a variant. Keep in mind that any new modifier needs to widely applicable across variants and composable with other modifiers."
+        "You can apply one or more modifiers to your button as long as it does not conflict with properties defined in the variant or other modifiers. Keep in mind that any new modifier needs to widely applicable across variants and composable with other modifiers."
     ),
     modifiedButtons,
     highlightHTML(modifiedButtons, true),
