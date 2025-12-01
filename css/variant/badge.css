@@ -1,6 +1,0 @@
-@layer variant {
-    .badge--success {
-        background-color: var(--success);
-        color: var(--color);
-    }
-}

@@ -11,9 +11,13 @@
         margin-block: var(--space-5);
     }
 
-    .container[data-variant="button-display"] {
+    .container[data-variant="button-display"],
+    .container[data-variant="button-display-col"] {
         display: flex;
         gap: var(--space-3);
         margin-block: var(--space-5);
+    }
+    .container[data-variant="button-display-col"] {
+        flex-direction: column;
     }
 }

@@ -1,7 +1,7 @@
 import van from "/js/van.js";
 import { highlightAll } from "/js/shj.js";
 import { Article, H1, H2, P, Ul, Li, CodeInline } from "/js/article.js";
-import { ChevronRight } from "/js/icon.js";
+import { ChevronRight, Play } from "/js/icon.js";
 import { highlightHTML, highlightCSS, registerStyle } from "/js/utils.js";
 
 const { button, span, b, div, a, input } = van.tags;
@@ -76,6 +76,75 @@ const buttonColoredStyle = registerStyle(/*css*/ `
         color: var(--warning-content);
     }
 }`);
+
+const buttonModifierStyle = registerStyle(/*css*/ `
+@layer variant {
+    .button.is-pill {
+        border-radius: 999px;
+        padding-inline: calc(var(--button-padding-inline) + var(--space-2));
+    }
+
+    .button.is-ghost {
+        --button-background: transparent;
+        --button-hover-background: var(--background-color-2);
+        border: none;
+    }
+
+    .button.is-full {
+        width: 100%;
+        justify-content: center;
+    }
+}`);
+
+const modifiedButtons = div(
+    { class: "container", "data-variant": "button-display" },
+    button(
+        {
+            class: "button is-pill",
+        },
+        "Pill"
+    ),
+    button(
+        {
+            class: "button is-ghost",
+        },
+        "Ghost"
+    ),
+    button(
+        {
+            class: "button is-pill is-ghost",
+        },
+        "Pill ghost"
+    )
+);
+
+const fullButtons = div(
+    { class: "container", "data-variant": "button-display-col" },
+    button(
+        {
+            class: "button is-full",
+        },
+        "Full width"
+    ),
+    button(
+        {
+            class: "button is-full is-pill",
+        },
+        "Full pill"
+    ),
+    button(
+        {
+            class: "button is-full is-ghost",
+        },
+        "Full ghost"
+    ),
+    button(
+        {
+            class: "button is-full is-pill is-ghost",
+        },
+        "Full pill ghost"
+    )
+);
 
 const articleControlStyle = registerStyle(/*css*/ `
 @layer variant {
@@ -201,6 +270,15 @@ const article = Article(
         " property directly. This is because both the normal and hover state share the same color, but not the same background."
     ),
     highlightCSS(buttonColoredStyle),
+    H2("Common modifiers"),
+    P(
+        "You can apply one or more modifiers to your button. Keep in mind that any new modifier needs to widely applicable across variants and composable with other modifiers."
+    ),
+    modifiedButtons,
+    highlightHTML(modifiedButtons, true),
+    fullButtons,
+    highlightHTML(fullButtons, true),
+    highlightCSS(buttonModifierStyle),
     H2("Article controls"),
     P(
         "Below are two buttons commonly found in documentations. Let's implement them: "

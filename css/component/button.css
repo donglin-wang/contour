@@ -21,8 +21,9 @@
         --button-line-height: 1;
 
         display: inline-flex;
-        align-items: center;
         width: max-content;
+        align-items: center;
+        justify-content: center;
         flex-direction: row;
         cursor: pointer;
 

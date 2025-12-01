@@ -29,7 +29,10 @@
     .typography[data-variant="inline-code"] {
         background-color: var(--background-color-muted);
         border-radius: 2px;
+        padding-block: 2px;
         padding-inline: var(--space-1);
         color: var(--danger);
+        display: inline-block;
+        line-height: 1;
     }
 }
