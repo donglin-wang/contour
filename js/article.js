@@ -16,7 +16,7 @@ export const Section = (...children) =>
     section(
         {
             class: "container",
-            "data-variant": "article",
+            "data-variant": "article-section",
         },
         ...children
     );
@@ -83,3 +83,10 @@ export const CodeInline = (text) =>
         },
         text
     );
+
+export const registerStyle = (styleText) => {
+    const sheet = new CSSStyleSheet();
+    sheet.replaceSync(styleText);
+    document.adoptedStyleSheets.push(sheet);
+    return styleText;
+};

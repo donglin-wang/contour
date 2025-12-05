@@ -1,7 +1,7 @@
 @layer variant {
     .container[data-variant="article"] {
         width: 100%;
-        max-width: 50rem;
+        max-width: 40rem;
         padding-inline: var(--space-2);
         margin-inline: auto;
         font-size: var(--font-size-base);

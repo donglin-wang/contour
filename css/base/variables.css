@@ -13,38 +13,27 @@
         --space-10: calc(var(--space) * 32);
 
         --background-color-1: hsl(0deg 0% 100%);
-        --background-color-2: hsl(0deg, 0%, 95%);
+        --background-color-2: hsl(0deg, 0%, 97%);
         --background-color-3: hsl(0deg, 0%, 90%);
 
         --color-1: hsl(0deg 0% 10%);
         --color-2: hsl(0deg 0% 20%);
-        --color-3: hsl(0deg 0% 30%);
+        --color-3: hsl(0deg 0% 40%);
 
         --color: hsl(0deg 0% 10%);
         --color-muted: hsl(0deg 0% 20%);
         --background-color: hsl(0deg 0% 100%);
         --background-color-muted: hsl(0deg 0% 95%);
 
-        /* --color: hsl(0deg 0% 90%);
-        --color-muted: hsl(0deg 0% 80%);
-        --background-color: hsl(0deg 0% 10%);
-        --background-color-muted: hsl(0deg 0% 20%); */
-
-        --danger: hsl(0deg 85% 60%);
-        --warning: hsl(45deg 100% 50%);
-        --success: hsl(145deg 75% 45%);
-        --info: hsl(215deg 95% 60%);
-
         --font-size-xs: clamp(0.7813rem, 0.7736rem + 0.0341vw, 0.8rem);
         --font-size-s: clamp(0.9375rem, 0.9119rem + 0.1136vw, 1rem);
-        --font-size-base: clamp(1.125rem, 1.0739rem + 0.2273vw, 1.25rem);
-        --font-size-l: clamp(1.35rem, 1.2631rem + 0.3864vw, 1.5625rem);
-        --font-size-xl: clamp(1.62rem, 1.4837rem + 0.6057vw, 1.9531rem);
-        --font-size-2xl: clamp(1.944rem, 1.7405rem + 0.9044vw, 2.4414rem);
-        --font-size-3xl: clamp(2.3328rem, 2.0387rem + 1.3072vw, 3.0518rem);
-        --font-size-4xl: clamp(2.7994rem, 2.384rem + 1.8461vw, 3.8147rem);
-        --font-size-5xl: clamp(3.3592rem, 2.7828rem + 2.5621vw, 4.7684rem);
-        --font-size-6xl: clamp(4.0311rem, 3.2418rem + 3.508vw, 5.9605rem);
+        --font-size-base: 1rem;
+        --font-size-l: 1.125rem;
+        --font-size-xl: 1.25rem;
+        --font-size-2xl: 1.5rem;
+        --font-size-3xl: 1.875rem;
+        --font-size-4xl: clamp(2.25rem, 1.9432rem + 1.3636vw, 3rem);
+        --font-size-5xl: 3rem;
 
         --font-thin: 100;
         --font-extralight: 200;
@@ -56,6 +45,7 @@
         --font-extrabold: 800;
         --font-black: 900;
 
-        --line-height-base: 1.5;
+        --line-height-content: 1.5;
+        --line-height-heading: 1.2;
     }
 }

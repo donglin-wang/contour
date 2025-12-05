@@ -1,8 +1,17 @@
 import van from "/js/van.js";
 import { highlightAll } from "/js/shj.js";
-import { Article, H1, H2, P, Ul, Li, CodeInline } from "/js/article.js";
+import {
+    Article,
+    H1,
+    H2,
+    P,
+    Ul,
+    Li,
+    CodeInline,
+    registerStyle,
+} from "/js/article.js";
 import { ChevronRight, Play } from "/js/icon.js";
-import { highlightHTML, highlightCSS, registerStyle } from "/js/utils.js";
+import { highlightHTML, highlightCSS } from "/js/highlight.js";
 
 const { button, span, b, div, a, input } = van.tags;
 

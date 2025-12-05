@@ -1,13 +1,13 @@
-@layer base {
+@layer component {
     .list {
-        --list-background: var(--background-color-muted);
-        --list-padding-block: 0;
+        --list-background: var(--background-color);
+        --list-padding-block: var(--space-1);
         --list-padding-inline: 0;
         --list-margin-block: 0;
         --list-margin-inline: 0;
-        --list-border-radius: 0;
-        --list-border-block: none;
-        --list-border-inline: none;
+        --list-border-radius: 5px;
+        --list-border-block: 1px solid var(--background-color-3);
+        --list-border-inline: 1px solid var(--background-color-3);
 
         --list-color: inherit;
         --list-text-decoration: inherit;
@@ -21,8 +21,8 @@
         --list-item-hover-color: inherit;
         --list-item-hover-background: transparent;
 
-        --list-item-padding-block: var(--space-3);
-        --list-item-padding-inline: var(--space-3);
+        --list-item-padding-block: var(--space-4);
+        --list-item-padding-inline: var(--space-4);
         --list-item-margin-block: 0;
         --list-item-margin-inline: 0;
         --list-item-border-radius: 0;
@@ -48,7 +48,7 @@
 
     .list__item {
         display: grid;
-        color: var(--list-item-color);
+        align-items: center;
         background-color: var(--list-item-background);
         padding-block: var(--list-item-padding-block);
         padding-inline: var(--list-item-padding-inline);
@@ -65,6 +65,6 @@
 
     .list__item:hover {
         color: var(--list-item-hover-color);
-        background-color: var(--list-item-hover-background);
+        background: var(--list-item-hover-background);
     }
 }

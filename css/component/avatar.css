@@ -1,34 +1,11 @@
-@layer element {
+@layer component {
     :root {
-        --avatar-4: calc(var(--space) * 4);
-        --avatar-8: calc(var(--space) * 8);
-        --avatar-12: calc(var(--space) * 12);
-        --avatar-16: calc(var(--space) * 16);
-        --avatar-32: calc(var(--space) * 32);
+        --avatar-width: var(--space-6);
+        --avatar-height: var(--space-6);
     }
 
-    .avatar-4 {
-        width: var(--avatar-4);
-        aspect-ratio: 1 / 1;
-    }
-
-    .avatar-8 {
-        width: var(--avatar-8);
-        aspect-ratio: 1 / 1;
-    }
-
-    .avatar-12 {
-        width: var(--avatar-12);
-        aspect-ratio: 1 / 1;
-    }
-
-    .avatar-16 {
-        width: var(--avatar-16);
-        aspect-ratio: 1 / 1;
-    }
-
-    .avatar-32 {
-        width: var(--avatar-32);
-        aspect-ratio: 1 / 1;
+    .avatar {
+        width: var(--avatar-width);
+        height: var(--avatar-height);
     }
 }
