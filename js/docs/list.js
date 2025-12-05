@@ -129,7 +129,7 @@ const accountSelectionStyle = registerStyle(/*css*/ `
         --list-item-hover-background: var(--background-color-2);
         grid-template-columns: max-content max-content;
         grid-template-rows: min-content min-content;
-        gap: var(--space-1) var(--space-3);
+        column-gap: var(--space-3);
         align-items: center;
         cursor: pointer;
         padding-block: var(--space-3);
