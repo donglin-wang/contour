@@ -21,8 +21,6 @@ import {
 
 const { table, tr, td, th, thead, tbody } = van.tags;
 
-console.log(userProfiles.length);
-
 /**
  * @typedef HeaderSpec
  * @property {number} index
@@ -72,13 +70,23 @@ const labelToSuffix = (label) => {
 
 /**
  * @param {string} block
- * @param {number} numChar
  * @returns {string}
  */
-const truncateLines = (block, numChar) => {
+const unindent = (block) => {
+    let counter = 0;
+    for (const char of block) {
+        if (char === "\n") {
+            continue;
+        }
+        if (char.trim()) {
+            break;
+        }
+        counter += 1;
+    }
+   
     const lines = [];
     for (const line of block.split("\n")) {
-        lines.push(line.slice(numChar));
+        lines.push(line.slice(counter));
     }
 
     return lines.join("\n");
@@ -113,7 +121,15 @@ const construcTableHeader = (headerSpecs, variantPrefix) => {
         }
 
         const height = spec.isLeaf ? maxDepth - spec.depth + 1 : 1;
-        const variant = `${variantPrefix}-header-${labelToSuffix(spec.label)}`;
+        let variant = "";
+        const isDefault = height === 1 && spec.width === 1
+
+        if (isDefault) {
+            variant = `${variantPrefix}-header`;
+        } else {
+            variant = `${variantPrefix}-header-${labelToSuffix(spec.label)}`;
+        }
+
         rows[spec.depth - 1].push(
             th(
                 {
@@ -124,15 +140,14 @@ const construcTableHeader = (headerSpecs, variantPrefix) => {
             )
         );
 
-        styleRules += truncateLines(
-            /*css*/ `
-            .table__cell[data-variant="${variant}"] {
-                grid-column: span ${spec.width};
-                grid-row: span ${height};
-            }
-        `,
-            8
-        );
+        if (!isDefault) {
+            styleRules += unindent(/*css*/ `
+                .table__cell[data-variant="${variant}"] {
+                    grid-column: span ${spec.width};
+                    grid-row: span ${height};
+                }
+            `);
+        }
 
         if (spec.children) {
             queue.push(...spec.children);
@@ -157,7 +172,7 @@ const construcTableHeader = (headerSpecs, variantPrefix) => {
         )
     );
 
-    return [header, styleRules];
+    return [header, styleRules.trim()];
 };
 
 /**
@@ -288,8 +303,6 @@ const nestedStyle = registerStyle(/*css*/ `
     ${rules}
 }`);
 
-
-
 const NestedTableBody = () => {
     const rows = [];
     for (const patientInfos of patients) {
@@ -328,7 +341,7 @@ const nestedTable = table(
         "data-variant": "nested",
     },
     header,
-    NestedTableBody(),
+    NestedTableBody()
 );
 
 const userProfileStyle = registerStyle(/*css*/ `
@@ -554,7 +567,7 @@ const article = Article(
     P(`
         You can form complex headers with the power of CSS grid.
     `),
-    nestedTable,
+    Section(nestedTable),
     highlightCSS(nestedStyle)
 );
 
