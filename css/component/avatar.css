@@ -1,11 +1,6 @@
 @layer component {
-    :root {
-        --avatar-width: var(--space-6);
-        --avatar-height: var(--space-6);
-    }
-
     .avatar {
-        width: var(--avatar-width);
-        height: var(--avatar-height);
+        width: var(--avatar-width, var(--space-6));
+        height: var(--avatar-height, var(--space-6));
     }
 }
