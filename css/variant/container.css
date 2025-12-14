@@ -20,4 +20,19 @@
     .container[data-variant="button-display-col"] {
         flex-direction: column;
     }
+
+    .container[data-variant="contour-hero"] {
+        display: block;
+        max-width: 50rem;
+        margin-block: 5rem;
+        margin-inline: auto;
+        padding-inline: 0.5rem;
+        justify-content: center;
+    }
+
+    .container[data-variant="contour-hero-control"] {
+        display: flex;
+        margin-block: 4rem;
+        gap: 0.5rem;
+    }
 }

@@ -1,0 +1,113 @@
+@layer variant {
+    .button[data-variant="contour-landing-inverse"],
+    .button[data-variant="contour-landing"] {
+        --button-font-size: var(--font-size-l);
+        padding-block: var(--space-4);
+        padding-inline: var(--space-4);
+    }
+
+    .button[data-variant="contour-landing"] {
+        --button-background: var(--color);
+        --button-hover-background: var(--color-2);
+        border: none;
+        color: var(--background-color-1);
+    }
+
+    .button[data-variant="blueprint"] {
+        --button-border-width: 1px;
+        border: var(--button-border-width) dashed black;
+        border-radius: 0;
+        position: relative;
+        z-index: 1;
+    }
+
+    .button[data-variant="blueprint"]::after,
+    .button[data-variant="blueprint"]::before {
+        --button-marker-size: 1rem;
+
+        height: calc(
+            100% + var(--button-marker-size) + var(--button-border-width)
+        );
+        width: var(--button-marker-size);
+        background-size: var(--button-marker-size) var(--button-marker-size);
+        background: url(/asset/image/plus.svg) no-repeat bottom,
+            url(/asset/image/plus.svg) no-repeat top;
+        content: "";
+        position: absolute;
+    }
+
+    .button[data-variant="blueprint"]::before {
+        left: calc(
+            -1 * (var(--button-marker-size) + var(--button-border-width)) / 2
+        );
+    }
+
+    .button[data-variant="blueprint"]::after {
+        right: calc(
+            -1 * (var(--button-marker-size) + var(--button-border-width)) / 2
+        );
+    }
+
+    .button[data-variant="digital"] {
+        border-radius: 0;
+        border: 2px solid black;
+        position: relative;
+        --button-background: var(--background-color-1);
+    }
+
+    .button[data-variant="digital"]::after {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        width: 100%;
+        height: 100%;
+        background-image: url(/asset/image/dotted.svg);
+        background-repeat: repeat;
+        z-index: -1;
+        isolation: isolate;
+    }
+
+    .button[data-variant="glassy"] {
+        position: relative;
+        backdrop-filter: blur(2px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        border-radius: 2rem;
+    }
+
+    .button[data-variant="glassy"]::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 2rem;
+        backdrop-filter: blur(1px);
+        box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
+                    inset 0px -9px 0px -8px rgba(255, 255, 255, 1);
+        opacity: 0.6;
+        z-index: -1;
+        filter: blur(1px) drop-shadow(10px 4px 6px black) brightness(115%);
+    }
+
+    .container[data-variant="landing-section"] {
+        margin-top: 7rem;
+        color: var(--color-1);
+        height: 1000px;
+        padding-inline: 10rem;
+        padding-block: 3rem;
+        position: relative;
+    }
+    .container[data-variant="landing-section"]::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        background-color: var(--background-color-2);
+    }
+}

@@ -33,7 +33,7 @@
         --font-size-2xl: 1.5rem;
         --font-size-3xl: 1.875rem;
         --font-size-4xl: clamp(2.25rem, 1.9432rem + 1.3636vw, 3rem);
-        --font-size-5xl: 3rem;
+        --font-size-5xl: clamp(3rem, 2.3864rem + 2.7273vw, 4.5rem);
 
         --font-thin: 100;
         --font-extralight: 200;
