@@ -252,7 +252,7 @@ const rankingStyle = registerStyle(/*css*/ `
         border-radius: 5px;
     }
 
-    .button[data-variant="ranking-control"] {
+    .trigger[data-variant="ranking-control"] {
         grid-row: 1 / span 2;
     }
 }`);
@@ -293,7 +293,7 @@ const ranking = Section(
             ),
             button(
                 {
-                    class: "button",
+                    class: "trigger",
                     "data-variant": "ranking-control",
                 },
                 Play()
@@ -330,7 +330,7 @@ const ranking = Section(
             ),
             button(
                 {
-                    class: "button",
+                    class: "trigger",
                     "data-variant": "ranking-control",
                 },
                 Play()
@@ -367,7 +367,7 @@ const ranking = Section(
             ),
             button(
                 {
-                    class: "button",
+                    class: "trigger",
                     "data-variant": "ranking-control",
                 },
                 Play()
@@ -414,7 +414,7 @@ const commentStyle = registerStyle(/*css*/ `
         line-height: var(--line-height-content);
     }
 
-    .button[data-variant="comment-control"] {
+    .trigger[data-variant="comment-control"] {
         --icon-width: var(--space-5);
         --icon-height: var(--space-5);
         padding: var(--space-3);
@@ -464,14 +464,14 @@ const comments = Section(
             ),
             button(
                 {
-                    class: "button",
+                    class: "trigger",
                     "data-variant": "comment-control",
                 },
                 ArrowUp()
             ),
             button(
                 {
-                    class: "button",
+                    class: "trigger",
                     "data-variant": "comment-control",
                 },
                 ArrowDown()
@@ -511,14 +511,14 @@ const comments = Section(
             ),
             button(
                 {
-                    class: "button",
+                    class: "trigger",
                     "data-variant": "comment-control",
                 },
                 ArrowUp()
             ),
             button(
                 {
-                    class: "button",
+                    class: "trigger",
                     "data-variant": "comment-control",
                 },
                 ArrowDown()
@@ -558,14 +558,14 @@ const comments = Section(
             ),
             button(
                 {
-                    class: "button",
+                    class: "trigger",
                     "data-variant": "comment-control",
                 },
                 ArrowUp()
             ),
             button(
                 {
-                    class: "button",
+                    class: "trigger",
                     "data-variant": "comment-control",
                 },
                 ArrowDown()
