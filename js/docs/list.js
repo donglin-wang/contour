@@ -146,7 +146,7 @@ const accountSelectionStyle = registerStyle(/*css*/ `
         padding-block: var(--space-3);
     }
 
-    .avatar[data-variant="account-selection"] {
+    .media[data-variant="account-selection"] {
         grid-column: 1 / 2;
         grid-row: 1 / span 2;
         width: var(--space-7);
@@ -179,7 +179,7 @@ const accountSelection = Section(
                 "data-variant": "account-selection",
             },
             img({
-                class: "avatar",
+                class: "media",
                 "data-variant": "account-selection",
                 src: "/asset/image/linux.jpg",
                 alt: "Linux penguin",
@@ -205,7 +205,7 @@ const accountSelection = Section(
                 "data-variant": "account-selection",
             },
             img({
-                class: "avatar",
+                class: "media",
                 "data-variant": "account-selection",
                 src: "/asset/image/linux.jpg",
                 alt: "Linux penguin",
@@ -255,7 +255,7 @@ const rankingStyle = registerStyle(/*css*/ `
         font-size: var(--font-size-s);
     }
 
-    .avatar[data-variant="ranking-avatar"] {
+    .media[data-variant="ranking-media"] {
         grid-column: 2 / span 1;
         grid-row: 1 / span 2;
         width: var(--space-7);
@@ -283,10 +283,10 @@ const ranking = Section(
                 "01"
             ),
             img({
-                class: "avatar",
+                class: "media",
                 src: "/asset/image/linux.jpg",
                 alt: "Linux penguin",
-                "data-variant": "ranking-avatar",
+                "data-variant": "ranking-media",
             }),
             span(
                 {
@@ -320,10 +320,10 @@ const ranking = Section(
                 "02"
             ),
             img({
-                class: "avatar",
+                class: "media",
                 src: "/asset/image/linux.jpg",
                 alt: "Linux penguin",
-                "data-variant": "ranking-avatar",
+                "data-variant": "ranking-media",
             }),
             span(
                 {
@@ -357,10 +357,10 @@ const ranking = Section(
                 "03"
             ),
             img({
-                class: "avatar",
+                class: "media",
                 src: "/asset/image/linux.jpg",
                 alt: "Linux penguin",
-                "data-variant": "ranking-avatar",
+                "data-variant": "ranking-media",
             }),
             span(
                 {
@@ -397,7 +397,7 @@ const commentStyle = registerStyle(/*css*/ `
         padding: var(--space-4);
     }
 
-    .avatar[data-variant="comment-avatar"] {
+    .media[data-variant="comment-media"] {
         grid-column: 1 / 2;
         grid-row: 1 / span 2;
         width: var(--space-7);
@@ -447,10 +447,10 @@ const comments = Section(
                 "data-variant": "comment",
             },
             img({
-                class: "avatar",
+                class: "media",
                 src: "/asset/image/linux.jpg",
                 alt: "Linux penguin",
-                "data-variant": "comment-avatar",
+                "data-variant": "comment-media",
             }),
             span(
                 {
@@ -494,10 +494,10 @@ const comments = Section(
                 "data-variant": "comment",
             },
             img({
-                class: "avatar",
+                class: "media",
                 src: "/asset/image/linux.jpg",
                 alt: "Linux penguin",
-                "data-variant": "comment-avatar",
+                "data-variant": "comment-media",
             }),
             span(
                 {
@@ -541,10 +541,10 @@ const comments = Section(
                 "data-variant": "comment",
             },
             img({
-                class: "avatar",
+                class: "media",
                 src: "/asset/image/linux.jpg",
                 alt: "Linux penguin",
-                "data-variant": "comment-avatar",
+                "data-variant": "comment-media",
             }),
             span(
                 {
