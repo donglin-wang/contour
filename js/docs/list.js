@@ -11,7 +11,7 @@ import {
     Section,
     registerStyle,
 } from "/js/article.js";
-import { ChevronRight, Play, ArrowUp, ArrowDown } from "/js/icon.js";
+import { ChevronRight, Play, ArrowUp, ArrowDown } from "/js/symbol.js";
 import { highlightHTML, highlightCSS } from "/js/highlight.js";
 
 const { button, span, b, div, img, kbd, hr } = van.tags;
@@ -52,7 +52,7 @@ const menuVanillaStyle = registerStyle(/*css*/ `
         border-block-end: none;
     }
 
-    .icon[data-variant="menu-chevron"] {
+    .symbol[data-variant="menu-chevron"] {
         width: var(--font-size-base);
         height: var(--font-size-base);
     }
@@ -426,8 +426,8 @@ const commentStyle = registerStyle(/*css*/ `
     }
 
     .trigger[data-variant="comment-control"] {
-        --icon-width: var(--space-5);
-        --icon-height: var(--space-5);
+        --symbol-width: var(--space-5);
+        --symbol-height: var(--space-5);
         padding: var(--space-3);
         grid-row: 1 / span 2;
         border-radius: 5px;

@@ -10,7 +10,7 @@ import {
     CodeInline,
     registerStyle,
 } from "/js/article.js";
-import { ChevronRight, Play } from "/js/icon.js";
+import { ChevronRight, Play } from "/js/symbol.js";
 import { highlightHTML, highlightCSS } from "/js/highlight.js";
 
 const { button, span, b, div, a, input } = van.tags;
@@ -185,18 +185,18 @@ const articleControlStyle = registerStyle(/*css*/ `
         color: var(--color-2);
     }
 
-    .icon[data-variant="article-control-chevron-next"],
-    .icon[data-variant="article-control-chevron-prev"] {
+    .symbol[data-variant="article-control-chevron-next"],
+    .symbol[data-variant="article-control-chevron-prev"] {
         width: var(--space-5);
         height: var(--space-5);
         color: var(--color-3);
     }
 
-    .icon[data-variant="article-control-chevron-next"] {
+    .symbol[data-variant="article-control-chevron-next"] {
         margin-inline-start: auto;
     }
 
-    .icon[data-variant="article-control-chevron-prev"] {
+    .symbol[data-variant="article-control-chevron-prev"] {
         margin-inline-end: auto;
         transform: rotate(-180deg);
     }
@@ -254,7 +254,7 @@ const article = Article(
         ),
         Li(
             CodeInline("trigger--symbol"),
-            " to reference icon, arrow, or other symbols"
+            " to reference symbols"
         )
     ),
     P(
