@@ -1,4 +1,4 @@
-@layer component {
+@layer pattern {
     .avatar {
         width: var(--avatar-width, var(--space-6));
         height: var(--avatar-height, var(--space-6));

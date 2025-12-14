@@ -1,4 +1,4 @@
-@layer component {
+@layer pattern {
     .list {
         background: var(--list-background, var(--background-color-1));
         padding-block: var(--list-padding-block, var(--space-1));

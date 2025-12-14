@@ -1,4 +1,4 @@
-@layer component {
+@layer pattern {
     .table {
         display: grid;
         width: max-content;

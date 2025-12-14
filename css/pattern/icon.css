@@ -1,4 +1,4 @@
-@layer component {
+@layer pattern {
     .icon {
         flex: none;
         width: var(--icon-width, var(--space-4));

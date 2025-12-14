@@ -588,7 +588,7 @@ const comments = Section(
 const article = Article(
     H1("List"),
     P(
-        `List is an abstraction over many other common UI components such as 
+        `List is an abstraction over many other common UI patterns such as 
         menu, comment section, article preview, etc. List consists of the 
         following: `
     ),
@@ -620,7 +620,7 @@ const article = Article(
     highlightCSS(accountSelectionStyle),
     H2("Ranking"),
     P(
-        `Below is a component that ranks the most popular song. You can adapt 
+        `Below is a pattern that ranks the most popular song. You can adapt 
         it to be ranking of other things, such as football players or e-sport 
         leader board.`
     ),
