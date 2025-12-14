@@ -20,11 +20,6 @@
         --color-2: hsl(0deg 0% 20%);
         --color-3: hsl(0deg 0% 40%);
 
-        --color: hsl(0deg 0% 10%);
-        --color-muted: hsl(0deg 0% 20%);
-        --background-color: hsl(0deg 0% 100%);
-        --background-color-muted: hsl(0deg 0% 95%);
-
         --font-size-xs: clamp(0.7813rem, 0.7736rem + 0.0341vw, 0.8rem);
         --font-size-s: clamp(0.9375rem, 0.9119rem + 0.1136vw, 1rem);
         --font-size-base: 1rem;

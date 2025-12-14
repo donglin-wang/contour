@@ -14,7 +14,7 @@
         font-weight: var(--trigger-font-weight, var(--font-normal));
         line-height: var(--trigger-line-height, 1);
 
-        background: var(--trigger-background, var(--background-color));
+        background: var(--trigger-background, var(--background-color-1));
         padding-block: var(--trigger-padding-block, var(--space-4));
         padding-inline: var(--trigger-padding-inline, var(--space-4));
         gap: var(--trigger-gap, calc(4 * var(--space)));

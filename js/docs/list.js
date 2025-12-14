@@ -18,8 +18,14 @@ const { button, span, b, div, img, kbd, hr } = van.tags;
 
 const menuVanillaStyle = registerStyle(/*css*/ `
 @layer variant {
+    .list[data-variant="menu"] {
+        --list-item-padding-inline: var(--space-4);
+        --list-item-padding-block: var(--space-4);
+    }
+
     .list__item[data-variant="menu-item"] {
         --list-item-hover-background: var(--background-color-2);
+
         cursor: pointer;
         grid-template-columns: 1fr max-content;
     }
@@ -125,6 +131,11 @@ const menuVanilla = Section(
 
 const accountSelectionStyle = registerStyle(/*css*/ `
 @layer variant {
+    .list[data-variant="account-selection"] {
+        --list-item-padding-inline: var(--space-4);
+        --list-item-padding-block: var(--space-4);
+    }
+
     .list__item[data-variant="account-selection"] {
         --list-item-hover-background: var(--background-color-2);
         grid-template-columns: max-content max-content;

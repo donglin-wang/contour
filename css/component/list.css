@@ -1,62 +1,33 @@
 @layer component {
     .list {
-        --list-background: var(--background-color);
-        --list-padding-block: var(--space-1);
-        --list-padding-inline: 0;
-        --list-margin-block: 0;
-        --list-margin-inline: 0;
-        --list-border-radius: 5px;
-        --list-border-block: 1px solid var(--background-color-3);
-        --list-border-inline: 1px solid var(--background-color-3);
+        background: var(--list-background, var(--background-color-1));
+        padding-block: var(--list-padding-block, var(--space-1));
+        padding-inline: var(--list-padding-inline, 0);
+        margin-block: var(--list-margin-block, 0);
+        margin-inline: var(--list-margin-inline, 0);
+        border-radius: var(--list-border-radius, 5px);
+        border-block: var(--list-border-block, 1px solid var(--background-color-3));
+        border-inline: var(--list-border-inline, 1px solid var(--background-color-3));
 
-        --list-color: inherit;
-        --list-text-decoration: inherit;
-        --list-text-overflow: inherit;
-        --list-font-size: var(--font-size-base);
-        --list-font-weight: var(--font-normal);
-        --list-line-height: 1;
-
-        --list-item-color: var(--color);
-        --list-item-background: transparent;
-        --list-item-hover-color: inherit;
-        --list-item-hover-background: transparent;
-
-        --list-item-padding-block: var(--space-4);
-        --list-item-padding-inline: var(--space-4);
-        --list-item-margin-block: 0;
-        --list-item-margin-inline: 0;
-        --list-item-border-radius: 0;
-        --list-item-border-block: none;
-        --list-item-border-inline: none;
-
-        background-color: var(--list-background);
-        padding-block: var(--list-padding-block);
-        padding-inline: var(--list-padding-inline);
-        margin-block: var(--list-margin-block);
-        margin-inline: var(--list-margin-inline);
-        border-radius: var(--list-border-radius);
-        border-block: var(--list-border-block);
-        border-inline: var(--list-border-inline);
-
-        color: var(--list-color);
-        text-decoration: var(--list-text-decoration);
-        text-overflow: var(--list-text-overflow);
-        font-size: var(--list-font-size);
-        font-weight: var(--list-font-weight);
-        line-height: var(--list-line-height);
+        color: var(--list-color, var(--color-1));
+        text-decoration: var(--list-text-decoration, inherit);
+        text-overflow: var(--list-text-overflow, inherit);
+        font-size: var(--list-font-size, var(--font-size-base));
+        font-weight: var(--list-font-weight, var(--font-normal));
+        line-height: var(--list-line-height, 1);
     }
 
     .list__item {
         display: grid;
         align-items: center;
-        background-color: var(--list-item-background);
-        padding-block: var(--list-item-padding-block);
-        padding-inline: var(--list-item-padding-inline);
-        margin-block: var(--list-item-margin-block);
-        margin-inline: var(--list-item-margin-inline);
-        border-radius: var(--list-item-border-radius);
-        border-block: var(--list-item-border-block);
-        border-inline: var(--list-item-border-inline);
+        background: var(--list-item-background, transparent);
+        padding-block: var(--list-item-padding-block, var(--space-4));
+        padding-inline: var(--list-item-padding-inline, var(--space-4));
+        margin-block: var(--list-item-margin-block, 0);
+        margin-inline: var(--list-item-margin-inline, 0);
+        border-radius: var(--list-item-border-radius, 0);
+        border-block: var(--list-item-border-block, none);
+        border-inline: var(--list-item-border-inline, none);
     }
 
     .list__section {
@@ -64,7 +35,7 @@
     }
 
     .list__item:hover {
-        color: var(--list-item-hover-color);
-        background: var(--list-item-hover-background);
+        color: var(--list-item-hover-color, inherit);
+        background: var(--list-item-hover-background, transparent);
     }
 }

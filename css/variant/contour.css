@@ -7,7 +7,7 @@
     }
 
     .trigger[data-variant="landing-inverse"] {
-        --trigger-background: var(--color);
+        --trigger-background: var(--color-1);
         --trigger-hover-background: var(--color-2);
         border: none;
         color: var(--background-color-1);
@@ -201,7 +201,7 @@
     }
 
     .typography[data-variant="inline-code"] {
-        background-color: var(--background-color-muted);
+        background-color: var(--background-color-2);
         border-radius: 2px;
         padding-block: 2px;
         padding-inline: var(--space-1);
