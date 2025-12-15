@@ -1,0 +1,88 @@
+@layer pattern {
+    .mutex {
+        display: flex;
+        position: relative;
+        gap: var(--mutex-gap, 0);
+        box-shadow: var(--mutex-box-shadow, none);
+        background: var(--mutex-background, var(--background-color-1));
+        padding-block: var(--mutex-padding-block, 0);
+        padding-inline: var(--mutex-padding-inline, 0);
+        margin-block: var(--mutex-margin-block, 0);
+        margin-inline: var(--mutex-margin-inline, 0);
+        border-block: var(--mutex-border-block, none);
+        border-inline: var(--mutex-border-inline, none);
+        border-radius: var(--mutex-border-radius, 0);
+    }
+
+    .mutex__item {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        z-index: 2;
+
+        background: var(--mutex-item-background, transparent);
+        margin-inline: var(--mutex-item-margin-inline, 0);
+        margin-block: var(--mutex-item-margin-block, 0);
+        padding-inline: var(--mutex-item-padding-inline, var(--space-4));
+        padding-block: var(--mutex-item-padding-block, var(--space-3));
+        border-inline: var(--mutex-item-border-inline, none);
+        border-block: var(--mutex-item-border-block, none);
+        border-radius: var(--mutex-item-border-radius, 0);
+        box-shadow: var(--mutex-item-box-shadow, none);
+
+        color: var(--mutex-item-color, inherit);
+        text-decoration: var(--mutex-item-text-decoration, inherit);
+        text-overflow: var(--mutex-item-text-overflow, inherit);
+        font-size: var(--mutex-item-font-size, var(--font-size-base));
+        font-weight: var(--mutex-item-font-weight, var(--font-normal));
+        line-height: var(--mutex-item-line-height, inherit);
+    }
+
+    .mutex__indicator {
+        position: absolute;
+        z-index: 1;
+
+        background: var(--mutex-indicator-background, transparent);
+        margin-inline: var(--mutex-indicator-margin-inline, 0);
+        margin-block: var(--mutex-indicator-margin-block, 0);
+        padding-inline: var(--mutex-indicator-padding-inline, var(--space-4));
+        padding-block: var(--mutex-indicator-padding-block, var(--space-3));
+        border-inline: var(--mutex-indicator-border-inline, none);
+        border-block: var(--mutex-indicator-border-block, none);
+        border-radius: var(--mutex-indicator-border-radius, 0);
+        box-shadow: var(--mutex-indicator-box-shadow, none);
+
+        color: var(--mutex-indicator-color, inherit);
+        text-decoration: var(--mutex-indicator-text-decoration, inherit);
+        text-overflow: var(--mutex-indicator-text-overflow, inherit);
+        font-size: var(--mutex-indicator-font-size, var(--font-size-base));
+        font-weight: var(--mutex-indicator-font-weight, var(--font-normal));
+        line-height: var(--mutex-indicator-line-height, inherit);
+    }
+
+    .mutex__item:hover {
+        background: var(--mutex-item-hover-background, transparent);
+        color: var(--mutex-item-hover-color, inherit);
+        font-weight: var(--mutex-item-hover-font-weight, var(--font-normal));
+    }
+
+    /* Selected is behind hover, as it should override hover */
+    .mutex__item[aria-selected] {
+        background: var(--mutex-item-active-background, transparent);
+        margin-inline: var(--mutex-item-active-margin-inline, 0);
+        margin-block: var(--mutex-item-active-margin-block, 0);
+        padding-inline: var(--mutex-item-active-padding-inline, var(--space-4));
+        padding-block: var(--mutex-item-active-padding-block, var(--space-3));
+        border-inline: var(--mutex-item-active-border-inline, none);
+        border-block: var(--mutex-item-active-border-block, none);
+        border-radius: var(--mutex-item-active-border-radius, 0);
+        box-shadow: var(--mutex-item-active-box-shadow, none);
+
+        color: var(--mutex-item-active-color, inherit);
+        text-decoration: var(--mutex-item-active-text-decoration, inherit);
+        text-overflow: var(--mutex-item-active-text-overflow, inherit);
+        font-size: var(--mutex-item-active-font-size, var(--font-size-base));
+        font-weight: var(--mutex-item-active-font-weight, var(--font-normal));
+        line-height: var(--mutex-item-active-line-height, inherit);
+    }
+}

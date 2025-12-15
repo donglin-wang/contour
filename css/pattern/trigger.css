@@ -1,4 +1,4 @@
-@layer base {
+@layer pattern {
     .trigger {
         display: inline-flex;
         width: max-content;

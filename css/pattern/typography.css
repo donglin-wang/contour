@@ -1,4 +1,4 @@
-@layer base {
+@layer pattern {
     .typography {
         color: var(--typography-color, inherit);
         text-decoration: var(--typography-text-decoration, inherit);

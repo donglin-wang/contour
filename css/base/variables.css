@@ -13,7 +13,7 @@
         --space-10: calc(var(--space) * 32);
 
         --background-color-1: hsl(0deg 0% 100%);
-        --background-color-2: hsl(0deg, 0%, 97%);
+        --background-color-2: hsl(0deg, 0%, 96%);
         --background-color-3: hsl(0deg, 0%, 90%);
 
         --color-1: hsl(0deg 0% 10%);

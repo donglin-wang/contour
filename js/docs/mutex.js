@@ -1,0 +1,267 @@
+import van from "/js/van.js";
+import { highlightAll } from "/js/shj.js";
+import {
+    Article,
+    H1,
+    H2,
+    P,
+    Ul,
+    Li,
+    CodeInline,
+    Section,
+    registerStyle,
+} from "/js/article.js";
+import { highlightHTML, highlightCSS } from "/js/highlight.js";
+
+const { div } = van.tags;
+
+const tabUnderscoredStyle = registerStyle(/*css*/ `
+@layer variant {
+    .mutex[data-variant="tab-underscored"] {
+        --mutex-variant-border-width: 2px;
+        border-block-end: var(--mutex-variant-border-width) solid var(--background-color-3);
+    }
+
+    .mutex__item[data-variant="tab-underscored"] {
+        margin-block: 0 calc(-1 * var(--mutex-variant-border-width));
+        border-block-end: var(--mutex-variant-border-width) solid transparent;
+    }
+
+    .mutex__item[data-variant="tab-underscored"][aria-selected] {
+        border-block-end: var(--mutex-variant-border-width) solid var(--color-1);
+    }
+}`);
+
+const tabUnderscored = div(
+    {
+        class: "mutex",
+        "data-variant": "tab-underscored",
+    },
+    div(
+        {
+            class: "mutex__item",
+            "data-variant": "tab-underscored",
+            "aria-selected": null,
+        },
+        "Tab 1"
+    ),
+    div(
+        {
+            class: "mutex__item",
+            "data-variant": "tab-underscored",
+        },
+        "Tab 2"
+    ),
+    div(
+        {
+            class: "mutex__item",
+            "data-variant": "tab-underscored",
+        },
+        "Tab 3"
+    )
+);
+
+const tabBackdropStyle = registerStyle(/*css*/ `
+@layer variant {
+    .mutex__item[data-variant="tab-backdrop"] {
+        --mutex-item-active-background: var(--background-color-2);
+        border-radius: 5px;
+    }
+}`);
+
+const tabBackdrop = div(
+    {
+        class: "mutex",
+        "data-variant": "tab-backdrop",
+    },
+    div(
+        {
+            class: "mutex__item",
+            "data-variant": "tab-backdrop",
+            "aria-selected": null,
+        },
+        "Tab 1"
+    ),
+    div(
+        {
+            class: "mutex__item",
+            "data-variant": "tab-backdrop",
+        },
+        "Tab 2"
+    ),
+    div(
+        {
+            class: "mutex__item",
+            "data-variant": "tab-backdrop",
+        },
+        "Tab 3"
+    )
+);
+
+const tabEnclosedStyle = registerStyle(/*css*/ `
+@layer variant {
+    .mutex[data-variant="tab-enclosed"] {
+        padding-block: var(--space-1);
+        padding-inline: var(--space-1);
+        background: var(--background-color-2);
+        border-radius: 5px;
+    }
+
+    .mutex__item[data-variant="tab-enclosed"] {
+        --mutex-item-active-background: var(--background-color-1);
+        --mutex-item-active-border-radius: 3px;
+        --mutex-item-active-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.05);
+    }
+}`);
+
+const tabEnclosed = div(
+    {
+        class: "mutex",
+        "data-variant": "tab-enclosed",
+    },
+    div(
+        {
+            class: "mutex__item",
+            "data-variant": "tab-enclosed",
+            "aria-selected": null,
+        },
+        "Tab 1"
+    ),
+    div(
+        {
+            class: "mutex__item",
+            "data-variant": "tab-enclosed",
+        },
+        "Tab 2"
+    ),
+    div(
+        {
+            class: "mutex__item",
+            "data-variant": "tab-enclosed",
+        },
+        "Tab 3"
+    )
+);
+
+const tabOutlinedStyle = registerStyle(/*css*/ `
+@layer variant {
+    .mutex[data-variant="tab-outlined"] {
+        --mutex-variant-border-width: 1px;
+        border-block-end: var(--mutex-variant-border-width) solid var(--color-1);
+    }
+
+    .mutex__item[data-variant="tab-outlined"] {
+        margin-block: 0 calc(-1 * var(--mutex-variant-border-width));
+    }
+
+    .mutex__item[data-variant="tab-outlined"][aria-selected] {
+        background: var(--background-color-1);
+        border-inline-start: var(--mutex-variant-border-width) solid var(--color-1);
+        border-inline-end: var(--mutex-variant-border-width) solid var(--color-1);
+        border-block-start: var(--mutex-variant-border-width) solid var(--color-1);
+        border-start-start-radius: 5px;
+        border-start-end-radius: 5px;
+    }
+}`);
+
+const tabOutlined = div(
+    {
+        class: "mutex",
+        "data-variant": "tab-outlined",
+    },
+    div(
+        {
+            class: "mutex__item",
+            "data-variant": "tab-outlined",
+            "aria-selected": null,
+        },
+        "Tab 1"
+    ),
+    div(
+        {
+            class: "mutex__item",
+            "data-variant": "tab-outlined",
+        },
+        "Tab 2"
+    ),
+    div(
+        {
+            class: "mutex__item",
+            "data-variant": "tab-outlined",
+        },
+        "Tab 3"
+    )
+);
+
+const tabJointStyle = registerStyle(/*css*/ `
+@layer variant {
+    .mutex__item[data-variant="tab-joint"] {
+        --mutex-item-hover-background: var(--background-color-2);
+
+        border-block: 1px solid var(--background-color-3);
+        border-inline: 1px solid var(--background-color-3);
+        color: var(--color-3);
+        margin-inline-start: -1px;
+    }
+
+    .mutex__item[data-variant="tab-joint"][aria-selected] {
+        border-block: 1px solid var(--background-color-3);
+        border-inline: 1px solid var(--background-color-3);
+        background: var(--background-color-2);
+        color: var(--color-1);
+    }
+
+    .mutex__item[data-variant="tab-joint"]:first-child,
+    .mutex__item[data-variant="tab-joint"][aria-selected]:first-child {
+        margin-inline-start: 0;
+        border-start-start-radius: 5px;
+        border-end-start-radius: 5px;
+    }
+
+    .mutex__item[data-variant="tab-joint"]:last-child,
+    .mutex__item[data-variant="tab-joint"][aria-selected]:last-child {
+        border-start-end-radius: 5px;
+        border-end-end-radius: 5px;
+    }
+}`);
+
+const tabJoint = div(
+    {
+        class: "mutex",
+        "data-variant": "tab-joint",
+    },
+    div(
+        {
+            class: "mutex__item",
+            "data-variant": "tab-joint",
+            "aria-selected": null,
+        },
+        "Tab 1"
+    ),
+    div(
+        {
+            class: "mutex__item",
+            "data-variant": "tab-joint",
+        },
+        "Tab 2"
+    ),
+    div(
+        {
+            class: "mutex__item",
+            "data-variant": "tab-joint",
+        },
+        "Tab 3"
+    )
+);
+
+
+const article = Article(
+    H1("Mutex"),
+    Section(tabUnderscored),
+    Section(tabBackdrop),
+    Section(tabEnclosed),
+    Section(tabOutlined),
+    Section(tabJoint)
+);
+
+van.add(document.body, article);
