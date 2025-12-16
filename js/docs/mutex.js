@@ -155,11 +155,11 @@ const tabEnclosed = div(
 const tabOutlinedStyle = registerStyle(/*css*/ `
 @layer variant {
     .mutex[data-variant="tab-outlined"] {
-        --mutex-variant-border-width: 1px;
+        --mutex-variant-border-width: 2px;
         --mutex-item-color: var(--color-3);
         --mutex-item-hover-color: var(--color-1);
         --mutex-item-active-color: var(--color-1);
-        border-block-end: var(--mutex-variant-border-width) solid var(--color-1);
+        border-block-end: var(--mutex-variant-border-width) solid var(--background-color-3);
     }
 
     .mutex__item[data-variant="tab-outlined"] {
@@ -168,9 +168,9 @@ const tabOutlinedStyle = registerStyle(/*css*/ `
 
     .mutex__item[data-variant="tab-outlined"][aria-selected] {
         background: var(--background-color-1);
-        border-inline-start: var(--mutex-variant-border-width) solid var(--color-1);
-        border-inline-end: var(--mutex-variant-border-width) solid var(--color-1);
-        border-block-start: var(--mutex-variant-border-width) solid var(--color-1);
+        border-inline-start: var(--mutex-variant-border-width) solid var(--background-color-3);
+        border-inline-end: var(--mutex-variant-border-width) solid var(--background-color-3);
+        border-block-start: var(--mutex-variant-border-width) solid var(--background-color-3);
         border-start-start-radius: 5px;
         border-start-end-radius: 5px;
     }
