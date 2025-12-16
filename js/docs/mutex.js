@@ -12,8 +12,9 @@ import {
     registerStyle,
 } from "/js/article.js";
 import { highlightHTML, highlightCSS } from "/js/highlight.js";
+import { Braces, X, FileCode } from "/js/symbol.js";
 
-const { div } = van.tags;
+const { div, button } = van.tags;
 
 const tabUnderscoredStyle = registerStyle(/*css*/ `
 @layer variant {
@@ -267,6 +268,68 @@ const tabJoint = div(
     )
 );
 
+const fileTabStyle = registerStyle(/*css*/ `
+@layer variant {
+    .mutex__item[data-variant="file-tab"] {
+        --mutex-item-hover-background: var(--background-color-1);
+        --mutex-item-background: var(--background-color-2);
+        gap: var(--space-2);
+        border: 1px solid var(--background-color-3);
+        margin-inline: -1px;
+        padding-inline-end: var(--space-3);
+    }
+
+    .mutex__item[data-variant="file-tab"][aria-selected] {
+        background: var(--background-color-1);
+        border-block-start: 2px solid var(--color-1);
+        border-block-end: none;
+    }
+
+    .trigger[data-variant="file-tab"] {
+        --trigger-background: transparent;
+        --trigger-hover-background: var(--background-color-2);
+        padding: var(--space-1);
+        border: none;
+    }
+}`);
+
+const fileTab = div(
+    {
+        class: "mutex",
+        "data-variant": "file-tab",
+    },
+    div(
+        {
+            class: "mutex__item",
+            "data-variant": "file-tab",
+            "aria-selected": "",
+        },
+        FileCode(),
+        "index.html",
+        button(
+            {
+                class: "trigger",
+                "data-variant": "file-tab",
+            },
+            X(),
+        )
+    ),
+    div(
+        {
+            class: "mutex__item",
+            "data-variant": "file-tab",
+        },
+        Braces(),
+        "styles.css",
+        button(
+            {
+                class: "trigger",
+                "data-variant": "file-tab",
+            },
+            X(),
+        )
+    )
+);
 
 const article = Article(
     H1("Mutex"),
@@ -274,7 +337,8 @@ const article = Article(
     Section(tabBackdrop),
     Section(tabEnclosed),
     Section(tabOutlined),
-    Section(tabJoint)
+    Section(tabJoint),
+    Section(fileTab),
 );
 
 van.add(document.body, article);
