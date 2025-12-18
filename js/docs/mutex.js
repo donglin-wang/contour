@@ -223,6 +223,7 @@ const tabJointStyle = registerStyle(/*css*/ `
         border-block: 1px solid var(--background-color-3);
         border-inline: 1px solid var(--background-color-3);
         background: var(--background-color-2);
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px inset;
     }
 
     .mutex__item[data-variant="tab-joint"]:first-child,
@@ -271,12 +272,21 @@ const tabJoint = div(
 const fileTabStyle = registerStyle(/*css*/ `
 @layer variant {
     .mutex__item[data-variant="file-tab"] {
-        --mutex-item-hover-background: var(--background-color-1);
+        --mutex-item-hover-background: var(--background-color-2);
         --mutex-item-background: var(--background-color-2);
         gap: var(--space-2);
         border: 1px solid var(--background-color-3);
         margin-inline: -1px;
         padding-inline-end: var(--space-3);
+    }
+
+    .mutex__item[data-variant="file-tab"] > .mutex--close {
+        visibility: hidden;
+    }
+
+    .mutex__item[data-variant="file-tab"]:hover > .mutex--close,
+    .mutex__item[data-variant="file-tab"][aria-selected] > .mutex--close {
+        visibility: visible;
     }
 
     .mutex__item[data-variant="file-tab"][aria-selected] {
@@ -287,7 +297,7 @@ const fileTabStyle = registerStyle(/*css*/ `
 
     .trigger[data-variant="file-tab"] {
         --trigger-background: transparent;
-        --trigger-hover-background: var(--background-color-2);
+        --trigger-hover-background: var(--background-color-3);
         padding: var(--space-1);
         border: none;
     }
@@ -308,10 +318,10 @@ const fileTab = div(
         "index.html",
         button(
             {
-                class: "trigger",
+                class: "trigger mutex--close",
                 "data-variant": "file-tab",
             },
-            X(),
+            X()
         )
     ),
     div(
@@ -323,10 +333,10 @@ const fileTab = div(
         "styles.css",
         button(
             {
-                class: "trigger",
+                class: "trigger mutex--close",
                 "data-variant": "file-tab",
             },
-            X(),
+            X()
         )
     )
 );
@@ -338,7 +348,7 @@ const article = Article(
     Section(tabEnclosed),
     Section(tabOutlined),
     Section(tabJoint),
-    Section(fileTab),
+    Section(fileTab)
 );
 
 van.add(document.body, article);
