@@ -2,9 +2,7 @@ import van from "/js/van.js";
 
 // Icons taken from Lucide https://lucide.dev
 
-const { path, svg } = van.tags(
-    "http://www.w3.org/2000/svg"
-);
+const { path, svg, circle } = van.tags("http://www.w3.org/2000/svg");
 
 const getAttributes = (variant = "") => {
     return {
@@ -65,11 +63,34 @@ export const X = (variant = "") =>
 
 export const FileCode = (variant = "") =>
     svg(
-       getAttributes(variant),
+        getAttributes(variant),
         path({
             d: "M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z",
         }),
         path({ d: "M14 2v5a1 1 0 0 0 1 1h5" }),
         path({ d: "M10 12.5 8 15l2 2.5" }),
         path({ d: "m14 12.5 2 2.5-2 2.5" })
+    );
+
+export const MapPin = (variant = "") =>
+    svg(
+        getAttributes(variant),
+        path({
+            d: "M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0",
+        }),
+        circle({ cx: "12", cy: "10", r: "3" })
+    );
+
+export const Bookmark = (variant = "") =>
+    svg(
+        getAttributes(variant),
+        path({ d: "m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z" })
+    );
+
+export const CirclePlus = (variant = "") =>
+    svg(
+        getAttributes(variant),
+        circle({ cx: "12", cy: "12", r: "10" }),
+        path({ d: "M8 12h8" }),
+        path({ d: "M12 8v8" })
     );

@@ -14,6 +14,20 @@
         border-radius: var(--mutex-border-radius, 0);
     }
 
+    .mutex__section {
+        display: flex;
+        gap: var(--mutex-section-gap, 0);
+        box-shadow: var(--mutex-section-box-shadow, none);
+        background: var(--mutex-section-background, var(--background-color-1));
+        padding-block: var(--mutex-section-padding-block, 0);
+        padding-inline: var(--mutex-section-padding-inline, 0);
+        margin-block: var(--mutex-section-margin-block, 0);
+        margin-inline: var(--mutex-section-margin-inline, 0);
+        border-block: var(--mutex-section-border-block, none);
+        border-inline: var(--mutex-section-border-inline, none);
+        border-radius: var(--mutex-section-border-radius, 0);
+    }
+
     .mutex__item {
         display: flex;
         align-items: center;

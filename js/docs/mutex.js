@@ -12,7 +12,14 @@ import {
     registerStyle,
 } from "/js/article.js";
 import { highlightHTML, highlightCSS } from "/js/highlight.js";
-import { Braces, X, FileCode } from "/js/symbol.js";
+import {
+    Braces,
+    X,
+    FileCode,
+    MapPin,
+    Bookmark,
+    CirclePlus,
+} from "/js/symbol.js";
 
 const { div, button } = van.tags;
 
@@ -223,7 +230,7 @@ const tabJointStyle = registerStyle(/*css*/ `
         border-block: 1px solid var(--background-color-3);
         border-inline: 1px solid var(--background-color-3);
         background: var(--background-color-2);
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px inset;
+        box-shadow: var(--background-color-3) 0px 0px 4px 0px inset;
     }
 
     .mutex__item[data-variant="tab-joint"]:first-child,
@@ -341,6 +348,89 @@ const fileTab = div(
     )
 );
 
+const dockStyle = registerStyle(/*css*/ `
+@layer variant {
+    .mutex__item[data-variant="dock"] {
+        --symbol-width: var(--space-5);
+        --symbol-height: var(--space-5);
+        flex-direction: column;
+        gap: var(--space-3);
+        color: var(--color-3);
+        flex: 1;
+    }
+
+    .mutex__item[data-variant="dock"][aria-selected],
+    .mutex__item[data-variant="dock"]:hover {
+        color: var(--color-1);
+    }
+
+    .mutex__item[data-variant="dock"]:hover > .mutex__section[data-variant="dock-symbol-backdrop"] {
+        background: var(--background-color-2);
+    }
+
+    .mutex__item[data-variant="dock"][aria-selected] > .mutex__section[data-variant="dock-symbol-backdrop"] {
+        background: var(--color-1);
+        color: var(--background-color-2);
+    }
+
+    .mutex__section[data-variant="dock-symbol-backdrop"] {
+        justify-content: center;
+        padding-block: var(--space-2);
+        padding-inline: var(--space-5);
+        border-radius: 999px;
+    }
+}`);
+
+const dock = div(
+    {
+        class: "mutex",
+        "data-variant": "dock",
+    },
+    div(
+        {
+            class: "mutex__item",
+            "data-variant": "dock",
+            "aria-selected": "",
+        },
+        div(
+            {
+                class: "mutex__section",
+                "data-variant": "dock-symbol-backdrop",
+            },
+            MapPin()
+        ),
+        "Explore"
+    ),
+    div(
+        {
+            class: "mutex__item",
+            "data-variant": "dock",
+        },
+        div(
+            {
+                class: "mutex__section",
+                "data-variant": "dock-symbol-backdrop",
+            },
+            Bookmark()
+        ),
+        "Revisit"
+    ),
+    div(
+        {
+            class: "mutex__item",
+            "data-variant": "dock",
+        },
+        div(
+            {
+                class: "mutex__section",
+                "data-variant": "dock-symbol-backdrop",
+            },
+            CirclePlus()
+        ),
+        "Contribute"
+    )
+);
+
 const article = Article(
     H1("Mutex"),
     Section(tabUnderscored),
@@ -348,7 +438,8 @@ const article = Article(
     Section(tabEnclosed),
     Section(tabOutlined),
     Section(tabJoint),
-    Section(fileTab)
+    Section(fileTab),
+    Section(dock)
 );
 
 van.add(document.body, article);
