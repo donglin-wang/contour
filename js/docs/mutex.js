@@ -127,7 +127,7 @@ const tabEnclosedStyle = registerStyle(/*css*/ `
     .mutex__item[data-variant="tab-enclosed"] {
         --mutex-item-active-background: var(--background-color-1);
         --mutex-item-active-border-radius: 3px;
-        --mutex-item-active-box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.05);
+        --mutex-item-active-box-shadow: 0 1px 1px 1px var(--background-color-3);
     }
 }`);
 

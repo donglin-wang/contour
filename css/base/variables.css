@@ -43,4 +43,14 @@
         --line-height-content: 2;
         --line-height-heading: 1.2;
     }
+
+    body[data-theme="dark"] {
+        --color-1: hsl(0deg 0% 100%);
+        --color-2: hsl(0deg, 0%, 96%);
+        --color-3: hsl(0deg, 0%, 90%);
+
+        --background-color-1: hsl(0deg 0% 10%);
+        --background-color-2: hsl(0deg 0% 20%);
+        --background-color-3: hsl(0deg 0% 40%);
+    }
 }

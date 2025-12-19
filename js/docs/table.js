@@ -445,7 +445,7 @@ const stickyStyle = registerStyle(/*css*/ `
         --table-cell-line-height: 1rem;
 
         /* Make cell background not transparent */
-        --table-cell-background: white;
+        --table-cell-background: var(--background-color-1);
 
         grid-template-columns:
             max-content
