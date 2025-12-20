@@ -167,6 +167,7 @@ const tabOutlinedStyle = registerStyle(/*css*/ `
         --mutex-item-color: var(--color-3);
         --mutex-item-hover-color: var(--color-1);
         --mutex-item-active-color: var(--color-1);
+        --mutex-item-padding-block: var(--space-3);
         border-block-end: var(--mutex-variant-border-width) solid var(--background-color-3);
     }
 
@@ -181,6 +182,7 @@ const tabOutlinedStyle = registerStyle(/*css*/ `
         border-block-start: var(--mutex-variant-border-width) solid var(--background-color-3);
         border-start-start-radius: 5px;
         border-start-end-radius: 5px;
+        padding-block-end: calc(var(--mutex-item-padding-block) + var(--mutex-variant-border-width))
     }
 }`);
 
@@ -443,3 +445,17 @@ const article = Article(
 );
 
 van.add(document.body, article);
+
+for (const mutexItem of document.getElementsByClassName("mutex__item")) {
+    mutexItem.addEventListener("click", () => {
+        const siblings =
+            mutexItem.parentElement.getElementsByClassName("mutex__item");
+        for (const sibling of siblings) {
+            if (sibling.getAttribute("aria-selected") !== null) {
+                sibling.toggleAttribute("aria-selected");
+                break;
+            }
+        }
+        mutexItem.setAttribute("aria-selected", "");
+    });
+}
