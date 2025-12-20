@@ -62,13 +62,12 @@
         left: 8px;
         width: 100%;
         height: 100%;
-        background-image: url(/asset/image/dotted.svg);
-        background-repeat: repeat;
+        background: radial-gradient(circle, var(--color-1) 30%, transparent 30%);
+        background-size: 2px 2px;
         z-index: -1;
-        isolation: isolate;
     }
 
-    .trigger[data-variant="glassy"] {
+    .trigger[data-variant="glassy"] { 
         position: relative;
         backdrop-filter: blur(2px) saturate(180%);
         border: 1px solid rgba(255, 255, 255, 0.8);
