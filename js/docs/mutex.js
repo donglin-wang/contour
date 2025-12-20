@@ -182,7 +182,8 @@ const tabOutlinedStyle = registerStyle(/*css*/ `
         border-block-start: var(--mutex-variant-border-width) solid var(--background-color-3);
         border-start-start-radius: 5px;
         border-start-end-radius: 5px;
-        padding-block-end: calc(var(--mutex-item-padding-block) + var(--mutex-variant-border-width))
+        /* Prevents jitter when toggling */
+        padding-block-end: calc(var(--mutex-item-padding-block) + var(--mutex-variant-border-width));
     }
 }`);
 
