@@ -1,9 +1,8 @@
-import van from "/js/van.js";
-import { registerStyle } from "/js/article.js";
-import { ContourLogo } from "/js/symbol.js";
-import { highlightCSS } from "/js/highlight.js";
+import van from "/js/van/van";
+import { registerStyle } from "/js/article";
+import { ContourLogo } from "/js/symbol";
 
-import { registerMutexHandler } from "/js/components/mutex.js";
+import { registerMutexHandler } from "/js/components/mutex";
 
 const { div, h2, button } = van.tags;
 

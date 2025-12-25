@@ -1,3 +1,21 @@
+export type ShjLanguage = "css" | "html" | "todo" ;
+export type ShjLanguageComponent = ShjToken | ShjCompositeToken | ShjReferenceToken;
+
+export type ShjToken = {
+    match: RegExp;
+    type: string;
+}
+export type ShjCompositeToken = {
+    match: RegExp;
+    sub: string | ShjLanguageDefinition | ShjSubTokenFunction;
+}
+export type ShjSubTokenFunction = (code: string) => ShjLanguageComponent
+
+export type ShjReferenceToken = {
+    expand: string;
+}
+export type ShjLanguageDefinition = ShjLanguageComponent[];
+
 let nameStartChar =
         ":A-Z_a-z\u{C0}-\u{D6}\u{D8}-\u{F6}\u{F8}-\u{2FF}\u{370}-\u{37D}\u{37F}-\u{1FFF}\u{200C}-\u{200D}\u{2070}-\u{218F}\u{2C00}-\u{2FEF}\u{3001}-\u{D7FF}\u{F900}-\u{FDCF}\u{FDF0}-\u{FFFD}",
     nameChar =
@@ -39,7 +57,7 @@ let name = `[${nameStartChar}][${nameChar}]*`,
         ],
     };
 
-export const langs = {
+export const langs: Record<ShjLanguage, ShjLanguageDefinition> = {
     css: [
         {
             match: /\/\*((?!\*\/)[^])*(\*\/)?/g,

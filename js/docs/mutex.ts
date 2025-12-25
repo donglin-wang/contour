@@ -1,16 +1,10 @@
-import van from "/js/van.js";
+import van from "/js/van/van";
 import {
     Article,
     H1,
-    H2,
-    P,
-    Ul,
-    Li,
-    CodeInline,
     Section,
     registerStyle,
 } from "/js/article.js";
-import { highlightHTML, highlightCSS } from "/js/highlight.js";
 import {
     Braces,
     X,
@@ -18,7 +12,7 @@ import {
     MapPin,
     Bookmark,
     CirclePlus,
-} from "/js/symbol.js";
+} from "/js/symbol";
 import { registerMutexHandler } from "/js/components/mutex.js";
 
 const { div, button } = van.tags;

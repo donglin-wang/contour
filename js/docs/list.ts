@@ -1,4 +1,4 @@
-import van from "/js/van.js";
+import van from "/js/van/van";
 import {
     Article,
     H1,
@@ -10,8 +10,8 @@ import {
     Section,
     registerStyle,
 } from "/js/article.js";
-import { ChevronRight, Play, ArrowUp, ArrowDown } from "/js/symbol.js";
-import { highlightHTML, highlightCSS } from "/js/highlight.js";
+import { ChevronRight, Play, ArrowUp, ArrowDown } from "/js/symbol";
+import { highlightHTML, highlightCSS } from "/js/highlight";
 
 const { button, span, b, div, img, kbd, hr } = van.tags;
 

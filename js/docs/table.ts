@@ -1,4 +1,4 @@
-import van from "/js/van.js";
+import van from "/js/van/van";
 import {
     Article,
     H1,
@@ -9,14 +9,14 @@ import {
     CodeInline,
     Section,
     registerStyle,
-} from "/js/article.js";
-import { highlightHTML, highlightCSS } from "/js/highlight.js";
+} from "/js/article";
+import { highlightHTML, highlightCSS } from "/js/highlight";
 import {
     userProfiles,
     userProfileSpec,
     patientHeaderSpec,
     patients,
-} from "/js/docs/tableData.js";
+} from "/js/docs/tableData";
 
 const { table, tr, td, th, thead, tbody } = van.tags;
 

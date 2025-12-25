@@ -1,10 +1,27 @@
-import { langs, expandData } from "/js/parser/languages.js";
+import { langs, expandData } from "/js/parser/languages";
+import type {
+    ShjLanguageComponent,
+    ShjToken,
+    ShjCompositeToken,
+    ShjSubTokenFunction,
+} from "/js/parser/languages";
 
-export const tokenize = (src, lang, token) => {
+type ShjTokenMatch = {
+    index?: number;
+    end?: number;
+    match?: string;
+    part?: ShjLanguageComponent;
+};
+
+export const tokenize = (
+    src: string,
+    lang,
+    token: (str: string, type?: string) => void
+) => {
     try {
         let m,
             part,
-            first = {},
+            first: ShjTokenMatch = {},
             match,
             cache = [],
             i = 0,
@@ -45,17 +62,21 @@ export const tokenize = (src, lang, token) => {
             if (first.index === null) break;
             token(src.slice(i, first.index), data.type);
             i = first.end;
-            if (first.part.sub)
+            if ((first.part as ShjCompositeToken).sub)
                 tokenize(
                     first.match,
-                    typeof first.part.sub === "string"
-                        ? first.part.sub
-                        : typeof first.part.sub === "function"
-                        ? first.part.sub(first.match)
+                    typeof (first.part as ShjCompositeToken).sub === "string"
+                        ? (first.part as ShjCompositeToken).sub
+                        : typeof (first.part as ShjCompositeToken).sub ===
+                          "function"
+                        ? (
+                              (first.part as ShjCompositeToken)
+                                  .sub as ShjSubTokenFunction
+                          )(first.match)
                         : first.part,
                     token
                 );
-            else token(first.match, first.part.type);
+            else token(first.match, (first.part as ShjToken).type);
         }
         token(src.slice(i, src.length), data.type);
     } catch (e) {

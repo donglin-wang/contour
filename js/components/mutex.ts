@@ -4,7 +4,9 @@ export const registerMutexHandler = () => {
     )) {
         const parent = indicator.parentElement;
         const firstItem = parent.getElementsByClassName("mutex__item").item(0);
-        indicator.style.width = `${firstItem.getBoundingClientRect().width}px`;
+        (indicator as HTMLElement).style.width = `${
+            firstItem.getBoundingClientRect().width
+        }px`;
     }
 
     for (const mutexItem of document.getElementsByClassName("mutex__item")) {

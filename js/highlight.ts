@@ -1,13 +1,11 @@
-import van from "/js/van.js";
+import van from "/js/van/van";
 
-import { tokenize } from "/js/parser/tokenize.js";
+import { tokenize } from "/js/parser/tokenize";
 
 const { div, span } = van.tags;
 
-/**
- * @param {string} html
- */
-export function formatHTML(html) {
+
+export function formatHTML(html: string) {
     var tab = "    ";
     var result = "";
     var indent = "";
@@ -27,10 +25,7 @@ export function formatHTML(html) {
     return result.substring(1, result.length - 3);
 }
 
-/**
- * @param {string} cssString
- */
-export const formatCSS = (cssString) => {
+export const formatCSS = (cssString: string) => {
     cssString = cssString.trim();
 
     const indent = "    ";
@@ -73,7 +68,7 @@ export const formatCSS = (cssString) => {
     return result.trim();
 };
 
-export const highlightHTML = (element, usesInner = false) => {
+export const highlightHTML = (element: HTMLElement, usesInner = false) => {
     const children = [];
 
     tokenize(
@@ -105,7 +100,7 @@ export const highlightHTML = (element, usesInner = false) => {
     );
 };
 
-export const highlightCSS = (styleText) => {
+export const highlightCSS = (styleText: string) => {
     const children = [];
 
     tokenize(

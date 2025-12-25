@@ -1,4 +1,4 @@
-import van from "/js/van.js";
+import van from "/js/van/van.js";
 import {
     Article,
     H1,
