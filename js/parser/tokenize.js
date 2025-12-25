@@ -59,7 +59,6 @@ export const tokenize = (src, lang, token) => {
         }
         token(src.slice(i, src.length), data.type);
     } catch (e) {
-        console.error(e);
         token(src);
     }
 };
