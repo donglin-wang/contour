@@ -1,8 +1,9 @@
 import van from "/js/van/van";
+import type { ValidChildDomValue } from "/js/van/van";
 
 const { article, section, h1, h2, p, ul, ol, li, code } = van.tags;
 
-export const Article = (...children) => {
+export const Article = (...children: ValidChildDomValue[]) => {
     return article(
         {
             class: "container",
@@ -12,7 +13,7 @@ export const Article = (...children) => {
     );
 };
 
-export const Section = (...children) =>
+export const Section = (...children: ValidChildDomValue[]) =>
     section(
         {
             class: "container",
@@ -21,7 +22,7 @@ export const Section = (...children) =>
         ...children
     );
 
-export const H1 = (text) =>
+export const H1 = (text: string) =>
     h1(
         {
             class: "typography",
@@ -30,7 +31,7 @@ export const H1 = (text) =>
         text
     );
 
-export const H2 = (text) =>
+export const H2 = (text: string) =>
     h2(
         {
             class: "typography",
@@ -39,7 +40,7 @@ export const H2 = (text) =>
         text
     );
 
-export const P = (...children) =>
+export const P = (...children: ValidChildDomValue[]) =>
     p(
         {
             class: "typography",
@@ -48,7 +49,7 @@ export const P = (...children) =>
         ...children
     );
 
-export const Ul = (...children) =>
+export const Ul = (...children: ValidChildDomValue[]) =>
     ul(
         {
             class: "typography",
@@ -57,7 +58,7 @@ export const Ul = (...children) =>
         ...children
     );
 
-export const Ol = (...children) =>
+export const Ol = (...children: ValidChildDomValue[]) =>
     ol(
         {
             class: "typography",
@@ -66,7 +67,7 @@ export const Ol = (...children) =>
         ...children
     );
 
-export const Li = (...children) =>
+export const Li = (...children: ValidChildDomValue[]) =>
     li(
         {
             class: "typography",
@@ -75,7 +76,7 @@ export const Li = (...children) =>
         ...children
     );
 
-export const CodeInline = (text) =>
+export const CodeInline = (text: string) =>
     code(
         {
             class: "typography",
@@ -84,7 +85,7 @@ export const CodeInline = (text) =>
         text
     );
 
-export const registerStyle = (styleText) => {
+export const registerStyle = (styleText: string) => {
     const sheet = new CSSStyleSheet();
     sheet.replaceSync(styleText);
     document.adoptedStyleSheets.push(sheet);
