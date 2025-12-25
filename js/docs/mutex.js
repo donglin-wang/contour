@@ -1,5 +1,4 @@
 import van from "/js/van.js";
-import { highlightAll } from "/js/shj.js";
 import {
     Article,
     H1,

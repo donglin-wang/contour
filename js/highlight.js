@@ -1,6 +1,8 @@
 import van from "/js/van.js";
 
-const { div } = van.tags;
+import { tokenize } from "/js/parser/tokenize.js";
+
+const { div, span } = van.tags;
 
 /**
  * @param {string} html
@@ -30,65 +32,107 @@ export function formatHTML(html) {
  */
 export const formatCSS = (cssString) => {
     cssString = cssString.trim();
+
     const indent = "    ";
     let result = "";
     let level = 0;
+    let inStatement = false;
+    let isFirstChar = false;
 
-    let newLine = false;
-    let inStatement = true;
     for (const char of cssString) {
-        const isWhiteSpace = char.trim() === "";
-
-        if (isWhiteSpace && !inStatement) {
+        if (char.trim() === "" && !inStatement) {
             continue;
         }
 
+        isFirstChar = inStatement === false;
         inStatement = true;
 
-        if (char === "{") {
-            result = result.concat(char);
-            newLine = true;
+        if (char === "{" || char === ";") {
+            level += char === "{" ? 1 : 0;
             inStatement = false;
-            level += 1;
-            continue;
-        } else if (char === ";") {
-            result = result.concat(char);
-            newLine = true;
+        } else if (char === "}") {
+            level -= 1;
             inStatement = false;
-            continue;
         }
 
-        if (newLine) {
-            if (char !== "}") {
-                newLine = false;
-            } else {
-                level -= 1;
-                inStatement = false;
-            }
-            result = result.concat("\n");
+        if (isFirstChar) {
             for (let i = 0; i < level; i++) {
-                result = result.concat(indent);
+                result += indent;
             }
         }
 
-        result = result.concat(char);
+        result += char;
+
+        if (char === "{" || char === ";") {
+            result += "\n";
+        } else if (char === "}") {
+            result += "\n\n";
+        }
     }
 
-    return result;
+    return result.trim();
 };
 
-export const highlightHTML = (element, usesInner = false) =>
-    div(
-        {
-            class: "shj-lang-html",
-        },
-        formatHTML(usesInner ? element.innerHTML : element.outerHTML)
+export const highlightHTML = (element, usesInner = false) => {
+    const children = [];
+
+    tokenize(
+        formatHTML(usesInner ? element.innerHTML : element.outerHTML),
+        "html",
+        (str, type) => {
+            if (str) {
+                children.push(
+                    span(
+                        {
+                            class: "typography",
+                            "data-variant": `token-${type}`,
+                        },
+                        str
+                    )
+                );
+            } else {
+                children.push(str);
+            }
+        }
     );
 
-export const highlightCSS = (styleText) =>
-    div(
+    return div(
         {
-            class: "shj-lang-css",
+            class: "container",
+            "data-variant": "code-block",
         },
-        formatCSS(styleText)
+        ...children
     );
+};
+
+export const highlightCSS = (styleText) => {
+    const children = [];
+
+    tokenize(
+        formatCSS(styleText),
+        "css",
+        (str, type) => {
+            if (str) {
+                children.push(
+                    span(
+                        {
+                            class: "typography",
+                            "data-variant": `token-${type}`,
+                        },
+                        str
+                    )
+                );
+            } else {
+                children.push(str);
+            }
+        }
+    );
+
+    return div(
+        {
+            class: "container",
+            "data-variant": "code-block",
+        },
+        ...children
+    );
+};

@@ -1,5 +1,4 @@
 import van from "/js/van.js";
-import { highlightAll } from "/js/shj.js";
 import { registerStyle } from "/js/article.js";
 import { ContourLogo } from "/js/symbol.js";
 import { highlightCSS } from "/js/highlight.js";

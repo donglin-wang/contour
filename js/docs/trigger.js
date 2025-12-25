@@ -1,5 +1,4 @@
 import van from "/js/van.js";
-import { highlightAll } from "/js/shj.js";
 import {
     Article,
     H1,
@@ -303,7 +302,3 @@ const article = Article(
 );
 
 van.add(document.body, article);
-
-highlightAll({
-    hideLineNumbers: true,
-});
