@@ -1,19 +1,8 @@
 import van from "/js/van/van";
-import {
-    Article,
-    H1,
-    Section,
-    registerStyle,
-} from "/js/article.js";
-import {
-    Braces,
-    X,
-    FileCode,
-    MapPin,
-    Bookmark,
-    CirclePlus,
-} from "/js/symbol";
-import { registerMutexHandler } from "/js/components/mutex.js";
+import { Article, H1, Section, registerStyle } from "/js/article.js";
+import { Braces, X, FileCode, MapPin, Bookmark, CirclePlus } from "/js/symbol";
+import { registerMutexHandler } from "/js/components/tabs";
+import { createTabs, createClosableTabs } from "/js/components/tabs";
 
 const { div, button } = van.tags;
 
@@ -273,7 +262,7 @@ const tabJoint = div(
     )
 );
 
-const tabIndecatedStyle = registerStyle(/*css*/`
+const tabIndecatedStyle = registerStyle(/*css*/ `
 @layer {
     .mutex[data-variant="tab-indicated"] {
         --mutex-item-color: var(--color-3);
@@ -306,12 +295,10 @@ const tabIndicated = div(
         class: "mutex",
         "data-variant": "tab-indicated",
     },
-    div(
-        {
-            class: "mutex__indicator",
-            "data-variant": "tab-indicated",
-        }
-    ),
+    div({
+        class: "mutex__indicator",
+        "data-variant": "tab-indicated",
+    }),
     div(
         {
             class: "mutex__item",
@@ -408,6 +395,27 @@ const fileTab = div(
     )
 );
 
+const fileTab2 = createClosableTabs({
+    variant: "file-tab",
+    itemVariant: "file-tab",
+    closeClass: "trigger mutex--close",
+    closeVariant: "file-tab",
+    children: [
+        {
+            selected: true,
+            body: [
+               "Tab 1"
+            ],
+        },
+        {
+            body: [
+                "Tab 2",
+            ],
+        },
+    ],
+});
+
+
 const dockStyle = registerStyle(/*css*/ `
 @layer variant {
     .mutex__item[data-variant="dock"] {
@@ -440,6 +448,60 @@ const dockStyle = registerStyle(/*css*/ `
         border-radius: 999px;
     }
 }`);
+
+const { addChild, root } = createTabs({
+    variant: "dock",
+    itemVariant: "dock",
+    children: [
+        {
+            selected: true,
+            body: [
+                div(
+                    {
+                        class: "mutex__section",
+                        "data-variant": "dock-symbol-backdrop",
+                    },
+                    MapPin()
+                ),
+                "Explore",
+            ],
+        },
+        {
+            body: [
+                div(
+                    {
+                        class: "mutex__section",
+                        "data-variant": "dock-symbol-backdrop",
+                    },
+                    Bookmark()
+                ),
+                "Revisit",
+            ],
+        },
+    ],
+});
+
+const addTab = button(
+    {
+        class: "trigger",
+    },
+    "Add"
+);
+
+addTab.addEventListener("click", () =>
+    addChild({
+        body: [
+            div(
+                {
+                    class: "mutex__section",
+                    "data-variant": "dock-symbol-backdrop",
+                },
+                Bookmark()
+            ),
+            "Revisit",
+        ],
+    })
+);
 
 const dock = div(
     {
@@ -499,7 +561,9 @@ const article = Article(
     Section(tabOutlined),
     Section(tabJoint),
     Section(fileTab),
+    Section(fileTab2),
     Section(dock),
+    Section(root, addTab),
     Section(tabIndicated)
 );
 
