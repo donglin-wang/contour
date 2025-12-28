@@ -1,9 +1,8 @@
 import van from "/js/van/van";
-import { X } from "/js/symbol";
 
 import type { ValidChildDomValue } from "/js/van/van";
 
-const { div, button } = van.tags;
+const { div } = van.tags;
 
 export type TabChildSpec = {
     selected?: boolean;
