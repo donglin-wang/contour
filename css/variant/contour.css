@@ -282,7 +282,7 @@
 
     .trigger[data-variant="digital"] {
         border-radius: 0;
-        border: 2px solid var(--color-1);
+        border: 1px solid var(--color-1);
         position: relative;
         --button-background: var(--background-color-1);
     }

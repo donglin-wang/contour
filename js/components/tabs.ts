@@ -116,8 +116,8 @@ class Tabs extends HTMLElement implements TabSpec {
 
         this.appendChild(root);
 
-        // The indicator's width can only be calculated after the tabs'
-        // widths are calculated by the browsers rendering engine
+        // The indicator's width can only be calculated after the tab's 
+        // DOM has been added to the screen
         indicator.style.width = `${tabs[0].getBoundingClientRect().width}px`
     }
 }
