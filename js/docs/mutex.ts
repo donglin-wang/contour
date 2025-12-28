@@ -1,8 +1,6 @@
 import van from "/js/van/van";
 import { Article, H1, Section, registerStyle } from "/js/article.js";
 import { Braces, X, FileCode, MapPin, Bookmark, CirclePlus } from "/js/symbol";
-import { registerMutexHandler } from "/js/components/tabs";
-import { createTabs, createClosableTabs } from "/js/components/tabs";
 
 const { div, button } = van.tags;
 
@@ -395,27 +393,6 @@ const fileTab = div(
     )
 );
 
-const fileTab2 = createClosableTabs({
-    variant: "file-tab",
-    itemVariant: "file-tab",
-    closeClass: "trigger mutex--close",
-    closeVariant: "file-tab",
-    children: [
-        {
-            selected: true,
-            body: [
-               "Tab 1"
-            ],
-        },
-        {
-            body: [
-                "Tab 2",
-            ],
-        },
-    ],
-});
-
-
 const dockStyle = registerStyle(/*css*/ `
 @layer variant {
     .mutex__item[data-variant="dock"] {
@@ -448,60 +425,6 @@ const dockStyle = registerStyle(/*css*/ `
         border-radius: 999px;
     }
 }`);
-
-const { addChild, root } = createTabs({
-    variant: "dock",
-    itemVariant: "dock",
-    children: [
-        {
-            selected: true,
-            body: [
-                div(
-                    {
-                        class: "mutex__section",
-                        "data-variant": "dock-symbol-backdrop",
-                    },
-                    MapPin()
-                ),
-                "Explore",
-            ],
-        },
-        {
-            body: [
-                div(
-                    {
-                        class: "mutex__section",
-                        "data-variant": "dock-symbol-backdrop",
-                    },
-                    Bookmark()
-                ),
-                "Revisit",
-            ],
-        },
-    ],
-});
-
-const addTab = button(
-    {
-        class: "trigger",
-    },
-    "Add"
-);
-
-addTab.addEventListener("click", () =>
-    addChild({
-        body: [
-            div(
-                {
-                    class: "mutex__section",
-                    "data-variant": "dock-symbol-backdrop",
-                },
-                Bookmark()
-            ),
-            "Revisit",
-        ],
-    })
-);
 
 const dock = div(
     {
@@ -561,11 +484,46 @@ const article = Article(
     Section(tabOutlined),
     Section(tabJoint),
     Section(fileTab),
-    Section(fileTab2),
     Section(dock),
-    Section(root, addTab),
     Section(tabIndicated)
 );
 
 van.add(document.body, article);
-registerMutexHandler();
+
+for (const indicator of document.getElementsByClassName("mutex__indicator")) {
+    const parent = indicator.parentElement;
+    const firstItem = parent.getElementsByClassName("mutex__item").item(0);
+    (indicator as HTMLElement).style.width = `${
+        firstItem.getBoundingClientRect().width
+    }px`;
+}
+
+for (const mutexItem of document.getElementsByClassName("mutex__item")) {
+    mutexItem.addEventListener("click", () => {
+        const parent = mutexItem.parentElement;
+        const siblings = parent.children;
+
+        let indicator = null;
+        for (const sibling of siblings) {
+            if (sibling.getAttribute("aria-selected") !== null) {
+                sibling.toggleAttribute("aria-selected");
+            }
+
+            if (sibling.classList.contains("mutex__indicator")) {
+                indicator = sibling;
+            }
+        }
+
+        mutexItem.setAttribute("aria-selected", "");
+
+        if (indicator !== null) {
+            const mutexRect = parent.getBoundingClientRect();
+            const itemRect = mutexItem.getBoundingClientRect();
+            const left = itemRect.left - mutexRect.left;
+            const width = itemRect.width;
+
+            indicator.style.left = `${left}px`;
+            indicator.style.width = `${width}px`;
+        }
+    });
+}

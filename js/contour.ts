@@ -2,7 +2,9 @@ import van from "/js/van/van";
 import { registerStyle } from "/js/article";
 import { ContourLogo } from "/js/symbol";
 
-import { registerMutexHandler } from "/js/components/mutex";
+import { highlightCSS } from "/js/highlight";
+
+import { Tabs } from "/js/components/tabs";
 
 const { div, h2, button } = van.tags;
 
@@ -35,45 +37,111 @@ const contourDisplayStyle = registerStyle(/*css*/ `
     }
 }`);
 
-const contourDisplay = div(
+const displayButton = button(
     {
-        class: "mutex",
-        "data-variant": "tab-indicated",
+        class: "trigger",
+        "data-variant": "inverse",
     },
-    div({
-        class: "mutex__indicator",
-        "data-variant": "tab-indicated",
-    }),
-    div(
-        {
-            class: "mutex__item",
-            "data-variant": "tab-indicated",
-            "aria-selected": null,
-        },
-        "Inverse"
-    ),
-    div(
-        {
-            class: "mutex__item",
-            "data-variant": "tab-indicated",
-        },
-        "Directional"
-    ),
-    div(
-        {
-            class: "mutex__item",
-            "data-variant": "tab-indicated",
-        },
-        "Digital"
-    ),
-    div(
-        {
-            class: "mutex__item",
-            "data-variant": "tab-indicated",
-        },
-        "Blueprint"
-    )
+    "Get started"
 );
+
+const inverseStyle = highlightCSS(/*css*/ `
+@layer {
+    .trigger[data-variant="inverse"] {
+        --trigger-background: var(--color-1);
+        --trigger-hover-background: var(--color-2);
+        color: var(--background-color-1);
+    }
+}`);
+
+const digitalStyle = highlightCSS(/*css*/ `
+@layer {
+    .trigger[data-variant="digital"] {
+        border-radius: 0;
+        border: 2px solid black;
+        position: relative;
+        --button-background: var(--background-color-1);
+    }
+
+    .trigger[data-variant="digital"]::after {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+            circle,
+            var(--color-1) 30%,
+            transparent 30%
+        );
+        background-size: 2px 2px;
+        z-index: -1;
+    }
+}`);
+
+const blueprintStyle = highlightCSS(/*css*/ `
+@layer {
+    .trigger[data-variant="blueprint"] {
+        --button-border-width: 1px;
+        border: var(--button-border-width) dashed black;
+        border-radius: 0;
+        position: relative;
+        z-index: 1;
+    }
+
+    .trigger[data-variant="blueprint"]::after,
+    .trigger[data-variant="blueprint"]::before {
+        --button-marker-size: 1rem;
+
+        height: calc(
+            100% + var(--button-marker-size) + var(--button-border-width)
+        );
+        width: var(--button-marker-size);
+        background-size: var(--button-marker-size) var(--button-marker-size);
+        background: url(/asset/image/plus.svg) no-repeat bottom,
+            url(/asset/image/plus.svg) no-repeat top;
+        content: "";
+        position: absolute;
+    }
+
+    .trigger[data-variant="blueprint"]::before {
+        left: calc(
+            -1 * (var(--button-marker-size) + var(--button-border-width)) / 2
+        );
+    }
+
+    .trigger[data-variant="blueprint"]::after {
+        right: calc(
+            -1 * (var(--button-marker-size) + var(--button-border-width)) / 2
+        );
+    }
+}`);
+
+const displayStyles = [inverseStyle, digitalStyle, blueprintStyle];
+
+const displayVariants = ["inverse", "digital", "blueprint"];
+
+const displayCode = div(inverseStyle);
+
+const contourDisplay = new Tabs({
+    childSpecs: [
+        ...displayVariants.map((value, index) => {
+            return {
+                selected: index === 0,
+                body: [value],
+            };
+        }),
+    ],
+    variant: "tab-indicated",
+    itemVariant: "tab-indicated",
+    indicatorVariant: "tab-indicated",
+    callback: (index) => {
+        displayButton.setAttribute("data-variant", displayVariants[index]);
+        displayCode.removeChild(displayCode.children[0]);
+        displayCode.appendChild(displayStyles[index]);
+    },
+});
 
 const hero = div(
     {
@@ -93,22 +161,16 @@ const hero = div(
             class: "container",
             "data-variant": "contour-hero-control",
         },
-        button(
-            {
-                class: "trigger",
-                "data-variant": "inverse",
-            },
-            "Get started"
-        )
+        displayButton
     ),
     div(
         {
             class: "container",
             "data-variant": "contour-display",
         },
-        contourDisplay
+        contourDisplay,
+        displayCode,
     )
 );
 
 van.add(document.body, hero);
-registerMutexHandler();

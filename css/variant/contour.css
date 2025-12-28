@@ -163,23 +163,25 @@
         white-space: pre;
         background: var(--background-color-2);
         border-radius: 5px;
-        padding: var(--space-4);
+        padding: var(--code-block-padding, var(--space-4));
         font: 1rem/1.5rem Consolas, Courier New, Monaco, Andale Mono,
             Ubuntu Mono, monospace;
         overflow-x: auto;
-        margin-block: var(--space-4);
+        margin-block: var(--code-block-margin, var(--space-4));
     }
 }
 
 /* Hero logo & slogan */
 @layer variant {
     .container[data-variant="contour-hero"] {
+        --hero-margin-block: clamp(4.5rem, 4.2955rem + 0.9091vw, 5rem);
         display: flex;
         flex-direction: column;
         max-width: 50rem;
-        margin-block: clamp(4.5rem, 4.2955rem + 0.9091vw, 5rem);
+        margin-block: var(--hero-margin-block);
         margin-inline: auto;
         padding-inline: 0.75rem;
+        max-height: calc(100vh - 2 * var(--hero-margin-block));
 
         align-items: start;
         justify-content: start;
@@ -211,16 +213,18 @@
     }
 
     .container[data-variant="contour-display"] {
+        --code-block-margin: 0;
+
         width: 100%;
-        min-height: 10rem;
         background: var(--background-color-2);
         border-radius: 5px;
         border: 1px solid var(--background-color-3);
+        overflow: auto;
     }
 
     .symbol[data-variant="contour-logo"] {
         aspect-ratio: 4 / 1;
-        height: clamp(4rem, 3.1818rem + 3.6364vw, 6rem);
+        flex: 0 0 clamp(4rem, 3.1818rem + 3.6364vw, 6rem);
     }
 
     .typography[data-variant="contour-slogan"] {
@@ -240,7 +244,7 @@
 
     .trigger[data-variant="blueprint"] {
         --button-border-width: 1px;
-        border: var(--button-border-width) dashed black;
+        border: var(--button-border-width) dashed var(--color-1);
         border-radius: 0;
         position: relative;
         z-index: 1;
@@ -255,8 +259,11 @@
         );
         width: var(--button-marker-size);
         background-size: var(--button-marker-size) var(--button-marker-size);
-        background: url(/asset/image/plus.svg) no-repeat bottom,
-            url(/asset/image/plus.svg) no-repeat top;
+        mask-image: url(/asset/image/plus.svg), url(/asset/image/plus.svg);
+        mask-repeat: no-repeat, no-repeat;
+        mask-position: bottom, top;
+        background-color: currentColor;
+        fill: var(--color-1);
         content: "";
         position: absolute;
     }
@@ -275,7 +282,7 @@
 
     .trigger[data-variant="digital"] {
         border-radius: 0;
-        border: 2px solid black;
+        border: 2px solid var(--color-1);
         position: relative;
         --button-background: var(--background-color-1);
     }

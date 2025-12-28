@@ -52,5 +52,20 @@
         --background-color-1: hsl(0deg 0% 10%);
         --background-color-2: hsl(0deg 0% 20%);
         --background-color-3: hsl(0deg 0% 30%);
+        
+        --token-cmnt: #8b949e;
+        --token-deleted: #ff7b72;
+        --token-err: #ff7b72;
+        --token-kwd: #ff7b72;
+        --token-class: #ffa657;
+        --token-type: #79c0ff;
+        --token-oper: #79c0ff;
+        --token-num: #79c0ff;
+        --token-section: #79c0ff;
+        --token-var: #79c0ff;
+        --token-bool: #79c0ff;
+        --token-insert: #98c379;
+        --token-str: #a5d6ff;
+        --token-func: #d2a8ff;
     }
 }
