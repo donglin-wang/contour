@@ -494,7 +494,7 @@ const stickyTable = constructTable(
     "sticky-body"
 );
 
-const article = Article(
+export const root = Article(
     H1("Table"),
     P(
         `
@@ -569,5 +569,3 @@ const article = Article(
     Section(nestedTable),
     highlightCSS(nestedStyle)
 );
-
-van.add(document.body, article);

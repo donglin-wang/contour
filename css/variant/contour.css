@@ -223,8 +223,9 @@
     }
 
     .symbol[data-variant="contour-logo"] {
-        aspect-ratio: 4 / 1;
-        flex: 0 0 clamp(4rem, 3.1818rem + 3.6364vw, 6rem);
+        --symbol-height: clamp(4rem, 3.1818rem + 3.6364vw, 6rem);
+        --symbol-width: calc(var(--symbol-height) * 4);
+        flex: 0 0 var(--symbol-height);
     }
 
     .typography[data-variant="contour-slogan"] {

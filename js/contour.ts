@@ -1,12 +1,14 @@
 import van from "/js/van/van";
 import { registerStyle } from "/js/article";
 import { ContourLogo } from "/js/symbol";
-
 import { highlightCSS } from "/js/highlight";
-
 import { Tabs } from "/js/components/tabs";
+import { registerMutexBehavior } from "/js/docs/mutex";
+import Router from "/js/router";
 
-const { div, h2, button } = van.tags;
+import type { Routes } from "/js/router";
+
+const { div, h2, a } = van.tags;
 
 const contourDisplayStyle = registerStyle(/*css*/ `
 @layer {
@@ -37,10 +39,11 @@ const contourDisplayStyle = registerStyle(/*css*/ `
     }
 }`);
 
-const displayButton = button(
+const displayButton = a(
     {
         class: "trigger",
         "data-variant": "inverse",
+        href: "/introduction"
     },
     "Get started"
 );
@@ -154,7 +157,7 @@ const hero = div(
             class: "typography",
             "data-variant": "contour-slogan",
         },
-        "helps you write scalable CSS"
+        "is a reference for implementing component systems"
     ),
     div(
         {
@@ -173,4 +176,104 @@ const hero = div(
     )
 );
 
-van.add(document.body, hero);
+const contourDocStyle = registerStyle(/*css*/`
+@layer variant {
+    .container[data-variant="contour-doc"] {
+        display: flex;
+    }
+
+    .list[data-variant="contour-menu"] {
+        width: 20rem;
+        border: none;
+        border-radius: 0;
+        padding: var(--space-4);
+    }
+
+    .list__item[data-variant="contour-menu"] {
+        text-decoration: none;
+        color: var(--color-1);
+        border-radius: 5px;
+        cursor: pointer;
+        --list-item-hover-background: var(--background-color-2);
+    }
+}`);
+
+const contourSideMenu = div(
+    {
+        class: "list",
+        "data-variant": "contour-menu",
+    },
+    a(
+        {
+            class: "list__item",
+            href: "/introduction",
+            "data-variant": "contour-menu"
+        },
+        "Introduction"
+    ),
+    a(
+        {
+            class: "list__item",
+            href: "/list",
+            "data-variant": "contour-menu"
+        },
+        "List"
+    ),
+    a(
+        {
+            class: "list__item",
+            href: "/mutex",
+            "data-variant": "contour-menu",
+        },
+        "Mutex"
+    ),
+    a(
+        {
+            class: "list__item",
+            href: "/table",
+            "data-variant": "contour-menu"
+        },
+        "Table"
+    )
+);
+
+const wrapArticle = (article: HTMLElement) => div(
+    { class: "container", "data-variant": "contour-doc" },
+    contourSideMenu,
+    article
+);
+
+const routes: Routes = [
+    {
+        path: "introduction",
+        callback: () => {
+            import("/js/docs/introduction").then(({root}) => document.body.replaceChildren(wrapArticle(root)))
+        }
+    },
+    {
+        path: "list",
+        callback: () => {
+            import("/js/docs/list").then(({root}) => document.body.replaceChildren(wrapArticle(root)))
+        }
+    },
+    {
+        path: "mutex",
+        callback: () => {
+            import("/js/docs/mutex").then(({root}) => {document.body.replaceChildren(wrapArticle(root)); registerMutexBehavior()})
+        }
+    },
+    {
+        path: "table",
+        callback: () => {
+            import("/js/docs/table").then(({root}) => document.body.replaceChildren(wrapArticle(root)))
+        }
+    },
+    {
+        path: "",
+        callback: () => {
+            document.body.replaceChildren(hero)
+        }
+    }
+]
+
+const router = new Router(routes);

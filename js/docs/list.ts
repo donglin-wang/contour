@@ -584,7 +584,7 @@ const comments = Section(
     )
 );
 
-const article = Article(
+export const root = Article(
     H1("List"),
     P(
         `List is an abstraction over many other common UI patterns such as 
@@ -630,5 +630,3 @@ const article = Article(
     P(`You can customize list to be a comment section: `),
     comments
 );
-
-van.add(document.body, article);
