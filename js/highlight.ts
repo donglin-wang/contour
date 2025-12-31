@@ -15,7 +15,7 @@ export function formatHTML(html: string) {
     let result = "";
     let indent = "";
 
-    html.split(/>\s*</).forEach(function (element) {
+    html.split(/>\s*</).forEach((element) => {
         if (element.match(/^\/\w/)) {
             indent = indent.substring(tab.length);
         }
