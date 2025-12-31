@@ -4,11 +4,16 @@ import { tokenize } from "/js/parser/tokenize";
 
 const { div, span } = tags;
 
+const isSelfClosing = (element: string) => (
+    element.startsWith("input") ||
+    element.startsWith("hr") ||
+    element.startsWith("img")
+)
 
 export function formatHTML(html: string) {
-    var tab = "    ";
-    var result = "";
-    var indent = "";
+    let tab = "    ";
+    let result = "";
+    let indent = "";
 
     html.split(/>\s*</).forEach(function (element) {
         if (element.match(/^\/\w/)) {
@@ -17,7 +22,7 @@ export function formatHTML(html: string) {
 
         result += indent + "<" + element + ">\r\n";
 
-        if (element.match(/^<?\w[^>]*[^\/]$/) && !element.startsWith("input")) {
+        if (element.match(/^<?\w[^>]*[^\/]$/) && !isSelfClosing(element)) {
             indent += tab;
         }
     });
