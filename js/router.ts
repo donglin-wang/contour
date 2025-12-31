@@ -1,17 +1,10 @@
-export type Routes = {
+export type Route = {
     path: string;
     callback: (param?: string) => void;
-}[];
-
-export type RouteSpec = {
-    path: string;
-    title: string;
-    body: Promise<HTMLElement[]>;
-    includeSideNav?: boolean;
-}
+};
 
 class Router {
-    routes: Routes;
+    routes: Route[];
 
     constructor(routes) {
         this.routes = routes;

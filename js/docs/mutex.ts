@@ -1,8 +1,8 @@
-import van from "/js/van/van";
+import { tags } from "/js/tags";
 import { Article, H1, Section, registerStyle } from "/js/article.js";
 import { Braces, X, FileCode, MapPin, Bookmark, CirclePlus } from "/js/symbol";
 
-const { div, button } = van.tags;
+const { div, button } = tags;
 
 const tabUnderscoredStyle = registerStyle(/*css*/ `
 @layer variant {
@@ -476,7 +476,7 @@ const dock = div(
     )
 );
 
-export const root = Article(
+export default Article(
     H1("Mutex"),
     Section(tabUnderscored),
     Section(tabBackdrop),

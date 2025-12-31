@@ -1,4 +1,4 @@
-import van from "/js/van/van.js";
+import { tags } from "/js/tags";
 import {
     Article,
     H1,
@@ -12,7 +12,7 @@ import {
 import { ChevronRight, Play } from "/js/symbol.js";
 import { highlightHTML, highlightCSS } from "/js/highlight.js";
 
-const { button, span, b, div, a, input } = van.tags;
+const { button, span, b, div, a, input } = tags;
 
 const buttonBasic = div(
     { class: "container", "data-variant": "button-display" },
@@ -236,7 +236,7 @@ const articleControls = div(
     ArticleControl("next", "Typography")
 );
 
-const article = Article(
+export default Article(
     H1("Trigger"),
     P("Button can be used on: "),
     Ul(
@@ -301,4 +301,3 @@ const article = Article(
     highlightCSS(articleControlStyle)
 );
 
-van.add(document.body, article);

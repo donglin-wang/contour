@@ -1,8 +1,8 @@
-import van from "/js/van/van";
+import { svgTags } from "/js/tags";
 
 // Icons taken from Lucide https://lucide.dev
 
-const { path, svg, circle } = van.tags("http://www.w3.org/2000/svg");
+const { path, svg, circle } = svgTags;
 
 const getAttributes = (
     variant = "",

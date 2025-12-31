@@ -1,8 +1,8 @@
-import van from "/js/van/van";
+import { tags } from "/js/tags"; 
 
 import { tokenize } from "/js/parser/tokenize";
 
-const { div, span } = van.tags;
+const { div, span } = tags;
 
 
 export function formatHTML(html: string) {

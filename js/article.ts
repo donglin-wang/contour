@@ -1,9 +1,9 @@
-import van from "/js/van/van";
-import type { ValidChildDomValue } from "/js/van/van";
+import { tags } from "/js/tags";
+import type { Child } from "/js/tags"; 
 
-const { article, section, h1, h2, p, ul, ol, li, code } = van.tags;
+const { article, section, h1, h2, p, ul, ol, li, code } = tags;
 
-export const Article = (...children: ValidChildDomValue[]) => {
+export const Article = (...children: Child[]) => {
     return article(
         {
             class: "container",
@@ -13,7 +13,7 @@ export const Article = (...children: ValidChildDomValue[]) => {
     );
 };
 
-export const Section = (...children: ValidChildDomValue[]) =>
+export const Section = (...children: Child[]) =>
     section(
         {
             class: "container",
@@ -40,7 +40,7 @@ export const H2 = (text: string) =>
         text
     );
 
-export const P = (...children: ValidChildDomValue[]) =>
+export const P = (...children: Child[]) =>
     p(
         {
             class: "typography",
@@ -49,7 +49,7 @@ export const P = (...children: ValidChildDomValue[]) =>
         ...children
     );
 
-export const Ul = (...children: ValidChildDomValue[]) =>
+export const Ul = (...children: Child[]) =>
     ul(
         {
             class: "typography",
@@ -58,7 +58,7 @@ export const Ul = (...children: ValidChildDomValue[]) =>
         ...children
     );
 
-export const Ol = (...children: ValidChildDomValue[]) =>
+export const Ol = (...children: Child[]) =>
     ol(
         {
             class: "typography",
@@ -67,7 +67,7 @@ export const Ol = (...children: ValidChildDomValue[]) =>
         ...children
     );
 
-export const Li = (...children: ValidChildDomValue[]) =>
+export const Li = (...children: Child[]) =>
     li(
         {
             class: "typography",

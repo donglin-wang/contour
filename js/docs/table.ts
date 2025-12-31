@@ -1,4 +1,3 @@
-import van from "/js/van/van";
 import {
     Article,
     H1,
@@ -18,7 +17,9 @@ import {
     patients,
 } from "/js/docs/tableData";
 
-const { table, tr, td, th, thead, tbody } = van.tags;
+import { tags } from "/js/tags";
+
+const { table, tr, td, th, thead, tbody } = tags;
 
 /**
  * @typedef HeaderSpec
@@ -494,7 +495,7 @@ const stickyTable = constructTable(
     "sticky-body"
 );
 
-export const root = Article(
+export default Article(
     H1("Table"),
     P(
         `

@@ -1,4 +1,3 @@
-import van from "/js/van/van";
 import {
     Article,
     H1,
@@ -13,7 +12,9 @@ import {
 import { ChevronRight, Play, ArrowUp, ArrowDown } from "/js/symbol";
 import { highlightHTML, highlightCSS } from "/js/highlight";
 
-const { button, span, b, div, img, kbd, hr } = van.tags;
+import { tags } from "/js/tags";
+
+const { button, span, b, div, img, kbd, hr } = tags;
 
 const menuVanillaStyle = registerStyle(/*css*/ `
 @layer variant {
@@ -580,11 +581,11 @@ const comments = Section(
                 },
                 ArrowDown()
             )
-        ),
+        )
     )
 );
 
-export const root = Article(
+export default Article(
     H1("List"),
     P(
         `List is an abstraction over many other common UI patterns such as 

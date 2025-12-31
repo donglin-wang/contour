@@ -1,12 +1,12 @@
-import van from "/js/van/van";
+import { tags } from "/js/tags";
 
-import type { ValidChildDomValue } from "/js/van/van";
+import type { Child } from "/js/tags";
 
-const { div } = van.tags;
+const { div } = tags;
 
 export type TabChildSpec = {
     selected?: boolean;
-    body: ValidChildDomValue[];
+    body: Child[];
 };
 
 export type TabSpec = {
