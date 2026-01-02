@@ -40,14 +40,15 @@ const buildSVGElement = <T extends keyof SVGElementTagNameMap>(name: T,
     return element;
 }
 
-const populate = (root: Element, first?: Attributes | Child, ...rest: Child[]) => {
+export const populate = (root: Element | ShadowRoot, first?: Attributes | Child, ...rest: Child[]) => {
     let children: Child[];
 
     if (
         first !== null &&
         first !== undefined &&
         typeof first === "object" &&
-        !(first instanceof Element)
+        !(first instanceof Element) &&
+        !(root instanceof ShadowRoot)
     ) {
         Object.entries(first).forEach(([key, value]) => {
             if (value !== undefined && value !== null) {

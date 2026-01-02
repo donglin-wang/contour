@@ -21,10 +21,11 @@ registerStyle(/*css*/ `
     }
 
     .list[data-variant="contour-menu"] {
-        width: 20rem;
+        width: 18rem;
         border: none;
         border-radius: 0;
         padding: var(--space-4);
+         border-inline-end: 1px solid var(--background-color-3);
     }
 
     .list__item[data-variant="contour-menu"] {
@@ -33,6 +34,13 @@ registerStyle(/*css*/ `
         border-radius: 5px;
         cursor: pointer;
         --list-item-hover-background: var(--background-color-2);
+       
+    }
+
+    @media (width <= 64rem) {
+        .list[data-variant="contour-menu"] {
+            display: none;
+        }
     }
 }`);
 

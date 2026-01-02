@@ -1,0 +1,20 @@
+export default /*css*/ `
+@layer pattern{
+    .outline {
+        display: block;
+    }
+
+    .outline__item {
+        display: block;
+        padding: var(--space-4);
+        cursor: pointer;
+    }
+
+    .outline__item:hover {
+        text-decoration: underline;
+    }
+
+    .outline__item[aria-current="true"] {
+        background-color: var(--background-color-2);
+    }
+}`;

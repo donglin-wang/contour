@@ -1,5 +1,5 @@
 import { tags } from "/js/tags";
-import type { Child } from "/js/tags"; 
+import type { Child } from "/js/tags";
 
 const { article, section, h1, h2, p, ul, ol, li, code } = tags;
 
@@ -90,4 +90,27 @@ export const registerStyle = (styleText: string) => {
     sheet.replaceSync(styleText);
     document.adoptedStyleSheets.push(sheet);
     return styleText;
+};
+
+export const inline = (
+    strings: TemplateStringsArray,
+    ...args: Child[]
+) => {
+    const children: Child[] = [];
+    for (let i = 0; i < strings.length; i++) {
+        if (strings[i] !== "") {
+            children.push(strings[i]);
+        }
+
+        if (i >= args.length) {
+            continue;
+        }
+
+        if (args[i] instanceof Element) {
+            children.push(args[i]);
+        } else {
+            children.push(args[i].toString())
+        }
+    }
+    return children;
 };
