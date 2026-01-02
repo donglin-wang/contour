@@ -4,6 +4,7 @@
         "target": "es2017",
         "paths": {
             "/js/*": ["./js/*"]
-        }
+        },
+        "types": ["vite/client"]
     }
 }

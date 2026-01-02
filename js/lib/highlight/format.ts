@@ -1,9 +1,3 @@
-import { tags } from "/js/tags"; 
-
-import { tokenize } from "/js/parser/tokenize";
-
-const { div, span } = tags;
-
 const isSelfClosing = (element: string) => (
     element.startsWith("input") ||
     element.startsWith("hr") ||
@@ -71,68 +65,4 @@ export const formatCSS = (cssString: string) => {
     }
 
     return result.trim();
-};
-
-export const highlightHTML = (element: HTMLElement, usesInner = false) => {
-    const children = [];
-
-    tokenize(
-        formatHTML(usesInner ? element.innerHTML : element.outerHTML),
-        "html",
-        (str, type) => {
-            if (str) {
-                children.push(
-                    span(
-                        {
-                            class: "typography",
-                            "data-variant": `token-${type}`,
-                        },
-                        str
-                    )
-                );
-            } else {
-                children.push(str);
-            }
-        }
-    );
-
-    return div(
-        {
-            class: "container",
-            "data-variant": "code-block",
-        },
-        ...children
-    );
-};
-
-export const highlightCSS = (styleText: string) => {
-    const children = [];
-
-    tokenize(
-        formatCSS(styleText),
-        "css",
-        (str, type) => {
-            if (str) {
-                children.push(
-                    span(
-                        {
-                            class: "typography",
-                            "data-variant": `token-${type}`,
-                        },
-                        str
-                    )
-                );
-            } else {
-                children.push(str);
-            }
-        }
-    );
-
-    return div(
-        {
-            class: "container",
-            "data-variant": "code-block",
-        },
-        ...children
-    );
 };

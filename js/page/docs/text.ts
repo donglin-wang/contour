@@ -1,31 +1,13 @@
-import { tags } from "/js/tags";
-import type { Child } from "/js/tags";
+import { populate, tags } from "/js/lib/tags";
 
-const { article, section, h1, h2, p, ul, ol, li, code } = tags;
+import type { Child } from "/js/lib/tags";
 
-export const Article = (...children: Child[]) => {
-    return article(
-        {
-            class: "container",
-            "data-variant": "article",
-        },
-        ...children
-    );
-};
-
-export const Section = (...children: Child[]) =>
-    section(
-        {
-            class: "container",
-            "data-variant": "article-section",
-        },
-        ...children
-    );
+const { h1, h2, p, ul, ol, li, code } = tags;
 
 export const H1 = (text: string) =>
     h1(
         {
-            class: "typography",
+            class: "text",
             "data-variant": "h1",
         },
         text
@@ -34,7 +16,7 @@ export const H1 = (text: string) =>
 export const H2 = (text: string) =>
     h2(
         {
-            class: "typography",
+            class: "text",
             "data-variant": "h2",
         },
         text
@@ -43,7 +25,7 @@ export const H2 = (text: string) =>
 export const P = (...children: Child[]) =>
     p(
         {
-            class: "typography",
+            class: "text",
             "data-variant": "p",
         },
         ...children
@@ -52,7 +34,7 @@ export const P = (...children: Child[]) =>
 export const Ul = (...children: Child[]) =>
     ul(
         {
-            class: "typography",
+            class: "text",
             "data-variant": "list",
         },
         ...children
@@ -61,7 +43,7 @@ export const Ul = (...children: Child[]) =>
 export const Ol = (...children: Child[]) =>
     ol(
         {
-            class: "typography",
+            class: "text",
             "data-variant": "list",
         },
         ...children
@@ -70,7 +52,7 @@ export const Ol = (...children: Child[]) =>
 export const Li = (...children: Child[]) =>
     li(
         {
-            class: "typography",
+            class: "text",
             "data-variant": "list-item",
         },
         ...children
@@ -79,18 +61,12 @@ export const Li = (...children: Child[]) =>
 export const CodeInline = (text: string) =>
     code(
         {
-            class: "typography",
+            class: "text",
             "data-variant": "inline-code",
         },
         text
     );
 
-export const registerStyle = (styleText: string) => {
-    const sheet = new CSSStyleSheet();
-    sheet.replaceSync(styleText);
-    document.adoptedStyleSheets.push(sheet);
-    return styleText;
-};
 
 export const inline = (
     strings: TemplateStringsArray,

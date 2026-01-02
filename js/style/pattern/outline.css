@@ -1,5 +1,4 @@
-export default /*css*/ `
-@layer pattern{
+@layer pattern {
     .outline {
         display: block;
     }
@@ -17,4 +16,4 @@ export default /*css*/ `
     .outline__item[aria-current="true"] {
         background-color: var(--background-color-2);
     }
-}`;
+}

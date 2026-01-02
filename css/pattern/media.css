@@ -1,6 +1,0 @@
-@layer pattern {
-    .media {
-        width: var(--media-width, var(--space-6));
-        height: var(--media-height, var(--space-6));
-    }
-}

@@ -1,0 +1,63 @@
+export default /*css*/ `
+@layer variant {
+    .container[data-variant="contour-hero"] {
+        --hero-margin-block: clamp(4.5rem, 4.2955rem + 0.9091vw, 5rem);
+        display: flex;
+        flex-direction: column;
+        max-width: 50rem;
+        margin-block: var(--hero-margin-block);
+        margin-inline: auto;
+        padding-inline: 0.75rem;
+        max-height: calc(100vh - 2 * var(--hero-margin-block));
+
+        align-items: start;
+        justify-content: start;
+        gap: clamp(2rem, 1.5909rem + 1.8182vw, 3rem);
+    }
+
+    .container[data-variant="contour-hero-control"] {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .container[data-variant="landing-section"] {
+        color: var(--color-1);
+        height: 1000px;
+        padding-inline: 10rem;
+        padding-block: 3rem;
+        position: relative;
+    }
+
+    .container[data-variant="landing-section"]::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        background-color: var(--background-color-2);
+    }
+
+    .container[data-variant="contour-display"] {
+        --code-block-margin: 0;
+
+        width: 100%;
+        background: var(--background-color-2);
+        border-radius: 5px;
+        border: 1px solid var(--background-color-3);
+        overflow: auto;
+    }
+
+    .symbol[data-variant="contour-logo"] {
+        --symbol-height: clamp(4rem, 3.1818rem + 3.6364vw, 6rem);
+        --symbol-width: calc(var(--symbol-height) * 4);
+        flex: 0 0 var(--symbol-height);
+    }
+
+    .typography[data-variant="contour-slogan"] {
+        font-weight: normal;
+        color: var(--color-2);
+        font-size: clamp(1.25rem, 1.1477rem + 0.4545vw, 1.5rem);
+    }
+}`;

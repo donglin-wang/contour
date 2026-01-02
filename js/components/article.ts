@@ -1,5 +1,5 @@
-import { populate, tags } from "/js/tags";
-import type { Child, Attributes } from "/js/tags";
+import { populate, tags } from "/js/lib/tags";
+import type { Child, Attributes } from "/js/lib/tags";
 
 export type ArticleSpec = {
     providedChildren?: Child[];
@@ -11,7 +11,6 @@ export type ArticleSpec = {
 };
 
 const { div } = tags;
-
 
 class Article extends HTMLElement {
     outlineAttributes: Attributes;
@@ -114,4 +113,3 @@ class Article extends HTMLElement {
 customElements.define("contour-article", Article);
 
 export default Article;
-

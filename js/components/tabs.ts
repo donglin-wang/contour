@@ -1,6 +1,6 @@
-import { tags } from "/js/tags";
+import { tags } from "/js/lib/tags";
 
-import type { Child } from "/js/tags";
+import type { Child } from "/js/lib/tags";
 
 const { div } = tags;
 

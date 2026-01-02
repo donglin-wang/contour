@@ -40,10 +40,11 @@ class Router {
         }
         matchedRoute.callback();
     }
+
     navigateTo(path) {
         window.history.pushState({}, "", path);
         this.loadRoute(path);
     }
 }
 
-export default Router ;
+export default Router;

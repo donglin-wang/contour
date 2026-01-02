@@ -1,0 +1,61 @@
+@layer variant {
+    .text[data-variant="p"],
+    .text[data-variant="h1"],
+    .text[data-variant="h2"],
+    .text[data-variant="h3"],
+    .text[data-variant="h4"],
+    .text[data-variant="h5"],
+    .text[data-variant="h6"],
+    .text[data-variant="list"] {
+        margin-block: var(--space-5);
+    }
+
+    .text[data-variant="p"],
+    .text[data-variant="list"],
+    .text[data-variant="list-item"] {
+        color: var(--color-2);
+        line-height: var(--line-height-content);
+    }
+
+    .text[data-variant="list-item"] {
+        margin-block: var(--space-2);
+    }
+
+    .text[data-variant="h1"],
+    .text[data-variant="h2"],
+    .text[data-variant="h3"],
+    .text[data-variant="h4"],
+    .text[data-variant="h5"],
+    .text[data-variant="h6"] {
+        font-weight: var(--font-bold);
+        line-height: var(--line-height-heading);
+    }
+
+    .text[data-variant="h1"] {
+        font-size: var(--font-size-4xl);
+    }
+
+    .text[data-variant="h2"] {
+        font-size: var(--font-size-3xl);
+    }
+
+    .text[data-variant="h3"] {
+        font-size: var(--font-size-l);
+    }
+
+    .text[data-variant="h4"],
+    .text[data-variant="h5"],
+    .text[data-variant="h6"] {
+        font-size: var(--font-size-base);
+    }
+
+    .text[data-variant="inline-code"] {
+        background-color: var(--background-color-2);
+        border-radius: 2px;
+        padding-block: 2px;
+        padding-inline: var(--space-1);
+        color: hsl(0deg 85% 60%);
+        display: inline-block;
+        line-height: 1;
+    }
+}

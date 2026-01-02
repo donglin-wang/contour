@@ -1,39 +1,6 @@
-import { H1, P, H2, registerStyle } from "/js/article.js";
+import { H1, H2, P } from "/js/page/docs/text";
 
 import Article from "/js/components/article";
-
-import outlineStyle from "/js/style/outline";
-
-registerStyle(outlineStyle);
-
-registerStyle(/*css*/ `
-@layer variant {
-    .container[data-variant="article-root"] {
-        display: flex;
-        gap: 2rem;
-        position: relative;
-        height: 100vh;
-        overflow-y: auto;
-        gap: var(--space-8);
-        margin-inline: auto;
-    }
-    .container[data-variant="article-alt"] {
-        max-width: 40rem;
-        padding-inline: var(--space-4);
-    }
-
-    .outline[data-variant="article-outline"] {
-        flex: 0 0 18rem;
-        position: sticky;
-        top: 0;
-    }
-
-    @media (width <= 80rem) {
-        .outline {
-            display: none;
-        }
-    }
- }`);
 
 const articleContent = [
     H1("Introduction"),
@@ -74,7 +41,7 @@ const articleContent = [
     ),
 ];
 
-export default new Article({
+export const createArticle = () => new Article({
     providedChildren: articleContent,
     articleAttributes: {
         class: "container",
