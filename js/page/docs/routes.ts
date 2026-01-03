@@ -1,28 +1,23 @@
 import { registerStyle } from "/js/lib/style";
 import { tags } from "/js/lib/tags";
 
-type StyleModule = {
-    default: string;
-};
-
-type ArticleModule = {
-    createArticle: () => HTMLElement;
-};
-
-type SideBarModule = {
-    createSidebar: (items: { path: string; title: string }[]) => HTMLElement;
-};
+import type Article from "/js/components/article";
 
 const { div } = tags;
 
-const sidebarPath = "/js/page/docs/sidebar";
+type ArticleSpec = {
+    path: string;
+    title: string;
+    importStyle: () => Promise<{default: string}>;
+    importArticle: () => Promise<{createArticle: () => Article}>
+}
 
-const articles = [
+const articles: ArticleSpec[] = [
     {
         path: "docs/introduction",
         title: "Introduction",
-        stylePath: "/js/page/docs/style",
-        articlePath: "/js/page/docs/articles/introduction",
+        importStyle: () => import("/js/page/docs/style"),
+        importArticle: () => import("/js/page/docs/articles/introduction"),
     },
 ];
 
@@ -30,16 +25,10 @@ export default articles.map((article) => ({
     path: article.path,
     callback: () => {
         Promise.all([
-            import(sidebarPath),
-            import(article.articlePath),
-            import(article.stylePath),
-        ]).then(async (modules) => {
-            const [sidebarModule, articleModule, styleModule] = modules as [
-                SideBarModule,
-                ArticleModule,
-                StyleModule
-            ];
-
+            import("/js/page/docs/sidebar"),
+            article.importArticle(),
+            article.importStyle(),
+        ]).then(async ([sidebarModule, articleModule, styleModule]) => {
             await registerStyle(styleModule.default);
             document.body.replaceChildren(
                 div(
