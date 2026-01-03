@@ -1,0 +1,26 @@
+@layer pattern {
+    .menu {
+        display: block;
+        list-style: none;
+    }
+
+    .menu__item,
+    .menu__label {
+        padding: var(--space-4);
+        margin: 0;
+        color: var(--color-1);
+    }
+
+    .menu__item {
+        display: flex;
+        text-decoration: none;
+    }
+    
+    .menu__item:hover {
+        background-color: var(--background-color-2);
+    }
+
+    .menu__label {
+        font-weight: var(--font-bold);
+    }
+}

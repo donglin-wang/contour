@@ -1,18 +1,18 @@
-import { tags } from "/js/lib/tags";
+import { tags } from "/lib/tags";
 
 const { div, a } = tags;
 
 export const createSidebar = (articles: {path: string, title: string}[]) => div(
     {
-        class: "list",
-        "data-variant": "contour-menu",
+        class: "menu",
+        "data-variant": "sidebar",
     },
     ...articles.map((spec) =>
         a(
             {
-                class: "list__item",
+                class: "menu__item",
                 href: `/${spec.path}`,
-                "data-variant": "contour-menu",
+                "data-variant": "sidebar",
             },
             spec.title
         )

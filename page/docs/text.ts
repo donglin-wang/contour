@@ -1,6 +1,6 @@
-import { populate, tags } from "/js/lib/tags";
+import { tags } from "/lib/tags";
 
-import type { Child } from "/js/lib/tags";
+import type { Child } from "/lib/tags";
 
 const { h1, h2, p, ul, ol, li, code } = tags;
 

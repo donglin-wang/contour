@@ -1,5 +1,5 @@
-import Router from "/js/lib/routing";
-import type { Route } from "/js/lib/routing";
+import Router from "/lib/routing";
+import type { Route } from "/lib/routing";
 
 let routerInstance: Router | null = null;
 

@@ -1,23 +1,21 @@
-import { registerStyle } from "/js/lib/style";
-import { tags } from "/js/lib/tags";
+import { registerStyle } from "/lib/style";
+import { tags } from "/lib/tags";
 
-import type Article from "/js/components/article";
+import type Article from "/component/article";
 
-const { div } = tags;
+const { main } = tags;
 
 type ArticleSpec = {
     path: string;
     title: string;
-    importStyle: () => Promise<{default: string}>;
     importArticle: () => Promise<{createArticle: () => Article}>
 }
 
 const articles: ArticleSpec[] = [
     {
-        path: "docs/introduction",
-        title: "Introduction",
-        importStyle: () => import("/js/page/docs/style"),
-        importArticle: () => import("/js/page/docs/articles/introduction"),
+        path: "docs/lorem",
+        title: "Lorem",
+        importArticle: () => import("/page/docs/articles/lorem"),
     },
 ];
 
@@ -25,16 +23,16 @@ export default articles.map((article) => ({
     path: article.path,
     callback: () => {
         Promise.all([
-            import("/js/page/docs/sidebar"),
+            import("/page/docs/sidebar"),
+            import("/page/docs/style"),
             article.importArticle(),
-            article.importStyle(),
-        ]).then(async ([sidebarModule, articleModule, styleModule]) => {
+        ]).then(async ([sidebarModule, styleModule, articleModule]) => {
             await registerStyle(styleModule.default);
             document.body.replaceChildren(
-                div(
+                main(
                     {
                         class: "container",
-                        "data-variant": "contour-root",
+                        "data-variant": "main",
                     },
                     sidebarModule.createSidebar(articles),
                     articleModule.createArticle()

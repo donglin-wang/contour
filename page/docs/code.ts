@@ -1,6 +1,6 @@
-import { tags } from "/js/lib/tags";
-import { formatCSS, formatHTML } from "/js/lib/highlight/format";
-import { tokenize } from "/js/lib/highlight/tokenize";
+import { tags } from "/lib/tags";
+import { formatCSS, formatHTML } from "/lib/highlight/format";
+import { tokenize } from "/lib/highlight/tokenize";
 
 const { div, span } = tags;
 

@@ -1,4 +1,4 @@
-import { svgTags } from "/js/lib/tags";
+import { svgTags } from "/lib/tags";
 
 // Icons taken from Lucide https://lucide.dev
 

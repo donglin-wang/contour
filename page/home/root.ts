@@ -1,6 +1,6 @@
-import { tags } from "/js/lib/tags";
-import { ContourLogo } from "/js/components/symbol";
-import { getRouter } from "/js/store/router";
+import { tags } from "/lib/tags";
+import { ContourLogo } from "/component/symbol";
+import { getRouter } from "/store/router";
 
 const { div, h2, a } = tags;
 const router = getRouter();

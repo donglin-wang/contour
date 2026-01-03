@@ -1,10 +1,10 @@
-import { langs, expandData } from "/js/lib/highlight/languages";
+import { langs, expandData } from "/lib/highlight/languages";
 import type {
     ShjLanguageComponent,
     ShjToken,
     ShjCompositeToken,
     ShjSubTokenFunction,
-} from "/js/lib/highlight/languages";
+} from "/lib/highlight/languages";
 
 type ShjTokenMatch = {
     index?: number;

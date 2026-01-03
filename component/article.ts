@@ -1,5 +1,5 @@
-import { populate, tags } from "/js/lib/tags";
-import type { Child, Attributes } from "/js/lib/tags";
+import { populate, tags } from "/lib/tags";
+import type { Child, Attributes } from "/lib/tags";
 
 export type ArticleSpec = {
     providedChildren?: Child[];
@@ -50,7 +50,6 @@ class Article extends HTMLElement {
         populate(this, this.articleRootAttributes, article, outline);
 
         const options: IntersectionObserverInit = {
-            root: this,
             threshold: [0, 1],
         };
 

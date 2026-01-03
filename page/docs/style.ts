@@ -1,64 +1,69 @@
-import outlineStyle from "/js/style/pattern/outline.css?inline";
-import articleStyle from "/js/style/variant/article.css?inline";
+import outlineStyle from "/style/pattern/outline.css?inline";
+import menuStyle from "/style/pattern/menu.css?inline";
+import articleStyle from "/style/variant/article.css?inline";
 
-export default /*css*/`
+export default /*css*/ `
 /* Article */
 ${articleStyle}
 
 /* Article outline */
 ${outlineStyle}
 
+/* Menu (sidebar) */
+${menuStyle}
+
 /* Article & sidebar scaffold */
 @layer variant {
-    .container[data-variant="article-root"] {
+    .container[data-variant="main"] {
+        width: 100%;
         display: flex;
-        gap: 2rem;
-        position: relative;
-        height: 100vh;
-        overflow-y: auto;
-        gap: var(--space-8);
-        margin-inline: auto;
     }
-    .container[data-variant="article-alt"] {
+
+    .menu[data-variant="sidebar"] {
+        height: 100vh;
+        flex: 0 0 18rem;
+        border-inline-end: 1px solid var(--background-color-3);
+        overflow-y: auto;
+        position: sticky;
+        top: 0;
+        padding: var(--space-4);
+    }
+
+    .menu__item[data-variant="sidebar"] {
+        border-radius: 5px;
+        padding: var(--space-3);
+    }
+
+    .container[data-variant="article"] {
+        display: flex;
+        flex: 1;
+        gap: 2rem;
+    }
+
+    .container[data-variant="article-content"] {
+        flex: 1;
         max-width: 40rem;
-        padding-inline: var(--space-4);
+        margin-inline: auto;
+        padding: var(--space-4);
     }
 
     .outline[data-variant="article-outline"] {
-        flex: 0 0 18rem;
+        --article-outline-width: 18rem;
         position: sticky;
         top: 0;
+        flex: 0 0 var(--article-outline-width);
+        max-height: 100vh;
+        overflow-y: auto;
     }
 
-    @media (width <= 80rem) {
-        .outline {
+    @media (width <= 64rem) {
+        .menu[data-variant="sidebar"] {
             display: none;
         }
     }
 
-    .container[data-variant="contour-root"] {
-        display: flex;
-    }
-
-    .list[data-variant="contour-menu"] {
-        width: 18rem;
-        border: none;
-        border-radius: 0;
-        padding: var(--space-4);
-         border-inline-end: 1px solid var(--background-color-3);
-    }
-
-    .list__item[data-variant="contour-menu"] {
-        text-decoration: none;
-        color: var(--color-1);
-        border-radius: 5px;
-        cursor: pointer;
-        --list-item-hover-background: var(--background-color-2);
-       
-    }
-
-    @media (width <= 64rem) {
-        .list[data-variant="contour-menu"] {
+    @media (width <= 80rem) {
+        .outline {
             display: none;
         }
     }
@@ -139,4 +144,4 @@ ${outlineStyle}
         color: var(--token-func);
     }
 }
-`
+`;
