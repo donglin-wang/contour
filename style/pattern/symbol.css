@@ -1,0 +1,7 @@
+@layer pattern {
+    .symbol {
+        display: inline-flex;
+        width: var(--font-size-base);
+        height: var(--font-size-base);
+    }
+}

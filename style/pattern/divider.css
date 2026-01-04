@@ -1,0 +1,7 @@
+@layer pattern {
+    .divider {
+        border-color: var(--background-color-3);
+        border-style: solid;
+        border-block-end: none;
+    }
+}
