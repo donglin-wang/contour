@@ -2,6 +2,13 @@ import { setCurrentStyle } from "/store/style";
 import { tags } from "/lib/tags";
 import Article from "/component/article";
 
+type ArticleSpec = {
+    path: string;
+    title: string;
+    importArticle: () => Promise<{ default: Element[] }>;
+    importStyle?: () => Promise<{ default: string }>;
+};
+
 const { main } = tags;
 
 const createArticle = (articleContent: Element[]) =>
@@ -25,11 +32,15 @@ const createArticle = (articleContent: Element[]) =>
         },
     });
 
-type ArticleSpec = {
-    path: string;
-    title: string;
-    importArticle: () => Promise<{ default: Element[] }>;
-};
+const importSharedStyle = () =>
+    Promise.all([
+        import("/page/docs/style.css?inline"),
+        import("/style/variant/highlight.css?inline"),
+        import("/style/variant/article.css?inline")
+    ]).then(
+        ([docStyleModule, highlightStyleModule, articleStyleModule]) =>
+            docStyleModule.default + highlightStyleModule.default + articleStyleModule.default
+    );
 
 const articles: ArticleSpec[] = [
     {
@@ -40,7 +51,8 @@ const articles: ArticleSpec[] = [
     {
         path: "docs/menu",
         title: "Menu",
-        importArticle: () => import("/page/docs/articles/menu"),
+        importArticle: () => import("/page/docs/articles/menu/root"),
+        importStyle: () => import("/page/docs/articles/menu/style.css?inline"),
     },
 ];
 
@@ -49,20 +61,32 @@ export default articles.map((article) => ({
     callback: () => {
         Promise.all([
             import("/page/docs/sidebar"),
-            import("/page/docs/style"),
+            importSharedStyle(),
             article.importArticle(),
-        ]).then(async ([sidebarModule, styleModule, articleModule]) => {
-            await setCurrentStyle(article.path, styleModule.default);
-            document.body.replaceChildren(
-                main(
-                    {
-                        class: "container",
-                        "data-variant": "main",
-                    },
-                    sidebarModule.createSidebar(articles),
-                    createArticle(articleModule.default),
-                )
-            );
-        });
+            article.importStyle ? article.importStyle() : { default: "" },
+        ]).then(
+            async ([
+                sidebarModule,
+                sharedStyle,
+                articleModule,
+                articleStyle,
+            ]) => {
+                await setCurrentStyle(
+                    article.path,
+                    sharedStyle,
+                    articleStyle.default
+                );
+                document.body.replaceChildren(
+                    main(
+                        {
+                            class: "container",
+                            "data-variant": "main",
+                        },
+                        sidebarModule.createSidebar(articles),
+                        createArticle(articleModule.default)
+                    )
+                );
+            }
+        );
     },
 }));

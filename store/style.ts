@@ -12,7 +12,7 @@ export const setCurrentStyle = async (key: string, ...styleStrings: string[]) =>
 
     resetStyle();
 
-    const sheet = await new CSSStyleSheet().replace(styleStrings.join());
+    const sheet = await new CSSStyleSheet().replace(styleStrings.join(""));
     document.adoptedStyleSheets.push(sheet);
 
     current = key;

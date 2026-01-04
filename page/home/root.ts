@@ -14,7 +14,7 @@ const displayButton = a(
 );
 
 displayButton.addEventListener("click", () =>
-    router.navigateTo("docs/introduction")
+    router.navigateTo("docs/lorem")
 );
 
 export default div(

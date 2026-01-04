@@ -42,7 +42,7 @@ class Router {
     }
 
     navigateTo(path) {
-        window.history.pushState({}, "", path);
+        window.history.pushState({}, "", "/" + path);
         this.loadRoute(path);
     }
 }

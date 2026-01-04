@@ -1,0 +1,31 @@
+@layer variant {
+    .container[data-variant="menu-display"] {
+        flex: 0 0 18rem;
+        margin-inline: auto;
+    }
+
+    .kbd[data-variant="menu-shortcut"] {
+        margin-inline-start: auto;
+        font-size: var(--font-size-base);
+    }
+
+    .menu__item[data-variant="indented"] {
+        padding-inline-start: var(--space-6);
+    }
+
+    .menu[data-variant="nested"] {
+        margin-inline-start: var(--space-6);
+        position: relative;
+        padding-block: 0;
+    }
+
+    .menu[data-variant="nested"]::before {
+        display: block;
+        width: 1px;
+        height: 100%;
+        content: " ";
+        top: 0;
+        position: absolute;
+        background-color: var(--background-color-3);
+    }
+}
