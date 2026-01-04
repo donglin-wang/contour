@@ -1,4 +1,4 @@
-import { registerStyle } from "/lib/style";
+import { setCurrentStyle } from "/store/style";
 import { tags } from "/lib/tags";
 import Article from "/component/article";
 
@@ -52,7 +52,7 @@ export default articles.map((article) => ({
             import("/page/docs/style"),
             article.importArticle(),
         ]).then(async ([sidebarModule, styleModule, articleModule]) => {
-            await registerStyle(styleModule.default);
+            await setCurrentStyle(article.path, styleModule.default);
             document.body.replaceChildren(
                 main(
                     {
