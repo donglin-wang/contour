@@ -1,21 +1,46 @@
 import { registerStyle } from "/lib/style";
 import { tags } from "/lib/tags";
-
-import type Article from "/component/article";
+import Article from "/component/article";
 
 const { main } = tags;
+
+const createArticle = (articleContent: Element[]) =>
+    new Article({
+        providedChildren: articleContent,
+        articleAttributes: {
+            class: "container",
+            "data-variant": "article-content",
+        },
+        articleRootAttributes: {
+            class: "container",
+            "data-variant": "article",
+        },
+        hasOutline: true,
+        outlineAttributes: {
+            class: "outline",
+            "data-variant": "article-outline",
+        },
+        outlineItemAttributes: {
+            class: "outline__item",
+        },
+    });
 
 type ArticleSpec = {
     path: string;
     title: string;
-    importArticle: () => Promise<{createArticle: () => Article}>
-}
+    importArticle: () => Promise<{ default: Element[] }>;
+};
 
 const articles: ArticleSpec[] = [
     {
         path: "docs/lorem",
         title: "Lorem",
         importArticle: () => import("/page/docs/articles/lorem"),
+    },
+    {
+        path: "docs/menu",
+        title: "Menu",
+        importArticle: () => import("/page/docs/articles/menu"),
     },
 ];
 
@@ -35,7 +60,7 @@ export default articles.map((article) => ({
                         "data-variant": "main",
                     },
                     sidebarModule.createSidebar(articles),
-                    articleModule.createArticle()
+                    createArticle(articleModule.default),
                 )
             );
         });

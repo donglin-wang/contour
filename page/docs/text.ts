@@ -2,7 +2,7 @@ import { tags } from "/lib/tags";
 
 import type { Child } from "/lib/tags";
 
-const { h1, h2, p, ul, ol, li, code } = tags;
+const { h1, h2, p, ul, ol, li, code, div } = tags;
 
 export const H1 = (text: string) =>
     h1(
@@ -67,11 +67,16 @@ export const CodeInline = (text: string) =>
         text
     );
 
+export const ComponentDisplay = (child: Element) =>
+    div(
+        {
+            class: "container",
+            "data-variant": "component-display",
+        },
+        child
+    );
 
-export const inline = (
-    strings: TemplateStringsArray,
-    ...args: Child[]
-) => {
+export const inline = (strings: TemplateStringsArray, ...args: Child[]) => {
     const children: Child[] = [];
     for (let i = 0; i < strings.length; i++) {
         if (strings[i] !== "") {
@@ -85,7 +90,7 @@ export const inline = (
         if (args[i] instanceof Element) {
             children.push(args[i]);
         } else {
-            children.push(args[i].toString())
+            children.push(args[i].toString());
         }
     }
     return children;

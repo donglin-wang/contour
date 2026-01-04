@@ -1,6 +1,9 @@
 import outlineStyle from "/style/pattern/outline.css?inline";
 import menuStyle from "/style/pattern/menu.css?inline";
+import symbolStyle from "/style/pattern/symbol.css?inline";
+import dividerStyle from "/style/pattern/divider.css?inline";
 import articleStyle from "/style/variant/article.css?inline";
+
 
 export default /*css*/ `
 /* Article */
@@ -11,6 +14,10 @@ ${outlineStyle}
 
 /* Menu (sidebar) */
 ${menuStyle}
+
+${symbolStyle}
+
+${dividerStyle}
 
 /* Article & sidebar scaffold */
 @layer variant {
@@ -54,6 +61,22 @@ ${menuStyle}
         flex: 0 0 var(--article-outline-width);
         max-height: 100vh;
         overflow-y: auto;
+    }
+
+    .container[data-variant="component-display"] {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: var(--background-color-2);
+        background-image: 
+            radial-gradient(circle, var(--background-color-3) 1px, transparent 1px),
+            radial-gradient(circle, var(--background-color-3) 1px, transparent 1px);
+        background-size: 20px 20px, 20px 20px;
+        background-position: 0 0, 10px 10px;
+        padding-block: var(--space-7);
+        border: 1px solid var(--background-color-3);
+        border-radius: 5px;
     }
 
     @media (width <= 64rem) {
@@ -144,4 +167,37 @@ ${menuStyle}
         color: var(--token-func);
     }
 }
-`;
+
+
+/* Containers */
+@layer variant{
+    .container[data-variant="menu-display"] {
+        flex:0 0 18rem;
+        margin-inline: auto;
+    }
+
+    .kbd[data-variant="menu-shortcut"] {
+        margin-inline-start: auto;
+        font-size: var(--font-size-base)
+    }
+
+    .menu__item[data-variant="indented"] {
+        padding-inline-start: var(--space-6);
+    }
+
+    .menu[data-variant="nested"] {
+        margin-inline-start: var(--space-6);
+        position: relative;
+        padding-block: 0;
+    }
+
+    .menu[data-variant="nested"]::before {
+        display: block;
+        width: 1px;
+        height: 100%;
+        content: ' ';
+        top: 0;
+        position: absolute;
+        background-color: var(--background-color-3)
+    }
+}`;
