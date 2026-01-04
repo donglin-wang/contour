@@ -16,59 +16,59 @@
         --token-func: #8250df;
     }
 
-    .typography[data-variant="token-cmnt"] {
+    .text[data-variant="token-cmnt"] {
         color: var(--token-cmnt);
     }
 
-    .typography[data-variant="token-deleted"] {
+    .text[data-variant="token-deleted"] {
         color: var(--token-deleted);
     }
 
-    .typography[data-variant="token-err"] {
+    .text[data-variant="token-err"] {
         color: var(--token-err);
     }
 
-    .typography[data-variant="token-kwd"] {
+    .text[data-variant="token-kwd"] {
         color: var(--token-kwd);
     }
 
-    .typography[data-variant="token-class"] {
+    .text[data-variant="token-class"] {
         color: var(--token-class);
     }
 
-    .typography[data-variant="token-type"] {
+    .text[data-variant="token-type"] {
         color: var(--token-type);
     }
 
-    .typography[data-variant="token-oper"] {
+    .text[data-variant="token-oper"] {
         color: var(--token-oper);
     }
 
-    .typography[data-variant="token-num"] {
+    .text[data-variant="token-num"] {
         color: var(--token-num);
     }
 
-    .typography[data-variant="token-section"] {
+    .text[data-variant="token-section"] {
         color: var(--token-section);
     }
 
-    .typography[data-variant="token-var"] {
+    .text[data-variant="token-var"] {
         color: var(--token-var);
     }
 
-    .typography[data-variant="token-bool"] {
+    .text[data-variant="token-bool"] {
         color: var(--token-bool);
     }
 
-    .typography[data-variant="token-insert"] {
+    .text[data-variant="token-insert"] {
         color: var(--token-insert);
     }
 
-    .typography[data-variant="token-str"] {
+    .text[data-variant="token-str"] {
         color: var(--token-str);
     }
 
-    .typography[data-variant="token-func"] {
+    .text[data-variant="token-func"] {
         color: var(--token-func);
     }
 }
