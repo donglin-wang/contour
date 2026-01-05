@@ -36,10 +36,12 @@ const importSharedStyle = () =>
     Promise.all([
         import("/page/docs/style.css?inline"),
         import("/style/variant/highlight.css?inline"),
-        import("/style/variant/article.css?inline")
+        import("/style/variant/article.css?inline"),
     ]).then(
         ([docStyleModule, highlightStyleModule, articleStyleModule]) =>
-            docStyleModule.default + highlightStyleModule.default + articleStyleModule.default
+            docStyleModule.default +
+            highlightStyleModule.default +
+            articleStyleModule.default
     );
 
 const articles: ArticleSpec[] = [
