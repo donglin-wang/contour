@@ -2,7 +2,7 @@ import { tags } from "/lib/tags";
 
 import type { Child } from "/lib/tags";
 
-const { h1, h2, p, ul, ol, li, code, div } = tags;
+const { h1, h2, p, ul, ol, li, code, div, hr } = tags;
 
 export const H1 = (text: string) =>
     h1(
@@ -75,6 +75,28 @@ export const ComponentDisplay = (child: Element) =>
         },
         child
     );
+
+export const ComponentPanel = (...providedChildren: Element[]) => {
+    const children = [];
+    for (let i = 0; i < providedChildren.length; i++) {
+        children.push(providedChildren[i]);
+        if (i < providedChildren.length - 1) {
+            children.push(
+                hr({
+                    class: "boundary",
+                    "data-variant": "component-panel-boundary",
+                })
+            );
+        }
+    }
+    return div(
+        {
+            class: "container",
+            "data-variant": "component-panel",
+        },
+        ...children
+    );
+};
 
 export const inline = (strings: TemplateStringsArray, ...args: Child[]) => {
     const children: Child[] = [];

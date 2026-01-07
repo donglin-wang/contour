@@ -1,4 +1,4 @@
-import { H1, H2, P } from "/page/docs/text";
+import { H1, H2, P } from "/page/docs/component";
 
 export default [
     H1("Lorem"),

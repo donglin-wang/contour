@@ -54,7 +54,7 @@ const articles: ArticleSpec[] = [
         path: "docs/menu",
         title: "Menu",
         importArticle: () => import("/page/docs/articles/menu/root"),
-        importStyle: () => import("/page/docs/articles/menu/style.css?inline"),
+        importStyle: () => import("/page/docs/articles/menu/style"),
     },
 ];
 

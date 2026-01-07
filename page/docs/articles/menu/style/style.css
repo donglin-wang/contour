@@ -1,0 +1,6 @@
+@layer variant {
+    .container[data-variant="menu-display"] {
+        flex: 0 0 18rem;
+        margin-inline: auto;
+    }
+}

@@ -2,7 +2,7 @@ import { tags } from "/lib/tags";
 import { formatCSS, formatHTML } from "/lib/highlight/format";
 import { tokenize } from "/lib/highlight/tokenize";
 
-const { div, span } = tags;
+const { div, span, hr } = tags;
 
 export const HTMLCodeBlock = (element: HTMLElement, usesInner = false) => {
     const children = [];
@@ -32,7 +32,24 @@ export const HTMLCodeBlock = (element: HTMLElement, usesInner = false) => {
             class: "container",
             "data-variant": "code-block",
         },
-        ...children
+        div(
+            {
+                class: "container",
+                "data-variant": "code-block-header",
+            },
+            "HTML"
+        ),
+        hr({
+            class: "boundary",
+            "data-variant": "component-panel-boundary",
+        }),
+        div(
+            {
+                class: "container",
+                "data-variant": "code-block-content",
+            },
+            ...children
+        )
     );
 };
 
@@ -60,6 +77,23 @@ export const CSSCodeBlock = (styleText: string) => {
             class: "container",
             "data-variant": "code-block",
         },
-        ...children
+        div(
+            {
+                class: "container",
+                "data-variant": "code-block-header",
+            },
+            "CSS"
+        ),
+        hr({
+            class: "boundary",
+            "data-variant": "component-panel-boundary",
+        }),
+        div(
+            {
+                class: "container",
+                "data-variant": "code-block-content",
+            },
+            ...children
+        )
     );
 };

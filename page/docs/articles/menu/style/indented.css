@@ -1,0 +1,5 @@
+@layer variant {
+    .menu__item[data-variant="indented"] {
+        padding-inline-start: var(--space-6);
+    }
+}

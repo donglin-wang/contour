@@ -1,9 +1,47 @@
 @layer variant {
-    .container[data-variant="main"] {
-        width: 100%;
-        display: flex;
+    .container[data-variant="component-panel"] {
+        overflow: hidden;
+        border-radius: 5px;
+        border: 1px solid var(--background-color-3);
+        margin-block: var(--space-4);
     }
 
+    .boundary[data-variant="component-panel-boundary"] {
+        margin-block: 0;
+    }
+
+    .container[data-variant="component-display"] {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: var(--background-color-2);
+        background-image: 
+            radial-gradient(circle, var(--background-color-3) 1px, transparent 1px),
+            radial-gradient(circle, var(--background-color-3) 1px, transparent 1px);
+        background-size: 20px 20px, 20px 20px;
+        background-position: 0 0, 10px 10px;
+        padding-block: var(--space-7);
+    }
+
+    .container[data-variant="code-block-header"] {
+        padding-block: var(--space-2);
+        padding-inline: var(--space-4);
+        background-color: var(--background-color-1);
+    }
+
+    .container[data-variant="code-block-content"] {
+        white-space: pre;
+        background: var(--background-color-1);
+        padding: var(--space-4);
+        font: 1rem/1.5rem Consolas, Courier New, Monaco, Andale Mono,
+            Ubuntu Mono, monospace;
+        overflow-x: auto;
+    }
+}
+
+/* Article Scaffolding */
+@layer variant {
     .menu[data-variant="sidebar"] {
         height: 100vh;
         flex: 0 0 18rem;
@@ -17,6 +55,11 @@
     .menu__item[data-variant="sidebar"] {
         border-radius: 5px;
         padding: var(--space-3);
+    }
+
+    .container[data-variant="main"] {
+        width: 100%;
+        display: flex;
     }
 
     .container[data-variant="article"] {
@@ -39,22 +82,6 @@
         flex: 0 0 var(--article-outline-width);
         max-height: 100vh;
         overflow-y: auto;
-    }
-
-    .container[data-variant="component-display"] {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        background-color: var(--background-color-2);
-        background-image: 
-            radial-gradient(circle, var(--background-color-3) 1px, transparent 1px),
-            radial-gradient(circle, var(--background-color-3) 1px, transparent 1px);
-        background-size: 20px 20px, 20px 20px;
-        background-position: 0 0, 10px 10px;
-        padding-block: var(--space-7);
-        border: 1px solid var(--background-color-3);
-        border-radius: 5px;
     }
 
     @media (width <= 64rem) {

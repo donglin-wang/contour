@@ -1,8 +1,7 @@
-const isSelfClosing = (element: string) => (
+const isSelfClosing = (element: string) =>
     element.startsWith("input") ||
     element.startsWith("hr") ||
-    element.startsWith("img")
-)
+    element.startsWith("img");
 
 export function formatHTML(html: string) {
     let tab = "    ";
@@ -60,6 +59,9 @@ export const formatCSS = (cssString: string) => {
         if (char === "{" || char === ";") {
             result += "\n";
         } else if (char === "}") {
+            if (result.slice(-3) === "\n\n}") {
+                result = result.slice(0, -2) + "}";
+            }
             result += "\n\n";
         }
     }

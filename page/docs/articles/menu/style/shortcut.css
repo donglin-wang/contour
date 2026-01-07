@@ -1,0 +1,6 @@
+@layer variant {
+    .kbd[data-variant="menu-shortcut"] {
+        margin-inline-start: auto;
+        font-size: var(--font-size-base);
+    }
+}
