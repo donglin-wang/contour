@@ -302,42 +302,56 @@ const withDivider = div(
 
 export default [
     H1("Menu"),
-    ComponentPanel(
-        ComponentDisplay(MenuContainer(defaultMenu)),
-        HTMLCodeBlock(defaultMenu),
-        CSSCodeBlock(menuStyle)
-    ),
+    ComponentPanel({
+        display: ComponentDisplay(MenuContainer(defaultMenu)),
+        sources: {
+            "HTML": HTMLCodeBlock(defaultMenu),
+            "CSS": CSSCodeBlock(menuStyle)
+        }
+    }),
     H2("Title"),
-    ComponentPanel(
-        ComponentDisplay(MenuContainer(withTitle)),
-        HTMLCodeBlock(withTitle)
-    ),
+    ComponentPanel({
+        display: ComponentDisplay(MenuContainer(withTitle)),
+        sources: {
+            "HTML": HTMLCodeBlock(withTitle)
+        }
+    }),
     H2("Icon and shortcut"),
-    ComponentPanel(
-        ComponentDisplay(MenuContainer(withSymbolKBD)),
-        HTMLCodeBlock(withSymbolKBD),
-        CSSCodeBlock(shortcutStyle)
-    ),
+    ComponentPanel({
+        display: ComponentDisplay(MenuContainer(withSymbolKBD)),
+        sources: {
+            "HTML": HTMLCodeBlock(withSymbolKBD),
+            "CSS": CSSCodeBlock(shortcutStyle)
+        }
+    }),
     H2("Indented items"),
-    ComponentPanel(
-        ComponentDisplay(MenuContainer(indented)),
-        HTMLCodeBlock(indented),
-        CSSCodeBlock(indentedStyle)
-    ),
+    ComponentPanel({
+        display: ComponentDisplay(MenuContainer(indented)),
+        sources: {
+            "HTML": HTMLCodeBlock(indented),
+            "CSS": CSSCodeBlock(indentedStyle)
+        }
+    }),
     H2("Nested menu"),
-    ComponentPanel(
-        ComponentDisplay(MenuContainer(nested)),
-        HTMLCodeBlock(nested),
-        CSSCodeBlock(nestedStyle)
-    ),
+    ComponentPanel({
+        display: ComponentDisplay(MenuContainer(nested)),
+        sources: {
+            "HTML": HTMLCodeBlock(nested),
+            "CSS": CSSCodeBlock(nestedStyle)
+        }
+    }),
     H2("Title with children"),
-    ComponentPanel(
-        ComponentDisplay(MenuContainer(titleNested)),
-        HTMLCodeBlock(titleNested)
-    ),
+    ComponentPanel({
+        display: ComponentDisplay(MenuContainer(titleNested)),
+        sources: {
+            "HTML": HTMLCodeBlock(titleNested)
+        }
+    }),
     H2("Sectioned menu with title"),
-    ComponentPanel(
-        ComponentDisplay(MenuContainer(withDivider)),
-        HTMLCodeBlock(withDivider)
-    ),
+    ComponentPanel({
+        display: ComponentDisplay(MenuContainer(withDivider)),
+        sources: {
+            "HTML": HTMLCodeBlock(withDivider)
+        }
+    }),
 ];

@@ -30,26 +30,9 @@ export const HTMLCodeBlock = (element: HTMLElement, usesInner = false) => {
     return div(
         {
             class: "container",
-            "data-variant": "code-block",
+            "data-variant": "code-block-content",
         },
-        div(
-            {
-                class: "container",
-                "data-variant": "code-block-header",
-            },
-            "HTML"
-        ),
-        hr({
-            class: "boundary",
-            "data-variant": "component-panel-boundary",
-        }),
-        div(
-            {
-                class: "container",
-                "data-variant": "code-block-content",
-            },
-            ...children
-        )
+        ...children
     );
 };
 
@@ -75,25 +58,8 @@ export const CSSCodeBlock = (styleText: string) => {
     return div(
         {
             class: "container",
-            "data-variant": "code-block",
+            "data-variant": "code-block-content",
         },
-        div(
-            {
-                class: "container",
-                "data-variant": "code-block-header",
-            },
-            "CSS"
-        ),
-        hr({
-            class: "boundary",
-            "data-variant": "component-panel-boundary",
-        }),
-        div(
-            {
-                class: "container",
-                "data-variant": "code-block-content",
-            },
-            ...children
-        )
+        ...children
     );
 };

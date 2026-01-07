@@ -76,25 +76,57 @@ export const ComponentDisplay = (child: Element) =>
         child
     );
 
-export const ComponentPanel = (...providedChildren: Element[]) => {
-    const children = [];
-    for (let i = 0; i < providedChildren.length; i++) {
-        children.push(providedChildren[i]);
-        if (i < providedChildren.length - 1) {
-            children.push(
+export const ComponentPanel = ({
+    display,
+    sources = {},
+}: {
+    display: Element;
+    sources?: Record<string, Element>;
+}) => {
+    const codeBlocks = [];
+    const numSources = Object.keys(sources).length;
+    Object.entries(sources).forEach(([key, value], index) => {
+        codeBlocks.push(
+            div(
+                {
+                    class: "container",
+                    "data-variant": "code-block",
+                },
+                div(
+                    {
+                        class: "container",
+                        "data-variant": "code-block-header",
+                    },
+                    key
+                ),
+                hr({
+                    class: "boundary",
+                    "data-variant": "component-panel-boundary",
+                }),
+                value
+            )
+        );
+        if (index < numSources - 1) {
+            codeBlocks.push(
                 hr({
                     class: "boundary",
                     "data-variant": "component-panel-boundary",
                 })
             );
         }
-    }
+    });
+
     return div(
         {
             class: "container",
             "data-variant": "component-panel",
         },
-        ...children
+        display,
+        hr({
+            class: "boundary",
+            "data-variant": "component-panel-boundary",
+        }),
+        ...codeBlocks
     );
 };
 
