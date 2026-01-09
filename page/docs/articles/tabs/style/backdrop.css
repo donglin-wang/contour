@@ -1,0 +1,8 @@
+@layer variant {
+    .tab[data-variant="backdrop"] {
+        border-radius: 5px;
+    }
+    .tab[data-variant="backdrop"][aria-selected="true"] {
+        background-color: var(--background-color-2);
+    }
+}

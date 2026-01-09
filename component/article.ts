@@ -50,7 +50,7 @@ class Article extends HTMLElement {
         populate(this, this.articleRootAttributes, article, outline);
 
         const options: IntersectionObserverInit = {
-            threshold: [0, 1],
+            threshold: [0],
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -58,8 +58,6 @@ class Article extends HTMLElement {
                 const id = (entry.target as HTMLElement).id;
                 if (entry.isIntersecting) {
                     this.setActiveItem(id);
-                } else {
-                    this.unsetActiveItem(id);
                 }
             });
         }, options);
@@ -70,16 +68,13 @@ class Article extends HTMLElement {
     }
 
     setActiveItem(id: string) {
-        const item = this.outlineLookup[id];
-        if (item) {
-            item.setAttribute("aria-current", "true");
-        }
-    }
-
-    unsetActiveItem(id: string) {
-        const item = this.outlineLookup[id];
-        if (item) {
+        for (const item of Object.values(this.outlineLookup)) {
             item.removeAttribute("aria-current");
+        }
+
+        const selected = this.outlineLookup[id];
+        if (selected) {
+            selected.setAttribute("aria-current", "true");
         }
     }
 

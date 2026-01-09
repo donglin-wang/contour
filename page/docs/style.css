@@ -10,18 +10,22 @@
         margin-block: 0;
     }
 
-    .container[data-variant="component-display"] {
+    .container[data-variant="component-display"],
+    .container[data-variant="component-display-muted"] {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
-        background-color: var(--background-color-2);
         background-image: 
             radial-gradient(circle, var(--background-color-3) 1px, transparent 1px),
             radial-gradient(circle, var(--background-color-3) 1px, transparent 1px);
-        background-size: 20px 20px, 20px 20px;
+        background-size: 10px 10px, 10px 10px;
         background-position: 0 0, 10px 10px;
         padding-block: var(--space-7);
+    }
+
+    .container[data-variant="component-display-muted"] {
+        background-color: var(--background-color-2);
     }
 
     .container[data-variant="code-block-header"] {

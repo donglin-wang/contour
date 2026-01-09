@@ -1,0 +1,17 @@
+@layer pattern {
+    .tabs {
+        display: flex;
+    }
+
+    .tab {
+        color: var(--color-3);
+        cursor: pointer;
+        padding-inline: var(--space-4);
+        padding-block: var(--space-3);
+    }
+
+    .tab:hover,
+    .tab[aria-selected="true"] {
+        color: var(--color-1);
+    }
+}

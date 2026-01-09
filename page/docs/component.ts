@@ -1,8 +1,10 @@
 import { tags } from "/lib/tags";
+import { formatCSS, formatHTML } from "/lib/highlight/format";
+import { tokenize } from "/lib/highlight/tokenize";
 
 import type { Child } from "/lib/tags";
 
-const { h1, h2, p, ul, ol, li, code, div, hr } = tags;
+const { h1, h2, p, ul, ol, li, code, div, hr, span } = tags;
 
 export const H1 = (text: string) =>
     h1(
@@ -67,11 +69,71 @@ export const CodeInline = (text: string) =>
         text
     );
 
-export const ComponentDisplay = (child: Element) =>
+export const HTMLCodeBlock = (element: HTMLElement, usesInner = false) => {
+    const children = [];
+
+    tokenize(
+        formatHTML(usesInner ? element.innerHTML : element.outerHTML),
+        "html",
+        (str, type) => {
+            if (str) {
+                children.push(
+                    span(
+                        {
+                            class: "text",
+                            "data-variant": `token-${type}`,
+                        },
+                        str
+                    )
+                );
+            } else {
+                children.push(str);
+            }
+        }
+    );
+
+    return div(
+        {
+            class: "container",
+            "data-variant": "code-block-content",
+        },
+        ...children
+    );
+};
+
+export const CSSCodeBlock = (styleText: string) => {
+    const children = [];
+
+    tokenize(formatCSS(styleText), "css", (str, type) => {
+        if (str) {
+            children.push(
+                span(
+                    {
+                        class: "text",
+                        "data-variant": `token-${type}`,
+                    },
+                    str
+                )
+            );
+        } else {
+            children.push(str);
+        }
+    });
+
+    return div(
+        {
+            class: "container",
+            "data-variant": "code-block-content",
+        },
+        ...children
+    );
+};
+
+export const ComponentDisplay = (child: Element, variant?: string) =>
     div(
         {
             class: "container",
-            "data-variant": "component-display",
+            "data-variant": variant ?? "component-display",
         },
         child
     );
@@ -115,6 +177,16 @@ export const ComponentPanel = ({
             );
         }
     });
+
+    if (codeBlocks.length === 0) {
+        return div(
+            {
+                class: "container",
+                "data-variant": "component-panel",
+            },
+            display
+        );
+    }
 
     return div(
         {

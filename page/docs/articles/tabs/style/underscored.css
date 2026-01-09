@@ -1,0 +1,15 @@
+@layer variant {
+    .tabs[data-variant="underscored"] {
+        --tabs-border-width: 1px;
+        border-block-end: var(--tabs-border-width) solid var(--background-color-3);
+    }
+
+    .tab[data-variant="underscored"] {
+        margin-block: 0 calc(-1 * var(--tabs-border-width));
+        border-block-end: var(--tabs-border-wdith) solid transparent;
+    }
+
+    .tab[data-variant="underscored"][aria-selected="true"] {
+        border-block-end: 2px solid var(--color-1);
+    }
+}

@@ -1,7 +1,14 @@
 import { tags } from "/lib/tags";
-import { H1, H2, P, ComponentDisplay, ComponentPanel } from "/page/docs/component";
+import {
+    H1,
+    H2,
+    P,
+    ComponentDisplay,
+    ComponentPanel,
+    HTMLCodeBlock,
+    CSSCodeBlock
+} from "/page/docs/component";
 import { FileCode, MapPin, Bookmark } from "/component/symbol";
-import { HTMLCodeBlock, CSSCodeBlock } from "/page/docs/code";
 
 import menuStyle from "/style/pattern/menu.css?inline";
 import shortcutStyle from "/page/docs/articles/menu/style/shortcut.css?raw";
@@ -303,55 +310,76 @@ const withDivider = div(
 export default [
     H1("Menu"),
     ComponentPanel({
-        display: ComponentDisplay(MenuContainer(defaultMenu)),
+        display: ComponentDisplay(
+            MenuContainer(defaultMenu),
+            "component-display-muted"
+        ),
         sources: {
-            "HTML": HTMLCodeBlock(defaultMenu),
-            "CSS": CSSCodeBlock(menuStyle)
-        }
+            HTML: HTMLCodeBlock(defaultMenu),
+            CSS: CSSCodeBlock(menuStyle),
+        },
     }),
     H2("Title"),
     ComponentPanel({
-        display: ComponentDisplay(MenuContainer(withTitle)),
+        display: ComponentDisplay(
+            MenuContainer(withTitle),
+            "component-display-muted"
+        ),
         sources: {
-            "HTML": HTMLCodeBlock(withTitle)
-        }
+            HTML: HTMLCodeBlock(withTitle),
+        },
     }),
     H2("Icon and shortcut"),
     ComponentPanel({
-        display: ComponentDisplay(MenuContainer(withSymbolKBD)),
+        display: ComponentDisplay(
+            MenuContainer(withSymbolKBD),
+            "component-display-muted"
+        ),
         sources: {
-            "HTML": HTMLCodeBlock(withSymbolKBD),
-            "CSS": CSSCodeBlock(shortcutStyle)
-        }
+            HTML: HTMLCodeBlock(withSymbolKBD),
+            CSS: CSSCodeBlock(shortcutStyle),
+        },
     }),
     H2("Indented items"),
     ComponentPanel({
-        display: ComponentDisplay(MenuContainer(indented)),
+        display: ComponentDisplay(
+            MenuContainer(indented),
+            "component-display-muted"
+        ),
         sources: {
-            "HTML": HTMLCodeBlock(indented),
-            "CSS": CSSCodeBlock(indentedStyle)
-        }
+            HTML: HTMLCodeBlock(indented),
+            CSS: CSSCodeBlock(indentedStyle),
+        },
     }),
     H2("Nested menu"),
     ComponentPanel({
-        display: ComponentDisplay(MenuContainer(nested)),
+        display: ComponentDisplay(
+            MenuContainer(nested),
+            "component-display-muted"
+        ),
         sources: {
-            "HTML": HTMLCodeBlock(nested),
-            "CSS": CSSCodeBlock(nestedStyle)
-        }
+            HTML: HTMLCodeBlock(nested),
+            CSS: CSSCodeBlock(nestedStyle),
+        },
     }),
     H2("Title with children"),
     ComponentPanel({
-        display: ComponentDisplay(MenuContainer(titleNested)),
+        display: ComponentDisplay(
+            MenuContainer(titleNested),
+            "component-display-muted"
+        ),
         sources: {
-            "HTML": HTMLCodeBlock(titleNested)
-        }
+            HTML: HTMLCodeBlock(titleNested),
+        },
     }),
     H2("Sectioned menu with title"),
     ComponentPanel({
-        display: ComponentDisplay(MenuContainer(withDivider)),
+        display: ComponentDisplay(
+            MenuContainer(withDivider),
+            "component-display-muted"
+        ),
         sources: {
-            "HTML": HTMLCodeBlock(withDivider)
-        }
+            HTML: HTMLCodeBlock(withDivider),
+        },
     }),
 ];

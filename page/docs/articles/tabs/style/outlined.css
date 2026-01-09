@@ -1,0 +1,20 @@
+@layer variant {
+    .tabs[data-variant="outlined"] {
+        --tabs-border-width: 1px;
+    }
+
+    .tab[data-variant="outlined"] {
+        margin-block: 0 calc(-1 * var(--tabs-border-width));
+        border-block-end: var(--tabs-border-width) solid var(--background-color-3);
+    }
+
+    .tab[data-variant="outlined"][aria-selected="true"] {
+        border-inline-start: var(--tabs-border-width) solid var(--background-color-3);
+        border-inline-end: var(--tabs-border-width) solid var(--background-color-3);
+        border-block-start: var(--tabs-border-width) solid var(--background-color-3);
+        border-block-end: none;
+        border-start-start-radius: 5px;
+        border-start-end-radius: 5px;
+        padding-block-end: calc(var(--mutex-item-padding-block) + var(--tabs-border-width));
+    }
+}
