@@ -1,0 +1,13 @@
+@layer variant {
+    .table[data-variant="column-bordered"] {
+        grid-template-columns: repeat(9, max-content);
+    }
+
+    .table__cell[data-variant^="column-bordered"] {
+        border-inline-end: 1px solid var(--background-color-3);
+    }
+
+    .table__cell[data-variant^="column-bordered"]:last-child {
+        border-inline-end: none;
+    }
+}

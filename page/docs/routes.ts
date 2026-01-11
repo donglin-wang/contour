@@ -62,6 +62,12 @@ const articles: ArticleSpec[] = [
         importArticle: () => import("/page/docs/articles/tabs/root"),
         importStyle: () => import("/page/docs/articles/tabs/style"),
     },
+    {
+        path: "docs/table",
+        title: "Table",
+        importArticle: () => import("/page/docs/articles/table/root"),
+        importStyle: () => import("/page/docs/articles/table/style"),
+    },
 ];
 
 export default articles.map((article) => ({

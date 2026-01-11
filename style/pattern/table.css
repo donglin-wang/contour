@@ -1,0 +1,19 @@
+@layer pattern {
+    .table {
+        display: grid;
+        overflow: auto;
+    }
+
+    .table__section,
+    .table__row {
+        display: contents;
+    }
+
+    .table__cell {
+        display: flex;
+        overflow: hidden;
+        align-items: center;
+        padding-inline: var(--space-2);
+        padding-block: var(--space-3);
+    }
+}

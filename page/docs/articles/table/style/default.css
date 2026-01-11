@@ -1,0 +1,5 @@
+@layer variant {
+    .table[data-variant="default"] {
+        grid-template-columns: repeat(9, max-content);
+    }
+}

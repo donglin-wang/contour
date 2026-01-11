@@ -1,21 +1,18 @@
 import { tags } from "/lib/tags";
 import { ContourLogo } from "/component/symbol";
 import { getRouter } from "/store/router";
+import { Link } from "/component/link";
 
 const { div, h2, a } = tags;
 const router = getRouter();
 
-const displayButton = a(
-    {
-        class: "trigger",
-        "data-variant": "inverse",
+const displayButton = Link({
+    attributes: {
+        class: "button",
     },
-    "Get started"
-);
-
-displayButton.addEventListener("click", () =>
-    router.navigateTo("docs/lorem")
-);
+    callback: () => router.navigateTo("docs/lorem"),
+    children: ["Get started"],
+});
 
 export default div(
     {

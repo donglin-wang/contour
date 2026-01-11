@@ -1,0 +1,13 @@
+@layer variant {
+    .table[data-variant="column-sticky"] {
+        grid-template-columns: repeat(9, max-content);
+        max-height: 20rem;
+        position: relative;
+    }
+
+    .table__cell[data-variant^="column-sticky"]:first-child {
+        position: sticky;
+        inset-inline-start: 0;
+        background-color: var(--background-color-2);
+    }
+}

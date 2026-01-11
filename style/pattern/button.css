@@ -1,0 +1,15 @@
+@layer pattern {
+    .button {
+        padding-inline: var(--space-4);
+        padding-block: var(--space-3);
+        background-color: var(--background-color-1);
+        border-radius: 5px;
+        border: 1px solid var(--background-color-2);
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .button:hover {
+        background-color: var(--background-color-2);
+    }
+}

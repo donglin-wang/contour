@@ -11,7 +11,8 @@
     }
 
     .container[data-variant="component-display"],
-    .container[data-variant="component-display-muted"] {
+    .container[data-variant="component-display-muted"],
+    .container[data-variant="component-display-table"] {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -26,6 +27,10 @@
 
     .container[data-variant="component-display-muted"] {
         background-color: var(--background-color-2);
+    }
+
+    .container[data-variant="component-display-table"] {
+        padding: var(--space-3);
     }
 
     .container[data-variant="code-block-header"] {
