@@ -30,7 +30,7 @@ const createArticle = (articleContent: Element[]) =>
         outlineItemAttributes: {
             class: "outline__item",
         },
-    });
+    }).root;
 
 const importSharedStyle = () =>
     Promise.all([

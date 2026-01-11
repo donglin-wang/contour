@@ -2,7 +2,7 @@ import { complexPatientSpec } from "../data";
 import { construcHeaderStyle, calculateHeaderDimensions } from "../component";
 
 const dimensions = calculateHeaderDimensions(complexPatientSpec);
-const headerRules = construcHeaderStyle(dimensions, "nested-header");
+const headerStyle = construcHeaderStyle(dimensions, "nested-header");
 
 export default /*css*/ `
 @layer variant {
@@ -31,5 +31,5 @@ export default /*css*/ `
     }
 
     /* Setting header cell spanning */
-    ${headerRules}
+    ${headerStyle}
 }`;

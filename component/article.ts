@@ -1,4 +1,4 @@
-import { populate, tags } from "/lib/tags";
+import { tags } from "/lib/tags";
 import type { Child, Attributes } from "/lib/tags";
 
 export type ArticleSpec = {
@@ -10,9 +10,10 @@ export type ArticleSpec = {
     articleRootAttributes?: Attributes;
 };
 
-const { div } = tags;
+const { div, article } = tags;
 
-class Article extends HTMLElement {
+class Article {
+    root: HTMLElement;
     outlineAttributes: Attributes;
     outlineItemAttributes: Attributes;
     articleAttributes: Attributes;
@@ -30,24 +31,21 @@ class Article extends HTMLElement {
         outlineItemAttributes = {},
         outlineAttributes = {},
     }: ArticleSpec) {
-        super();
         this.providedChildren = providedChildren;
         this.hasOutline = hasOutline;
         this.articleRootAttributes = articleRootAttributes;
         this.articleAttributes = articleAttributes;
         this.outlineAttributes = outlineAttributes;
         this.outlineItemAttributes = outlineItemAttributes;
-    }
 
-    connectedCallback() {
-        const article = div(this.articleAttributes, ...this.providedChildren);
+        const articleContent = div(this.articleAttributes, ...this.providedChildren);
 
-        const spec = this.populateHeadingIds(article);
+        const spec = this.populateHeadingIds(articleContent);
         const { outline, lookup } = this.createOutline(spec);
 
         this.outlineLookup = lookup;
 
-        populate(this, this.articleRootAttributes, article, outline);
+        this.root = article(this.articleRootAttributes, articleContent, outline);
 
         const options: IntersectionObserverInit = {
             threshold: [0],
@@ -103,7 +101,5 @@ class Article extends HTMLElement {
         return spec;
     }
 }
-
-customElements.define("contour-article", Article);
 
 export default Article;

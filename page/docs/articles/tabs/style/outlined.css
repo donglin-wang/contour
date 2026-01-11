@@ -12,9 +12,8 @@
         border-inline-start: var(--tabs-border-width) solid var(--background-color-3);
         border-inline-end: var(--tabs-border-width) solid var(--background-color-3);
         border-block-start: var(--tabs-border-width) solid var(--background-color-3);
-        border-block-end: none;
+        border-block-end: var(--tabs-border-width) solid transparent;
         border-start-start-radius: 5px;
         border-start-end-radius: 5px;
-        padding-block-end: calc(var(--mutex-item-padding-block) + var(--tabs-border-width));
     }
 }

@@ -1,4 +1,3 @@
-import { tags } from "/lib/tags";
 import {
     H1,
     H2,
@@ -7,6 +6,7 @@ import {
     CSSCodeBlock,
     HTMLCodeBlock,
 } from "/page/docs/component";
+import { Tabs } from "/component/tabs";
 
 import defaultStyle from "/style/pattern/tabs.css?inline";
 import underscoredStyle from "/page/docs/articles/tabs/style/underscored.css?inline";
@@ -14,147 +14,107 @@ import backdropStyle from "/page/docs/articles/tabs/style/backdrop.css?inline";
 import enclosedStyle from "/page/docs/articles/tabs/style/enclosed.css?inline";
 import outlinedStyle from "/page/docs/articles/tabs/style/outlined.css?inline";
 
-const { div } = tags;
+const defaultTabs = new Tabs({
+    rootAttributes: { class: "tabs" },
+    tabSpecs: [
+        {
+            attributes: {
+                class: "tab",
+            },
+            body: ["Tab 1"],
+            selected: true,
+        },
+        {
+            attributes: {
+                class: "tab",
+            },
+            body: ["Tab 2"],
+        },
+        {
+            attributes: {
+                class: "tab",
+            },
+            body: ["Tab 3"],
+        },
+    ],
+}).root;
 
-const defaultTabs = div(
-    {
-        class: "tabs",
-    },
-    div(
+const underscored = new Tabs({
+    rootAttributes: { class: "tabs", "data-variant": "underscored" },
+    tabSpecs: [
         {
-            class: "tab",
+            attributes: { class: "tab", "data-variant": "underscored" },
+            body: ["Tab 1"],
+            selected: true,
         },
-        "Tab 1"
-    ),
-    div(
         {
-            class: "tab",
+            attributes: { class: "tab", "data-variant": "underscored" },
+            body: ["Tab 2"],
         },
-        "Tab 2"
-    ),
-    div(
         {
-            class: "tab",
+            attributes: { class: "tab", "data-variant": "underscored" },
+            body: ["Tab 3"],
         },
-        "Tab 3"
-    )
-);
+    ],
+}).root;
 
-const underscored = div(
-    {
-        class: "tabs",
-        "data-variant": "underscored",
-    },
-    div(
+const backdrop = new Tabs({
+    rootAttributes: { class: "tabs", "data-variant": "backdrop" },
+    tabSpecs: [
         {
-            class: "tab",
-            "data-variant": "underscored",
-            "aria-selected": "true",
+            attributes: { class: "tab", "data-variant": "backdrop" },
+            body: ["Tab 1"],
+            selected: true,
         },
-        "Tab 1"
-    ),
-    div(
         {
-            class: "tab",
-            "data-variant": "underscored",
+            attributes: { class: "tab", "data-variant": "backdrop" },
+            body: ["Tab 2"],
         },
-        "Tab 2"
-    ),
-    div(
         {
-            class: "tab",
-            "data-variant": "underscored",
+            attributes: { class: "tab", "data-variant": "backdrop" },
+            body: ["Tab 3"],
         },
-        "Tab 3"
-    )
-);
+    ],
+}).root;
 
-const backdrop = div(
-    {
-        class: "tabs",
-        "data-variant": "backdrop",
-    },
-    div(
+const enclosed = new Tabs({
+    rootAttributes: { class: "tabs", "data-variant": "enclosed" },
+    tabSpecs: [
         {
-            class: "tab",
-            "data-variant": "backdrop",
-            "aria-selected": "true",
+            attributes: { class: "tab", "data-variant": "enclosed" },
+            body: ["Tab 1"],
+            selected: true,
         },
-        "Tab 1"
-    ),
-    div(
         {
-            class: "tab",
-            "data-variant": "backdrop",
+            attributes: { class: "tab", "data-variant": "enclosed" },
+            body: ["Tab 2"],
         },
-        "Tab 2"
-    ),
-    div(
         {
-            class: "tab",
-            "data-variant": "backdrop",
+            attributes: { class: "tab", "data-variant": "enclosed" },
+            body: ["Tab 3"],
         },
-        "Tab 3"
-    )
-);
+    ],
+}).root;
 
-const enclosed = div(
-    {
-        class: "tabs",
-        "data-variant": "enclosed",
-    },
-    div(
-        {
-            class: "tab",
-            "data-variant": "enclosed",
-            "aria-selected": "true",
-        },
-        "Tab 1"
-    ),
-    div(
-        {
-            class: "tab",
-            "data-variant": "enclosed",
-        },
-        "Tab 2"
-    ),
-    div(
-        {
-            class: "tab",
-            "data-variant": "enclosed",
-        },
-        "Tab 3"
-    )
-);
 
-const outlined = div(
-    {
-        class: "tabs",
-        "data-variant": "outlined",
-    },
-    div(
+const outlined = new Tabs({
+    rootAttributes: { class: "tabs", "data-variant": "outlined" },
+    tabSpecs: [
         {
-            class: "tab",
-            "data-variant": "outlined",
-            "aria-selected": "true",
+            attributes: { class: "tab", "data-variant": "outlined" },
+            body: ["Tab 1"],
+            selected: true,
         },
-        "Tab 1"
-    ),
-    div(
         {
-            class: "tab",
-            "data-variant": "outlined",
+            attributes: { class: "tab", "data-variant": "outlined" },
+            body: ["Tab 2"],
         },
-        "Tab 2"
-    ),
-    div(
         {
-            class: "tab",
-            "data-variant": "outlined",
+            attributes: { class: "tab", "data-variant": "outlined" },
+            body: ["Tab 3"],
         },
-        "Tab 3"
-    )
-);
+    ],
+}).root;
 
 export default [
     H1("Tabs"),
@@ -190,8 +150,11 @@ export default [
         },
     }),
     H2("Outlined"),
-    ComponentPanel({ display: ComponentDisplay(outlined), sources: {
-        HTML: HTMLCodeBlock(outlined),
-        CSS: CSSCodeBlock(outlinedStyle)
-    } }),
+    ComponentPanel({
+        display: ComponentDisplay(outlined),
+        sources: {
+            HTML: HTMLCodeBlock(outlined),
+            CSS: CSSCodeBlock(outlinedStyle),
+        },
+    }),
 ];

@@ -1,126 +1,103 @@
 import { tags } from "/lib/tags";
 
-import type { Child } from "/lib/tags";
+import type { Attributes, Child } from "/lib/tags";
 
 const { div } = tags;
 
-export type TabChildSpec = {
+export type TabSpec = {
     selected?: boolean;
     body: Child[];
+    attributes: Attributes;
 };
 
-export type TabSpec = {
-    childSpecs: TabChildSpec[];
-    variant?: string;
-    itemVariant?: string;
-    itemClass?: string;
-    indicatorVariant?: string;
-    callback?: (index: number) => void;
+export type TabsSpec = {
+    rootAttributes: Attributes;
+    tabSpecs: TabSpec[];
+    indicatorAttributes?: Attributes;
+    callback?: (index: number) => number;
 };
 
-const registerTab = (
-    root: HTMLElement,
-    tab: HTMLElement,
-    callback?: () => void
-) => {
-    root.appendChild(tab);
+class Tabs {
+    root: HTMLElement;
+    rootAttributes: Attributes;
+    tabSpecs: TabSpec[];
+    tabAttributes: Attributes;
+    indicatorAttributes?: Attributes;
+    callback?: (index: number) => number;
 
-    let indicator: HTMLElement | null = null;
-    for (const child of root.children) {
-        if (child.classList.contains("mutex__indicator")) {
-            indicator = child as HTMLElement;
-        }
-    }
-
-    tab.addEventListener("click", () => {
-        const siblings = root.children;
-        for (const sibling of siblings) {
-            if (sibling.getAttribute("aria-selected") !== null) {
-                sibling.toggleAttribute("aria-selected");
-                break;
-            }
-        }
-
-        tab.setAttribute("aria-selected", "");
-
-        if (indicator !== null) {
-            const mutexRect = root.getBoundingClientRect();
-            const itemRect = tab.getBoundingClientRect();
-
-            indicator.style.left = `${itemRect.left - mutexRect.left}px`;
-            indicator.style.width = `${itemRect.width}px`;
-        }
-
-        callback();
-    });
-};
-
-class Tabs extends HTMLElement implements TabSpec {
-    childSpecs: TabChildSpec[];
-    variant?: string;
-    itemVariant?: string;
-    itemClass?: string;
-    indicatorVariant?: string;
-    callback?: (index: number) => void;
+    private indicator: HTMLElement;
+    private tabPositions: number[];
+    private tabWidths: number[];
 
     constructor({
-        childSpecs,
-        variant,
-        itemVariant,
-        itemClass,
-        indicatorVariant,
+        rootAttributes = {},
+        tabSpecs = [],
+        indicatorAttributes,
         callback,
-    }: TabSpec) {
-        super();
-        this.childSpecs = childSpecs;
-        this.variant = variant;
-        this.itemVariant = itemVariant;
-        this.itemClass = itemClass;
-        this.indicatorVariant = indicatorVariant;
+    }: TabsSpec) {
+        this.root = div(rootAttributes);
         this.callback = callback;
+        this.indicatorAttributes = indicatorAttributes;
+        this.tabPositions = [];
+        this.tabWidths = [];
+
+        for (const tabSpec of tabSpecs) {
+            this.insertTab(tabSpec);
+        }
+
+        if (indicatorAttributes) {
+            this.indicator = div(indicatorAttributes);
+        }
     }
 
-    connectedCallback() {
-        const root = div({
-            class: "mutex",
-            "data-variant": this.variant,
-        });
-
-        const indicator = div({
-            class: "mutex__indicator",
-            "data-variant": this.indicatorVariant,
-        });
-
-        const tabs = this.childSpecs.map((spec) =>
-            div(
-                {
-                    class: this.itemClass ?? "mutex__item",
-                    "data-variant": this.itemVariant ?? "",
-                    ...(spec.selected ? { "aria-selected": "" } : {}),
-                },
-                ...spec.body
-            )
-        );
-
-        if (
-            this.indicatorVariant !== null &&
-            this.indicatorVariant !== undefined
-        ) {
-            root.appendChild(indicator);
+    setActiveTab(index: number) {
+        for (const tab of this.root.children) {
+            tab.removeAttribute("aria-selected");
         }
 
-        for (let i = 0; i < this.childSpecs.length; i++) {
-            registerTab(root, tabs[i], () => this.callback(i));
+        this.root.children[index].setAttribute("aria-selected", "true");
+        if (this.indicator) {
+            this.moveIndicator(index);
         }
 
-        this.appendChild(root);
+        if (this.callback) {
+            this.callback(index);
+        }
+    }
 
-        // The indicator's width can only be calculated after the tab's 
-        // DOM has been added to the screen
-        indicator.style.width = `${tabs[0].getBoundingClientRect().width}px`
+    moveIndicator(index: number) {
+        this.indicator.style.left = `${this.tabPositions[index]}px`;
+        this.indicator.style.width = `${this.tabWidths[index]}px`;
+    }
+
+    insertTab(tabSpec: TabSpec) {
+        const tab = div(tabSpec.attributes, ...tabSpec.body);
+        this.root.appendChild(tab);
+
+        const index = this.root.children.length - 1;
+        tab.addEventListener("click", () => this.setActiveTab(index));
+
+        const rootLeft = this.root.getBoundingClientRect().left;
+        const tabRect = tab.getBoundingClientRect();
+        this.tabPositions.push(tabRect.left - rootLeft);
+        this.tabWidths.push(tabRect.width);
+
+        if (tabSpec.selected) {
+            this.setActiveTab(index);
+        }
+    }
+
+    deleteTab(index: number) {
+        if (index === this.root.children.length - 1 && index - 1 >= 0) {
+            this.setActiveTab(index - 1);
+        } else if (index === 0 && index + 1 < this.root.children.length) {
+            this.setActiveTab(index + 1);
+        }
+
+        this.root.removeChild(this.root.childNodes[index]);
+        this.tabPositions.splice(index, 1);
+        this.tabWidths.splice(index, 1);
     }
 }
-
-customElements.define("contour-tabs", Tabs);
 
 export { Tabs };
