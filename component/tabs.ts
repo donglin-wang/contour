@@ -1,4 +1,5 @@
-import { tags } from "/lib/tags";
+import Component from "./base";
+import { tags, populate } from "/lib/tags";
 
 import type { Attributes, Child } from "/lib/tags";
 
@@ -17,17 +18,17 @@ export type TabsSpec = {
     callback?: (index: number) => number;
 };
 
-class Tabs {
+class Tabs extends Component {
     root: HTMLElement;
     rootAttributes: Attributes;
     tabSpecs: TabSpec[];
-    tabAttributes: Attributes;
     indicatorAttributes?: Attributes;
     callback?: (index: number) => number;
 
-    private indicator: HTMLElement;
-    private tabPositions: number[];
-    private tabWidths: number[];
+    private tabs: HTMLElement[] = [];
+    private tabPositions: number[] = [];
+    private tabWidths: number[] = [];
+    private indicator?: HTMLElement;
 
     constructor({
         rootAttributes = {},
@@ -35,27 +36,33 @@ class Tabs {
         indicatorAttributes,
         callback,
     }: TabsSpec) {
-        this.root = div(rootAttributes);
-        this.callback = callback;
+        super();
+        this.rootAttributes = rootAttributes;
+        this.tabSpecs = tabSpecs;
         this.indicatorAttributes = indicatorAttributes;
-        this.tabPositions = [];
-        this.tabWidths = [];
+        this.callback = callback;
+    }
 
-        for (const tabSpec of tabSpecs) {
-            this.insertTab(tabSpec);
+    initialize(): void {
+        populate(this, this.rootAttributes);
+
+        if (this.indicatorAttributes && this.tabSpecs.length !== 0) {
+            this.indicator = div(this.indicatorAttributes);
+            this.appendChild(this.indicator);
         }
 
-        if (indicatorAttributes) {
-            this.indicator = div(indicatorAttributes);
+        for (const tabSpec of this.tabSpecs) {
+            this.insertTab(tabSpec);
         }
     }
 
     setActiveTab(index: number) {
-        for (const tab of this.root.children) {
+        for (const tab of this.tabs) {
             tab.removeAttribute("aria-selected");
         }
 
-        this.root.children[index].setAttribute("aria-selected", "true");
+        this.tabs[index].setAttribute("aria-selected", "true");
+
         if (this.indicator) {
             this.moveIndicator(index);
         }
@@ -72,32 +79,44 @@ class Tabs {
 
     insertTab(tabSpec: TabSpec) {
         const tab = div(tabSpec.attributes, ...tabSpec.body);
-        this.root.appendChild(tab);
+        this.appendChild(tab);
+        this.tabs.push(tab);
 
-        const index = this.root.children.length - 1;
+        const index = this.tabs.length - 1;
         tab.addEventListener("click", () => this.setActiveTab(index));
 
-        const rootLeft = this.root.getBoundingClientRect().left;
-        const tabRect = tab.getBoundingClientRect();
-        this.tabPositions.push(tabRect.left - rootLeft);
-        this.tabWidths.push(tabRect.width);
-
+        this.resetPositionWidth();
+        
         if (tabSpec.selected) {
             this.setActiveTab(index);
         }
     }
 
     deleteTab(index: number) {
-        if (index === this.root.children.length - 1 && index - 1 >= 0) {
+        if (index === this.tabs.length - 1 && index - 1 >= 0) {
             this.setActiveTab(index - 1);
-        } else if (index === 0 && index + 1 < this.root.children.length) {
+        } else if (index === 0 && index + 1 < this.tabs.length) {
             this.setActiveTab(index + 1);
         }
 
-        this.root.removeChild(this.root.childNodes[index]);
-        this.tabPositions.splice(index, 1);
-        this.tabWidths.splice(index, 1);
+        this.removeChild(this.tabs[index]);
+        this.tabs.splice(index, 1);
+        this.resetPositionWidth();
+    }
+
+    resetPositionWidth() {
+        this.tabPositions = [];
+        this.tabWidths = []
+
+        for (const tab of this.tabs) {
+            const rootLeft = this.getBoundingClientRect().left;
+            const tabRect = tab.getBoundingClientRect();
+            this.tabPositions.push(tabRect.left - rootLeft);
+            this.tabWidths.push(tabRect.width);
+        }
     }
 }
 
-export { Tabs };
+customElements.define("contour-tabs", Tabs);
+
+export default Tabs;
