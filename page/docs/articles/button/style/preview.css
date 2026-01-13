@@ -1,0 +1,25 @@
+@layer variant {
+    .button[data-variant="preview"] {
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .button__section[data-variant="preview"] {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: var(--space-4);
+    }
+
+    .media[data-variant="preview-trigger"] {
+        max-width: var(--space-9);
+    }
+
+    .text[data-variant="preview-primary"] {
+        font-size: var(--font-size-l);
+    }
+
+    .text[data-variant="preview-secondary"] {
+        color: var(--color-3);
+    }
+}

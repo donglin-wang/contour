@@ -68,6 +68,12 @@ const articles: ArticleSpec[] = [
         importArticle: () => import("/page/docs/articles/table/root"),
         importStyle: () => import("/page/docs/articles/table/style"),
     },
+    {
+        path: "docs/button",
+        title: "Button",
+        importArticle: () => import("/page/docs/articles/button/root"),
+        importStyle: () => import("/page/docs/articles/button/style"),
+    },
 ];
 
 export default articles.map((article) => ({
@@ -90,6 +96,7 @@ export default articles.map((article) => ({
                     sharedStyle,
                     articleStyle.default
                 );
+                document.title = article.title;
                 document.body.replaceChildren(
                     main(
                         {

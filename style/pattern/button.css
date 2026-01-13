@@ -1,15 +1,21 @@
 @layer pattern {
     .button {
+        display: flex;
         padding-inline: var(--space-4);
         padding-block: var(--space-3);
         background-color: var(--background-color-1);
         border-radius: 5px;
-        border: 1px solid var(--background-color-2);
+        border: 1px solid var(--background-color-3);
         text-decoration: none;
         cursor: pointer;
+        font-size: var(--font-size-base);
     }
 
     .button:hover {
         background-color: var(--background-color-2);
+    }
+
+    .button__section {
+        display: flex;
     }
 }

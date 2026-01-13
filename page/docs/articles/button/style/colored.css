@@ -1,0 +1,61 @@
+@layer base {
+    :root {
+        --danger-1: hsl(354.25, 70.46%, 53.53%);
+        --danger-2: hsl(354.25, 70.46%, 45.53%);
+        --danger-content: hsl(0deg 0% 100%);
+
+        --success-1: hsl(152.18, 68.75%, 31.37%);
+        --success-2: hsl(152.18, 68.75%, 26.37%);
+        --success-content: hsl(0deg 0% 100%);
+
+        --info-1: hsl(190.04, 89.72%, 49.61%);
+        --info-2: hsl(190.04, 89.72%, 44.61%);
+        --info-content: hsl(0deg 0% 10%);
+
+        --warning-1: hsl(45, 100%, 51.37%);
+        --warning-2: hsl(45, 100%, 46.37%);
+        --warning-content: hsl(0deg 0% 10%);
+    }
+}
+
+@layer variant {
+    .button[data-variant="danger"] {
+        border: none;
+        background-color: var(--danger-1);
+        color: var(--danger-content);
+    }
+
+    .button[data-variant="danger"]:hover {
+        background-color: var(--danger-2);
+    }
+
+    .button[data-variant="success"] {
+        border: none;
+        background-color: var(--success-1);
+        color: var(--success-content);
+    }
+
+    .button[data-variant="success"]:hover {
+        background-color: var(--success-2);
+    }
+
+    .button[data-variant="info"] {
+        border: none;
+        background-color: var(--info-1);
+        color: var(--info-content);
+    }
+
+    .button[data-variant="info"]:hover {
+        background-color: var(--info-2);
+    }
+
+    .button[data-variant="warning"] {
+        border: none;
+        background-color: var(--warning-1);
+        color: var(--warning-content);
+    }
+
+    .button[data-variant="warning"]:hover {
+        background-color: var(--warning-2);
+    }
+}
