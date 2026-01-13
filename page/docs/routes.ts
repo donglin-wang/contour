@@ -70,9 +70,9 @@ const articles: ArticleSpec[] = [
     },
     {
         path: "docs/button",
-        title: "Button",
-        importArticle: () => import("/page/docs/articles/button/root"),
-        importStyle: () => import("/page/docs/articles/button/style"),
+        title: "Trigger",
+        importArticle: () => import("/page/docs/articles/trigger/root"),
+        importStyle: () => import("/page/docs/articles/trigger/style"),
     },
     {
         path: "docs/accordion",

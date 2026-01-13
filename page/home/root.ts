@@ -8,7 +8,7 @@ const router = getRouter();
 
 const displayButton = Link({
     attributes: {
-        class: "button",
+        class: "trigger",
     },
     callback: () => router.navigateTo("docs/lorem"),
     children: ["Get started"],

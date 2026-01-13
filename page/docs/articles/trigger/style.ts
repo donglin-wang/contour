@@ -1,7 +1,7 @@
-import colored from "/page/docs/articles/button/style/colored.css?inline";
-import articleControl from "/page/docs/articles/button/style/articleControl.css?inline";
-import pillGhost from "/page/docs/articles/button/style/pillGhost.css?inline";
-import preview from "/page/docs/articles/button/style/preview.css?inline";
+import colored from "/page/docs/articles/trigger/style/colored.css?inline";
+import articleControl from "/page/docs/articles/trigger/style/articleControl.css?inline";
+import pillGhost from "/page/docs/articles/trigger/style/pillGhost.css?inline";
+import preview from "/page/docs/articles/trigger/style/preview.css?inline";
 
 const containerStyle = /*css*/ `
 @layer variant {

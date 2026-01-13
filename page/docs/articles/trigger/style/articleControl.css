@@ -1,6 +1,6 @@
 @layer variant {
-    .button[data-variant="article-control-next"],
-    .button[data-variant="article-control-prev"] {
+    .trigger[data-variant="article-control-next"],
+    .trigger[data-variant="article-control-prev"] {
         flex: 1;
         align-items: center;
         gap: var(--space-3);
@@ -9,11 +9,11 @@
         padding-block: var(--space-4);
     }
 
-    .button[data-variant="article-control-prev"] {
+    .trigger[data-variant="article-control-prev"] {
         flex-direction: row-reverse;
     }
 
-    .button__section[data-variant="article-control"] {
+    .trigger__section[data-variant="article-control"] {
         flex-direction: column;
         gap: var(--space-1);
         align-items: start;

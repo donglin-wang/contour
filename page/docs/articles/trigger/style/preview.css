@@ -1,10 +1,10 @@
 @layer variant {
-    .button[data-variant="preview"] {
+    .trigger[data-variant="preview"] {
         padding: 0;
         overflow: hidden;
     }
 
-    .button__section[data-variant="preview"] {
+    .trigger__section[data-variant="preview"] {
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;

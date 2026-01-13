@@ -16,12 +16,12 @@ const ButtonsContainer = (...children: Child[]) =>
 const ArticleControl = (variantSuffix: "prev" | "next", title) =>
     button(
         {
-            class: "button",
+            class: "trigger",
             "data-variant": `article-control-${variantSuffix}`,
         },
         span(
             {
-                class: "button__section",
+                class: "trigger__section",
                 "data-variant": "article-control",
             },
             b(
@@ -43,37 +43,37 @@ const ArticleControl = (variantSuffix: "prev" | "next", title) =>
     );
 
 export default [
-    H1("Button"),
+    H1("Trigger"),
     ComponentPanel({
-        display: ComponentDisplay(button({ class: "button" }, "Default")),
+        display: ComponentDisplay(button({ class: "trigger" }, "Default")),
     }),
     ComponentPanel({
         display: ComponentDisplay(
             ButtonsContainer(
                 button(
                     {
-                        class: "button",
+                        class: "trigger",
                         "data-variant": "danger",
                     },
                     "Danger"
                 ),
                 button(
                     {
-                        class: "button",
+                        class: "trigger",
                         "data-variant": "warning",
                     },
                     "Warning"
                 ),
                 button(
                     {
-                        class: "button",
+                        class: "trigger",
                         "data-variant": "info",
                     },
                     "Info"
                 ),
                 button(
                     {
-                        class: "button",
+                        class: "trigger",
                         "data-variant": "success",
                     },
                     "Success"
@@ -94,21 +94,21 @@ export default [
             ButtonsContainer(
                 button(
                     {
-                        class: "button",
+                        class: "trigger",
                         "data-variant": "pill",
                     },
                     "Pill"
                 ),
                 button(
                     {
-                        class: "button",
+                        class: "trigger",
                         "data-variant": "ghost",
                     },
                     "Ghost"
                 ),
                 button(
                     {
-                        class: "button",
+                        class: "trigger",
                         "data-variant": "pill-ghost",
                     },
                     "Pill ghost"
@@ -121,7 +121,7 @@ export default [
             ButtonsContainer(
                 button(
                     {
-                        class: "button",
+                        class: "trigger",
                         "data-variant": "preview",
                     },
                     img({
@@ -132,7 +132,7 @@ export default [
                     }),
                     span(
                         {
-                            class: "button__section",
+                            class: "trigger__section",
                             "data-variant": "preview",
                         },
                         span(

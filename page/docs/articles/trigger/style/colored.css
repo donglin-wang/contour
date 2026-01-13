@@ -19,43 +19,43 @@
 }
 
 @layer variant {
-    .button[data-variant="danger"] {
+    .trigger[data-variant="danger"] {
         border: none;
         background-color: var(--danger-1);
         color: var(--danger-content);
     }
 
-    .button[data-variant="danger"]:hover {
+    .trigger[data-variant="danger"]:hover {
         background-color: var(--danger-2);
     }
 
-    .button[data-variant="success"] {
+    .trigger[data-variant="success"] {
         border: none;
         background-color: var(--success-1);
         color: var(--success-content);
     }
 
-    .button[data-variant="success"]:hover {
+    .trigger[data-variant="success"]:hover {
         background-color: var(--success-2);
     }
 
-    .button[data-variant="info"] {
+    .trigger[data-variant="info"] {
         border: none;
         background-color: var(--info-1);
         color: var(--info-content);
     }
 
-    .button[data-variant="info"]:hover {
+    .trigger[data-variant="info"]:hover {
         background-color: var(--info-2);
     }
 
-    .button[data-variant="warning"] {
+    .trigger[data-variant="warning"] {
         border: none;
         background-color: var(--warning-1);
         color: var(--warning-content);
     }
 
-    .button[data-variant="warning"]:hover {
+    .trigger[data-variant="warning"]:hover {
         background-color: var(--warning-2);
     }
 }
