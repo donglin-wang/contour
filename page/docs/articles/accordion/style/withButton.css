@@ -1,0 +1,12 @@
+@layer variant {
+    .button[data-variant="accordion-options"] {
+        margin-inline-start: auto;
+        padding: var(--space-2);
+        background-color: transparent;
+        border: none;
+    }
+
+    .button[data-variant="accordion-options"]:hover {
+        background-color: var(--background-color-2);
+    }
+}

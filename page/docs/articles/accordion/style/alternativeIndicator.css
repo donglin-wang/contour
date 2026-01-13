@@ -1,0 +1,5 @@
+@layer variant {
+    .accordion__item[data-variant="alternative-indicator"][open] {
+        --accordion-indicator-rotate: 45deg;
+    }
+}

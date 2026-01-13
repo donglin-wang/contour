@@ -1,0 +1,6 @@
+@layer variant {
+    .accordion[data-variant="enclosed"] {
+        border: 1px solid var(--background-color-3);
+        border-radius: 5px;
+    }
+}

@@ -1,0 +1,5 @@
+@layer variant {
+    .accordion__indicator[data-variant="inline-end"] {
+        margin-inline-start: auto;
+    }
+}

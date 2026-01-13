@@ -1,0 +1,38 @@
+@layer pattern {
+    .accordion__item {
+        border-block-end: 1px solid var(--background-color-3);
+    }
+
+    .accordion__item:last-child {
+        border: none;
+    }
+
+    .accordion__item[open] {
+        --accordion-indicator-rotate: 180deg;
+    }
+
+    .accordion__control {
+        display: flex;
+        cursor: pointer;
+        gap: var(--space-3);
+        align-items: center;
+        padding-inline: var(--space-4);
+        padding-block: var(--space-3);
+    }
+
+    .accordion__control:hover {
+        text-decoration: underline;
+    }
+
+    .accordion__content {
+        padding-inline: var(--space-4);
+        padding-block: var(--space-3);
+    }
+
+    .accordion__indicator {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        rotate: var(--accordion-indicator-rotate, 0deg);
+    }
+}

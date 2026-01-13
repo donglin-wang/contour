@@ -40,6 +40,12 @@ export const ArrowDown = (variant = "") =>
 export const ChevronRight = (variant = "") =>
     svg(getAttributes(variant), path({ d: "m9 18 6-6-6-6" }));
 
+export const ChevronUp = (variant = "") =>
+    svg(getAttributes(variant), path({ d: "m18 15-6-6-6 6" }));
+
+export const ChevronDown = (variant = "") =>
+    svg(getAttributes(variant), path({ d: "m6 9 6 6 6-6" }));
+
 export const Play = (variant = "") =>
     svg(
         getAttributes(variant),
@@ -98,6 +104,21 @@ export const CirclePlus = (variant = "") =>
         circle({ cx: "12", cy: "12", r: "10" }),
         path({ d: "M8 12h8" }),
         path({ d: "M12 8v8" })
+    );
+
+export const Plus = (variant = "") =>
+    svg(
+        getAttributes(variant),
+        path({ d: "M5 12h14" }),
+        path({ d: "M12 5v14" })
+    );
+
+export const Ellipsis = (variant = "") =>
+    svg(
+        getAttributes(variant),
+        circle({ cx: "12", cy: "12", r: "1" }),
+        circle({ cx: "19", cy: "12", r: "1" }),
+        circle({ cx: "5", cy: "12", r: "1" })
     );
 
 export const ContourLogo = (variant = "") =>

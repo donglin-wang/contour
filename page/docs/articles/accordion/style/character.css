@@ -1,0 +1,26 @@
+@layer variant {
+    .media[data-variant="accordion-avatar"] {
+        width: var(--space-8);
+        height: var(--space-8);
+        border-radius: 999px;
+    }
+
+    .accordion__control[data-variant="character"]:hover {
+        text-decoration: none;
+    }
+
+    .accordion__section[data-variant="character-bio"] {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2);
+        justify-content: center;
+    }
+
+    .text[data-variant="character-name"] {
+        font-size: var(--font-size-l);
+    }
+
+    .text[data-variant="character-description"] {
+        color: var(--color-3);
+    }
+}
