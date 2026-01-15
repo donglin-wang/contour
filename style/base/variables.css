@@ -65,7 +65,7 @@
         --warning-2: hsl(45, 100%, 46.37%);
         --warning-content: hsl(0deg 0% 10%);
 
-        --shadow-l: 0 10px 15px -3px var(--background-color-2), 0 4px 6px -4px var(--background-color-2)
+        --shadow-l: 0 10px 15px -3px var(--background-color-2), 0 4px 6px -4px var(--background-color-2);
     }
 
     body[data-theme="dark"] {
@@ -91,5 +91,7 @@
         --token-insert: #98c379;
         --token-str: #a5d6ff;
         --token-func: #d2a8ff;
+
+        --shadow-l: 0 10px 15px -3px var(--background-color-2), 0 4px 6px -4px var(--background-color-2);
     }
 }

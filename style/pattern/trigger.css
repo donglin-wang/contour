@@ -9,6 +9,7 @@
         text-decoration: none;
         cursor: pointer;
         font-size: var(--font-size-base);
+        color: var(--color-1);
     }
 
     .trigger:hover {

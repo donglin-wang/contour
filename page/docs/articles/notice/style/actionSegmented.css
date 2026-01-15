@@ -12,15 +12,24 @@
     }
 
     .notice__section[data-variant="action-segmented-control"] {
-        align-items: stretch;
+        align-self: stretch;
+        align-items: center;
+        flex-direction: column;
+        border-inline-start: 1px solid var(--background-color-3);
     }
 
     .trigger[data-variant="notice-segmented-action"] {
+        flex: 1;
         align-self: stretch;
         align-items: center;
+        justify-content: center;
         border: none;
-        border-inline-start: 1px solid var(--background-color-3);
+        border-block-start: 1px solid var(--background-color-3);
         border-radius: 0;
+    }
+
+    .trigger[data-variant="notice-segmented-action"]:first-child {
+        border-block-start: none;
     }
 
     .media[data-variant="notice-avatar"] {

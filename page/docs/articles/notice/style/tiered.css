@@ -16,4 +16,11 @@
     .notice__symbol[data-variant="tiered"] {
         align-self: flex-start;
     }
+
+    .notice__section[data-variant="tiered-control"] {
+        gap: var(--space-3);
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-block-start: var(--space-3);
+    }
 }

@@ -2,4 +2,10 @@
     .accordion__indicator[data-variant="inline-end"] {
         margin-inline-start: auto;
     }
+
+    .trigger[data-variant="accordion-options"] {
+        border: none;
+        padding: var(--space-2);
+        margin-inline-start: auto;
+    }
 }

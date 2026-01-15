@@ -1,0 +1,6 @@
+@layer variant {
+    .trigger.m-tight {
+        padding-inline: var(--space-3);
+        padding-block: var(--space-2);
+    }
+}
