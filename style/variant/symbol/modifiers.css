@@ -1,12 +1,12 @@
 @layer variant {
-    .symbol.m-small {
-        width: 0.75rem;
-        height: 0.75rem;
+    .symbol.m-x-large {
+        width: 1.44rem;
+        height: 1.44rem;
     }
 
     .symbol.m-large {
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 1.2rem;
+        height: 1.2rem;
     }
 
     .symbol.m-success {

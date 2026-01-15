@@ -157,13 +157,6 @@ export default [
                 button(
                     {
                         class: "trigger",
-                        "data-variant": "icon-small",
-                    },
-                    House({class: "symbol m-small"})
-                ),
-                button(
-                    {
-                        class: "trigger",
                         "data-variant": "icon",
                     },
                     House()
@@ -171,9 +164,16 @@ export default [
                 button(
                     {
                         class: "trigger",
-                        "data-variant": "icon-large",
+                        "data-variant": "icon",
                     },
                     House({class: "symbol m-large"})
+                ),
+                button(
+                    {
+                        class: "trigger",
+                        "data-variant": "icon",
+                    },
+                    House({class: "symbol m-x-large"})
                 ),
             )
         ),

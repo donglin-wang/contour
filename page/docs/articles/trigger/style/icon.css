@@ -1,5 +1,5 @@
 @layer variant {
-    .trigger[data-variant^="icon"] {
+    .trigger[data-variant="icon"] {
         padding: var(--space-2);
     }
 }
