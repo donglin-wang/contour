@@ -1,12 +1,12 @@
 @layer variant {
-    .trigger[data-variant="accordion-options"] {
+    .trigger[data-variant="icon-ghost"] {
         margin-inline-start: auto;
         padding: var(--space-2);
         background-color: transparent;
         border: none;
     }
 
-    .trigger[data-variant="accordion-options"]:hover {
+    .trigger[data-variant="icon-ghost"]:hover {
         background-color: var(--background-color-2);
     }
 }

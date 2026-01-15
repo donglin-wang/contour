@@ -1,0 +1,31 @@
+@layer variant {
+    .notice[data-variant="action-segmented"] {
+        overflow: hidden;
+        padding: 0;
+        padding-inline-start: var(--space-4);
+    }
+
+    .notice__section[data-variant="action-segmented"] {
+        flex-direction: column;
+        padding-block: var(--space-4);
+        gap: var(--space-2);
+    }
+
+    .notice__section[data-variant="action-segmented-control"] {
+        align-items: stretch;
+    }
+
+    .trigger[data-variant="notice-segmented-action"] {
+        align-self: stretch;
+        align-items: center;
+        border: none;
+        border-inline-start: 1px solid var(--background-color-3);
+        border-radius: 0;
+    }
+
+    .media[data-variant="notice-avatar"] {
+        width: var(--space-7);
+        height: var(--space-7);
+        border-radius: 999px;
+    }
+}

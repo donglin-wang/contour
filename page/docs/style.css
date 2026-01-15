@@ -20,8 +20,8 @@
         background-image: 
             radial-gradient(circle, var(--background-color-3) 1px, transparent 1px),
             radial-gradient(circle, var(--background-color-3) 1px, transparent 1px);
-        background-size: 10px 10px, 10px 10px;
-        background-position: 0 0, 10px 10px;
+        background-size: 16px 16px, 16px 16px;
+        background-position: 0 0, 8px 8px;
         padding-block: var(--space-7);
     }
 
@@ -79,7 +79,7 @@
 
     .container[data-variant="article-content"] {
         flex: 1;
-        max-width: 40rem;
+        max-width: 48rem;
         margin-inline: auto;
         padding: var(--space-4);
     }

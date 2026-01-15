@@ -19,7 +19,12 @@ export default div(
         class: "container",
         "data-variant": "contour-hero",
     },
-    ContourLogo("contour-logo"),
+    ContourLogo({
+        variant: "contour-logo",
+        fill: "currentColor",
+        stroke: "currentColor",
+        viewBox: "0 0 336 84",
+    }),
     h2(
         {
             class: "typography",

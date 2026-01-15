@@ -187,7 +187,7 @@ const withButton = AccordionContainer(
                 ),
                 "Does this work?",
                 button(
-                    { class: "trigger", "data-variant": "accordion-options" },
+                    { class: "trigger", "data-variant": "icon-ghost" },
                     Ellipsis()
                 )
             ),
@@ -205,7 +205,7 @@ const withButton = AccordionContainer(
                 ),
                 "How about stacked together?",
                 button(
-                    { class: "trigger", "data-variant": "accordion-options" },
+                    { class: "trigger", "data-variant": "icon-ghost" },
                     Ellipsis()
                 )
             ),

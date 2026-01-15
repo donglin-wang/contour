@@ -14,7 +14,7 @@
     .accordion__control {
         display: flex;
         cursor: pointer;
-        gap: var(--space-3);
+        gap: var(--space-4);
         align-items: center;
         padding-inline: var(--space-4);
         padding-block: var(--space-3);

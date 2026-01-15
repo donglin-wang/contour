@@ -21,7 +21,7 @@
         --color-3: hsl(0deg 0% 40%);
 
         --font-size-xs: clamp(0.7813rem, 0.7736rem + 0.0341vw, 0.8rem);
-        --font-size-s: clamp(0.9375rem, 0.9119rem + 0.1136vw, 1rem);
+        --font-size-s: 0.875rem;
         --font-size-base: 1rem;
         --font-size-l: 1.125rem;
         --font-size-xl: 1.25rem;
@@ -48,6 +48,24 @@
         --breakpoint-lg: 64rem;
         --breakpoint-xl: 80rem;
         --breakpoint-2xl: 96rem;
+
+        --danger-1: hsl(354.25, 70.46%, 53.53%);
+        --danger-2: hsl(354.25, 70.46%, 45.53%);
+        --danger-content: hsl(0deg 0% 100%);
+
+        --success-1: hsl(152.18, 68.75%, 31.37%);
+        --success-2: hsl(152.18, 68.75%, 26.37%);
+        --success-content: hsl(0deg 0% 100%);
+
+        --info-1: hsl(190.04, 89.72%, 49.61%);
+        --info-2: hsl(190.04, 89.72%, 44.61%);
+        --info-content: hsl(0deg 0% 10%);
+
+        --warning-1: hsl(45, 100%, 51.37%);
+        --warning-2: hsl(45, 100%, 46.37%);
+        --warning-content: hsl(0deg 0% 10%);
+
+        --shadow-l: 0 10px 15px -3px var(--background-color-2), 0 4px 6px -4px var(--background-color-2)
     }
 
     body[data-theme="dark"] {

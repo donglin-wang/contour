@@ -1,0 +1,15 @@
+@layer variant {
+    .symbol.m-small {
+        width: 0.75rem;
+        height: 0.75rem;
+    }
+
+    .symbol.m-large {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .symbol.m-success {
+        color: hsl(152.18, 68.75%, 31.37%);
+    }
+}

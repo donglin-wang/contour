@@ -1,0 +1,21 @@
+@layer pattern {
+    .notice {
+        display: flex;
+        padding: var(--space-4);
+        background-color: var(--background-color-1);
+        box-shadow: var(--shadow-l);
+        border: 1px solid var(--background-color-3);
+        border-radius: 5px;
+        max-width: var(--notice-max-width, 32rem);
+        gap: var(--space-4);
+        align-items: center;
+    }
+
+    .notice__section {
+        display: flex;
+    }
+
+    .notice__close {
+        margin-inline-start: auto;
+    }
+}

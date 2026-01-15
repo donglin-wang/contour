@@ -6,7 +6,7 @@ import {
     ComponentDisplay,
     ComponentPanel,
     HTMLCodeBlock,
-    CSSCodeBlock
+    CSSCodeBlock,
 } from "/page/docs/component";
 import { FileCode, MapPin, Bookmark } from "/component/symbol";
 

@@ -1,7 +1,7 @@
-import { ComponentDisplay, ComponentPanel, H1, H2 } from "/page/docs/component";
+import { ComponentDisplay, ComponentPanel, H1 } from "/page/docs/component";
 
 import { Child, tags } from "/lib/tags";
-import { ChevronRight } from "/component/symbol";
+import { ChevronRight, House } from "/component/symbol";
 const { button, div, span, b, img } = tags;
 
 const ButtonsContainer = (...children: Child[]) =>
@@ -39,7 +39,7 @@ const ArticleControl = (variantSuffix: "prev" | "next", title) =>
                 variantSuffix === "prev" ? "Previous" : "Next"
             )
         ),
-        ChevronRight(`article-control-chevron-${variantSuffix}`)
+        ChevronRight({ variant: `article-control-chevron-${variantSuffix}` })
     );
 
 export default [
@@ -94,22 +94,19 @@ export default [
             ButtonsContainer(
                 button(
                     {
-                        class: "trigger",
-                        "data-variant": "pill",
+                        class: "trigger m-pill",
                     },
                     "Pill"
                 ),
                 button(
                     {
-                        class: "trigger",
-                        "data-variant": "ghost",
+                        class: "trigger m-ghost",
                     },
                     "Ghost"
                 ),
                 button(
                     {
-                        class: "trigger",
-                        "data-variant": "pill-ghost",
+                        class: "trigger m-pill m-ghost",
                     },
                     "Pill ghost"
                 )
@@ -151,6 +148,33 @@ export default [
                         )
                     )
                 )
+            )
+        ),
+    }),
+    ComponentPanel({
+        display: ComponentDisplay(
+            ButtonsContainer(
+                button(
+                    {
+                        class: "trigger",
+                        "data-variant": "icon-small",
+                    },
+                    House({class: "symbol m-small"})
+                ),
+                button(
+                    {
+                        class: "trigger",
+                        "data-variant": "icon",
+                    },
+                    House()
+                ),
+                button(
+                    {
+                        class: "trigger",
+                        "data-variant": "icon-large",
+                    },
+                    House({class: "symbol m-large"})
+                ),
             )
         ),
     }),

@@ -2,7 +2,7 @@ import inlineEnd from "/page/docs/articles/accordion/style/inlineEndIndicator.cs
 import enclosed from "/page/docs/articles/accordion/style/enclosed.css?inline";
 import character from "/page/docs/articles/accordion/style/character.css?inline";
 import alternative from "/page/docs/articles/accordion/style/alternativeIndicator.css?inline";
-import withButton from "/page/docs/articles/accordion/style/withButton.css?inline";
+import iconGhost from "/style/variant/trigger/iconGhost.css?inline";
 
 const containerStyle = /*css*/`
 @layer variant {
@@ -13,4 +13,4 @@ const containerStyle = /*css*/`
 }`;
 console.log(alternative);
 
-export default containerStyle + inlineEnd + enclosed + character + alternative + withButton;
+export default containerStyle + inlineEnd + enclosed + character + alternative + iconGhost;

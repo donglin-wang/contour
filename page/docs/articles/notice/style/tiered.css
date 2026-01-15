@@ -1,0 +1,19 @@
+@layer variant {
+    .notice__section[data-variant="tiered"] {
+        flex-direction: column;
+        gap: var(--space-2);
+    }
+
+    .text[data-variant="notice-primary"] {
+        font-weight: var(--font-bold);
+    }
+
+    .text[data-variant="notice-secondary"] {
+        color: var(--color-3);
+    }
+
+    .notice__close[data-variant="tiered"],
+    .notice__symbol[data-variant="tiered"] {
+        align-self: flex-start;
+    }
+}
