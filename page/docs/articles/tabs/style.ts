@@ -1,6 +1,6 @@
-import underscored from "/page/docs/articles/tabs/style/underscored.css?inline";
-import backdrop from "/page/docs/articles/tabs/style/backdrop.css?inline";
-import enclosed from "/page/docs/articles/tabs/style/enclosed.css?inline";
-import outlined from "/page/docs/articles/tabs/style/outlined.css?inline";
+import underscored from "/style/variant/tabs/underscored.css?inline";
+import backdrop from "/style/variant/tabs/backdrop.css?inline";
+import enclosed from "/style/variant/tabs/enclosed.css?inline";
+import outlined from "/style/variant/tabs/outlined.css?inline";
 
 export default underscored + backdrop + enclosed + outlined;

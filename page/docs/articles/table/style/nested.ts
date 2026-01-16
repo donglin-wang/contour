@@ -1,5 +1,5 @@
-import { complexPatientSpec } from "../data";
-import { construcHeaderStyle, calculateHeaderDimensions } from "../component";
+import { complexPatientSpec } from "/page/docs/articles/table/data";
+import { construcHeaderStyle, calculateHeaderDimensions } from "/page/docs/articles/table/component";
 
 const dimensions = calculateHeaderDimensions(complexPatientSpec);
 const headerStyle = construcHeaderStyle(dimensions, "nested-header");

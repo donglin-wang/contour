@@ -11,7 +11,7 @@ export default [
         display: ComponentDisplay(
             div(
                 { class: "notice" },
-                CircleCheck(),
+                CircleCheck({class: "symbol m-large"}),
                 "Successfully uploaded",
                 button({ class: "trigger m-ghost", "data-variant": "icon" }, X())
             )

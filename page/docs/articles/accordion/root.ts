@@ -16,9 +16,9 @@ import {
 } from "/component/symbol";
 
 import accordionStyle from "/style/pattern/accordion.css?inline";
-import inlineEndStyle from "/page/docs/articles/accordion/style/inlineEndIndicator.css?inline";
-import enclosedStyle from "/page/docs/articles/accordion/style/enclosed.css?inline";
-import alternativeStyle from "/page/docs/articles/accordion/style/alternativeIndicator.css?inline";
+import inlineEndStyle from "/style/variant/accordion/inlineEndIndicator.css?inline";
+import enclosedStyle from "/style/variant/accordion/enclosed.css?inline";
+import alternativeStyle from "/style/variant/accordion/alternativeIndicator.css?inline";
 
 import type { Child } from "/lib/tags";
 

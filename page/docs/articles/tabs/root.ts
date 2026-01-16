@@ -10,10 +10,10 @@ import { tags } from "/lib/tags";
 import { registerTabsBehavior } from "/page/docs/articles/tabs/behavior";
 
 import defaultStyle from "/style/pattern/tabs.css?inline";
-import underscoredStyle from "/page/docs/articles/tabs/style/underscored.css?inline";
-import backdropStyle from "/page/docs/articles/tabs/style/backdrop.css?inline";
-import enclosedStyle from "/page/docs/articles/tabs/style/enclosed.css?inline";
-import outlinedStyle from "/page/docs/articles/tabs/style/outlined.css?inline";
+import underscoredStyle from "/style/variant/tabs/underscored.css?inline";
+import backdropStyle from "/style/variant/tabs/backdrop.css?inline";
+import enclosedStyle from "/style/variant/tabs/enclosed.css?inline";
+import outlinedStyle from "/style/variant/tabs/outlined.css?inline";
 
 const { div } = tags;
 

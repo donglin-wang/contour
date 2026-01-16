@@ -11,9 +11,9 @@ import {
 import { FileCode, MapPin, Bookmark } from "/component/symbol";
 
 import menuStyle from "/style/pattern/menu.css?inline";
-import shortcutStyle from "/page/docs/articles/menu/style/shortcut.css?raw";
-import indentedStyle from "/page/docs/articles/menu/style/indented.css?raw";
-import nestedStyle from "/page/docs/articles/menu/style/nested.css?raw";
+import shortcutStyle from "/style/variant/menu/shortcut.css?raw";
+import indentedStyle from "/style/variant/menu/indented.css?raw";
+import nestedStyle from "/style/variant/menu/nested.css?raw";
 
 const { div, kbd, span, hr } = tags;
 

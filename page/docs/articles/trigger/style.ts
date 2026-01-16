@@ -1,8 +1,8 @@
-import colored from "/page/docs/articles/trigger/style/colored.css?inline";
-import articleControl from "/page/docs/articles/trigger/style/articleControl.css?inline";
-import modifiers from "/page/docs/articles/trigger/style/modifiers.css?inline";
-import preview from "/page/docs/articles/trigger/style/preview.css?inline";
-import icon from "/page/docs/articles/trigger/style/icon.css?inline";
+import colored from "/style/variant/trigger/colored.css?inline";
+import articleControl from "/style/variant/trigger/articleControl.css?inline";
+import modifiers from "/style/variant/trigger/modifiers.css?inline";
+import preview from "/style/variant/trigger/preview.css?inline";
+import icon from "/style/variant/trigger/icon.css?inline";
 import iconModifiers from "/style/variant/symbol/modifiers.css?inline";
 
 const containerStyle = /*css*/ `

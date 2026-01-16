@@ -8,11 +8,11 @@ import {
     CSSCodeBlock,
     HTMLCodeBlock,
 } from "/page/docs/component";
-import defaultStyle from "/page/docs/articles/table/style/default.css?inline";
-import rowBorderedStyle from "/page/docs/articles/table/style/rowBordered.css?inline";
-import columnBorderedStyle from "/page/docs/articles/table/style/columnBordered.css?inline";
-import rowStickyStyle from "/page/docs/articles/table/style/rowSticky.css?inline";
-import columnStickyStyle from "/page/docs/articles/table/style/columnSticky.css?inline";
+import defaultStyle from "/style/variant/table/default.css?inline";
+import rowBorderedStyle from "/style/variant/table/rowBordered.css?inline";
+import columnBorderedStyle from "/style/variant/table/columnBordered.css?inline";
+import rowStickyStyle from "/style/variant/table/rowSticky.css?inline";
+import columnStickyStyle from "/style/variant/table/columnSticky.css?inline";
 import nestedStyle from "/page/docs/articles/table/style/nested";
 
 const defaultTable = constructTable(

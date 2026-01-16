@@ -1,8 +1,8 @@
-import inlineEnd from "/page/docs/articles/accordion/style/inlineEndIndicator.css?inline";
-import enclosed from "/page/docs/articles/accordion/style/enclosed.css?inline";
-import character from "/page/docs/articles/accordion/style/character.css?inline";
-import alternative from "/page/docs/articles/accordion/style/alternativeIndicator.css?inline";
-import icon from "/page/docs/articles/trigger/style/icon.css?inline";
+import inlineEnd from "/style/variant/accordion/inlineEndIndicator.css?inline";
+import enclosed from "/style/variant/accordion/enclosed.css?inline";
+import character from "/style/variant/accordion/character.css?inline";
+import alternative from "/style/variant/accordion/alternativeIndicator.css?inline";
+import icon from "/style/variant/trigger/icon.css?inline";
 import modifiers from "/style/variant/trigger/modifiers.css?inline";
 
 const containerStyle = /*css*/`
