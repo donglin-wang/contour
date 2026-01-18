@@ -5,13 +5,18 @@ import alternative from "/style/variant/accordion/alternativeIndicator.css?inlin
 import icon from "/style/variant/trigger/icon.css?inline";
 import modifiers from "/style/variant/trigger/modifiers.css?inline";
 
-const containerStyle = /*css*/`
+const containerStyle = /*css*/ `
 @layer variant {
     .accordion[data-variant="accordion-display"] {
         flex: 1;
         padding: var(--space-5);
     }
 }`;
-console.log(alternative);
 
-export default containerStyle + inlineEnd + enclosed + character + alternative + icon + modifiers;
+export default containerStyle +
+    inlineEnd +
+    enclosed +
+    character +
+    alternative +
+    icon +
+    modifiers;

@@ -1,0 +1,35 @@
+@layer variant {
+    .card__section[data-variant="product-body"] {
+        flex-direction: row;
+        gap: var(--space-2);
+        justify-content: space-between;
+    }
+    
+    .card__section[data-variant="product-content"] {
+        padding: 0;
+        border-bottom: none;
+        gap: var(--space-2);
+    }
+
+    .card__section[data-variant="product-control"] {
+        flex-direction: row;
+    }
+
+    .text[data-variant="product-primary"] {
+        font-size: var(--font-size-l);
+        font-weight: var(--font-bold);
+    }
+
+    .text[data-variant="product-secondary"] {
+        color: var(--color-3);
+    }
+
+    .text[data-variant="product-price"] {
+        font-size: var(--font-size-l);
+    }
+
+    .trigger[data-variant="product-add-cart"] {
+        flex: 1;
+        justify-content: center;
+    }
+}

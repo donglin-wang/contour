@@ -124,7 +124,7 @@ export default [
                     img({
                         class: "media",
                         "data-variant": "preview-trigger",
-                        src: "/asset/image/contour-letter.svg",
+                        src: "/asset/image/accessibility.jpg",
                         alt: "Linux penguin",
                     }),
                     span(
@@ -137,7 +137,7 @@ export default [
                                 class: "text",
                                 "data-variant": "preview-primary",
                             },
-                            "Getting started with Contour"
+                            "Learn more about web accessibility"
                         ),
                         span(
                             {

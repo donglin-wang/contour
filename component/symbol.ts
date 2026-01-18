@@ -146,6 +146,30 @@ export const House = (attributes?: SymbolAttributes) =>
         })
     );
 
+export const Heart = (attributes?: SymbolAttributes) =>
+    svg(
+        getAttributes(attributes),
+        path({
+            d: "M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5",
+        })
+    );
+
+export const MessageSquare = (attributes?: SymbolAttributes) =>
+    svg(
+        getAttributes(attributes),
+        path({
+            d: "M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z",
+        })
+    );
+
+export const Share = (attributes?: SymbolAttributes) =>
+    svg(
+        getAttributes(attributes),
+        path({ d: "M12 2v13" }),
+        path({ d: "m16 6-4-4-4 4" }),
+        path({ d: "M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" })
+    );
+
 export const ContourLogo = (attributes?: SymbolAttributes) =>
     svg(
         getAttributes(attributes),

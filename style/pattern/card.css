@@ -1,0 +1,20 @@
+@layer pattern {
+    .card {
+        display: block;
+        border: 1px solid var(--background-color-3);
+        border-radius: 5px;
+        background-color: var(--background-color-1);
+    }
+
+    .card__section {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3);
+        padding: var(--space-4);
+        border-block-end: 1px solid var(--background-color-3);
+    }
+
+    .card__section:last-child {
+        border-block-end: none;
+    }
+}

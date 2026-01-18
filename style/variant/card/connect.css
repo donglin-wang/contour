@@ -1,0 +1,52 @@
+@layer variant {
+    .card[data-variant="connect"] {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+        padding-block-end: var(--space-4);
+        padding-block-start: var(--space-5);
+        position: relative;
+    }
+
+    .card__section[data-variant^="connect"] {
+        align-items: center;
+        border-block-end: none;
+        padding-block: 0;
+    }
+
+    .card__section[data-variant="connect-body"] {
+        gap: var(--space-1);
+    }
+
+    .media[data-variant="connect-avatar"] {
+        width: var(--space-9);
+        height: var(--space-9);
+        border-radius: 999px;
+    }
+
+    .text[data-variant="connect-name"] {
+        font-size: var(--font-size-l);
+        font-weight: var(--font-bold);
+    }
+
+    .text[data-variant="connect-title"],
+    .text[data-variant="connect-company"] {
+        color: var(--color-3);
+        font-size: var(--font-size-s);
+    }
+
+    .trigger[data-variant="connect"] {
+        justify-content: center;
+        padding-inline: var(--space-6);
+        font-size: var(--font-size-l);
+    }
+
+    .trigger[data-variant="connect-close"] {
+        position: absolute;
+        right: var(--space-2);
+        top: var(--space-2);
+        border: none;
+        padding: var(--space-2);
+        border-radius: 999px;
+    }
+}
