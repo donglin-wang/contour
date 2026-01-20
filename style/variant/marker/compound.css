@@ -1,0 +1,33 @@
+@layer variant {
+    .marker[data-variant="compound"] {
+        overflow: hidden;
+        border-radius: 5px;
+        line-height: 1.5;
+        align-items: stretch;
+    }
+
+    .marker[data-variant="compound-item"] {
+        align-items: center;
+        padding-inline: var(--space-1);
+    }
+
+    .marker[data-variant="compound-item"].m-danger {
+        background-color: var(--danger-1);
+        color: var(--danger-content);
+    }
+
+    .marker[data-variant="compound-item"].m-danger-muted {
+        background-color: var(--danger-2);
+        color: var(--danger-content);
+    }
+
+    .marker[data-variant="compound-item"].m-inverse {
+        background-color: var(--background-color-inverse-1);
+        color: var(--color-inverse-1);
+    }
+
+    .marker[data-variant="compound-item"].m-success {
+        background-color: var(--success-1);
+        color: var(--success-content);
+    }
+}

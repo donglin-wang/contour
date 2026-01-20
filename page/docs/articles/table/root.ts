@@ -13,7 +13,7 @@ import rowBorderedStyle from "/style/variant/table/rowBordered.css?inline";
 import columnBorderedStyle from "/style/variant/table/columnBordered.css?inline";
 import rowStickyStyle from "/style/variant/table/rowSticky.css?inline";
 import columnStickyStyle from "/style/variant/table/columnSticky.css?inline";
-import nestedStyle from "/page/docs/articles/table/style/nested";
+import nestedStyle from "/page/docs/articles/table/style";
 
 const defaultTable = constructTable(
     patientSepc,

@@ -1,0 +1,21 @@
+@layer variant {
+    .marker[data-variant="closeable"] {
+        border: 1px solid var(--background-color-3);
+        gap: var(--space-1);
+        padding-inline-start: var(--space-2);
+        align-items: center;
+        border-radius: 999px;
+        line-height: 1.5;
+    }
+
+    .trigger[data-variant="marker-close"] {
+        padding: var(--space-1);
+        border-radius: 99px;
+        border: none;
+    }
+
+    .symbol[data-variant="marker-close"] {
+        width: var(--space-3);
+        height: var(--space-3);
+    }
+}

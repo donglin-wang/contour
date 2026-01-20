@@ -1,0 +1,11 @@
+@layer variant {
+    .marker[data-variant="kbd"] {
+        color: var(--color-3);
+        border: 1px solid var(--background-color-3);
+        border-block-end-width: 2px;
+        font-size: var(--font-size-xs);
+        padding-inline: var(--space-1);
+        border-radius: 5px;
+        line-height: 1.5;
+    }
+}

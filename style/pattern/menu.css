@@ -12,13 +12,13 @@
         padding: var(--space-4);
         margin: 0;
         color: var(--color-1);
+        align-items: center;
     }
 
     .menu__item {
         text-decoration: none;
         cursor: pointer;
         gap: var(--space-2);
-        align-items: baseline;
     }
     
     .menu__item:hover {

@@ -1,6 +1,5 @@
 @layer variant {
-    .kbd[data-variant="menu-shortcut"] {
+    .menu__section[data-variant="item-end"] {
         margin-inline-start: auto;
-        font-size: var(--font-size-base);
     }
 }

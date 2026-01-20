@@ -20,6 +20,9 @@
         --color-2: hsl(0deg 0% 20%);
         --color-3: hsl(0deg 0% 40%);
 
+        --background-color-inverse-1: hsl(0deg 0% 10%);
+        --color-inverse-1: hsl(0deg 0% 100%);
+
         --font-size-xs: clamp(0.7813rem, 0.7736rem + 0.0341vw, 0.8rem);
         --font-size-s: 0.875rem;
         --font-size-base: 1rem;
@@ -66,6 +69,21 @@
         --warning-content: hsl(0deg 0% 10%);
 
         --shadow-l: 0 10px 15px -3px var(--background-color-2), 0 4px 6px -4px var(--background-color-2);
+
+        --token-cmnt: #6e7781;
+        --token-deleted: #cf222e;
+        --token-err: #cf222e;
+        --token-kwd: #cf222e;
+        --token-class: #953800;
+        --token-type: #0550ae;
+        --token-oper: #0550ae;
+        --token-num: #0550ae;
+        --token-section: #0550ae;
+        --token-var: #0550ae;
+        --token-bool: #0550ae;
+        --token-insert: #0a3069;
+        --token-str: #0a3069;
+        --token-func: #8250df;
     }
 
     body[data-theme="dark"] {

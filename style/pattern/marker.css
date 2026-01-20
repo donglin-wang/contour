@@ -1,0 +1,5 @@
+@layer pattern {
+    .marker {
+        display: inline-flex;
+    }
+}

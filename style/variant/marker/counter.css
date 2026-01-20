@@ -1,0 +1,19 @@
+@layer variant {
+    .marker[data-variant="counter"] {
+        position: absolute;
+        font-size: 1rem;
+        top: 0;
+        right: 0;
+        translate: 50%, -50%;
+        padding-inline: var(--space-2);
+        padding-block: var(--space-1);
+        translate: 50% -50%;
+        font-size: var(--font-size-xs);
+        border-radius: 99px;
+    }
+
+    .marker[data-variant="counter"].m-danger {
+        background-color: var(--danger-1);
+        color: var(--danger-content);
+    }
+}

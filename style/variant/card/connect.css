@@ -37,7 +37,7 @@
 
     .trigger[data-variant="connect"] {
         justify-content: center;
-        padding-inline: var(--space-6);
+        padding-inline: var(--space-7);
         font-size: var(--font-size-l);
     }
 

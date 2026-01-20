@@ -1,0 +1,18 @@
+@layer variant {
+    .marker[data-variant="toggleable"] {
+        background-color: var(--background-color-2);
+        cursor: pointer;
+        line-height: 1.5;
+        padding-inline: var(--space-2);
+        border-radius: 99px;
+    }
+
+    .marker[data-variant="toggleable"]:hover {
+        background-color: var(--background-color-3);
+    }
+
+    .marker[data-variant="toggleable"][aria-selected="true"] {
+        background-color: var(--background-color-inverse-1);
+        color: var(--color-inverse-1);
+    }
+}

@@ -60,12 +60,18 @@ const withSymbolKBD = div(
         },
         MapPin(),
         "Item 1",
-        kbd(
+        div(
             {
-                class: "kbd",
-                "data-variant": "menu-shortcut",
+                class: "menu__section",
+                "data-variant": "item-end",
             },
-            "Ctrl P"
+            kbd(
+                {
+                    class: "marker",
+                    "data-variant": "kbd",
+                },
+                "Ctrl P"
+            )
         )
     ),
     div(
@@ -74,12 +80,18 @@ const withSymbolKBD = div(
         },
         Bookmark(),
         "Item 2",
-        kbd(
+        div(
             {
-                class: "kbd",
-                "data-variant": "menu-shortcut",
+                class: "menu__section",
+                "data-variant": "item-end",
             },
-            "Ctrl C"
+            kbd(
+                {
+                    class: "marker",
+                    "data-variant": "kbd",
+                },
+                "Ctrl C"
+            )
         )
     ),
     div(
@@ -88,12 +100,18 @@ const withSymbolKBD = div(
         },
         FileCode(),
         "Item 3",
-        kbd(
+        div(
             {
-                class: "kbd",
-                "data-variant": "menu-shortcut",
+                class: "menu__section",
+                "data-variant": "item-end",
             },
-            "Ctrl D"
+            kbd(
+                {
+                    class: "marker",
+                    "data-variant": "kbd",
+                },
+                "Ctrl D"
+            )
         )
     )
 );
