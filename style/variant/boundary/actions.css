@@ -1,0 +1,26 @@
+@layer variant {
+    .boundary[data-variant="actions"] {
+        border-block: 1px solid var(--background-color-3);
+        height: var(--space-3);
+        justify-content: center;
+    }
+
+    .trigger[data-variant="boundary-control"] {
+        height: 100%;
+        padding: 0;
+        min-width: var(--space-7);
+        border: none;
+        background-color: var(--background-color-1);
+        color: var(--color-3);
+        border-radius: 0;
+        justify-content: center;
+    }
+
+    .trigger[data-variant="boundary-control"]:hover {
+        background-color: var(--background-color-2);
+    }
+
+    .symbol[data-variant="boundary-symbol"] {
+        height: 100%;
+    }
+}

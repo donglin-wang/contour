@@ -1,0 +1,22 @@
+@layer variant {
+    .boundary[data-variant="draggable"] {
+        justify-content: center;
+        height: var(--space-3);
+        border-block: 1px solid var(--background-color-3);
+    }
+
+    .boundary[data-variant="draggable-control"] {
+        height: var(100% - 2px);
+        margin-block: 2px;
+        width: var(--space-7);
+        flex-basis: var(--sapce-7);
+        cursor: row-resize;
+        background-color: var(--background-color-2);
+        border-radius: 99px;
+        border: none;
+    }
+
+    .boundary[data-variant="draggable-control"]:hover {
+        background-color: var(--background-color-3);
+    }
+}
