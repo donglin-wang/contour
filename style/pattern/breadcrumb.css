@@ -1,0 +1,32 @@
+@layer base {
+    .breadcrumb {
+        display: flex;
+        padding: unset;
+        list-style: none;
+        align-items: center;
+    }
+
+    .breadcrumb__divider {
+        display: inline-flex;
+        padding-inline: var(--space-2);
+        align-items: center;
+    }
+
+    .breadcrumb__control {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+    }
+
+    .breadcrumb__control,
+    .breadcrumb__control:active,
+    .breadcrumb__control:visited {
+        color: var(--color);
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .breadcrumb__control:hover {
+        text-decoration: underline;
+    }
+}

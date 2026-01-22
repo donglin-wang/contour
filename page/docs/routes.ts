@@ -104,6 +104,12 @@ const articles: ArticleSpec[] = [
         importArticle: () => import("/page/docs/articles/boundary/root"),
         importStyle: () => import("/page/docs/articles/boundary/style"),
     },
+    {
+        path: "docs/breadcrumb",
+        title: "Breadcrumb",
+        importArticle: () => import("/page/docs/articles/breadcrumb/root"),
+        importStyle: () => import("/page/docs/articles/breadcrumb/style"),
+    },
 ];
 
 export default articles.map((article) => ({

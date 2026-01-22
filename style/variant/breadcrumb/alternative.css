@@ -1,0 +1,16 @@
+@layer variant {
+    .breadcrumb__control[data-variant="alternative"] {
+        border-radius: 5px;
+        padding-block: var(--space-1);
+        padding-inline: var(--space-1);
+    }
+
+    .breadcrumb__divider[data-variant="alternative"] {
+        padding-inline: var(--space-1);
+    }
+
+    .breadcrumb__control[data-variant="alternative"]:hover {
+        text-decoration: none;
+        background-color: var(--background-color-2);
+    }
+}
