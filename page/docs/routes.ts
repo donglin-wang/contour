@@ -110,6 +110,12 @@ const articles: ArticleSpec[] = [
         importArticle: () => import("/page/docs/articles/breadcrumb/root"),
         importStyle: () => import("/page/docs/articles/breadcrumb/style"),
     },
+    {
+        path: "docs/modal",
+        title: "Modal",
+        importArticle: () => import("/page/docs/articles/modal/root"),
+        importStyle: () => import("/page/docs/articles/modal/style"),
+    },
 ];
 
 export default articles.map((article) => ({

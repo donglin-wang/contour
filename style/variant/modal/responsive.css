@@ -1,0 +1,6 @@
+@layer variant {
+    .modal[data-variant="responsive"] {
+        width: calc(100% - 2 * var(--space-4));
+        max-width: 32rem;
+    }
+}

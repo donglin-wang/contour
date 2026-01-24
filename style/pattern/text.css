@@ -1,0 +1,8 @@
+@layer pattern {
+    .text {
+        font-size: inherit;
+        font-weight: inherit;
+        text-decoration: inherit;
+        margin: 0;
+    }
+}

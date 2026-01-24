@@ -1,0 +1,5 @@
+@layer variant {
+    .text.m-bold {
+        font-weight: var(--font-bold);
+    }
+}

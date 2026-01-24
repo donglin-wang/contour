@@ -74,7 +74,7 @@ const post = CardContainer(
             {
                 class: "card__section",
             },
-            b({ class: "text" }, "Card body title"),
+            b({ class: "text", "data-variant": "post-primary"}, "Card body title"),
             span(
                 { class: "text" },
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "

@@ -1,0 +1,7 @@
+@layer variant {
+    .modal__close[data-variant="cornered"] {
+        position: absolute;
+        inset-inline-end: var(--space-2);
+        inset-block-start: var(--space-2);
+    }
+}
