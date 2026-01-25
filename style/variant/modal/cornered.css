@@ -1,4 +1,8 @@
 @layer variant {
+    .modal__dialog[data-variant="cornered"] {
+        position: relative;
+    }
+
     .modal__close[data-variant="cornered"] {
         position: absolute;
         inset-inline-end: var(--space-2);

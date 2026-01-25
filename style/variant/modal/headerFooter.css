@@ -1,5 +1,5 @@
 @layer variant {
-    .modal[data-variant="sectioned"] {
+    .modal__dialog[data-variant="sectioned"] {
         padding: 0;
         gap: 0;
     }
@@ -7,12 +7,12 @@
     .modal__section[data-variant="sectioned-body"],
     .modal__section[data-variant="sectioned-header"] {
         border-block-end: 1px solid var(--background-color-2);
+        padding: var(--space-4);
     }
 
-    .modal__section[data-variant="sectioned-body"],
-    .modal__section[data-variant="sectioned-header"],
     .modal__section[data-variant="sectioned-footer"] {
-        padding: var(--space-4);
+        padding-block: var(--space-3);
+        padding-inline: var(--space-4)
     }
 
     .text[data-variant="sectioned-modal-title"] {

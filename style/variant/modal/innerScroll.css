@@ -1,0 +1,15 @@
+@layer variant {
+    .modal__dialog[data-variant="inner-scroll"] {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+        max-height: 100%;
+        max-width: 32rem;
+        align-items: flex-start;
+        gap: var(--space-4);
+    }
+
+    .modal__section[data-variant="inner-scroll"] {
+        overflow: auto;
+    }
+}

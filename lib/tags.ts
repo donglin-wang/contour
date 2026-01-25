@@ -1,8 +1,8 @@
 export type Primitive = string | number | boolean | bigint;
 
-export type Child = Primitive | Element ;
+export type Child = Primitive | Element;
 
-export type Attributes = Record<string, Primitive> 
+export type Attributes = Record<string, Primitive>;
 
 export type TagFunc<ElementType> = (
     first?: Attributes | Child,
@@ -10,11 +10,11 @@ export type TagFunc<ElementType> = (
 ) => ElementType;
 
 export type HTMLTags = {
-    [K in keyof HTMLElementTagNameMap]: TagFunc<HTMLElementTagNameMap[K]>
+    [K in keyof HTMLElementTagNameMap]: TagFunc<HTMLElementTagNameMap[K]>;
 };
 
 export type SVGTags = {
-    [K in keyof SVGElementTagNameMap]: TagFunc<SVGElementTagNameMap[K]>
+    [K in keyof SVGElementTagNameMap]: TagFunc<SVGElementTagNameMap[K]>;
 };
 
 const buildHTMLElement = <T extends keyof HTMLElementTagNameMap>(
@@ -29,18 +29,26 @@ const buildHTMLElement = <T extends keyof HTMLElementTagNameMap>(
     return element;
 };
 
-const buildSVGElement = <T extends keyof SVGElementTagNameMap>(name: T,
+const buildSVGElement = <T extends keyof SVGElementTagNameMap>(
+    name: T,
     first?: Attributes | Child,
     ...rest: Child[]
 ) => {
-    const element = document.createElementNS<T>("http://www.w3.org/2000/svg", name);
+    const element = document.createElementNS<T>(
+        "http://www.w3.org/2000/svg",
+        name
+    );
 
     populate(element, first, ...rest);
 
     return element;
-}
+};
 
-export const populate = (root: Element | ShadowRoot, first?: Attributes | Child, ...rest: Child[]) => {
+export const populate = (
+    root: Element | ShadowRoot,
+    first?: Attributes | Child,
+    ...rest: Child[]
+) => {
     let children: Child[];
 
     if (
@@ -53,6 +61,8 @@ export const populate = (root: Element | ShadowRoot, first?: Attributes | Child,
         Object.entries(first).forEach(([key, value]) => {
             if (value !== undefined && value !== null) {
                 root.setAttribute(key, value.toString());
+            } else {
+                root.toggleAttribute(key, true);
             }
         });
         children = rest;
@@ -67,16 +77,18 @@ export const populate = (root: Element | ShadowRoot, first?: Attributes | Child,
             root.appendChild(new Text(child.toString()));
         }
     });
-}
+};
 
 export const tags = new Proxy({} as HTMLTags, {
     get(_, prop: keyof HTMLElementTagNameMap) {
-        return (first, ...children) => buildHTMLElement(prop, first, ...children);
+        return (first, ...children) =>
+            buildHTMLElement(prop, first, ...children);
     },
 });
 
 export const svgTags = new Proxy({} as SVGTags, {
     get(_, prop: keyof SVGElementTagNameMap) {
-        return (first, ...children) => buildSVGElement(prop, first, ...children);
+        return (first, ...children) =>
+            buildSVGElement(prop, first, ...children);
     },
-})
+});

@@ -1,44 +1,48 @@
 @layer pattern {
-    .modal-backdrop[data-open] {
+    .modal {
+        display: none;
+        margin: 0;
+        border: none;
         position: fixed;
         inset-inline-start: 0;
         inset-block-start: 0;
-        width: 100%;
         height: 100%;
-    }
-
-    .modal[open],
-    .modal-backdrop[data-open] {
-        --modal-display: flex;
-    }
-
-    .modal {
-        display: var(--modal-display, none);
-        flex-direction: column;
-        align-items: start;
-        gap: var(--space-4);
-        position: fixed;
-        background-color: var(--background-color-1);
-        border: 1px solid var(--background-color-3);
-        border-radius: 5px;
-        top: 50%;
-        left: 50%;
-        translate: -50% -50%;
-        padding: var(--space-4);
-        margin: 0;
-    }
-
-    .modal-backdrop[data-open],
-    .modal::backdrop {
+        width: 100%;
         background-color: color-mix(
             in hsl,
-            var(--background-color-2) 50%,
-            transparent
+            var(--background-color-2),
+            transparent 50%
         );
+        max-width: none;
+        max-height: none;
+        overflow: auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal::backdrop {
+        display: none;
+    }
+
+    .modal[data-open],
+    .modal[open] {
+        display: flex;
+    }
+
+    .modal__dialog {
+        display: block;
+        margin: 0;
+        padding: var(--space-4);
+        border: 1px solid var(--background-color-2);
+        border-radius: 5px;
+        background-color: var(--background-color-1);
     }
 
     .modal__section {
         display: flex;
         width: 100%;
+        flex-direction: column;
+        align-items: start;
+        gap: var(--space-4);
     }
 }

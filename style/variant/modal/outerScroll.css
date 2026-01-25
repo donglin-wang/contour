@@ -1,0 +1,11 @@
+@layer variant {
+    .modal[data-variant="outer-scroll"] {
+        overflow: auto;
+        padding: var(--space-6);
+        align-items: start;
+    }
+
+    .modal__dialog[data-variant="outer-scroll"] {
+        max-width: 32rem;
+    }
+}
