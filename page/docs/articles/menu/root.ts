@@ -330,7 +330,7 @@ export default [
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(defaultMenu),
-            "component-display-muted"
+            "component-display-stripe"
         ),
         sources: {
             HTML: HTMLCodeBlock(defaultMenu),
@@ -341,7 +341,7 @@ export default [
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(withTitle),
-            "component-display-muted"
+            "component-display-stripe"
         ),
         sources: {
             HTML: HTMLCodeBlock(withTitle),
@@ -351,7 +351,7 @@ export default [
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(withSymbolKBD),
-            "component-display-muted"
+            "component-display-stripe"
         ),
         sources: {
             HTML: HTMLCodeBlock(withSymbolKBD),
@@ -362,7 +362,7 @@ export default [
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(indented),
-            "component-display-muted"
+            "component-display-stripe"
         ),
         sources: {
             HTML: HTMLCodeBlock(indented),
@@ -373,7 +373,7 @@ export default [
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(nested),
-            "component-display-muted"
+            "component-display-stripe"
         ),
         sources: {
             HTML: HTMLCodeBlock(nested),
@@ -384,7 +384,7 @@ export default [
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(titleNested),
-            "component-display-muted"
+            "component-display-stripe"
         ),
         sources: {
             HTML: HTMLCodeBlock(titleNested),
@@ -394,7 +394,7 @@ export default [
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(withDivider),
-            "component-display-muted"
+            "component-display-stripe"
         ),
         sources: {
             HTML: HTMLCodeBlock(withDivider),

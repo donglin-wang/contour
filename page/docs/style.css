@@ -12,14 +12,22 @@
 
     .container[data-variant="component-display"],
     .container[data-variant="component-display-muted"],
-    .container[data-variant="component-display-table"] {
+    .container[data-variant="component-display-table"],
+    .container[data-variant="component-display-stripe"] {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
-        background-image: 
-            radial-gradient(circle, var(--background-color-3) 1px, transparent 1px),
-            radial-gradient(circle, var(--background-color-3) 1px, transparent 1px);
+        background-image: radial-gradient(
+                circle,
+                var(--background-color-3) 1px,
+                transparent 1px
+            ),
+            radial-gradient(
+                circle,
+                var(--background-color-3) 1px,
+                transparent 1px
+            );
         background-size: 16px 16px, 16px 16px;
         background-position: 0 0, 8px 8px;
         padding-block: var(--space-7);
@@ -27,6 +35,17 @@
 
     .container[data-variant="component-display-muted"] {
         background-color: var(--background-color-2);
+    }
+
+    .container[data-variant="component-display-stripe"] {
+        background-image: repeating-linear-gradient(
+            315deg,
+            var(--background-color-3) 0,
+            var(--background-color-3) 1px,
+            transparent 0,
+            transparent 50%
+        );
+        background-size: 8px 8px;
     }
 
     .container[data-variant="component-display-table"] {
