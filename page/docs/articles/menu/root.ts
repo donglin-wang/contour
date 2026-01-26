@@ -2,7 +2,6 @@ import { tags } from "/lib/tags";
 import {
     H1,
     H2,
-    P,
     ComponentDisplay,
     ComponentPanel,
     HTMLCodeBlock,
