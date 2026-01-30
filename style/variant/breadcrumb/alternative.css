@@ -11,6 +11,6 @@
 
     .breadcrumb__control[data-variant="alternative"]:hover {
         text-decoration: none;
-        background-color: var(--background-color-2);
+        background-color: var(--background-muted);
     }
 }

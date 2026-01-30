@@ -15,7 +15,7 @@
         align-self: stretch;
         align-items: center;
         flex-direction: column;
-        border-inline-start: 1px solid var(--background-color-3);
+        border-inline-start: var(--border-width-1) solid var(--border-color);
     }
 
     .trigger[data-variant="notice-segmented-action"] {
@@ -24,7 +24,7 @@
         align-items: center;
         justify-content: center;
         border: none;
-        border-block-start: 1px solid var(--background-color-3);
+        border-block-start: var(--border-width-1) solid var(--border-color);
         border-radius: 0;
     }
 

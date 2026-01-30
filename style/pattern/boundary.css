@@ -1,6 +1,6 @@
 @layer pattern {
     .boundary {
-        border-block-start: 1px solid var(--background-color-3);
+        border-block-start: var(--border-width-1) solid var(--border-color);
         border-block-end: none;
         display: flex;
     }

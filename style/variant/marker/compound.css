@@ -12,13 +12,13 @@
     }
 
     .marker[data-variant="compound-item"].m-danger {
-        background-color: var(--danger-1);
-        color: var(--danger-content);
+        background-color: var(--danger);
+        color: var(--danger-text);
     }
 
     .marker[data-variant="compound-item"].m-danger-muted {
-        background-color: var(--danger-2);
-        color: var(--danger-content);
+        background-color: var(--danger-muted);
+        color: var(--danger-text);
     }
 
     .marker[data-variant="compound-item"].m-inverse {
@@ -27,7 +27,7 @@
     }
 
     .marker[data-variant="compound-item"].m-success {
-        background-color: var(--success-1);
-        color: var(--success-content);
+        background-color: var(--success);
+        color: var(--success-text);
     }
 }

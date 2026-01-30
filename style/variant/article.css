@@ -13,30 +13,32 @@
     .text[data-variant="p"],
     .text[data-variant="list"],
     .text[data-variant="list-item"] {
-        color: var(--color-2);
-        line-height: var(--line-height-content);
+        color: var(--text-color-prose);
+        line-height: var(--line-height-prose);
     }
 
     .text[data-variant="list-item"] {
         margin-block: var(--space-2);
     }
 
-    .text[data-variant="h1"],
+    .text[data-variant="h1"] {
+        font-weight: var(--font-bold);
+    }
+
     .text[data-variant="h2"],
     .text[data-variant="h3"],
     .text[data-variant="h4"],
     .text[data-variant="h5"],
     .text[data-variant="h6"] {
-        font-weight: var(--font-bold);
-        line-height: var(--line-height-heading);
+        font-weight: var(--font-semibold);
     }
 
     .text[data-variant="h1"] {
-        font-size: var(--font-size-4xl);
+        font-size: var(--font-size-heading-1);
     }
 
     .text[data-variant="h2"] {
-        font-size: var(--font-size-3xl);
+        font-size: var(--font-size-heading-2);
     }
 
     .text[data-variant="h3"] {
@@ -50,7 +52,7 @@
     }
 
     .text[data-variant="inline-code"] {
-        background-color: var(--background-color-2);
+        background-color: var(--background-muted);
         border-radius: 2px;
         padding-block: 2px;
         padding-inline: var(--space-1);

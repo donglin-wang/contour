@@ -6,7 +6,7 @@
 
     .modal__section[data-variant="sectioned-body"],
     .modal__section[data-variant="sectioned-header"] {
-        border-block-end: 1px solid var(--background-color-2);
+        border-block-end: var(--border-width-1) solid var(--background-muted);
         padding: var(--space-4);
     }
 

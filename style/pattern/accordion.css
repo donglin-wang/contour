@@ -1,6 +1,6 @@
 @layer pattern {
     .accordion__item {
-        border-block-end: 1px solid var(--background-color-3);
+        border-block-end: var(--border-width-1) solid var(--border-color);
     }
 
     .accordion__item:last-child {

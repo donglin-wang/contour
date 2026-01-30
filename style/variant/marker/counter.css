@@ -13,7 +13,7 @@
     }
 
     .marker[data-variant="counter"].m-danger {
-        background-color: var(--danger-1);
-        color: var(--danger-content);
+        background-color: var(--danger);
+        color: var(--danger-text);
     }
 }

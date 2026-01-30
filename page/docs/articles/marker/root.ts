@@ -23,7 +23,7 @@ toggleable.addEventListener("selectstart", (event) => {
 const counter = div(
     {
         class: "container",
-        style: "width: 50px; height: 50px; background-color: var(--background-color-2); position: relative;",
+        style: "width: 50px; height: 50px; background-color: var(--background-muted); position: relative;",
     },
     span({ class: "marker m-danger", "data-variant": "counter" }, "99+")
 );
@@ -31,7 +31,7 @@ const counter = div(
 const ribbon = div(
     {
         class: "container",
-        style: "width: 50px; height: 50px; background-color: var(--background-color-2); position: relative;",
+        style: "width: 50px; height: 50px; background-color: var(--background-muted); position: relative;",
     },
     span({ class: "marker m-danger", "data-variant": "ribbon" }, "Ribbon"),
     span({ class: "marker m-danger", "data-variant": "ribbon-corner" })

@@ -1,0 +1,24 @@
+@layer base {
+    :root {
+        --danger: hsl(354.25, 70.46%, 53.53%);
+        --danger-muted: hsl(354.25, 70.46%, 45.53%);
+        --danger-text: hsl(0deg 0% 100%);
+
+        --success: hsl(152.18, 68.75%, 31.37%);
+        --success-muted: hsl(152.18, 68.75%, 26.37%);
+        --success-text: hsl(0deg 0% 100%);
+
+        --info: hsl(190.04, 89.72%, 49.61%);
+        --info-muted: hsl(190.04, 89.72%, 44.61%);
+        --info-text: hsl(0deg 0% 10%);
+
+        --warning: hsl(45, 100%, 51.37%);
+        --warning-muted: hsl(45, 100%, 46.37%);
+        --warning-text: hsl(0deg 0% 10%);
+
+        --background: hsl(0deg 0% 100%);
+        --background-muted: hsl(0deg, 0%, 96%);
+
+        --border-color: hsl(0deg, 0%, 90%);
+    }
+}

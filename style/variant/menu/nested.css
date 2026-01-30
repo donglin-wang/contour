@@ -12,6 +12,6 @@
         content: " ";
         top: 0;
         position: absolute;
-        background-color: var(--background-color-3);
+        background-color: var(--border-color);
     }
 }

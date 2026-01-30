@@ -4,7 +4,7 @@
     }
 
     .table__cell[data-variant^="column-bordered"] {
-        border-inline-end: 1px solid var(--background-color-3);
+        border-inline-end: var(--border-width-1) solid var(--border-color);
     }
 
     .table__cell[data-variant^="column-bordered"]:last-child {

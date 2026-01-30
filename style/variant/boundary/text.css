@@ -3,25 +3,25 @@
         gap: var(--space-4);
         border: none;
         align-items: center;
-        color: var(--color-3);
+        color: var(--text-color-muted);
     }
 
     .boundary[data-variant="text"]::before {
         content: "";
-        border-block-end: 1px solid var(--background-color-3);
+        border-block-end: var(--border-width-1) solid var(--border-color);
         width: 100%;
     }
 
     .boundary[data-variant="text"]::after {
         content: "";
-        border-block-end: 1px solid var(--background-color-3);
+        border-block-end: var(--border-width-1) solid var(--border-color);
         width: 100%;
     }
 
     .text[data-variant="boundary-enclosed"] {
         padding-block: var(--space-1);
         padding-inline: var(--space-2);
-        border: 1px solid var(--background-color-3);
+        border: var(--border-width-1) solid var(--border-color);
         border-radius: 99px;
     }
 }

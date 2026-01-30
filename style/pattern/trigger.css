@@ -3,17 +3,17 @@
         display: flex;
         padding-inline: var(--space-4);
         padding-block: var(--space-3);
-        background-color: var(--background-color-1);
+        background-color: var(--background);
         border-radius: 5px;
-        border: 1px solid var(--background-color-3);
+        border: var(--border-width-1) solid var(--border-color);
         text-decoration: none;
         cursor: pointer;
         font-size: var(--font-size-base);
-        color: var(--color-1);
+        color: var(--text-color-base);
     }
 
     .trigger:hover {
-        background-color: var(--background-color-2);
+        background-color: var(--background-muted);
     }
 
     .trigger__section {

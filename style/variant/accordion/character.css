@@ -21,6 +21,6 @@
     }
 
     .text[data-variant="character-description"] {
-        color: var(--color-3);
+        color: var(--text-color-muted);
     }
 }

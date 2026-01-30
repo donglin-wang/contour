@@ -16,6 +16,6 @@
     }
 
     .text[data-variant="preview-secondary"] {
-        color: var(--color-3);
+        color: var(--text-color-muted);
     }
 }

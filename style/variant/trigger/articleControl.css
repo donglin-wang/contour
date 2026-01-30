@@ -27,14 +27,14 @@
     .text[data-variant="article-control-secondary"] {
         font-size: var(--font-size-s);
         font-weight: var(--font-extralight);
-        color: var(--color-2);
+        color: var(--text-color-prose);
     }
 
     .symbol[data-variant="article-control-chevron-next"],
     .symbol[data-variant="article-control-chevron-prev"] {
         width: var(--space-5);
         height: var(--space-5);
-        color: var(--color-3);
+        color: var(--text-color-muted);
     }
 
     .symbol[data-variant="article-control-chevron-next"] {

@@ -2,13 +2,13 @@
     .tabs[data-variant="enclosed"] {
         padding-block: var(--space-1);
         padding-inline: var(--space-1);
-        background: var(--background-color-2);
+        background: var(--background-muted);
         border-radius: 5px;
     }
 
     .tab[data-variant="enclosed"][aria-selected="true"] {
-        background: var(--background-color-1);
+        background: var(--background);
         border-radius: 3px;
-        box-shadow: 0 1px 1px 1px var(--background-color-3);
+        box-shadow: 0 1px 1px 1px var(--border-color);
     }
 }

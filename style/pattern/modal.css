@@ -10,7 +10,7 @@
         width: 100%;
         background-color: color-mix(
             in hsl,
-            var(--background-color-2),
+            var(--background-muted),
             transparent 50%
         );
         max-width: none;
@@ -33,9 +33,9 @@
         display: block;
         margin: 0;
         padding: var(--space-4);
-        border: 1px solid var(--background-color-2);
+        border: var(--border-width-1) solid var(--background-muted);
         border-radius: 5px;
-        background-color: var(--background-color-1);
+        background-color: var(--background);
     }
 
     .modal__section {

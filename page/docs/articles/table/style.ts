@@ -20,13 +20,13 @@ export const nestedStyle = /*css*/ `
     }
 
     .table__cell[data-variant^="nested"] {
-        border-inline-end: 1px solid var(--background-color-3);
-        border-block-end: var(--table-body-cell-horizontal-border, 1px solid var(--background-color-3));
+        border-inline-end: var(--border-width-1) solid var(--border-color);
+        border-block-end: var(--table-body-cell-horizontal-border, var(--border-width-1) solid var(--border-color));
     }
 
     /* Setting header row background & font weight */
     .table__cell[data-variant^="nested-header"] {
-        background: var(--background-color-2);
+        background: var(--background-muted);
         font-weight: var(--font-bold);
     }
 

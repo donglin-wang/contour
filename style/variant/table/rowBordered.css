@@ -4,7 +4,7 @@
     }
     
     .table__cell[data-variant^="row-bordered"] {
-        border-block-end: var(--table-body-cell-horizontal-border, 1px solid var(--background-color-3))
+        border-block-end: var(--table-body-cell-horizontal-border, var(--border-width-1) solid var(--border-color))
     }
 
     .table__row[data-variant^="row-bordered-body"]:last-child{

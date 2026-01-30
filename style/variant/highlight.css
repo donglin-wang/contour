@@ -1,57 +1,57 @@
 @layer variant {
     .text[data-variant="token-cmnt"] {
-        color: var(--token-cmnt);
+        color: var(--code-token-cmnt);
     }
 
     .text[data-variant="token-deleted"] {
-        color: var(--token-deleted);
+        color: var(--code-token-deleted);
     }
 
     .text[data-variant="token-err"] {
-        color: var(--token-err);
+        color: var(--code-token-err);
     }
 
     .text[data-variant="token-kwd"] {
-        color: var(--token-kwd);
+        color: var(--code-token-kwd);
     }
 
     .text[data-variant="token-class"] {
-        color: var(--token-class);
+        color: var(--code-token-class);
     }
 
     .text[data-variant="token-type"] {
-        color: var(--token-type);
+        color: var(--code-token-type);
     }
 
     .text[data-variant="token-oper"] {
-        color: var(--token-oper);
+        color: var(--code-token-oper);
     }
 
     .text[data-variant="token-num"] {
-        color: var(--token-num);
+        color: var(--code-token-num);
     }
 
     .text[data-variant="token-section"] {
-        color: var(--token-section);
+        color: var(--code-token-section);
     }
 
     .text[data-variant="token-var"] {
-        color: var(--token-var);
+        color: var(--code-token-var);
     }
 
     .text[data-variant="token-bool"] {
-        color: var(--token-bool);
+        color: var(--code-token-bool);
     }
 
     .text[data-variant="token-insert"] {
-        color: var(--token-insert);
+        color: var(--code-token-insert);
     }
 
     .text[data-variant="token-str"] {
-        color: var(--token-str);
+        color: var(--code-token-str);
     }
 
     .text[data-variant="token-func"] {
-        color: var(--token-func);
+        color: var(--code-token-func);
     }
 }

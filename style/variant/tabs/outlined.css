@@ -5,13 +5,13 @@
 
     .tab[data-variant="outlined"] {
         margin-block: 0 calc(-1 * var(--tabs-border-width));
-        border-block-end: var(--tabs-border-width) solid var(--background-color-3);
+        border-block-end: var(--tabs-border-width) solid var(--border-color);
     }
 
     .tab[data-variant="outlined"][aria-selected="true"] {
-        border-inline-start: var(--tabs-border-width) solid var(--background-color-3);
-        border-inline-end: var(--tabs-border-width) solid var(--background-color-3);
-        border-block-start: var(--tabs-border-width) solid var(--background-color-3);
+        border-inline-start: var(--tabs-border-width) solid var(--border-color);
+        border-inline-end: var(--tabs-border-width) solid var(--border-color);
+        border-block-start: var(--tabs-border-width) solid var(--border-color);
         border-block-end: var(--tabs-border-width) solid transparent;
         border-start-start-radius: 5px;
         border-start-end-radius: 5px;

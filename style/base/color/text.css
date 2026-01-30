@@ -1,0 +1,13 @@
+@layer base {
+    :root {
+        --text-color-base: hsl(0deg 0% 10%);
+        --text-color-prose: hsl(0deg 0% 20%);
+        --text-color-muted: hsl(0deg 0% 40%);
+    }
+
+    body[data-theme="dark"] {
+        --text-color-base: hsl(0deg 0% 100%);
+        --text-color-prose: hsl(0deg, 0%, 96%);
+        --text-color-muted: hsl(0, 0%, 70%);
+    }
+}

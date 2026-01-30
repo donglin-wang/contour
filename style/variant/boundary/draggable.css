@@ -2,7 +2,7 @@
     .boundary[data-variant="draggable"] {
         justify-content: center;
         height: var(--space-3);
-        border-block: 1px solid var(--background-color-3);
+        border-block: var(--border-width-1) solid var(--border-color);
     }
 
     .boundary[data-variant="draggable-control"] {
@@ -11,12 +11,12 @@
         width: var(--space-7);
         flex-basis: var(--sapce-7);
         cursor: row-resize;
-        background-color: var(--background-color-2);
+        background-color: var(--background-muted);
         border-radius: 99px;
         border: none;
     }
 
     .boundary[data-variant="draggable-control"]:hover {
-        background-color: var(--background-color-3);
+        background-color: var(--border-color);
     }
 }

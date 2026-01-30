@@ -4,7 +4,7 @@
     }
 
     .tab {
-        color: var(--color-3);
+        color: var(--text-color-muted);
         cursor: pointer;
         padding-inline: var(--space-4);
         padding-block: var(--space-3);
@@ -12,6 +12,6 @@
 
     .tab:hover,
     .tab[aria-selected="true"] {
-        color: var(--color-1);
+        color: var(--text-color-base);
     }
 }

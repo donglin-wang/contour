@@ -1,12 +1,12 @@
 @layer variant {
     .marker[data-variant="ribbon"].m-danger {
-        background-color: var(--danger-1);
+        background-color: var(--danger);
         position: absolute;
         padding-inline: var(--space-1);
         line-height: 1.5;
         border-radius: 5px;
         border-end-end-radius: 0;
-        color: var(--danger-content);
+        color: var(--danger-text);
     }
 
     .marker[data-variant="ribbon"]::after {
@@ -14,7 +14,7 @@
         position: absolute;
         width: var(--space-2);
         height: var(--space-2);
-        border: var(--space-1) solid var(--danger-2);
+        border: var(--space-1) solid var(--danger-muted);
         border-inline-end-color: transparent;
         border-block-end-color: transparent;
         bottom: calc(-1 * var(--space-2));

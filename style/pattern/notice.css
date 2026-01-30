@@ -2,9 +2,8 @@
     .notice {
         display: flex;
         padding: var(--space-4);
-        background-color: var(--background-color-1);
-        box-shadow: var(--shadow-l);
-        border: 1px solid var(--background-color-3);
+        background-color: var(--background);
+        border: var(--border-width-1) solid var(--border-color);
         border-radius: 5px;
         max-width: var(--notice-max-width, 32rem);
         gap: var(--space-4);

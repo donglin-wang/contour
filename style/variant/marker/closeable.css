@@ -1,6 +1,6 @@
 @layer variant {
     .marker[data-variant="closeable"] {
-        border: 1px solid var(--background-color-3);
+        border: var(--border-width-1) solid var(--border-color);
         gap: var(--space-1);
         padding-inline-start: var(--space-2);
         align-items: center;

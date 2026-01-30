@@ -1,7 +1,7 @@
 @layer variant {
     .tabs[data-variant="underscored"] {
         --tabs-border-width: 1px;
-        border-block-end: var(--tabs-border-width) solid var(--background-color-3);
+        border-block-end: var(--tabs-border-width) solid var(--border-color);
     }
 
     .tab[data-variant="underscored"] {
@@ -10,6 +10,6 @@
     }
 
     .tab[data-variant="underscored"][aria-selected="true"] {
-        border-block-end: 2px solid var(--color-1);
+        border-block-end: 2px solid var(--text-color-base);
     }
 }

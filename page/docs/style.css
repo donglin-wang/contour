@@ -2,7 +2,7 @@
     .container[data-variant="component-panel"] {
         overflow: hidden;
         border-radius: 5px;
-        border: 1px solid var(--background-color-3);
+        border: var(--border-width-1) solid var(--border-color);
         margin-block: var(--space-4);
     }
 
@@ -20,12 +20,12 @@
         width: 100%;
         background-image: radial-gradient(
                 circle,
-                var(--background-color-3) 1px,
+                var(--border-color) 1px,
                 transparent 1px
             ),
             radial-gradient(
                 circle,
-                var(--background-color-3) 1px,
+                var(--border-color) 1px,
                 transparent 1px
             );
         background-size: 16px 16px, 16px 16px;
@@ -34,14 +34,14 @@
     }
 
     .container[data-variant="component-display-muted"] {
-        background-color: var(--background-color-2);
+        background-color: var(--background-muted);
     }
 
     .container[data-variant="component-display-stripe"] {
         background-image: repeating-linear-gradient(
             315deg,
-            var(--background-color-3) 0,
-            var(--background-color-3) 1px,
+            var(--border-color) 0,
+            var(--border-color) 1px,
             transparent 0,
             transparent 50%
         );
@@ -55,12 +55,12 @@
     .container[data-variant="code-block-header"] {
         padding-block: var(--space-2);
         padding-inline: var(--space-4);
-        background-color: var(--background-color-1);
+        background-color: var(--background);
     }
 
     .container[data-variant="code-block-content"] {
         white-space: pre;
-        background: var(--background-color-1);
+        background: var(--background);
         padding: var(--space-4);
         font: 1rem/1.5rem Consolas, Courier New, Monaco, Andale Mono,
             Ubuntu Mono, monospace;
@@ -73,7 +73,7 @@
     .menu[data-variant="sidebar"] {
         height: 100vh;
         flex: 0 0 18rem;
-        border-inline-end: 1px solid var(--background-color-3);
+        border-inline-end: var(--border-width-1) solid var(--border-color);
         overflow-y: auto;
         position: sticky;
         top: 0;

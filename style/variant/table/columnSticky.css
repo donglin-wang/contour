@@ -8,6 +8,6 @@
     .table__cell[data-variant^="column-sticky"]:first-child {
         position: sticky;
         inset-inline-start: 0;
-        background-color: var(--background-color-2);
+        background-color: var(--background-muted);
     }
 }

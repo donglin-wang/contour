@@ -1,0 +1,35 @@
+@layer base {
+    :root {
+        --code-token-cmnt: #6e7781;
+        --code-token-deleted: #cf222e;
+        --code-token-err: #cf222e;
+        --code-token-kwd: #cf222e;
+        --code-token-class: #953800;
+        --code-token-type: #0550ae;
+        --code-token-oper: #0550ae;
+        --code-token-num: #0550ae;
+        --code-token-section: #0550ae;
+        --code-token-var: #0550ae;
+        --code-token-bool: #0550ae;
+        --code-token-insert: #0a3069;
+        --code-token-str: #0a3069;
+        --code-token-func: #8250df;
+    }
+
+    body[data-theme="dark"] {
+        --code-token-cmnt: #8b949e;
+        --code-token-deleted: #ff7b72;
+        --code-token-err: #ff7b72;
+        --code-token-kwd: #ff7b72;
+        --code-token-class: #ffa657;
+        --code-token-type: #79c0ff;
+        --code-token-oper: #79c0ff;
+        --code-token-num: #79c0ff;
+        --code-token-section: #79c0ff;
+        --code-token-var: #79c0ff;
+        --code-token-bool: #79c0ff;
+        --code-token-insert: #98c379;
+        --code-token-str: #a5d6ff;
+        --code-token-func: #d2a8ff;
+    }
+}

@@ -21,7 +21,7 @@
     }
 
     .text[data-variant="product-secondary"] {
-        color: var(--color-3);
+        color: var(--text-color-muted);
     }
 
     .text[data-variant="product-price"] {

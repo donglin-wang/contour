@@ -31,7 +31,7 @@
 
     .text[data-variant="connect-title"],
     .text[data-variant="connect-company"] {
-        color: var(--color-3);
+        color: var(--text-color-muted);
         font-size: var(--font-size-s);
     }
 
