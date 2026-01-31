@@ -90,6 +90,7 @@
     .container[data-variant="main"] {
         width: 100%;
         display: flex;
+        gap: var(--space-6);
     }
 
     .container[data-variant="article"] {
