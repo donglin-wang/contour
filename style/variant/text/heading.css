@@ -1,5 +1,0 @@
-@layer variant {
-    .text[data-variant="display"] {
-        font-size: var(--font-size-display);
-    }
-}

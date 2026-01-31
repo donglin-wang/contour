@@ -4,13 +4,13 @@ import { tokenize } from "/lib/highlight/tokenize";
 
 import type { Child } from "/lib/tags";
 
-const { h1, h2, p, ul, ol, li, code, div, hr, span } = tags;
+const { h1, h2, h3, h4, h5, h6, p, ul, ol, li, code, div, hr, span } = tags;
 
 export const H1 = (text: string) =>
     h1(
         {
             class: "text",
-            "data-variant": "h1",
+            "data-variant": "title-1",
         },
         text
     );
@@ -19,10 +19,54 @@ export const H2 = (text: string) =>
     h2(
         {
             class: "text",
-            "data-variant": "h2",
+            "data-variant": "title-2",
         },
         text
     );
+
+export const H3 = (text: string) =>
+    h3(
+        {
+            class: "text",
+            "data-variant": "title-3",
+        },
+        text
+    );
+
+export const H4 = (text: string) =>
+    h4(
+        {
+            class: "text",
+            "data-variant": "title-4",
+        },
+        text
+    );
+
+export const H5 = (text: string) =>
+    h5(
+        {
+            class: "text",
+            "data-variant": "title-4",
+        },
+        text
+    );
+
+export const H6 = (text: string) =>
+    h6(
+        {
+            class: "text",
+            "data-variant": "title-4",
+        },
+        text
+    );
+
+export const Subheading = (text: string) => p(
+    {
+        class: "text",
+        "data-variant": "subheading",
+    },
+    text
+)
 
 export const P = (...children: Child[]) =>
     p(
@@ -64,7 +108,7 @@ export const CodeInline = (text: string) =>
     code(
         {
             class: "text",
-            "data-variant": "inline-code",
+            "data-variant": "code-inline",
         },
         text
     );
@@ -81,7 +125,7 @@ export const HTMLCodeBlock = (element: HTMLElement, usesInner = false) => {
                     span(
                         {
                             class: "text",
-                            "data-variant": `token-${type}`,
+                            "data-variant": `code-token-${type}`,
                         },
                         str
                     )
@@ -110,7 +154,7 @@ export const CSSCodeBlock = (styleText: string) => {
                 span(
                     {
                         class: "text",
-                        "data-variant": `token-${type}`,
+                        "data-variant": `code-token-${type}`,
                     },
                     str
                 )

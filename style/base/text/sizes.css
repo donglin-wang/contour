@@ -1,13 +1,12 @@
 @layer base {
     :root {
-        --font-size-sub: 0.875rem;
-        --font-size-base: 1rem;
-        --font-size-heading-6: 1.125rem;
-        --font-size-heading-5: 1.25rem;
-        --font-size-heading-4: 1.5rem;
-        --font-size-heading-3: 1.75rem;
-        --font-size-heading-2: 2.25rem;
-        --font-size-heading-1: 3rem;
-        --font-size-display: clamp(2.7994rem, 2.384rem + 1.8461vw, 3.8147rem);
+        --font-size-title-1: clamp(3rem, 2.55rem + 1.5vw, 3.75rem);
+        --font-size-title-2: 2.25rem;
+        --font-size-title-3: 1.75rem;
+        --font-size-title-4: 1.25rem;
+
+        --font-size-prose-base: 1rem;
+        --font-size-prose-large: 1.25rem;
+        --font-size-prose-small: 0.875rem;
     }
 }

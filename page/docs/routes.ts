@@ -16,7 +16,7 @@ const createArticle = (articleContent: Element[]) =>
         providedChildren: articleContent,
         articleAttributes: {
             class: "container",
-            "data-variant": "article-content",
+            "data-variant": "article-prose",
         },
         articleRootAttributes: {
             class: "container",
@@ -35,8 +35,8 @@ const createArticle = (articleContent: Element[]) =>
 const importSharedStyle = () =>
     Promise.all([
         import("/page/docs/style.css?inline"),
-        import("/style/variant/highlight.css?inline"),
-        import("/style/variant/article.css?inline"),
+        import("/style/variant/text/code.css?inline"),
+        import("/style/variant/text/prose.css?inline"),
     ]).then(
         ([docStyleModule, highlightStyleModule, articleStyleModule]) =>
             docStyleModule.default +

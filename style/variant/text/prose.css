@@ -1,0 +1,36 @@
+@layer variant {
+    .text[data-variant="p"],
+    .text[data-variant="list"],
+    .text[data-variant="list-item"],
+    .text[data-variant="subheading"] {
+        color: var(--text-color-prose);
+        line-height: var(--line-height-prose);
+    }
+
+    .text[data-variant="subheading"] {
+        font-size: var(--font-size-prose-large);
+    }
+
+    .text[data-variant="title-1"],
+    .text[data-variant="title-2"],
+    .text[data-variant="title-3"],
+    .text[data-variant="title-4"] {
+        font-weight: var(--font-bold);
+    }
+
+    .text[data-variant="title-1"] {
+        font-size: var(--font-size-title-1);
+    }
+
+    .text[data-variant="title-2"] {
+        font-size: var(--font-size-title-2);
+    }
+
+    .text[data-variant="title-3"] {
+        font-size: var(--font-size-title-3);
+    }
+
+    .text[data-variant="title-4"] {
+        font-size: var(--font-size-title-4);
+    }
+}

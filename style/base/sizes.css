@@ -12,11 +12,12 @@
         --space-9: calc(var(--space) * 24);
         --space-10: calc(var(--space) * 32);
 
-        --prose-spacing: 1em;
+        --space-prose: 1.2em;
 
-        --measure-1: 30ch;
-        --measure-2: 45ch;
-        --measure-3: 60ch;
-        --measure-4: 75ch;
+        --measure-1: 15ch;
+        --measure-2: 30ch;
+        --measure-3: 45ch;
+        --measure-4: 60ch;
+        --measure-5: 75ch;
     }
 }

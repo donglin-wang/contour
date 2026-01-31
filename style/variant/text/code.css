@@ -1,0 +1,67 @@
+@layer variant {
+    .text[data-variant="code-inline"] {
+        background-color: var(--background-muted);
+        border-radius: 2px;
+        padding-block: 2px;
+        padding-inline: var(--space-1);
+        color: hsl(0deg 85% 60%);
+        display: inline-block;
+        line-height: 1;
+    }
+
+    .text[data-variant="code-token-cmnt"] {
+        color: var(--code-token-cmnt);
+    }
+
+    .text[data-variant="code-token-deleted"] {
+        color: var(--code-token-deleted);
+    }
+
+    .text[data-variant="code-token-err"] {
+        color: var(--code-token-err);
+    }
+
+    .text[data-variant="code-token-kwd"] {
+        color: var(--code-token-kwd);
+    }
+
+    .text[data-variant="code-token-class"] {
+        color: var(--code-token-class);
+    }
+
+    .text[data-variant="code-token-type"] {
+        color: var(--code-token-type);
+    }
+
+    .text[data-variant="code-token-oper"] {
+        color: var(--code-token-oper);
+    }
+
+    .text[data-variant="code-token-num"] {
+        color: var(--code-token-num);
+    }
+
+    .text[data-variant="code-token-section"] {
+        color: var(--code-token-section);
+    }
+
+    .text[data-variant="code-token-var"] {
+        color: var(--code-token-var);
+    }
+
+    .text[data-variant="code-token-bool"] {
+        color: var(--code-token-bool);
+    }
+
+    .text[data-variant="code-token-insert"] {
+        color: var(--code-token-insert);
+    }
+
+    .text[data-variant="code-token-str"] {
+        color: var(--code-token-str);
+    }
+
+    .text[data-variant="code-token-func"] {
+        color: var(--code-token-func);
+    }
+}
