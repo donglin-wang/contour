@@ -18,6 +18,7 @@
 
         --background: hsl(0deg 0% 100%);
         --background-muted: hsl(0deg, 0%, 96%);
+        --background-inverted: hsl(0deg 0% 10%);
 
         --border-color: hsl(0deg, 0%, 90%);
     }

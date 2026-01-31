@@ -3,6 +3,10 @@
         --text-color-base: hsl(0deg 0% 10%);
         --text-color-prose: hsl(0deg 0% 20%);
         --text-color-muted: hsl(0deg 0% 40%);
+
+        --text-color-base-inverted: hsl(0deg 0% 100%);
+        --text-color-prose-inverted: hsl(0deg, 0%, 96%);
+        --text-color-muted-inverted: hsl(0, 0%, 70%);
     }
 
     body[data-theme="dark"] {

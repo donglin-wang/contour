@@ -1,0 +1,16 @@
+@layer variant {
+    @font-face {
+        font-family: RecursiveMonoLinearExtraBold;
+        font-display: swap;
+        src: url("/asset/font/RecursiveMonoLinearExtraBold.woff2") format("woff2");
+    }
+
+    .text[data-variant="logo"] {
+        font-family: "RecursiveMonoLinearExtraBold";
+        padding: var(--space) var(--space-2);
+        border-radius: 5px;
+        color: var(--text-color-base-inverted);
+        background-color: var(--background-inverted);
+        font-size: var(--font-size-prose-large);
+    }
+}

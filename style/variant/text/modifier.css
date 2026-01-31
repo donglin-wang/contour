@@ -2,8 +2,4 @@
     .text.m-bold {
         font-weight: var(--font-bold);
     }
-
-    .text.m-margin-block-1 {
-        margin-block: var(--space-4);
-    }
 }
