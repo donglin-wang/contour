@@ -94,12 +94,14 @@
 
     .container[data-variant="article"] {
         display: flex;
+        max-width: 100%;
         flex: 1;
         gap: 2rem;
     }
 
     .container[data-variant="article-prose"] {
         flex: 1;
+        width: 100%;
         margin-inline: auto;
         max-width: var(--measure-5);
         padding: var(--space-4);
