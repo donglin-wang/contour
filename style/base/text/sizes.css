@@ -1,5 +1,7 @@
 @layer base {
     :root {
+        --font-size-base: 1rem;
+
         --font-size-title-1: clamp(3rem, 2.55rem + 1.5vw, 3.75rem);
         --font-size-title-2: 2.25rem;
         --font-size-title-3: 1.75rem;

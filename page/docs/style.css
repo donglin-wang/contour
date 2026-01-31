@@ -73,7 +73,8 @@
 @layer variant {
     .menu[data-variant="sidebar"] {
         height: 100vh;
-        flex: 0 0 var(--measure-2);
+        flex: 1;
+        max-width: var(--measure-2);
         border-inline-end: var(--border-width-1) solid var(--border-color);
         overflow-y: auto;
         position: sticky;
