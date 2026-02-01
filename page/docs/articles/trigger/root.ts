@@ -124,7 +124,7 @@ export default [
                     img({
                         class: "media",
                         "data-variant": "preview-trigger",
-                        src: "/asset/image/accessibility.jpg",
+                        src: "/asset/image/linux.jpg",
                         alt: "Linux penguin",
                     }),
                     span(
@@ -137,7 +137,7 @@ export default [
                                 class: "text",
                                 "data-variant": "preview-primary",
                             },
-                            "Learn more about web accessibility"
+                            "Learn more about installing Linux"
                         ),
                         span(
                             {
