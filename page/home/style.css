@@ -45,6 +45,8 @@
         margin-block-start: var(--space-5);
         font-size: var(--font-size-prose-large);
         color: var(--text-color-muted);
+        max-width: 40rem;
+        line-height: 1.5;
     }
 
     .trigger[data-for="landing-hero"] {

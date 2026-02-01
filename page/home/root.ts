@@ -84,7 +84,8 @@ export default div(
                         class: "text",
                         "data-for": "landing-subheading",
                     },
-                    "It is a zero-dependency naming convention, library, and design system rolled into one.",
+                    "It is a zero-dependency naming convention, component \
+                    library, and design system rolled into one.",
                 ),
                 displayButton
             ),
