@@ -2,7 +2,7 @@
 
 import { svgTags } from "/lib/tags";
 
-const { path, svg, circle } = svgTags;
+const { path, svg, circle, rect } = svgTags;
 
 export type SymbolAttributes = {
     class?: string;
@@ -186,6 +186,44 @@ export const Menu = (attributes?: SymbolAttributes) =>
         path({ d: "M4 5h16" }),
         path({ d: "M4 12h16" }),
         path({ d: "M4 19h16" }),
+    );
+
+export const PanelLeftClose = (attributes?: SymbolAttributes) =>
+    svg(
+        getAttributes(attributes),
+        rect({ width: "18", height: "18", x: "3", y: "3", rx: "2" }),
+        path({ d: "M9 3v18" }),
+        path({ d: "m16 15-3-3 3-3" }),
+    );
+
+export const PanelRightClose = (attributes?: SymbolAttributes) =>
+    svg(
+        getAttributes(attributes),
+        rect({ width: "18", height: "18", x: "3", y: "3", rx: "2" }),
+        path({ d: "M15 3v18" }),
+        path({ d: "m8 9 3 3-3 3" }),
+    );
+
+export const Sun = (attributes?: SymbolAttributes) =>
+    svg(
+        getAttributes(attributes),
+        circle({ cx: "12", cy: "12", r: "4" }),
+        path({ d: "M12 2v2" }),
+        path({ d: "M12 20v2" }),
+        path({ d: "m4.93 4.93 1.41 1.41" }),
+        path({ d: "m17.66 17.66 1.41 1.41" }),
+        path({ d: "M2 12h2" }),
+        path({ d: "M20 12h2" }),
+        path({ d: "m6.34 17.66-1.41 1.41" }),
+        path({ d: "m19.07 4.93-1.41 1.41" }),
+    );
+
+export const Moon = (attributes?: SymbolAttributes) =>
+    svg(
+        getAttributes(attributes),
+        path({
+            d: "M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401",
+        }),
     );
 
 export const ContourLogo = (attributes?: SymbolAttributes) =>

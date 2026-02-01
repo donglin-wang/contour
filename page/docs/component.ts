@@ -3,8 +3,10 @@ import { formatCSS, formatHTML } from "/lib/highlight/format";
 import { tokenize } from "/lib/highlight/tokenize";
 
 import type { Child } from "/lib/tags";
+import { Moon, Sun } from "/component/symbol";
 
-const { h1, h2, h3, h4, h5, h6, p, ul, ol, li, code, div, hr, span } = tags;
+const { h1, h2, h3, h4, h5, h6, p, ul, ol, li, code, div, hr, span, button } =
+    tags;
 
 export const H1 = (text: string) =>
     h1(
@@ -12,7 +14,7 @@ export const H1 = (text: string) =>
             class: "text",
             "data-variant": "title-1",
         },
-        text
+        text,
     );
 
 export const H2 = (text: string) =>
@@ -21,7 +23,7 @@ export const H2 = (text: string) =>
             class: "text",
             "data-variant": "title-2",
         },
-        text
+        text,
     );
 
 export const H3 = (text: string) =>
@@ -30,7 +32,7 @@ export const H3 = (text: string) =>
             class: "text",
             "data-variant": "title-3",
         },
-        text
+        text,
     );
 
 export const H4 = (text: string) =>
@@ -39,7 +41,7 @@ export const H4 = (text: string) =>
             class: "text",
             "data-variant": "title-4",
         },
-        text
+        text,
     );
 
 export const H5 = (text: string) =>
@@ -48,7 +50,7 @@ export const H5 = (text: string) =>
             class: "text",
             "data-variant": "title-4",
         },
-        text
+        text,
     );
 
 export const H6 = (text: string) =>
@@ -57,16 +59,17 @@ export const H6 = (text: string) =>
             class: "text",
             "data-variant": "title-4",
         },
-        text
+        text,
     );
 
-export const Subheading = (text: string) => p(
-    {
-        class: "text",
-        "data-variant": "subheading",
-    },
-    text
-)
+export const Subheading = (text: string) =>
+    p(
+        {
+            class: "text",
+            "data-variant": "subheading",
+        },
+        text,
+    );
 
 export const P = (...children: Child[]) =>
     p(
@@ -74,7 +77,7 @@ export const P = (...children: Child[]) =>
             class: "text",
             "data-variant": "p",
         },
-        ...children
+        ...children,
     );
 
 export const Ul = (...children: Child[]) =>
@@ -83,7 +86,7 @@ export const Ul = (...children: Child[]) =>
             class: "text",
             "data-variant": "list",
         },
-        ...children
+        ...children,
     );
 
 export const Ol = (...children: Child[]) =>
@@ -92,7 +95,7 @@ export const Ol = (...children: Child[]) =>
             class: "text",
             "data-variant": "list",
         },
-        ...children
+        ...children,
     );
 
 export const Li = (...children: Child[]) =>
@@ -101,7 +104,7 @@ export const Li = (...children: Child[]) =>
             class: "text",
             "data-variant": "list-item",
         },
-        ...children
+        ...children,
     );
 
 export const CodeInline = (text: string) =>
@@ -110,7 +113,7 @@ export const CodeInline = (text: string) =>
             class: "text",
             "data-variant": "code-inline",
         },
-        text
+        text,
     );
 
 export const HTMLCodeBlock = (element: HTMLElement, usesInner = false) => {
@@ -127,13 +130,13 @@ export const HTMLCodeBlock = (element: HTMLElement, usesInner = false) => {
                             class: "text",
                             "data-variant": `code-token-${type}`,
                         },
-                        str
-                    )
+                        str,
+                    ),
                 );
             } else {
                 children.push(str);
             }
-        }
+        },
     );
 
     return div(
@@ -141,7 +144,7 @@ export const HTMLCodeBlock = (element: HTMLElement, usesInner = false) => {
             class: "container",
             "data-variant": "code-block-content",
         },
-        ...children
+        ...children,
     );
 };
 
@@ -156,8 +159,8 @@ export const CSSCodeBlock = (styleText: string) => {
                         class: "text",
                         "data-variant": `code-token-${type}`,
                     },
-                    str
-                )
+                    str,
+                ),
             );
         } else {
             children.push(str);
@@ -169,7 +172,7 @@ export const CSSCodeBlock = (styleText: string) => {
             class: "container",
             "data-variant": "code-block-content",
         },
-        ...children
+        ...children,
     );
 };
 
@@ -179,7 +182,7 @@ export const ComponentDisplay = (child: Element, variant?: string) =>
             class: "container",
             "data-variant": variant ?? "component-display",
         },
-        child
+        child,
     );
 
 export const ComponentPanel = ({
@@ -203,21 +206,21 @@ export const ComponentPanel = ({
                         class: "container",
                         "data-variant": "code-block-header",
                     },
-                    key
+                    key,
                 ),
                 hr({
                     class: "boundary",
                     "data-variant": "component-panel-boundary",
                 }),
-                value
-            )
+                value,
+            ),
         );
         if (index < numSources - 1) {
             codeBlocks.push(
                 hr({
                     class: "boundary",
                     "data-variant": "component-panel-boundary",
-                })
+                }),
             );
         }
     });
@@ -228,7 +231,7 @@ export const ComponentPanel = ({
                 class: "container",
                 "data-variant": "component-panel",
             },
-            display
+            display,
         );
     }
 
@@ -242,7 +245,7 @@ export const ComponentPanel = ({
             class: "boundary",
             "data-variant": "component-panel-boundary",
         }),
-        ...codeBlocks
+        ...codeBlocks,
     );
 };
 
@@ -264,4 +267,26 @@ export const inline = (strings: TemplateStringsArray, ...args: Child[]) => {
         }
     }
     return children;
+};
+
+export const ThemeToggleTrigger = () => {
+    const trigger = button(
+        {
+            class: "trigger m-ghost",
+            "data-variant": "icon",
+        },
+        Sun(),
+    );
+
+    trigger.addEventListener("click", () => {
+        if (document.body.getAttribute("data-theme") === "dark") {
+            document.body.setAttribute("data-theme", "light");
+            trigger.replaceChildren(Sun());
+        } else {
+            document.body.setAttribute("data-theme", "dark");
+            trigger.replaceChildren(Moon());
+        }
+    });
+    
+    return trigger;
 };

@@ -103,6 +103,7 @@
         width: 100%;
         display: flex;
         gap: var(--space-6);
+        background-color: var(--background);
     }
 
     .container[data-variant="article"] {

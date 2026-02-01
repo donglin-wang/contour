@@ -1,7 +1,8 @@
 import { setCurrentStyle } from "/store/style";
 import { tags } from "/lib/tags";
 import Article from "/component/article";
-import { House } from "/component/symbol";
+import { House, PanelLeftClose, Sun } from "/component/symbol";
+import { ThemeToggleTrigger } from "/page/docs/component";
 
 type ArticleSpec = {
     path: string;
@@ -10,7 +11,7 @@ type ArticleSpec = {
     importStyle?: () => Promise<{ default: string }>;
 };
 
-const { main, nav, div, button, span } = tags;
+const { main, nav, div, button } = tags;
 
 const createArticle = (articleContent: Element[]) =>
     new Article({
@@ -166,14 +167,8 @@ export default articles.map((article) => ({
                                         class: "trigger m-ghost",
                                         "data-variant": "icon",
                                     },
-                                    House(),
+                                    PanelLeftClose(),
                                 ),
-                            ),
-                            div(
-                                {
-                                    class: "bar__section",
-                                    "data-composition":"margin-inline-start-auto",
-                                },
                                 button(
                                     {
                                         class: "trigger m-ghost",
@@ -181,6 +176,15 @@ export default articles.map((article) => ({
                                     },
                                     House(),
                                 ),
+                            ),
+                            div(
+                                {
+                                    class: "bar__section",
+                                    "data-composition":
+                                        "margin-inline-start-auto",
+                                },
+
+                                ThemeToggleTrigger(),
                             ),
                         ),
                         main(
