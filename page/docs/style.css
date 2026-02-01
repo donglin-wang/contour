@@ -71,6 +71,18 @@
 
 /* Article Scaffolding */
 @layer variant {
+    .container[data-for="root-wrapper"] {
+        --top-nav-height: 3rem;
+    }
+
+    .bar[data-for="top-nav"] {
+        height: var(--top-nav-height);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        border-block-end: var(--border-width-1) solid var(--border-color);
+    }
+
     .menu[data-variant="sidebar"] {
         height: 100vh;
         flex: 1;
@@ -78,7 +90,7 @@
         border-inline-end: var(--border-width-1) solid var(--border-color);
         overflow-y: auto;
         position: sticky;
-        top: 0;
+        top: var(--top-nav-height);
         padding: var(--space-4);
     }
 
@@ -114,7 +126,7 @@
 
     .outline[data-variant="article-outline"] {
         position: sticky;
-        top: 0;
+        top: var(--top-nav-height);
         flex: 0 0 var(--measure-2);
         max-height: 100vh;
         overflow-y: auto;

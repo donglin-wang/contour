@@ -1,6 +1,7 @@
 import { setCurrentStyle } from "/store/style";
 import { tags } from "/lib/tags";
 import Article from "/component/article";
+import { House } from "/component/symbol";
 
 type ArticleSpec = {
     path: string;
@@ -9,7 +10,7 @@ type ArticleSpec = {
     importStyle?: () => Promise<{ default: string }>;
 };
 
-const { main } = tags;
+const { main, nav, div, button, span } = tags;
 
 const createArticle = (articleContent: Element[]) =>
     new Article({
@@ -34,14 +35,14 @@ const createArticle = (articleContent: Element[]) =>
 
 const importSharedStyle = () =>
     Promise.all([
-        import("/page/docs/style.css?inline"),
+        import("/page/docs/css"),
         import("/style/variant/text/code.css?inline"),
         import("/style/variant/text/prose.css?inline"),
     ]).then(
         ([docStyleModule, highlightStyleModule, articleStyleModule]) =>
             docStyleModule.default +
             highlightStyleModule.default +
-            articleStyleModule.default
+            articleStyleModule.default,
     );
 
 const articles: ArticleSpec[] = [
@@ -142,20 +143,57 @@ export default articles.map((article) => ({
                 await setCurrentStyle(
                     article.path,
                     sharedStyle,
-                    articleStyle.default
+                    articleStyle.default,
                 );
                 document.title = article.title;
                 document.body.replaceChildren(
-                    main(
+                    div(
                         {
                             class: "container",
-                            "data-variant": "main",
+                            "data-for": "root-wrapper",
                         },
-                        sidebarModule.createSidebar(articles),
-                        createArticle(articleModule.default)
-                    )
+                        nav(
+                            {
+                                class: "bar",
+                                "data-for": "top-nav",
+                            },
+                            div(
+                                {
+                                    class: "bar__section",
+                                },
+                                button(
+                                    {
+                                        class: "trigger m-ghost",
+                                        "data-variant": "icon",
+                                    },
+                                    House(),
+                                ),
+                            ),
+                            div(
+                                {
+                                    class: "bar__section",
+                                    "data-composition":"margin-inline-start-auto",
+                                },
+                                button(
+                                    {
+                                        class: "trigger m-ghost",
+                                        "data-variant": "icon",
+                                    },
+                                    House(),
+                                ),
+                            ),
+                        ),
+                        main(
+                            {
+                                class: "container",
+                                "data-variant": "main",
+                            },
+                            sidebarModule.createSidebar(articles),
+                            createArticle(articleModule.default),
+                        ),
+                    ),
                 );
-            }
+            },
         );
     },
 }));
