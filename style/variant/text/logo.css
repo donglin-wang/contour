@@ -5,12 +5,20 @@
         src: url("/asset/font/RecursiveMonoLinearExtraBold.woff2") format("woff2");
     }
 
+    .text[data-for="landing-hero-logo"],
     .text[data-variant="logo"] {
         font-family: "RecursiveMonoLinearExtraBold";
-        padding: var(--space) var(--space-2);
+        padding: var(--space) var(--space-1);
         border-radius: 5px;
         color: var(--text-color-base-inverted);
         background-color: var(--background-inverted);
-        font-size: var(--font-size-prose-large);
+        font-size: inherit;
+        display: inline-block;
+        line-height: 1;
+    }
+
+    .text[data-for="landing-hero-logo"]{
+        padding: var(--space-2) var(--space-4);
+        margin-block-end: var(--space-2);
     }
 }

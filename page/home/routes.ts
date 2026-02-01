@@ -1,4 +1,4 @@
-import homeStyle from "/page/home/style.css?inline";
+import homeStyle from "/page/home/css";
 import { setCurrentStyle } from "/store/style";
 
 export default [

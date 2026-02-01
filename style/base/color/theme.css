@@ -19,6 +19,7 @@
         --background: hsl(0deg 0% 100%);
         --background-muted: hsl(0deg, 0%, 96%);
         --background-inverted: hsl(0deg 0% 10%);
+        --background-muted-inverted: hsl(0deg 0% 20%);
 
         --border-color: hsl(0deg, 0%, 90%);
     }
@@ -27,6 +28,7 @@
         --background: hsl(0deg 0% 10%);
         --background-muted: hsl(0deg 0% 20%);
         --background-inverted: hsl(0deg 0% 100%);
+        --background-muted-inverted: hsl(0deg, 0%, 96%);
 
         --border-color: hsl(0deg 0% 30%);
     }

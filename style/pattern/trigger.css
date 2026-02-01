@@ -1,6 +1,7 @@
 @layer pattern {
     .trigger {
         display: flex;
+        width: fit-content;
         padding-inline: var(--space-4);
         padding-block: var(--space-3);
         background-color: var(--background);

@@ -1,0 +1,9 @@
+@layer variant {
+    .bar[data-for="top-nav"] {
+        height: var(--top-nav-height);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        border-block-end: var(--border-width-1) solid var(--border-color);
+    }
+}
