@@ -73,7 +73,7 @@
 
 /* Article Scaffolding */
 @layer variant {
-    body {
+    :root {
         --top-nav-height: 3rem;
     }
 
