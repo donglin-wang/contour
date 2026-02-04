@@ -37,7 +37,7 @@
 
     .text[data-for="landing-hero"] {
         font-size: var(--font-size-title-1);
-        line-height: 1.2;
+        line-height: 1.32;
         font-weight: var(--font-medium);
     }
 
