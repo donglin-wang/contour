@@ -17,31 +17,42 @@ class Router {
     rootCallback: () => HTMLElement = () => document.body;
 
     constructor() {
-        window.addEventListener("popstate", async () => {
-            this.loadPath();
-        });
+        window.addEventListener("popstate", this.loadPath);
+    }
+
+    destroy() {
+        window.removeEventListener("popstate", this.loadPath);
+    }
+
+    getDesiredSegments(): string[] {
+        const segments = window.location.pathname.slice(1).split("/");
+        if (segments[0] === "") {
+            return [""];
+        }
+        if (segments[segments.length - 1] === "") {
+            return segments;
+        }
+        return [...segments, ""];
     }
 
     async loadPath() {
-        const desiredPath = (window.location.pathname + "/")
-            .split("/")
-            .slice(1);
+        const segments = this.getDesiredSegments();
         let i = 0;
         let j = 0;
         let currentCandidates = this.routeSegments;
         let root = this.rootCallback();
 
-        while (i < desiredPath.length && j < currentCandidates.length) {
+        while (i < segments.length && j < currentCandidates.length) {
             let match = undefined;
             const segment = currentCandidates[j];
 
             if (typeof segment.pattern === "string") {
-                if (segment.pattern !== desiredPath[i]) {
+                if (segment.pattern !== segments[i]) {
                     j++;
                     continue;
                 }
             } else {
-                match = desiredPath[i].match(segment.pattern);
+                match = segments[i].match(segment.pattern);
                 if (!match) {
                     j++;
                     continue;
@@ -55,19 +66,17 @@ class Router {
         }
 
         const routeMatch =
-            desiredPath.length === i ||
-            (desiredPath.length === i + 1 && desiredPath[i] === "");
-
-        console.log(desiredPath.length, i)
+            i === segments.length ||
+            (i === segments.length - 1 && segments[i] === "");
 
         if (!routeMatch) {
             throw new Error("Route not found");
         }
     }
 
-    navigateTo(path) {
+    async navigateTo(path): Promise<void> {
         window.history.pushState({}, "", "/" + path);
-        this.loadPath();
+        await this.loadPath();
     }
 }
 

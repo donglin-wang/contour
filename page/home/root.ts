@@ -1,10 +1,8 @@
 import { tags } from "/lib/tags";
 import { getRouter } from "/store/router";
 import { Link } from "/component/link";
-import { ThemeToggleTrigger } from "/page/docs/component";
-import { House, PanelLeftClose } from "/component/symbol";
 
-const { div, h1, p, span, nav, button } = tags;
+const { div, h1, p, span } = tags;
 const router = getRouter();
 
 const displayButton = Link({
@@ -12,7 +10,7 @@ const displayButton = Link({
         class: "trigger",
         "data-for": "landing-hero",
     },
-    callback: () => router.navigateTo("docs/lorem"),
+    callback: async () => await router.navigateTo("docs/lorem"),
     children: ["Get started"],
 });
 

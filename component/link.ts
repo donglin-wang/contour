@@ -3,7 +3,7 @@ import { tags } from "/lib/tags";
 import type { Child, Attributes } from "/lib/tags";
 
 export type LinkSpec = {
-    callback?: () => void;
+    callback?: () => Promise<void>;
     attributes: Attributes;
     children: Child[];
 };
@@ -18,9 +18,9 @@ export const Link = ({
     const root = a(attributes, ...children);
 
     if (callback) {
-        root.addEventListener("click", (event) => {
+        root.addEventListener("click", async (event) => {
             event.preventDefault();
-            callback();
+            await callback();
         });
     }
 

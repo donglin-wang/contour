@@ -14,8 +14,8 @@ export const createSidebar = (articles: { path: string; title: string }[]) =>
         },
         ...articles.map((spec) =>
             Link({
-                callback: () => {
-                    router.navigateTo("docs/" + spec.path);
+                callback: async () => {
+                    await router.navigateTo("docs/" + spec.path);
                 },
                 children: [spec.title],
                 attributes: {
