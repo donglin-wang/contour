@@ -19,18 +19,15 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        background-image: radial-gradient(
-                circle,
-                var(--border-color) 1px,
-                transparent 1px
-            ),
-            radial-gradient(
-                circle,
-                var(--border-color) 1px,
-                transparent 1px
-            );
-        background-size: 16px 16px, 16px 16px;
-        background-position: 0 0, 8px 8px;
+        background-image:
+            radial-gradient(circle, var(--border-color) 1px, transparent 1px),
+            radial-gradient(circle, var(--border-color) 1px, transparent 1px);
+        background-size:
+            16px 16px,
+            16px 16px;
+        background-position:
+            0 0,
+            8px 8px;
         padding-block: var(--space-7);
     }
 
@@ -63,20 +60,32 @@
         white-space: pre;
         background: var(--background);
         padding: var(--space-4);
-        font: 1rem/1.5rem Consolas, Courier New, Monaco, Andale Mono,
-            Ubuntu Mono, monospace;
+        font:
+            1rem/1.5rem Consolas,
+            Courier New,
+            Monaco,
+            Andale Mono,
+            Ubuntu Mono,
+            monospace;
         overflow-x: auto;
     }
 }
 
 /* Article Scaffolding */
 @layer variant {
-    .container[data-for="root-wrapper"] {
+    body {
         --top-nav-height: 3rem;
     }
 
+    .container[data-for="contour-root"] {
+        display: flex;
+        flex: 1;
+        width: 100%;
+        position: relative;
+    }
+
     .menu[data-variant="sidebar"] {
-        height: 100vh;
+        height: calc(100vh - var(--top-nav-height));
         flex: 1;
         max-width: var(--measure-2);
         border-inline-end: var(--border-width-1) solid var(--border-color);
@@ -92,24 +101,20 @@
     }
 
     .container[data-variant="main"] {
-        width: 100%;
         display: flex;
-        gap: var(--space-6);
         background-color: var(--background);
     }
 
     .container[data-variant="article"] {
         display: flex;
-        max-width: 100%;
-        flex: 1;
+        width: 100%;
         gap: 2rem;
     }
 
     .container[data-variant="article-prose"] {
-        flex: 1;
         width: 100%;
+        max-width: var(--measure-4);
         margin-inline: auto;
-        max-width: var(--measure-5);
         padding: var(--space-4);
     }
 

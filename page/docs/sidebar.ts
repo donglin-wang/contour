@@ -15,12 +15,12 @@ export const createSidebar = (articles: { path: string; title: string }[]) =>
         ...articles.map((spec) =>
             Link({
                 callback: () => {
-                    router.navigateTo(spec.path);
+                    router.navigateTo("docs/" + spec.path);
                 },
                 children: [spec.title],
                 attributes: {
                     class: "menu__item",
-                    href: `/${spec.path}`,
+                    href: `/docs/${spec.path}`,
                     "data-variant": "sidebar",
                 },
             })

@@ -3,10 +3,12 @@ import { setCurrentStyle } from "/store/style";
 
 export default [
     {
-        path: "",
-        callback: () =>
-            import("/page/home/root")
-                .then((root) => setCurrentStyle("home", homeStyle).then(() => root))
-                .then((root) => document.body.replaceChildren(root.default)),
+        pattern: "",
+        callback: async (root: HTMLElement) => {
+            const homeElement = await import("/page/home/root")
+            await setCurrentStyle("home", homeStyle)
+            root.replaceChildren(homeElement.default);
+        },
+        children: [],
     },
 ];

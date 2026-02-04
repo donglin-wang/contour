@@ -1,49 +1,73 @@
-export type Route = {
-    path: string;
-    callback: (param?: string) => void;
+export type RouteSegment = {
+    pattern: string | RegExp;
+    children: RouteSegment[];
+    callback: (
+        root: HTMLElement,
+        match?: RegExpMatchArray,
+    ) => Promise<HTMLElement | void>;
+};
+
+export type RouterSpec = {
+    routeSegments: RouteSegment[];
+    rootCallback?: () => HTMLElement;
 };
 
 class Router {
-    routes: Route[];
+    routeSegments: RouteSegment[] = [];
+    rootCallback: () => HTMLElement = () => document.body;
 
-    constructor(routes) {
-        this.routes = routes;
-        this.loadInitialRoute();
-        window.addEventListener("popstate", () => {
-            this.loadInitialRoute();
+    constructor() {
+        window.addEventListener("popstate", async () => {
+            this.loadPath();
         });
     }
 
-    getCurrentURL() {
-        const path = window.location.pathname;
-        return path;
-    }
+    async loadPath() {
+        const desiredPath = (window.location.pathname + "/")
+            .split("/")
+            .slice(1);
+        let i = 0;
+        let j = 0;
+        let currentCandidates = this.routeSegments;
+        let root = this.rootCallback();
 
-    matchUrlToRoute(urlSegs: string[]) {
-        const matchedRoute = this.routes.find(
-            (route) => route.path === urlSegs.join("/")
-        );
-        return matchedRoute;
-    }
+        while (i < desiredPath.length && j < currentCandidates.length) {
+            let match = undefined;
+            const segment = currentCandidates[j];
 
-    loadInitialRoute() {
-        const pathnameSplit = window.location.pathname.split("/");
-        const pathSegs = pathnameSplit.length > 1 ? pathnameSplit.slice(1) : "";
+            if (typeof segment.pattern === "string") {
+                if (segment.pattern !== desiredPath[i]) {
+                    j++;
+                    continue;
+                }
+            } else {
+                match = desiredPath[i].match(segment.pattern);
+                if (!match) {
+                    j++;
+                    continue;
+                }
+            }
+            const newRoot = await segment.callback(root, match);
+            root = newRoot ? newRoot : root;
+            currentCandidates = segment.children;
+            i++;
+            j = 0;
+        }
 
-        this.loadRoute(...pathSegs);
-    }
+        const routeMatch =
+            desiredPath.length === i ||
+            (desiredPath.length === i + 1 && desiredPath[i] === "");
 
-    loadRoute(...urlSegs) {
-        const matchedRoute = this.matchUrlToRoute(urlSegs);
-        if (!matchedRoute) {
+        console.log(desiredPath.length, i)
+
+        if (!routeMatch) {
             throw new Error("Route not found");
         }
-        matchedRoute.callback();
     }
 
     navigateTo(path) {
         window.history.pushState({}, "", "/" + path);
-        this.loadRoute(path);
+        this.loadPath();
     }
 }
 

@@ -1,22 +1,20 @@
 import Router from "/lib/routing";
-import type { Route } from "/lib/routing";
+import type { RouterSpec } from "/lib/routing";
 
 let routerInstance: Router | null = null;
 
-export function initializeRouter(routes: Route[]): Router {
-    if (routerInstance) {
-        console.warn("Router already initialized");
-        return routerInstance;
+export const getRouter = () => {
+    if (!routerInstance) {
+        routerInstance = new Router();
     }
-    routerInstance = new Router(routes);
     return routerInstance;
 }
 
-export function getRouter(): Router {
+export const initializeRouter = (spec: RouterSpec) => {
     if (!routerInstance) {
-        throw new Error(
-            "Router not initialized. Call initializeRouter() first."
-        );
+        routerInstance = new Router();
     }
+    routerInstance.routeSegments = spec.routeSegments;
+    routerInstance.rootCallback = spec.rootCallback;
     return routerInstance;
 }
