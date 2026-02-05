@@ -1,0 +1,40 @@
+@layer variant {
+    .menu[data-for="article-outline"] {
+        height: fit-content;
+        padding-block: 0;
+    }
+
+    .menu[data-for="article-outline"]::before,
+    .menu__item[data-for="article-outline"]:hover::before,
+    .menu__item[data-for="article-outline"][aria-current="true"]::before {
+        display: block;
+        width: var(--border-width-2);
+        height: 100%;
+        content: "";
+        top: 0;
+        position: absolute;
+    }
+
+    .menu[data-for="article-outline"]::before {
+        background-color: var(--background-muted);
+    }
+
+    .menu__item[data-for="article-outline"] {
+        position: relative;
+        padding-block: var(--space-2);
+    }
+
+    .menu__item[data-for="article-outline"][aria-current="true"] {
+        background-color: var(--background-muted);
+    }
+
+    .menu__item[data-for="article-outline"]:hover::before {
+        left: 0;
+        background-color: var(--border-color);
+    }
+
+    .menu__item[data-for="article-outline"][aria-current="true"]::before {
+        left: 0;
+        background-color: var(--text-color-muted);
+    }
+}

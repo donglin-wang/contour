@@ -1,8 +1,5 @@
 import { setCurrentStyle } from "/store/style";
-import { tags } from "/lib/tags";
 import Article from "/component/article";
-import { House, PanelLeftClose, Sun } from "/component/symbol";
-import { ThemeToggleTrigger } from "/page/docs/component";
 
 type ArticleSpec = {
     path: string;
@@ -10,8 +7,6 @@ type ArticleSpec = {
     importArticle: () => Promise<{ default: Element[] }>;
     importStyle?: () => Promise<{ default: string }>;
 };
-
-const { main, nav, div, button } = tags;
 
 const createArticle = (articleContent: Element[]) =>
     new Article({
@@ -26,11 +21,12 @@ const createArticle = (articleContent: Element[]) =>
         },
         hasOutline: true,
         outlineAttributes: {
-            class: "outline",
-            "data-variant": "article-outline",
+            class: "menu",
+            "data-for": "article-outline"
         },
         outlineItemAttributes: {
-            class: "outline__item",
+            class: "menu__item",
+            "data-for": "article-outline"
         },
     }).root;
 

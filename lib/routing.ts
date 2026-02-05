@@ -15,13 +15,15 @@ export type RouterSpec = {
 class Router {
     routeSegments: RouteSegment[] = [];
     rootCallback: () => HTMLElement = () => document.body;
+    private eventHandler;
 
     constructor() {
-        window.addEventListener("popstate", this.loadPath);
+        this.eventHandler = () => this.loadPath()
+        window.addEventListener("popstate", this.eventHandler);
     }
 
     destroy() {
-        window.removeEventListener("popstate", this.loadPath);
+        window.removeEventListener("popstate", this.eventHandler);
     }
 
     getDesiredSegments(): string[] {

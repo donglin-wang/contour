@@ -8,6 +8,7 @@ import { articles } from "/page/docs/routes";
 import docRoutes from "/page/docs/routes";
 import { createSidebar } from "/page/docs/sidebar";
 import { Link } from "/component/link";
+import { setCurrentStyle } from "/store/style";
 
 const { div, nav, button, main } = tags;
 const home = Link({
