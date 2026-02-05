@@ -61,8 +61,7 @@ const scaffold = [
         ),
         div(
             {
-                class: "bar__section",
-                "data-composition": "margin-inline-start-auto",
+                class: "bar__section m-margin-inline-start-auto",
             },
             ThemeToggleTrigger(),
         ),

@@ -12,8 +12,7 @@ export default [
         },
         div(
             {
-                class: "bar__section",
-                "data-composition": "gap-3",
+                class: "bar__section m-gap-3",
             },
             span(
                 {
@@ -27,8 +26,7 @@ export default [
         ),
         div(
             {
-                class: "bar__section",
-                "data-composition": "margin-inline-start-auto",
+                class: "bar__section m-margin-inline-start-auto",
             },
             button(
                 {
@@ -45,8 +43,7 @@ export default [
         },
         div(
             {
-                class: "bar__section",
-                "data-composition": "sandwich-start",
+                class: "bar__section m-sandwich-start",
             },
             button(
                 {
@@ -58,8 +55,7 @@ export default [
         ),
         div(
             {
-                class: "bar__section",
-                "data-composition": "sandwich-middle",
+                class: "bar__section m-sandwich-middle",
             },
             span(
                 {
@@ -71,8 +67,7 @@ export default [
         ),
         div(
             {
-                class: "bar__section",
-                "data-composition": "sandwich-end",
+                class: "bar__section m-sandwich-end",
             },
             button(
                 {
