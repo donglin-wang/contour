@@ -1,0 +1,23 @@
+@layer variant {
+    .bar__section.m-margin-inline-start-auto {
+        margin-inline-start: auto;
+    }
+
+    .bar__section.m-gap-3 {
+        gap: var(--space-3);
+    }
+
+    .bar__section.m-sandwich-start {
+        justify-content: flex-start;
+        width: 50%;
+    }
+
+    .bar__section.m-sandwich-end {
+        justify-content: flex-end;
+        width: 50%
+    }
+
+    .bar__section.m-sandwich-middle {
+        flex-shrink: 0;
+    }
+}
