@@ -18,7 +18,6 @@
     }
 
     .text[data-for="landing-hero-logo"]{
-        padding: var(--space-2) var(--space-4);
-        margin-block-end: var(--space-2);
+        padding-inline: var(--space-4);
     }
 }
