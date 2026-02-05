@@ -2,7 +2,7 @@ import { initializeRouter } from "/store/router";
 import { initializeStyleRegistry } from "/store/style";
 import homeRoutes from "/page/home/routes";
 import { tags } from "/lib/tags";
-import { PanelLeftClose, House, Sun } from "/component/symbol";
+import { PanelLeftClose, PanelRightClose, House } from "/component/symbol";
 import { ThemeToggleTrigger } from "/page/docs/component";
 import { articles } from "/page/docs/routes";
 import docRoutes from "/page/docs/routes";
@@ -24,6 +24,28 @@ const root = div({
     "data-for": "contour-root",
 });
 
+const sidebar = createSidebar(articles);
+
+const sidebarToggle = button(
+    {
+        class: "trigger m-ghost",
+        "data-variant": "icon",
+    },
+    PanelLeftClose(),
+);
+
+sidebarToggle.addEventListener("click", () => {
+    if (sidebar.hasAttribute("data-closed")) {
+        sidebar.toggleAttribute("data-open", true);
+        sidebar.toggleAttribute("data-closed", false);
+        sidebarToggle.replaceChildren(PanelLeftClose());
+    } else {
+        sidebar.toggleAttribute("data-open", false);
+        sidebar.toggleAttribute("data-closed", true);
+        sidebarToggle.replaceChildren(PanelRightClose());
+    }
+});
+
 const scaffold = [
     nav(
         {
@@ -34,13 +56,7 @@ const scaffold = [
             {
                 class: "bar__section",
             },
-            button(
-                {
-                    class: "trigger m-ghost",
-                    "data-variant": "icon",
-                },
-                PanelLeftClose(),
-            ),
+            sidebarToggle,
             home,
         ),
         div(
@@ -56,7 +72,7 @@ const scaffold = [
             class: "container",
             "data-variant": "main",
         },
-        createSidebar(articles),
+        sidebar,
         root,
     ),
 ];

@@ -11,6 +11,7 @@ export const createSidebar = (articles: { path: string; title: string }[]) =>
         {
             class: "menu",
             "data-variant": "sidebar",
+            "data-open": null,
         },
         ...articles.map((spec) =>
             Link({

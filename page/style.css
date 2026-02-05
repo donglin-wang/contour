@@ -22,6 +22,10 @@
         padding: var(--space-4);
     }
 
+    .menu[data-variant="sidebar"][data-closed] {
+        display: none;
+    }
+
     .menu__item[data-variant="sidebar"] {
         border-radius: 5px;
         padding: var(--space-3);
