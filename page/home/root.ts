@@ -1,6 +1,7 @@
 import { tags } from "/lib/tags";
 import { getRouter } from "/store/router";
 import { Link } from "/component/link";
+import { openSidebar } from "/page/routes";
 
 const { div, h1, p, span } = tags;
 const router = getRouter();
@@ -10,7 +11,10 @@ const displayButton = Link({
         class: "trigger",
         "data-for": "landing-hero",
     },
-    callback: async () => await router.navigateTo("docs/lorem"),
+    callback: async () => {
+        await router.navigateTo("docs/lorem");
+        openSidebar()
+    },
     children: ["Get started"],
 });
 

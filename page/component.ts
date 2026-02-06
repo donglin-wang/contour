@@ -11,7 +11,7 @@ export const createSidebar = (articles: { path: string; title: string }[]) =>
         {
             class: "menu",
             "data-variant": "sidebar",
-            "data-open": null,
+            "data-closed": null,
         },
         ...articles.map((spec) =>
             Link({
@@ -24,6 +24,6 @@ export const createSidebar = (articles: { path: string; title: string }[]) =>
                     href: `/docs/${spec.path}`,
                     "data-variant": "sidebar",
                 },
-            })
-        )
+            }),
+        ),
     );
