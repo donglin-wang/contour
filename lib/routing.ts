@@ -18,7 +18,7 @@ class Router {
     private eventHandler;
 
     constructor() {
-        this.eventHandler = () => this.loadPath()
+        this.eventHandler = () => this.loadPath();
         window.addEventListener("popstate", this.eventHandler);
     }
 
