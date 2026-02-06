@@ -13,14 +13,14 @@ import rowBorderedStyle from "/style/variant/table/rowBordered.css?inline";
 import columnBorderedStyle from "/style/variant/table/columnBordered.css?inline";
 import rowStickyStyle from "/style/variant/table/rowSticky.css?inline";
 import columnStickyStyle from "/style/variant/table/columnSticky.css?inline";
-import nestedStyle from "/page/docs/articles/table/style";
+import { nestedStyle } from "/page/docs/articles/table/css";
 
 const defaultTable = constructTable(
     patientSepc,
     patients,
     "default",
     "default-header",
-    "default-body"
+    "default-body",
 );
 
 const rowBordered = constructTable(
@@ -28,7 +28,7 @@ const rowBordered = constructTable(
     patients,
     "row-bordered",
     "row-bordered-header",
-    "row-bordered-body"
+    "row-bordered-body",
 );
 
 const columnBordered = constructTable(
@@ -36,7 +36,7 @@ const columnBordered = constructTable(
     patients,
     "column-bordered",
     "column-bordered-header",
-    "column-bordered-body"
+    "column-bordered-body",
 );
 
 const rowSticky = constructTable(
@@ -44,7 +44,7 @@ const rowSticky = constructTable(
     patients,
     "row-sticky",
     "row-sticky-header",
-    "row-sticky-body"
+    "row-sticky-body",
 );
 
 const columnSticky = constructTable(
@@ -52,7 +52,7 @@ const columnSticky = constructTable(
     patients,
     "column-sticky",
     "column-sticky-header",
-    "column-sticky-body"
+    "column-sticky-body",
 );
 
 const nestedHeader = constructTable(
@@ -60,7 +60,7 @@ const nestedHeader = constructTable(
     patients,
     "nested",
     "nested-header",
-    "nested-body"
+    "nested-body",
 );
 
 export default [
