@@ -16,6 +16,13 @@
         src: url("/asset/font/InterVariable-Italic.woff2") format("woff2");
     }
 
+    @font-face {
+        font-family: RecursiveMonoLinearExtraBold;
+        font-display: swap;
+        src: url("/asset/font/RecursiveMonoLinearExtraBold.woff2")
+            format("woff2");
+    }
+
     body {
         font-family: "InterVariable", sans-serif;
         color: var(--text-color-base, initial);

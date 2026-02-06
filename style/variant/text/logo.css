@@ -1,10 +1,4 @@
 @layer variant {
-    @font-face {
-        font-family: RecursiveMonoLinearExtraBold;
-        font-display: swap;
-        src: url("/asset/font/RecursiveMonoLinearExtraBold.woff2") format("woff2");
-    }
-
     .text[data-for="landing-hero-logo"],
     .text[data-variant="logo"] {
         font-family: "RecursiveMonoLinearExtraBold";
