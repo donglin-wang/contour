@@ -65,4 +65,17 @@
         display: flex;
         gap: 0.5rem;
     }
+
+    .text[data-for="landing-hero-logo"],
+    .text[data-variant="logo"] {
+        font-family: "RecursiveMonoLinearExtraBold";
+        padding-block: var(--space);
+        padding-inline: var(--space-4);
+        border-radius: 5px;
+        color: var(--text-color-base-inverted);
+        background-color: var(--background-inverted);
+        font-size: inherit;
+        display: inline-block;
+        line-height: 1;
+    }
 }
