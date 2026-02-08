@@ -2,6 +2,7 @@
 @layer variant {
     :root {
         --top-nav-height: 3rem;
+        --main-height: calc(100vh - var(--top-nav-height));
     }
 
     .container[data-for="contour-root"] {
@@ -9,10 +10,11 @@
         flex: 1;
         width: 100%;
         position: relative;
+        height: var(--main-height);
     }
 
     .menu[data-variant="sidebar"] {
-        height: calc(100vh - var(--top-nav-height));
+        height: var(--main-height);
         flex: 1;
         max-width: var(--measure-2);
         border-inline-end: var(--border-width-1) solid var(--border-color);
@@ -57,7 +59,7 @@
         position: sticky;
         top: var(--top-nav-height);
         flex: 0 0 var(--measure-2);
-        max-height: 100vh;
+        max-height: var(--main-height);
         overflow-y: auto;
     }
 
