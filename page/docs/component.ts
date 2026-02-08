@@ -268,25 +268,3 @@ export const inline = (strings: TemplateStringsArray, ...args: Child[]) => {
     }
     return children;
 };
-
-export const ThemeToggleTrigger = () => {
-    const trigger = button(
-        {
-            class: "trigger m-ghost",
-            "data-variant": "icon",
-        },
-        Sun(),
-    );
-
-    trigger.addEventListener("click", () => {
-        if (document.body.getAttribute("data-theme") === "dark") {
-            document.body.setAttribute("data-theme", "light");
-            trigger.replaceChildren(Sun());
-        } else {
-            document.body.setAttribute("data-theme", "dark");
-            trigger.replaceChildren(Moon());
-        }
-    });
-    
-    return trigger;
-};

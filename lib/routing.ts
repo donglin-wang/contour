@@ -1,85 +1,61 @@
-export type RouteSegment = {
-    pattern: string | RegExp;
-    children: RouteSegment[];
-    callback: (
-        root: HTMLElement,
-        match?: RegExpMatchArray,
-    ) => Promise<HTMLElement | void>;
-};
+export type RouteHandler = (router: Router) => Promise<Element>;
 
-export type RouterSpec = {
-    routeSegments: RouteSegment[];
-    rootCallback?: () => HTMLElement;
-};
-
-class Router {
-    routeSegments: RouteSegment[] = [];
-    rootCallback: () => HTMLElement = () => document.body;
-    private eventHandler;
-
-    constructor() {
-        this.eventHandler = () => this.loadPath();
-        window.addEventListener("popstate", this.eventHandler);
-    }
-
-    destroy() {
-        window.removeEventListener("popstate", this.eventHandler);
-    }
-
-    getDesiredSegments(): string[] {
-        const segments = window.location.pathname.slice(1).split("/");
-        if (segments[0] === "") {
-            return [""];
-        }
-        if (segments[segments.length - 1] === "") {
-            return segments;
-        }
-        return [...segments, ""];
-    }
-
-    async loadPath() {
-        const segments = this.getDesiredSegments();
-        let i = 0;
-        let j = 0;
-        let currentCandidates = this.routeSegments;
-        let root = this.rootCallback();
-
-        while (i < segments.length && j < currentCandidates.length) {
-            let match = undefined;
-            const segment = currentCandidates[j];
-
-            if (typeof segment.pattern === "string") {
-                if (segment.pattern !== segments[i]) {
-                    j++;
-                    continue;
-                }
-            } else {
-                match = segments[i].match(segment.pattern);
-                if (!match) {
-                    j++;
-                    continue;
-                }
-            }
-            const newRoot = await segment.callback(root, match);
-            root = newRoot ? newRoot : root;
-            currentCandidates = segment.children;
-            i++;
-            j = 0;
-        }
-
-        const routeMatch =
-            i === segments.length ||
-            (i === segments.length - 1 && segments[i] === "");
-
-        if (!routeMatch) {
-            throw new Error("Route not found");
-        }
-    }
-
-    async navigateTo(path): Promise<void> {
-        window.history.pushState({}, "", "/" + path);
-        await this.loadPath();
-    }
+export interface Route {
+    path: string;
+    handler: RouteHandler;
 }
 
-export default Router;
+export class Router {
+    private routes: Map<string, RouteHandler> = new Map();
+    private container: Element;
+    private currentCleanup?: () => void;
+
+    constructor(container: Element) {
+        this.container = container;
+        window.addEventListener('popstate', () => this.handleRoute());
+    }
+
+    addRoute(route: Route): void {
+        this.routes.set(route.path, route.handler);
+    }
+
+    navigate(path: string): void {
+        window.history.pushState({}, '', path);
+        this.handleRoute();
+    }
+
+    private async handleRoute(): Promise<void> {
+        const path = window.location.pathname;
+        
+        let handler = this.routes.get(path);
+        
+        if (!handler) {
+            handler = this.routes.get('/') || this.routes.get('/home');
+        }
+
+        if (!handler) {
+            console.error('No route handler found for:', path);
+            return;
+        }
+
+        if (this.currentCleanup) {
+            this.currentCleanup();
+        }
+
+        try {
+            const element = await handler(this);
+            this.container.replaceChildren(element);
+        } catch (error) {
+            console.error('Error loading route:', error);
+            this.container.textContent = 'Error loading page';
+        }
+    }
+
+    start(): void {
+        this.handleRoute();
+    }
+
+    setCleanup(cleanup: () => void): void {
+        this.currentCleanup = cleanup;
+    }
+}

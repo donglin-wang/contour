@@ -1,22 +1,29 @@
 import { tags } from "/lib/tags";
 import { Link } from "/component/link";
-import { getRouter } from "/store/router";
+import { stateStore } from "/store/state";
+import {
+    PanelLeftClose,
+    PanelRightClose,
+    Sun,
+    Moon,
+    House,
+} from "/component/symbol";
 
-const router = getRouter();
+const { div, button, nav, main } = tags;
 
-const { div } = tags;
-
-export const createSidebar = (articles: { path: string; title: string }[]) =>
-    div(
+export const createSidebar = (
+    articles: { path: string; title: string }[],
+    navigateTo: (path: string) => void,
+) => {
+    const sidebar = div(
         {
             class: "menu",
             "data-variant": "sidebar",
-            "data-closed": null,
         },
         ...articles.map((spec) =>
             Link({
                 callback: async () => {
-                    await router.navigateTo("docs/" + spec.path);
+                    navigateTo("/docs/" + spec.path);
                 },
                 children: [spec.title],
                 attributes: {
@@ -27,3 +34,142 @@ export const createSidebar = (articles: { path: string; title: string }[]) =>
             }),
         ),
     );
+
+    const openSidebar = () => {
+        sidebar.toggleAttribute("data-open", true);
+        sidebar.toggleAttribute("data-closed", false);
+    };
+
+    const closeSidebar = () => {
+        sidebar.toggleAttribute("data-open", false);
+        sidebar.toggleAttribute("data-closed", true);
+    };
+
+    if (stateStore.getState().sidebarOpen) {
+        openSidebar();
+    } else {
+        closeSidebar();
+    }
+
+    stateStore.subscribe((state) => {
+        if (state.sidebarOpen) {
+            openSidebar();
+        } else {
+            closeSidebar();
+        }
+    });
+
+    return sidebar;
+};
+
+const closeSidebar = () => {
+    stateStore.setState({ sidebarOpen: false });
+};
+
+const openSidebar = () => {
+    stateStore.setState({ sidebarOpen: true });
+};
+
+const toggleSidebarState = () => {
+    if (stateStore.getState().sidebarOpen) {
+        closeSidebar();
+    } else {
+        openSidebar();
+    }
+};
+
+export const createSidebarToggle = () => {
+    const sidebarToggleSymbol = stateStore.getState().sidebarOpen
+        ? PanelLeftClose()
+        : PanelRightClose();
+
+    const sidebarToggle = button(
+        {
+            class: "trigger m-ghost",
+            "data-variant": "icon",
+        },
+        sidebarToggleSymbol,
+    );
+
+    sidebarToggle.addEventListener("click", toggleSidebarState);
+    stateStore.subscribe((appState) => {
+        console.log("Setting toggle icon");
+        if (appState.sidebarOpen) {
+            sidebarToggle.replaceChildren(PanelLeftClose());
+        } else {
+            sidebarToggle.replaceChildren(PanelRightClose());
+        }
+    });
+
+    return sidebarToggle;
+};
+
+export const createHomeButton = (navigateTo: (path: string) => void) =>
+    Link({
+        attributes: {
+            class: "trigger m-ghost",
+            "data-variant": "icon",
+        },
+        callback: async () => {
+            navigateTo("/");
+            closeSidebar();
+        },
+        children: [House()],
+    });
+
+export const createScaffold = (
+    sidebar: Element,
+    sidebarToggle: Element,
+    homeButton: Element,
+    root: Element,
+) => [
+    nav(
+        {
+            class: "bar",
+            "data-for": "top-nav",
+        },
+        div(
+            {
+                class: "bar__section",
+            },
+            sidebarToggle,
+            homeButton,
+        ),
+        div(
+            {
+                class: "bar__section m-margin-inline-start-auto",
+            },
+            ThemeToggleTrigger(),
+        ),
+    ),
+    main(
+        {
+            class: "container",
+            "data-variant": "main",
+        },
+        sidebar,
+        root,
+    ),
+];
+
+export const ThemeToggleTrigger = () => {
+    const trigger = button(
+        {
+            class: "trigger m-ghost",
+            "data-variant": "icon",
+        },
+        Sun(),
+    );
+
+    trigger.addEventListener("click", () => {
+        if (document.body.getAttribute("data-theme") === "dark") {
+            document.body.setAttribute("data-theme", "light");
+            trigger.replaceChildren(Sun());
+        } else {
+            document.body.setAttribute("data-theme", "dark");
+            trigger.replaceChildren(Moon());
+        }
+    });
+
+    return trigger;
+};

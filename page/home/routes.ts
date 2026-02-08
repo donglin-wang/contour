@@ -1,15 +1,18 @@
 import homeStyle from "/page/home/css";
 import { setCurrentStyle } from "/store/style";
 
-export default [
+import type { Route, Router } from "/lib/routing";
+
+const homeRoutes: Route[] = [
     {
-        pattern: "",
-        callback: async (root: HTMLElement) => {
+        path: "/",
+        handler: async (router: Router) => {
             const homeElement = await import("/page/home/root");
             await setCurrentStyle("home", homeStyle);
-            root.replaceChildren(homeElement.default);
-            return root;
+            document.title = "Home";
+            return homeElement.default(router);
         },
-        children: [],
     },
 ];
+
+export default homeRoutes;

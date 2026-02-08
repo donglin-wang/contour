@@ -1,5 +1,6 @@
 import { setCurrentStyle } from "/store/style";
 import Article from "/component/article";
+import type { Route } from "/lib/routing";
 
 type ArticleSpec = {
     path: string;
@@ -22,11 +23,11 @@ const createArticle = (articleContent: Element[]) =>
         hasOutline: true,
         outlineAttributes: {
             class: "menu",
-            "data-for": "article-outline"
+            "data-for": "article-outline",
         },
         outlineItemAttributes: {
             class: "menu__item",
-            "data-for": "article-outline"
+            "data-for": "article-outline",
         },
     }).root;
 
@@ -122,27 +123,20 @@ export const articles: ArticleSpec[] = [
     },
 ];
 
-const routeSegments = [
-    {
-        pattern: "docs",
-        callback: (root) => root,
-        children: articles.map((article) => ({
-            pattern: article.path,
-            callback: async (root: HTMLElement) => {
-                const sharedStyle = await importSharedStyle();
-                const articleModule = await article.importArticle();
-                let articleStyle = "";
-                if (article.importStyle) {
-                    const articleStyleModule = await article.importStyle();
-                    articleStyle = articleStyleModule.default;
-                }
-                await setCurrentStyle(article.path, sharedStyle, articleStyle);
-                document.title = article.title;
-                root.replaceChildren(createArticle(articleModule.default));
-            },
-            children: [],
-        })),
+const docRoutes: Route[] = articles.map((article) => ({
+    path: `/docs/${article.path}`,
+    handler: async () => {
+        const sharedStyle = await importSharedStyle();
+        const articleModule = await article.importArticle();
+        let articleStyle = "";
+        if (article.importStyle) {
+            const articleStyleModule = await article.importStyle();
+            articleStyle = articleStyleModule.default;
+        }
+        await setCurrentStyle(article.path, sharedStyle, articleStyle);
+        document.title = article.title;
+        return createArticle(articleModule.default);
     },
-];
+}));
 
-export default routeSegments;
+export default docRoutes;
