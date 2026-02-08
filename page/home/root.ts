@@ -1,7 +1,7 @@
 import { tags } from "/lib/tags";
 import { getRouter } from "/store/router";
 import { Link } from "/component/link";
-import { openSidebar } from "/page/routes";
+import { openSidebar } from "/page/root";
 
 const { div, h1, p, span } = tags;
 const router = getRouter();
