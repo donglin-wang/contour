@@ -9,7 +9,7 @@ import {
     House,
 } from "/component/symbol";
 
-const { div, button, nav, main } = tags;
+const { div, button, nav, main, span } = tags;
 
 export const createSidebar = (
     articles: { path: string; title: string }[],
@@ -20,18 +20,42 @@ export const createSidebar = (
             class: "menu",
             "data-variant": "sidebar",
         },
-        ...articles.map((spec) =>
-            Link({
-                callback: async () => {
-                    navigateTo("/docs/" + spec.path);
-                },
-                children: [spec.title],
-                attributes: {
-                    class: "menu__item",
-                    href: `/docs/${spec.path}`,
-                    "data-variant": "sidebar",
-                },
-            }),
+        span(
+            {
+                class: "menu__title",
+            },
+            "Foundation"
+        ),
+        div(
+            {
+                class: "menu",
+                "data-variant": "nested",
+            }
+        ),
+        span(
+            {
+                class: "menu__title",
+            },
+            "Patterns"
+        ),
+        div(
+            {
+                class: "menu",
+                "data-variant": "nested",
+            },
+            ...articles.map((spec) =>
+                Link({
+                    callback: async () => {
+                        navigateTo("/docs/" + spec.path);
+                    },
+                    children: [spec.title],
+                    attributes: {
+                        class: "menu__item",
+                        href: `/docs/${spec.path}`,
+                        "data-variant": "sidebar",
+                    },
+                }),
+            ),
         ),
     );
 

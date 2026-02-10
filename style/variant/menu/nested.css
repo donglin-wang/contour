@@ -1,6 +1,6 @@
 @layer variant {
     .menu[data-variant="nested"] {
-        margin-inline-start: var(--space-6);
+        margin-inline-start: var(--space-4);
         position: relative;
         padding-block: 0;
     }

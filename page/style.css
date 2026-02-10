@@ -30,7 +30,8 @@
 
     .menu__item[data-variant="sidebar"] {
         border-radius: 5px;
-        padding: var(--space-3);
+        padding-block: var(--space-3);
+        padding-inline: var(--space-5);
     }
 
     .container[data-variant="main"] {
