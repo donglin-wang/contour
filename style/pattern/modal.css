@@ -18,6 +18,7 @@
         overflow: auto;
         align-items: center;
         justify-content: center;
+        color: var(--text-color-base);
     }
 
     .modal::backdrop {

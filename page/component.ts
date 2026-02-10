@@ -12,9 +12,12 @@ import {
 const { div, button, nav, main, span } = tags;
 
 export const createSidebar = (
-    articles: { path: string; title: string }[],
+    articles: { path: string; title: string; section: "Foundation" | "Patterns" }[],
     navigateTo: (path: string) => void,
 ) => {
+    const foundationArticles = articles.filter((a) => a.section === "Foundation");
+    const patternArticles = articles.filter((a) => a.section === "Patterns");
+
     const sidebar = div(
         {
             class: "menu",
@@ -30,7 +33,20 @@ export const createSidebar = (
             {
                 class: "menu",
                 "data-variant": "nested",
-            }
+            },
+            ...foundationArticles.map((spec) =>
+                Link({
+                    callback: async () => {
+                        navigateTo("/docs/" + spec.path);
+                    },
+                    children: [spec.title],
+                    attributes: {
+                        class: "menu__item",
+                        href: `/docs/${spec.path}`,
+                        "data-variant": "sidebar",
+                    },
+                }),
+            ),
         ),
         span(
             {
@@ -43,7 +59,7 @@ export const createSidebar = (
                 class: "menu",
                 "data-variant": "nested",
             },
-            ...articles.map((spec) =>
+            ...patternArticles.map((spec) =>
                 Link({
                     callback: async () => {
                         navigateTo("/docs/" + spec.path);

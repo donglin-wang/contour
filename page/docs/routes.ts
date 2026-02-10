@@ -2,9 +2,12 @@ import { setCurrentStyle } from "/store/style";
 import Article from "/component/article";
 import type { Route } from "/lib/routing";
 
+type ArticleSection = "Foundation" | "Patterns";
+
 type ArticleSpec = {
     path: string;
     title: string;
+    section: ArticleSection;
     importArticle: () => Promise<{ default: Element[] }>;
     importStyle?: () => Promise<{ default: string }>;
 };
@@ -47,79 +50,99 @@ export const articles: ArticleSpec[] = [
     {
         path: "lorem",
         title: "Lorem",
+        section: "Foundation",
         importArticle: () => import("/page/docs/articles/lorem"),
     },
     {
         path: "menu",
         title: "Menu",
+        section: "Patterns",
         importArticle: () => import("/page/docs/articles/menu/root"),
         importStyle: () => import("/page/docs/articles/menu/css"),
     },
     {
         path: "tabs",
         title: "Tabs",
+        section: "Patterns",
         importArticle: () => import("/page/docs/articles/tabs/root"),
         importStyle: () => import("/page/docs/articles/tabs/css"),
     },
     {
         path: "table",
         title: "Table",
+        section: "Patterns",
         importArticle: () => import("/page/docs/articles/table/root"),
         importStyle: () => import("/page/docs/articles/table/css"),
     },
     {
         path: "button",
         title: "Trigger",
+        section: "Patterns",
         importArticle: () => import("/page/docs/articles/trigger/root"),
         importStyle: () => import("/page/docs/articles/trigger/css"),
     },
     {
         path: "accordion",
         title: "Accordion",
+        section: "Patterns",
         importArticle: () => import("/page/docs/articles/accordion/root"),
         importStyle: () => import("/page/docs/articles/accordion/css"),
     },
     {
         path: "notice",
         title: "Notice",
+        section: "Patterns",
         importArticle: () => import("/page/docs/articles/notice/root"),
         importStyle: () => import("/page/docs/articles/notice/css"),
     },
     {
         path: "card",
         title: "Card",
+        section: "Patterns",
         importArticle: () => import("/page/docs/articles/card/root"),
         importStyle: () => import("/page/docs/articles/card/css"),
     },
     {
         path: "marker",
         title: "Marker",
+        section: "Patterns",
         importArticle: () => import("/page/docs/articles/marker/root"),
         importStyle: () => import("/page/docs/articles/marker/css"),
     },
     {
         path: "boundary",
         title: "Boundary",
+        section: "Patterns",
         importArticle: () => import("/page/docs/articles/boundary/root"),
         importStyle: () => import("/page/docs/articles/boundary/css"),
     },
     {
         path: "breadcrumb",
         title: "Breadcrumb",
+        section: "Patterns",
         importArticle: () => import("/page/docs/articles/breadcrumb/root"),
         importStyle: () => import("/page/docs/articles/breadcrumb/css"),
     },
     {
         path: "modal",
         title: "Modal",
+        section: "Patterns",
         importArticle: () => import("/page/docs/articles/modal/root"),
         importStyle: () => import("/page/docs/articles/modal/css"),
     },
     {
         path: "bar",
         title: "Bar",
+        section: "Patterns",
         importArticle: () => import("/page/docs/articles/bar/root"),
         importStyle: () => import("/page/docs/articles/bar/css"),
+    },
+    {
+        path: "overview",
+        title: "Overview",
+        section: "Foundation",
+        importArticle: () =>
+            import("/page/docs/articles/overview/root"),
     },
 ];
 

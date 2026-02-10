@@ -38,8 +38,8 @@ const defaultModal = dialog(
             {
                 class: "modal__section",
             },
-            b({ class: "text m-bold" }, "Congratulation"),
-            p({ class: "text" }, "You have successfuly opened the modal"),
+            b({ class: "text m-bold" }, "Congratulations"),
+            p({ class: "text" }, "You have successfully opened the modal"),
             defaultClose
         )
     )
@@ -60,7 +60,7 @@ const controlledModal = div(
             {
                 class: "modal__section",
             },
-            b({ class: "text m-bold" }, "Congragulation"),
+            b({ class: "text m-bold" }, "Congratulations"),
             p({ class: "text" }, "You have successfully opened the modal"),
             controlledClose
         )
@@ -79,7 +79,7 @@ const responsiveModal = dialog(
             {
                 class: "modal__section",
             },
-            b({ class: "text m-bold" }, "Congragulation"),
+            b({ class: "text m-bold" }, "Congratulations"),
             p({ class: "text" }, "You have successfully opened the modal"),
             responsiveClose
         )
@@ -107,7 +107,7 @@ const headerFooter = dialog(
                     class: "text m-bold",
                     "data-variant": "sectioned-modal-title",
                 },
-                "Congragulation"
+                "Congratulations"
             )
         ),
         div(
@@ -115,7 +115,7 @@ const headerFooter = dialog(
                 class: "modal__section",
                 "data-variant": "sectioned-body",
             },
-            "You have successfully opened the modal"
+            p({ class: "text" }, "You have successfully opened the modal")
         ),
         div(
             {
@@ -148,7 +148,7 @@ const corneredModal = dialog(
             {
                 class: "modal__section",
             },
-            b({ class: "text m-bold" }, "Congragulation"),
+            b({ class: "text m-bold" }, "Congratulations"),
             p({ class: "text" }, "You have successfully opened the modal"),
             div(
                 { class: "modal__close", "data-variant": "cornered" },
@@ -173,7 +173,7 @@ const longModal = dialog(
             {
                 class: "modal__section",
             },
-            b({ class: "text m-bold" }, "Congratulation"),
+            b({ class: "text m-bold" }, "Congratulations"),
             p(
                 { class: "text" },
                 "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
@@ -218,7 +218,7 @@ const innerModal = dialog(
             class: "modal__dialog",
             "data-variant": "inner-scroll",
         },
-        b({ class: "text m-bold" }, "Congratulation"),
+        b({ class: "text m-bold" }, "Congratulations"),
         div(
             {
                 class: "modal__section",
