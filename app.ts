@@ -4,6 +4,7 @@ import {
     createHomeButton,
     createSidebar,
     createSidebarToggle,
+    initializeTheme,
 } from "/page/component";
 import homeRoutes from "/page/home/routes";
 import docRoutes from "/page/docs/routes";
@@ -24,6 +25,8 @@ for (const route of [...homeRoutes, ...docRoutes]) {
 }
 
 const navigateTo = (path: string) => router.navigate(path);
+
+initializeTheme();
 
 document.body.replaceChildren(
     ...createScaffold(

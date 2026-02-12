@@ -204,12 +204,21 @@ export const ThemeToggleTrigger = () => {
     trigger.addEventListener("click", () => {
         if (document.body.getAttribute("data-theme") === "dark") {
             document.body.setAttribute("data-theme", "light");
+            localStorage.setItem("theme", "light");
             trigger.replaceChildren(Sun());
         } else {
             document.body.setAttribute("data-theme", "dark");
+            localStorage.setItem("theme", "dark");
             trigger.replaceChildren(Moon());
         }
     });
 
     return trigger;
 };
+
+export const initializeTheme = () => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+        document.body.setAttribute("data-theme", storedTheme);
+    }
+}
