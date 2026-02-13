@@ -6,7 +6,7 @@ import {
     CSSCodeBlock,
     HTMLCodeBlock,
 } from "/page/docs/component";
-import { Ellipsis, Menu } from "/component/symbol";
+import { Ellipsis, Menu, ContourLogo } from "/component/symbol";
 import { tags } from "/lib/tags";
 import topNavStyle from "/style/variant/bar/topNav.css?inline";
 import modifiersStyle from "/style/variant/bar/modifiers.css?inline";
@@ -26,13 +26,7 @@ const bars: Record<
                 {
                     class: "bar__section m-gap-3",
                 },
-                span(
-                    {
-                        class: "text",
-                        "data-variant": "logo",
-                    },
-                    "Contour",
-                ),
+                ContourLogo({class: "symbol m-x-large"}),
                 span("Doucmentation"),
                 span("Guides"),
             ),
@@ -73,13 +67,7 @@ const bars: Record<
                 {
                     class: "bar__section m-sandwich-middle",
                 },
-                span(
-                    {
-                        class: "text",
-                        "data-variant": "logo",
-                    },
-                    "Contour",
-                ),
+                ContourLogo({class: "symbol m-x-large"}),
             ),
             div(
                 {
@@ -113,7 +101,7 @@ Object.values(bars).forEach(({ element, style, title }) => {
     }
     articleElements.push(
         ComponentPanel({
-            display: ComponentDisplay(element),
+            display: ComponentDisplay(element, "display-main-striped"),
             sources: sources,
         }),
     );
