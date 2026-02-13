@@ -1,81 +1,122 @@
+import {
+    ComponentDisplay,
+    ComponentPanel,
+    H1,
+    H2,
+    CSSCodeBlock,
+    HTMLCodeBlock,
+} from "/page/docs/component";
 import { Ellipsis, Menu } from "/component/symbol";
 import { tags } from "/lib/tags";
-import { H1 } from "/page/docs/component";
+import topNavStyle from "/style/variant/bar/topNav.css?inline";
+import modifiersStyle from "/style/variant/bar/modifiers.css?inline";
 
 const { nav, div, button, span } = tags;
 
-export default [
-    H1("Bar"),
-    nav(
-        {
-            class: "bar",
-        },
-        div(
+const bars: Record<
+    string,
+    { element: HTMLElement; style?: string; title?: string }
+> = {
+    topNav: {
+        element: nav(
             {
-                class: "bar__section m-gap-3",
+                class: "bar",
             },
-            span(
+            div(
                 {
-                    class: "text",
-                    "data-variant": "logo",
+                    class: "bar__section m-gap-3",
                 },
-                "Contour",
+                span(
+                    {
+                        class: "text",
+                        "data-variant": "logo",
+                    },
+                    "Contour",
+                ),
+                span("Doucmentation"),
+                span("Guides"),
             ),
-            span("Doucmentation"),
-            span("Guides"),
-        ),
-        div(
-            {
-                class: "bar__section m-margin-inline-start-auto",
-            },
-            button(
+            div(
                 {
-                    class: "trigger m-ghost",
-                    "data-variant": "icon",
+                    class: "bar__section m-margin-inline-start-auto",
                 },
-                Ellipsis(),
-            ),
-        ),
-    ),
-    nav(
-        {
-            class: "bar",
-        },
-        div(
-            {
-                class: "bar__section m-sandwich-start",
-            },
-            button(
-                {
-                    class: "trigger m-ghost",
-                    "data-variant": "icon",
-                },
-                Menu(),
+                button(
+                    {
+                        class: "trigger m-ghost",
+                        "data-variant": "icon",
+                    },
+                    Ellipsis(),
+                ),
             ),
         ),
-        div(
+        style: topNavStyle,
+        title: "Top nav",
+    },
+    sandwich: {
+        element: nav(
             {
-                class: "bar__section m-sandwich-middle",
+                class: "bar",
             },
-            span(
+            div(
                 {
-                    class: "text",
-                    "data-variant": "logo",
+                    class: "bar__section m-sandwich-start",
                 },
-                "Contour",
+                button(
+                    {
+                        class: "trigger m-ghost",
+                        "data-variant": "icon",
+                    },
+                    Menu(),
+                ),
+            ),
+            div(
+                {
+                    class: "bar__section m-sandwich-middle",
+                },
+                span(
+                    {
+                        class: "text",
+                        "data-variant": "logo",
+                    },
+                    "Contour",
+                ),
+            ),
+            div(
+                {
+                    class: "bar__section m-sandwich-end",
+                },
+                button(
+                    {
+                        class: "trigger m-ghost",
+                        "data-variant": "icon",
+                    },
+                    Ellipsis(),
+                ),
             ),
         ),
-        div(
-            {
-                class: "bar__section m-sandwich-end",
-            },
-            button(
-                {
-                    class: "trigger m-ghost",
-                    "data-variant": "icon",
-                },
-                Ellipsis(),
-            ),
-        ),
-    ),
-];
+        style: modifiersStyle,
+        title: "Sandwich",
+    },
+};
+
+const articleElements = [H1("Bar")];
+
+Object.values(bars).forEach(({ element, style, title }) => {
+    if (title) {
+        articleElements.push(H2(title));
+    }
+    const sources: any = {
+        HTML: HTMLCodeBlock(element),
+    };
+    if (style) {
+        sources.CSS = CSSCodeBlock(style);
+    }
+    articleElements.push(
+        ComponentPanel({
+            display: ComponentDisplay(element),
+            sources: sources,
+        }),
+    );
+});
+
+export default articleElements;
