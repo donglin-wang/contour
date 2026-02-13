@@ -19,8 +19,10 @@
     .container[data-for="display-main-table"] {
         display: block;
         padding: var(--space-4);
+        border-block-end: var(--border-width-1) solid var(--border-color);
     }
 
+    .container[data-for="display-main-table"]:last-child,
     .container[data-for="display-main-striped"]:last-child,
     .container[data-for="display-main-dotted"]:last-child {
         border-block-end: none;
