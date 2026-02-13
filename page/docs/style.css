@@ -22,6 +22,14 @@
         border-block-end: var(--border-width-1) solid var(--border-color);
     }
 
+    .container[data-for="display-main-boundary"] {
+        display: block;
+        padding-block: var(--space-7);
+        padding-inline: var(--space-3);
+        border-block-end: var(--border-width-1) solid var(--border-color);
+    }
+
+    .container[data-for="display-main-boundary"]:last-child,
     .container[data-for="display-main-table"]:last-child,
     .container[data-for="display-main-striped"]:last-child,
     .container[data-for="display-main-dotted"]:last-child {
@@ -39,6 +47,7 @@
         background-size: 8px 8px;
     }
 
+    .container[data-for="display-main-boundary"],
     .container[data-for="display-main-table"],
     .container[data-for="display-main-dotted"] {
         background-image:
