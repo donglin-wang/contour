@@ -1,7 +1,7 @@
 @layer base {
     :root {
         --line-height-sparse: 2;
-        --line-height-prose: 1.5;
+        --line-height-prose: 1.75;
         --line-height-heading: 1.2;
     }
 }

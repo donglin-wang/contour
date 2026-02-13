@@ -1,86 +1,105 @@
-import { H1, H2, P, Ul, Li, Subheading } from "/page/docs/component";
-
+import {
+    H1,
+    H2,
+    P,
+    Ul,
+    Li,
+    Subheading,
+    CodeInline,
+    inline,
+} from "/page/docs/component";
 
 export default [
     H1("Overview"),
-    Subheading(`The Contour CSS library follows a structured and scalable naming
-convention system that organizes styles into three primary layers:
-Base, Pattern, and Variant. This hierarchical approach ensures
-consistency, maintainability, and clarity across the entire design
-system.`),
+    Subheading("Contour is a set of conventions for \
+organizing CSS that helps teams document their \
+design systems, build component libraries, and \
+scale concurrent development without tooling \
+dependencies or specificity conflicts."),
 
-    H2("Predictable"),
-    P(`Consistent naming makes the codebase easy to navigate and
-understand. When developers encounter a class name like .menu__item
-or a variant like data-variant="indented", they can immediately
-understand the purpose and location of the corresponding styles.
-This reduces cognitive load and onboarding time for new team
-members.`),
+    H2("A CSS-native design system"),
+    P("Contour uses plain CSS custom properties and \
+layers to express your design tokens and component \
+styles. Colors, spacing scales, typography, shadows, \
+and borders are all defined as standard custom \
+properties in the base layer, making your entire \
+design system readable and editable without leaving \
+CSS. There is no proprietary configuration format, \
+no token compiler, and no theme object to learn. \
+Your design decisions live where they belong: in \
+stylesheets that any browser can interpret directly."),
 
-    H2("Scalable"),
-    P(`New variants are added without modifying existing patterns. The
-separation between pattern and variant layers means you can
-introduce new component variations by simply creating new CSS files
-in the appropriate variant/[component]/ subdirectory. There's no
-risk of breaking existing styles or introducing cascading issues
-when adding features.`),
+    H2("No runtime, no build step"),
+    P("Every Contour stylesheet is valid CSS that works \
+in any modern browser as-is. There is no JavaScript \
+runtime generating class names, no preprocessor \
+transforming your source files, and no \
+framework-specific binding to adopt. This means your \
+styles are fully transferable. They work the same \
+way whether your project uses React, Vue, a \
+server-rendered template, or a static HTML file. If \
+you move to a different stack tomorrow, your styles \
+come with you unchanged."),
 
-    H2("Maintainable"),
-    P(`Clear separation of concerns and explicit layer structure make
-debugging and refactoring straightforward. Each CSS file has a
-single responsibility: either defining the component structure
-(pattern) or applying a specific variation (variant). When a bug
-occurs, you know exactly where to look based on whether it's
-structural or variant-related.`),
-
-    H2("Flexible"),
-    P(`Data attributes allow combining multiple modifiers within a single
-variation context. The m- prefix modifier system enables stacking
-multiple adjustments on a single component without explosion of
-class combinations. Additionally, the @layer system ensures
-modifiers and variants compose predictably without specificity
-conflicts.`),
-
-    H2("Semantic"),
-    P(`HTML remains clean and meaningful with a single primary class name
-per element. Rather than littering HTML with dozens of utility or
-modifier classes, elements carry semantic meaning through their BEM
-class names, with style variations applied through data attributes
-and modifier prefixes. This makes the markup easier to read and
-maintain.`),
-
-    H2("Performance"),
-    P(`CSS layers control cascade without specificity wars. By using
-@layer directives, you establish a predictable cascade order
-(base → pattern → variant) without relying on specificity tricks
-or !important. This results in:`),
+    H2("Scaling with layers and data attributes"),
+    P("Large teams working in the same codebase \
+inevitably run into specificity conflicts. One \
+developer's override silently breaks another's \
+component. Contour addresses this structurally by \
+organizing all styles into three CSS cascade layers:"),
     Ul(
-        Li(
-            "Smaller compiled CSS (no repeated selectors trying to override each other)",
-        ),
-        Li("Faster browser rendering (simpler cascade resolution)"),
-        Li("Easier debugging (no mystery specificity conflicts)"),
-        Li("Better maintainability (rules apply in predictable order)"),
+        Li(...inline`${CodeInline("base")} contains \
+design tokens, resets, and global defaults.`),
+        Li(...inline`${CodeInline("pattern")} contains \
+self-contained component styles that consume \
+base tokens.`),
+        Li(...inline`${CodeInline("variant")} contains \
+modifications and alternate presentations of \
+existing patterns.`),
     ),
+    P("Because the cascade resolves layers in a \
+defined order, a variant will always override a \
+pattern, and a pattern will always override a base \
+style, regardless of selector specificity or source \
+order. Developers working on different components \
+or variants can merge their work without collisions."),
+    P("Component variations are expressed through data \
+attributes rather than class name combinatorics. A \
+card becomes a profile card by adding a single \
+data-variant attribute. This keeps selector intent \
+explicit and avoids the ambiguity of stacking \
+modifier classes that may interact in unpredictable \
+ways."),
 
-    H2("Consistency Across Components"),
-    P(`The standardized structure creates consistency across your entire
-design system. Every component follows the same pattern: one base
-pattern file, organized variations in dedicated files. This
-consistency makes it easier for new components to be added with
-confidence that they'll integrate seamlessly with existing styles.`),
+    H2("Clean markup, flexible styles"),
+    P("Utility-first frameworks push styling decisions \
+into HTML, producing dense clusters of class names \
+that obscure document structure. Component-based \
+libraries like Bootstrap go the other direction, \
+offering pre-packaged designs that are difficult to \
+customize beyond their intended variations."),
+    P("Contour sits between these extremes. Each \
+element carries one primary class name that \
+identifies what it is, with optional modifier \
+classes or a data attribute to select a specific \
+presentation. The result is markup that reads like \
+a document outline rather than a styling instruction \
+sheet. At the same time, because every visual \
+property traces back to a custom property or a \
+layer-scoped rule, any aspect of any component can \
+be adjusted or extended without fighting the \
+framework."),
 
-    H2("Reduced CSS Duplication"),
-    P(`Design tokens (CSS custom properties) ensure values are defined
-once and reused everywhere. Rather than duplicating spacing values,
-colors, or typography across multiple files, you define them once
-in the base layer and reference them throughout. This makes theme
-changes and design updates simple and error-free.`),
-
-    H2("Framework Agnostic"),
-    P(`This naming convention doesn't depend on any specific JavaScript
-framework or build tool. Whether you're using vanilla JavaScript,
-React, Vue, or any other technology, the CSS works the same way.
-The structure is purely CSS-based, making it portable and
-long-lasting.`),
+    H2("No installation, full ownership"),
+    P("Contour does not publish packages, provide a \
+CDN link, or manage versions. There is no \
+installation step. Instead, the style files live \
+directly in your project's source directory. You \
+own every line of CSS. You can rename files, delete \
+components you do not use, modify token values, or \
+restructure the folders to fit your project's \
+conventions. When your requirements change, you edit \
+your own code rather than waiting for an upstream \
+release or working around an abstraction you cannot \
+control."),
 ];

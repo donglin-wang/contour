@@ -1,14 +1,15 @@
 @layer variant {
     .text[data-variant="p"],
     .text[data-variant="list"],
-    .text[data-variant="list-item"],
-    .text[data-variant="subheading"] {
+    .text[data-variant="list-item"] {
         color: var(--text-color-prose);
         line-height: var(--line-height-prose);
     }
 
     .text[data-variant="subheading"] {
+        color: var(--text-color-prose);
         font-size: var(--font-size-prose-large);
+        line-height: 1.5;
     }
 
     .text[data-variant="title-1"],
