@@ -1,41 +1,32 @@
 /* Component display */
 @layer variant {
-    .container[data-variant="component-panel"] {
-        overflow: hidden;
+    .container[data-for="display"] {
         border-radius: 5px;
         border: var(--border-width-1) solid var(--border-color);
         margin-block: var(--space-4);
     }
 
-    .boundary[data-variant="component-panel-boundary"] {
-        margin-block: 0;
-    }
-
-    .container[data-variant="component-display"],
-    .container[data-variant="component-display-muted"],
-    .container[data-variant="component-display-table"],
-    .container[data-variant="component-display-stripe"] {
+    .container[data-for="display-main-striped"],
+    .container[data-for="display-main-dotted"] {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
-        background-image:
-            radial-gradient(circle, var(--border-color) 1px, transparent 1px),
-            radial-gradient(circle, var(--border-color) 1px, transparent 1px);
-        background-size:
-            16px 16px,
-            16px 16px;
-        background-position:
-            0 0,
-            8px 8px;
         padding-block: var(--space-7);
+        border-block-end: var(--border-width-1) solid var(--border-color);
     }
 
-    .container[data-variant="component-display-muted"] {
-        background-color: var(--background-muted);
+    .container[data-for="display-main-table"] {
+        display: block;
+        padding: var(--space-4);
     }
 
-    .container[data-variant="component-display-stripe"] {
+    .container[data-for="display-main-striped"]:last-child,
+    .container[data-for="display-main-dotted"]:last-child {
+        border-block-end: none;
+    }
+
+    .container[data-for="display-main-striped"] {
         background-image: repeating-linear-gradient(
             315deg,
             var(--border-color) 0,
@@ -46,17 +37,27 @@
         background-size: 8px 8px;
     }
 
-    .container[data-variant="component-display-table"] {
-        padding: var(--space-3);
+    .container[data-for="display-main-table"],
+    .container[data-for="display-main-dotted"] {
+        background-image:
+            radial-gradient(circle, var(--border-color) 1px, transparent 1px),
+            radial-gradient(circle, var(--border-color) 1px, transparent 1px);
+        background-size:
+            16px 16px,
+            16px 16px;
+        background-position:
+            0 0,
+            8px 8px;
     }
 
-    .container[data-variant="code-block-header"] {
+    .container[data-for="display-code-header"] {
         padding-block: var(--space-2);
         padding-inline: var(--space-4);
         background-color: var(--background);
+        border-block-end: var(--border-width-1) solid var(--border-color);
     }
 
-    .container[data-variant="code-block-content"] {
+    .container[data-for="display-code"] {
         white-space: pre;
         background: var(--background);
         padding: var(--space-4);
@@ -68,5 +69,14 @@
             Ubuntu Mono,
             monospace;
         overflow-x: auto;
+    }
+
+    .container[data-for="display-code"]:last-child {
+        border-block-end: var(--border-width-1) solid var(--border-color);
+    }
+
+    .container[data-for="menu-framing"] {
+        flex-basis: var(--measure-2);
+        margin-inline: auto;
     }
 }

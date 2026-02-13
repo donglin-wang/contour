@@ -20,7 +20,7 @@ const MenuContainer = (...children: Element[]) =>
     div(
         {
             class: "container",
-            "data-variant": "menu-display",
+            "data-for": "menu-framing",
         },
         ...children
     );
@@ -329,7 +329,7 @@ export default [
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(defaultMenu),
-            "component-display-stripe"
+            "display-main-striped"
         ),
         sources: {
             HTML: HTMLCodeBlock(defaultMenu),
@@ -340,7 +340,7 @@ export default [
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(withTitle),
-            "component-display-stripe"
+            "display-main-striped"
         ),
         sources: {
             HTML: HTMLCodeBlock(withTitle),
@@ -350,7 +350,7 @@ export default [
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(withSymbolKBD),
-            "component-display-stripe"
+            "display-main-striped"
         ),
         sources: {
             HTML: HTMLCodeBlock(withSymbolKBD),
@@ -361,7 +361,7 @@ export default [
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(indented),
-            "component-display-stripe"
+            "display-main-striped"
         ),
         sources: {
             HTML: HTMLCodeBlock(indented),
@@ -372,7 +372,7 @@ export default [
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(nested),
-            "component-display-stripe"
+            "display-main-striped"
         ),
         sources: {
             HTML: HTMLCodeBlock(nested),
@@ -383,7 +383,7 @@ export default [
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(titleNested),
-            "component-display-stripe"
+            "display-main-striped"
         ),
         sources: {
             HTML: HTMLCodeBlock(titleNested),
@@ -393,7 +393,7 @@ export default [
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(withDivider),
-            "component-display-stripe"
+            "display-main-striped"
         ),
         sources: {
             HTML: HTMLCodeBlock(withDivider),

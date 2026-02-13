@@ -25,6 +25,8 @@
     }
 
     body[data-theme="dark"] {
+        color-scheme: dark;
+
         --background: hsl(0deg 0% 10%);
         --background-muted: hsl(0deg 0% 20%);
         --background-inverted: hsl(0deg 0% 100%);

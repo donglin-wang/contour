@@ -142,7 +142,7 @@ export const HTMLCodeBlock = (element: HTMLElement, usesInner = false) => {
     return div(
         {
             class: "container",
-            "data-variant": "code-block-content",
+            "data-for": "display-code",
         },
         ...children,
     );
@@ -170,7 +170,7 @@ export const CSSCodeBlock = (styleText: string) => {
     return div(
         {
             class: "container",
-            "data-variant": "code-block-content",
+            "data-for": "display-code",
         },
         ...children,
     );
@@ -180,7 +180,7 @@ export const ComponentDisplay = (child: Element, variant?: string) =>
     div(
         {
             class: "container",
-            "data-variant": variant ?? "component-display",
+            "data-for": variant ?? "display-main-dotted",
         },
         child,
     );
@@ -204,32 +204,20 @@ export const ComponentPanel = ({
                 div(
                     {
                         class: "container",
-                        "data-variant": "code-block-header",
+                        "data-for": "display-code-header",
                     },
                     key,
                 ),
-                hr({
-                    class: "boundary",
-                    "data-variant": "component-panel-boundary",
-                }),
                 value,
             ),
         );
-        if (index < numSources - 1) {
-            codeBlocks.push(
-                hr({
-                    class: "boundary",
-                    "data-variant": "component-panel-boundary",
-                }),
-            );
-        }
     });
 
     if (codeBlocks.length === 0) {
         return div(
             {
                 class: "container",
-                "data-variant": "component-panel",
+                "data-for": "display",
             },
             display,
         );
@@ -238,13 +226,9 @@ export const ComponentPanel = ({
     return div(
         {
             class: "container",
-            "data-variant": "component-panel",
+            "data-for": "display",
         },
         display,
-        hr({
-            class: "boundary",
-            "data-variant": "component-panel-boundary",
-        }),
         ...codeBlocks,
     );
 };
