@@ -3,6 +3,11 @@ import {
     ComponentPanel,
     CSSCodeBlock,
     H1,
+    H2,
+    Subheading,
+    P,
+    Ul,
+    Li,
     HTMLCodeBlock,
 } from "/page/docs/component";
 import { tags } from "/lib/tags";
@@ -197,7 +202,7 @@ const connect = CardContainer(
             },
             span(
                 { class: "text", "data-variant": "connect-name" },
-                "Thomas Ryan"
+                "Mr. Penguin"
             ),
             span(
                 { class: "text", "data-variant": "connect-title" },
@@ -217,12 +222,31 @@ const connect = CardContainer(
 
 export default [
     H1("Card"),
+    Subheading(
+        "A bordered container that groups related content into distinct sections, used for previews, summaries, and standalone items."
+    ),
+    H2("Base style"),
+    P(
+        "The base card is a block-level bordered box with rounded corners. Each section is a flex column separated by a bottom border, with the last section's border removed."
+    ),
+    Ul(
+        Li(
+            "Sections stack vertically by default. Variants that need horizontal layouts must override flex-direction on individual sections."
+        ),
+        Li(
+            "Avoid using the card for full-page layouts or dense data. Use a table or dedicated page template instead."
+        )
+    ),
     ComponentPanel({
         display: ComponentDisplay(defaultCard),
         sources: {
             HTML: HTMLCodeBlock(defaultCard),
         },
     }),
+    H2("Post"),
+    P(
+        "A social-media-style card with an avatar header, a full-width image, body text, and a row of icon action buttons."
+    ),
     ComponentPanel({
         display: ComponentDisplay(post),
         sources: {
@@ -230,12 +254,20 @@ export default [
             CSS: CSSCodeBlock(postStyle),
         },
     }),
+    H2("Product"),
+    P(
+        "A commerce-oriented card with a product image, a side-by-side title/price row, and action buttons."
+    ),
     ComponentPanel({
         display: ComponentDisplay(product),
         sources: {
             HTML: HTMLCodeBlock(product),
         },
     }),
+    H2("Connect"),
+    P(
+        "A centered, profile-style card with an avatar, stacked identity details, and a connect action. Includes an absolutely positioned close button."
+    ),
     ComponentPanel({
         display: ComponentDisplay(connect),
         sources: {
