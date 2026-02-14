@@ -2,6 +2,8 @@ import { tags } from "/lib/tags";
 import {
     H1,
     H2,
+    Subheading,
+    P,
     ComponentDisplay,
     ComponentPanel,
     HTMLCodeBlock,
@@ -326,6 +328,9 @@ const withDivider = div(
 
 export default [
     H1("Menu"),
+    Subheading(
+        "A vertical list of actionable items, often used for navigation, command palettes, and context menus."
+    ),
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(defaultMenu),
@@ -337,6 +342,9 @@ export default [
         },
     }),
     H2("Title"),
+    P(
+        "A menu can include a title element to label a group of items."
+    ),
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(withTitle),
@@ -347,6 +355,9 @@ export default [
         },
     }),
     H2("Icon and shortcut"),
+    P(
+        "Menu items can display a leading icon and a trailing keyboard shortcut. This variant adds its own shortcut styles."
+    ),
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(withSymbolKBD),
@@ -358,6 +369,9 @@ export default [
         },
     }),
     H2("Indented items"),
+    P(
+        "Items can be visually indented beneath a title using the indented variant."
+    ),
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(indented),
@@ -369,6 +383,9 @@ export default [
         },
     }),
     H2("Nested menu"),
+    P(
+        "Menus can be nested to create multi-level hierarchies."
+    ),
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(nested),
@@ -380,6 +397,9 @@ export default [
         },
     }),
     H2("Title with children"),
+    P(
+        "A title can serve as a heading for a nested group of items, combining the title and nested menu patterns. Reuses the nested menu styles."
+    ),
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(titleNested),
@@ -390,6 +410,9 @@ export default [
         },
     }),
     H2("Sectioned menu with title"),
+    P(
+        "A menu can be divided into distinct sections using a divider, each with its own title."
+    ),
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(withDivider),
