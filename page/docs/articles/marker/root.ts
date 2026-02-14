@@ -3,6 +3,10 @@ import {
     ComponentPanel,
     H1,
     H2,
+    Subheading,
+    P,
+    Ul,
+    Li,
     CSSCodeBlock,
     HTMLCodeBlock,
 } from "/page/docs/component";
@@ -132,24 +136,63 @@ const markers: Record<
     },
 };
 
-const articleElements = [H1("Marker")];
-
-Object.values(markers).forEach(({ element, style, title }) => {
-    if (title) {
-        articleElements.push(H2(title));
-    }
-    const sources: any = {
-        HTML: HTMLCodeBlock(element),
-    };
+const panel = (key: string) => {
+    const { element, style } = markers[key];
+    const sources: any = { HTML: HTMLCodeBlock(element) };
     if (style) {
         sources.CSS = CSSCodeBlock(style);
     }
-    articleElements.push(
-        ComponentPanel({
-            display: ComponentDisplay(element),
-            sources: sources,
-        }),
-    );
-});
+    return ComponentPanel({
+        display: ComponentDisplay(element),
+        sources,
+    });
+};
 
-export default articleElements;
+export default [
+    H1("Marker"),
+    Subheading(
+        "A small inline label used for tags, badges, counters, and status indicators."
+    ),
+    H2("Base style"),
+    P(
+        "The base marker is a minimal inline-flex container. All visual styling — color, padding, shape — comes from variants and color modifiers."
+    ),
+    Ul(
+        Li(
+            "The base pattern provides no padding, border, or background on its own. Every marker needs a variant or modifier to be visually meaningful."
+        ),
+        Li(
+            "Avoid using the marker for long text or multi-line content. Use a notice or card instead."
+        )
+    ),
+    H2("Closeable"),
+    P(
+        "A pill-shaped marker with a bordered outline and an inline close button."
+    ),
+    panel("closeable"),
+    H2("Toggleable"),
+    P(
+        "A pill-shaped marker that acts as a toggle. It switches between a muted background and an inverted selected state via aria-selected."
+    ),
+    panel("toggleable"),
+    H2("Counter"),
+    P(
+        "An absolutely positioned badge anchored to the top-right corner of its container, typically used for notification counts."
+    ),
+    panel("counter"),
+    H2("Ribbon"),
+    P(
+        "An absolutely positioned label with a folded corner effect created by a pseudo-element."
+    ),
+    panel("ribbon"),
+    H2("Compound"),
+    P(
+        "Two or more marker segments joined side by side within a shared rounded container, each with its own color modifier."
+    ),
+    panel("compound"),
+    H2("Compound secondary"),
+    P(
+        "A variation of the compound marker using different color combinations. Reuses the compound styles."
+    ),
+    panel("compoundSecondary"),
+];
