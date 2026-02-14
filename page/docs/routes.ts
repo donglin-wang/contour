@@ -48,12 +48,6 @@ const importSharedStyle = () =>
 
 export const articles: ArticleSpec[] = [
     {
-        path: "lorem",
-        title: "Lorem",
-        section: "Foundation",
-        importArticle: () => import("/page/docs/articles/lorem"),
-    },
-    {
         path: "menu",
         title: "Menu",
         section: "Patterns",
