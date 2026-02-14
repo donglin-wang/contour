@@ -1,5 +1,6 @@
 @layer variant {
     .text[data-variant="code-inline"] {
+        font-size: var(--font-size-base);
         background-color: var(--background-muted);
         border-radius: 2px;
         padding-block: 2px;
