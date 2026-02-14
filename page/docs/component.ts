@@ -3,7 +3,7 @@ import { formatCSS, formatHTML } from "/lib/highlight/format";
 import { tokenize } from "/lib/highlight/tokenize";
 
 import type { Child } from "/lib/tags";
-import { Moon, Sun } from "/component/symbol";
+import { Moon, Sun, Copy, Check } from "/component/symbol";
 
 const { h1, h2, h3, h4, h5, h6, p, ul, ol, li, code, div, hr, span, button } =
     tags;
@@ -193,8 +193,30 @@ export const ComponentPanel = ({
     sources?: Record<string, Element>;
 }) => {
     const codeBlocks = [];
-    const numSources = Object.keys(sources).length;
-    Object.entries(sources).forEach(([key, value], index) => {
+    Object.entries(sources).forEach(([key, value]) => {
+        const copyIcon = Copy();
+        const checkIcon = Check();
+        checkIcon.style.display = "none";
+
+        const copyButton = button(
+            {
+                class: "trigger",
+                "data-variant": "copy",
+            },
+            copyIcon,
+            checkIcon,
+        );
+
+        copyButton.addEventListener("click", () => {
+            navigator.clipboard.writeText(value.textContent ?? "");
+            copyIcon.style.display = "none";
+            checkIcon.style.display = "";
+            setTimeout(() => {
+                copyIcon.style.display = "";
+                checkIcon.style.display = "none";
+            }, 2000);
+        });
+
         codeBlocks.push(
             div(
                 {
@@ -207,6 +229,7 @@ export const ComponentPanel = ({
                         "data-for": "display-code-header",
                     },
                     key,
+                    copyButton,
                 ),
                 value,
             ),

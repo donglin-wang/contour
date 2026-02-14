@@ -62,10 +62,26 @@
     }
 
     .container[data-for="display-code-header"] {
+        display: flex;
+        align-items: center;
         padding-block: var(--space-2);
         padding-inline: var(--space-4);
         background-color: var(--background);
         border-block-end: var(--border-width-1) solid var(--border-color);
+    }
+
+    .trigger[data-variant="copy"] {
+        margin-inline-start: auto;
+        padding: var(--space-2);
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+
+    .trigger[data-variant="copy"] .symbol {
+        width: 1em;
+        height: 1em;
     }
 
     .container[data-for="display-code"] {
