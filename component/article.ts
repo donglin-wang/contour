@@ -10,7 +10,7 @@ export type ArticleSpec = {
     articleRootAttributes?: Attributes;
 };
 
-const { div, article } = tags;
+const { a, div, article } = tags;
 
 class Article {
     root: HTMLElement;
@@ -79,7 +79,7 @@ class Article {
     createOutline(spec: { id: string; title: string }[]) {
         const lookup: Record<string, Element> = {};
         for (const { id, title } of spec) {
-            lookup[id] = div(this.outlineItemAttributes, title);
+            lookup[id] = a({ ...this.outlineItemAttributes, href: `#${id}` }, title);
         }
 
         const outline = div(this.outlineAttributes, ...Object.values(lookup));
