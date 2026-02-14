@@ -79,7 +79,18 @@ class Article {
     createOutline(spec: { id: string; title: string }[]) {
         const lookup: Record<string, Element> = {};
         for (const { id, title } of spec) {
-            lookup[id] = a({ ...this.outlineItemAttributes, href: `#${id}` }, title);
+            const link = a({ ...this.outlineItemAttributes, href: `#${id}` }, title);
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+                const target = document.getElementById(id);
+                if (target) {
+                    const offset = 60;
+                    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+                    window.scrollTo({ top, behavior: "smooth" });
+                    history.pushState(null, "", `#${id}`);
+                }
+            });
+            lookup[id] = link;
         }
 
         const outline = div(this.outlineAttributes, ...Object.values(lookup));
