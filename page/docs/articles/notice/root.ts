@@ -3,12 +3,17 @@ import {
     ComponentPanel,
     H1,
     H2,
+    Subheading,
+    P,
+    Ul,
+    Li,
     CSSCodeBlock,
     HTMLCodeBlock,
 } from "/page/docs/component";
 
 import { tags } from "/lib/tags";
 import { CircleCheck, X } from "/component/symbol";
+import baseStyle from "/style/pattern/notice.css?inline";
 import actionSegmentedStyle from "/style/variant/notice/actionSegmented.css?inline";
 import controlStyle from "/style/variant/notice/control.css?inline";
 import tieredStyle from "/style/variant/notice/tiered.css?inline";
@@ -26,6 +31,7 @@ const notices: Record<
             "Successfully uploaded",
             button({ class: "trigger m-ghost", "data-variant": "icon" }, X()),
         ),
+        style: baseStyle
     },
     tiered: {
         element: div(
@@ -194,24 +200,54 @@ const notices: Record<
     },
 };
 
-const articleElements = [H1("Notice")];
-
-Object.values(notices).forEach(({ element, style, title }) => {
-    if (title) {
-        articleElements.push(H2(title));
-    }
-    const sources: any = {
-        HTML: HTMLCodeBlock(element),
-    };
+const panel = (key: string) => {
+    const { element, style } = notices[key];
+    const sources: any = { HTML: HTMLCodeBlock(element) };
     if (style) {
         sources.CSS = CSSCodeBlock(style);
     }
-    articleElements.push(
-        ComponentPanel({
-            display: ComponentDisplay(element),
-            sources: sources,
-        }),
-    );
-});
+    return ComponentPanel({
+        display: ComponentDisplay(element),
+        sources,
+    });
+};
 
-export default articleElements;
+export default [
+    H1("Notice"),
+    Subheading(
+        "A brief, non-modal message used to surface feedback, alerts, or status updates."
+    ),
+    H2("Base style"),
+    P(
+        "The base notice is a bordered, rounded flex row with centered alignment and a max-width constraint. A close button is pushed to the inline-end with auto margin."
+    ),
+    Ul(
+        Li(
+            "The notice does not auto-dismiss. Add your own timeout or animation logic if it should disappear after a delay."
+        ),
+        Li(
+            "Avoid using the notice for long-form content or multi-step flows. Use a dialog or dedicated page instead."
+        )
+    ),
+    panel("simple"),
+    H2("Tiered"),
+    P(
+        "A two-line layout with a large icon, a bold primary label, and a muted secondary description stacked in a column."
+    ),
+    panel("tiered"),
+    H2("Tiered with control"),
+    P(
+        "Extends the tiered layout with inline action buttons below the description. Reuses the tiered styles."
+    ),
+    panel("tieredControl"),
+    H2("Action segmented"),
+    P(
+        "Splits the notice into content and action zones separated by a vertical border. Action buttons stack vertically and stretch to fill the trailing segment."
+    ),
+    panel("actionSegmented"),
+    H2("Action segmented with multiple buttons"),
+    P(
+        "Same segmented layout with more than one action button, separated by horizontal borders. Reuses the action segmented styles."
+    ),
+    panel("actionSegmentedMultiple"),
+];
