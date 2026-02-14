@@ -3,15 +3,26 @@ import {
     ComponentPanel,
     H1,
     H2,
+    Subheading,
+    P,
+    Ul,
+    Li,
     CSSCodeBlock,
     HTMLCodeBlock,
 } from "/page/docs/component";
+import barStyle from "/style/pattern/bar.css?inline";
 import { Ellipsis, Menu, ContourLogo } from "/component/symbol";
 import { tags } from "/lib/tags";
 import topNavStyle from "/style/variant/bar/topNav.css?inline";
 import modifiersStyle from "/style/variant/bar/modifiers.css?inline";
 
 const { nav, div, button, span } = tags;
+
+const defaultBar = nav(
+    { class: "bar" },
+    div({ class: "bar__section" }, span("Section 1")),
+    div({ class: "bar__section" }, span("Section 2")),
+);
 
 const bars: Record<
     string,
@@ -87,24 +98,50 @@ const bars: Record<
     },
 };
 
-const articleElements = [H1("Bar")];
-
-Object.values(bars).forEach(({ element, style, title }) => {
-    if (title) {
-        articleElements.push(H2(title));
-    }
-    const sources: any = {
-        HTML: HTMLCodeBlock(element),
-    };
+const panel = (key: string) => {
+    const { element, style } = bars[key];
+    const sources: any = { HTML: HTMLCodeBlock(element) };
     if (style) {
         sources.CSS = CSSCodeBlock(style);
     }
-    articleElements.push(
-        ComponentPanel({
-            display: ComponentDisplay(element, "display-main-striped"),
-            sources: sources,
-        }),
-    );
-});
+    return ComponentPanel({
+        display: ComponentDisplay(element, "display-main-striped"),
+        sources,
+    });
+};
 
-export default articleElements;
+export default [
+    H1("Bar"),
+    Subheading(
+        "A full-width horizontal strip used for toolbars, navigation headers, and status bars."
+    ),
+    H2("Base style"),
+    P(
+        "The base bar is a full-width flex row with centered alignment and inline/block padding. Sections are flex containers that can be positioned with modifier classes."
+    ),
+    Ul(
+        Li(
+            "The bar has no fixed height by default. Variants that need a consistent height, such as a sticky top nav, must set it explicitly."
+        ),
+        Li(
+            "Avoid using the bar for stacked or multi-row layouts. Use a card or a container with grid layout instead."
+        )
+    ),
+    ComponentPanel({
+        display: ComponentDisplay(defaultBar, "display-main-striped"),
+        sources: {
+            HTML: HTMLCodeBlock(defaultBar),
+            CSS: CSSCodeBlock(barStyle),
+        },
+    }),
+    H2("Top nav"),
+    P(
+        "A sticky navigation bar pinned to the top of the viewport with a fixed height and a bottom border."
+    ),
+    panel("topNav"),
+    H2("Sandwich"),
+    P(
+        "A three-section layout with start and end sections each taking 50% width, and a non-shrinking center section. Useful for centering a logo between two action areas."
+    ),
+    panel("sandwich"),
+];
