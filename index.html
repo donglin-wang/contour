@@ -8,7 +8,35 @@
             @layer base, pattern, variant, override;
         </style>
         <link rel="preload" as="font" href="/asset/font/InterVariable.woff2" type="font/woff2" crossorigin />
+        <link rel="preload" as="font" href="/asset/font/InterVariable-Italic.woff2" type="font/woff2" crossorigin />
         <link rel="preload" as="font" href="/asset/font/RecursiveMonoLinearExtraBold.woff2" type="font/woff2" crossorigin />
+        <style>
+            @layer base {
+                @font-face {
+                    font-family: InterVariable;
+                    font-style: normal;
+                    font-weight: 100 900;
+                    font-display: swap;
+                    src: url("/asset/font/InterVariable.woff2") format("woff2");
+                    font-feature-settings: "ss02" 1;
+                }
+
+                @font-face {
+                    font-family: InterVariable;
+                    font-style: italic;
+                    font-weight: 100 900;
+                    font-display: swap;
+                    src: url("/asset/font/InterVariable-Italic.woff2") format("woff2");
+                }
+
+                @font-face {
+                    font-family: RecursiveMonoLinearExtraBold;
+                    font-display: swap;
+                    src: url("/asset/font/RecursiveMonoLinearExtraBold.woff2")
+                        format("woff2");
+                }
+            }
+        </style>
         <link rel="stylesheet" href="/style/base/sizes.css" />
         <link rel="stylesheet" href="/style/base/border.css" />
         <link rel="stylesheet" href="/style/base/shadow.css" />
