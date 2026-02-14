@@ -4,6 +4,8 @@ import {
     H2,
     Subheading,
     P,
+    Ul,
+    Li,
     ComponentDisplay,
     ComponentPanel,
     HTMLCodeBlock,
@@ -330,6 +332,18 @@ export default [
     H1("Menu"),
     Subheading(
         "A vertical list of actionable items, often used for navigation, command palettes, and context menus."
+    ),
+    H2("Base style"),
+    P(
+        "The base menu is a block-level container with vertical padding. Each item is a flexbox row with hover highlighting and a pointer cursor."
+    ),
+    Ul(
+        Li(
+            "The menu does not manage focus or keyboard navigation. Add your own key handlers if the menu needs to be accessible as a composite widget."
+        ),
+        Li(
+            "Avoid using the menu pattern for content that is not actionable. Use a list or card layout instead for displaying static information."
+        )
     ),
     ComponentPanel({
         display: ComponentDisplay(
