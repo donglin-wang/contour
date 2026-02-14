@@ -144,6 +144,20 @@ export const articles: ArticleSpec[] = [
         importArticle: () =>
             import("/page/docs/articles/overview/root"),
     },
+    {
+        path: "primer",
+        title: "CSS Primer",
+        section: "Foundation",
+        importArticle: () =>
+            import("/page/docs/articles/primer/root"),
+    },
+    {
+        path: "convention",
+        title: "Naming Conventions",
+        section: "Foundation",
+        importArticle: () =>
+            import("/page/docs/articles/convention/root"),
+    },
 ];
 
 const docRoutes: Route[] = articles.map((article) => ({
