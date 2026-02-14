@@ -4,6 +4,10 @@ import {
     ComponentPanel,
     H1,
     H2,
+    Subheading,
+    P,
+    Ul,
+    Li,
     HTMLCodeBlock,
     CSSCodeBlock,
 } from "/page/docs/component";
@@ -339,6 +343,21 @@ const character = AccordionContainer(
 
 export default [
     H1("Accordion"),
+    Subheading(
+        "A vertically stacked set of collapsible sections, built on the native details/summary elements."
+    ),
+    H2("Base style"),
+    P(
+        "Each item is a details element separated by a bottom border. The summary row is a flex container with a rotating chevron indicator that turns 180 degrees when open."
+    ),
+    Ul(
+        Li(
+            "Because it relies on the native details element, accordions are mutually exclusive."
+        ),
+        Li(
+            "Avoid using the accordion for content that users need to compare side by side. Use a tabbed or stacked layout instead."
+        )
+    ),
     ComponentPanel({
         display: ComponentDisplay(accordion),
         sources: {
@@ -347,6 +366,9 @@ export default [
         },
     }),
     H2("With alternative indicator"),
+    P(
+        "Swaps the chevron for a plus icon that rotates 45 degrees into an X when open."
+    ),
     ComponentPanel({
         display: ComponentDisplay(alternativeIndicator),
         sources: {
@@ -355,6 +377,9 @@ export default [
         },
     }),
     H2("With icon"),
+    P(
+        "Adds a leading icon next to the label in the summary row."
+    ),
     ComponentPanel({
         display: ComponentDisplay(withIcon),
         sources: {
@@ -362,6 +387,9 @@ export default [
         },
     }),
     H2("Indicator at the end"),
+    P(
+        "Moves the expand/collapse indicator to the inline-end of the summary row using auto margin."
+    ),
     ComponentPanel({
         display: ComponentDisplay(inlineEnd),
         sources: {
@@ -370,6 +398,9 @@ export default [
         },
     }),
     H2("With button"),
+    P(
+        "Places an action button at the inline-end of the summary row alongside the label. Reuses the inline-end indicator styles for positioning."
+    ),
     ComponentPanel({
         display: ComponentDisplay(withButton),
         sources: {
@@ -377,6 +408,9 @@ export default [
         },
     }),
     H2("Enclosed"),
+    P(
+        "Wraps the entire accordion in a rounded border to visually group the items."
+    ),
     ComponentPanel({
         display: ComponentDisplay(enclosed),
         sources: {
@@ -385,6 +419,9 @@ export default [
         },
     }),
     H2("Character"),
+    P(
+        "A richer summary row with an avatar image and a stacked name/description section."
+    ),
     ComponentPanel({
         display: ComponentDisplay(character),
         sources: {
