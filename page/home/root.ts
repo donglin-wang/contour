@@ -15,7 +15,7 @@ export default (router: Router) => {
             "data-for": "landing-hero",
         },
         callback: async () => {
-            await router.navigate("/docs/lorem");
+            await router.navigate("/docs/overview");
             stateStore.setState({sidebarOpen: true});
         },
         children: ["Get started"],
