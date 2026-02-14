@@ -220,7 +220,7 @@ export default [
     }),
     H2("Enclosed"),
     P(
-        "Wraps all tabs in a muted background pill, then elevates the selected tab with a raised surface and subtle shadow."
+        "Wraps all tabs in a muted background, then elevates the selected tab with a subtle shadow and darker background."
     ),
     ComponentPanel({
         display: ComponentDisplay(enclosed),
