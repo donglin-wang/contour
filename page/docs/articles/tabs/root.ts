@@ -1,6 +1,10 @@
 import {
     H1,
     H2,
+    Subheading,
+    P,
+    Ul,
+    Li,
     ComponentDisplay,
     ComponentPanel,
     CSSCodeBlock,
@@ -170,6 +174,21 @@ const outlined = registerTabsBehavior(
 
 export default [
     H1("Tabs"),
+    Subheading(
+        "A horizontal set of selectable items that switch between views or filter content."
+    ),
+    H2("Base style"),
+    P(
+        "The base tabs container is a flex row. Each tab uses muted text that becomes full color on hover or when selected via aria-selected."
+    ),
+    Ul(
+        Li(
+            "Consider using a menu if the elements are used for actions or navigations"
+        ),
+        Li(
+            "Avoid using tabs when the selections are not mutually exclusive"
+        )
+    ),
     ComponentPanel({
         display: ComponentDisplay(defaultTabs),
         sources: {
@@ -178,6 +197,9 @@ export default [
         },
     }),
     H2("Underscored"),
+    P(
+        "Adds a bottom border to the tab bar and highlights the selected tab with a thicker underline."
+    ),
     ComponentPanel({
         display: ComponentDisplay(underscored),
         sources: {
@@ -186,6 +208,9 @@ export default [
         },
     }),
     H2("Backdrop"),
+    P(
+        "Highlights the selected tab with a muted background fill and rounded corners."
+    ),
     ComponentPanel({
         display: ComponentDisplay(backdrop),
         sources: {
@@ -194,6 +219,9 @@ export default [
         },
     }),
     H2("Enclosed"),
+    P(
+        "Wraps all tabs in a muted background pill, then elevates the selected tab with a raised surface and subtle shadow."
+    ),
     ComponentPanel({
         display: ComponentDisplay(enclosed),
         sources: {
@@ -202,6 +230,9 @@ export default [
         },
     }),
     H2("Outlined"),
+    P(
+        "Draws a border around the selected tab on three sides while removing the bottom border, creating a connected-panel look."
+    ),
     ComponentPanel({
         display: ComponentDisplay(outlined),
         sources: {
