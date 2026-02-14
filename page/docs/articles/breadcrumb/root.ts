@@ -3,9 +3,14 @@ import {
     ComponentPanel,
     H1,
     H2,
+    Subheading,
+    P,
+    Ul,
+    Li,
     CSSCodeBlock,
     HTMLCodeBlock,
 } from "/page/docs/component";
+import breadcrumbStyle from "/style/pattern/breadcrumb.css?inline";
 
 import { tags } from "/lib/tags";
 import { ChevronRight, House, BookText, Ellipsis } from "/component/symbol";
@@ -125,24 +130,55 @@ const breadcrumbs: Record<
     },
 };
 
-const articleElements = [H1("Breadcrumb")];
-
-Object.values(breadcrumbs).forEach(({ element, style, title }) => {
-    if (title) {
-        articleElements.push(H2(title));
-    }
-    const sources: any = {
-        HTML: HTMLCodeBlock(element),
-    };
+const panel = (key: string) => {
+    const { element, style } = breadcrumbs[key];
+    const sources: any = { HTML: HTMLCodeBlock(element) };
     if (style) {
         sources.CSS = CSSCodeBlock(style);
     }
-    articleElements.push(
-        ComponentPanel({
-            display: ComponentDisplay(element),
-            sources: sources,
-        }),
-    );
-});
+    return ComponentPanel({
+        display: ComponentDisplay(element),
+        sources,
+    });
+};
 
-export default articleElements;
+export default [
+    H1("Breadcrumb"),
+    Subheading(
+        "A horizontal trail of links showing the user's current location within a site hierarchy."
+    ),
+    H2("Base style"),
+    P(
+        "The base breadcrumb is a flex row of link items separated by inline dividers. Links show an underline on hover and preserve color across visited states."
+    ),
+    Ul(
+        Li(
+            "The last breadcrumb item typically represents the current page and should be marked with aria-current=\"page\" to convey this to assistive technology."
+        ),
+        Li(
+            "Avoid using the breadcrumb for flat navigation or unrelated links. Use a bar or tab instead."
+        )
+    ),
+    ComponentPanel({
+        display: ComponentDisplay(breadcrumbs["default"].element),
+        sources: {
+            HTML: HTMLCodeBlock(breadcrumbs["default"].element),
+            CSS: CSSCodeBlock(breadcrumbStyle),
+        },
+    }),
+    H2("Alternative"),
+    P(
+        "Replaces the text divider with a chevron icon and swaps the underline hover for a muted background fill with rounded corners."
+    ),
+    panel("alternative"),
+    H2("With icon"),
+    P(
+        "Adds a leading icon alongside the link text in each breadcrumb item."
+    ),
+    panel("withIcon"),
+    H2("With ellipsis"),
+    P(
+        "Collapses intermediate items behind an ellipsis button, useful when the hierarchy is deep."
+    ),
+    panel("withEllipsis"),
+];
