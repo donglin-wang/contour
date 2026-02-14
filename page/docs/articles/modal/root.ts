@@ -3,9 +3,16 @@ import {
     ComponentPanel,
     H1,
     H2,
+    Subheading,
+    P,
+    Ul,
+    Li,
+    CodeInline,
+    inline,
     CSSCodeBlock,
     HTMLCodeBlock,
 } from "/page/docs/component";
+import modalStyle from "/style/pattern/modal.css?inline";
 import { X } from "/component/symbol";
 import { tags } from "/lib/tags";
 import responsiveStyle from "/style/variant/modal/responsive.css?inline";
@@ -271,70 +278,70 @@ const innerModal = dialog(
 
 registerBehaviour(innerScrollOpen, innerScrollClose, innerModal);
 
-const modals: Record<
-    string,
-    { open: HTMLElement; modal: HTMLElement; style?: string; title?: string }
-> = {
-    default: {
-        open: defaultOpen,
-        modal: defaultModal,
-    },
-    controlled: {
-        open: controlledOpen,
-        modal: controlledModal,
-        title: "Controlled",
-    },
-    responsive: {
-        open: responsiveOpen,
-        modal: responsiveModal,
-        style: responsiveStyle,
-        title: "Responsive",
-    },
-    headerFooter: {
-        open: headerFooterOpen,
-        modal: headerFooter,
-        style: headerFooterStyle,
-        title: "Header footer",
-    },
-    cornered: {
-        open: corneredOpen,
-        modal: corneredModal,
-        style: corneredStyle,
-        title: "Cornered",
-    },
-    outerScroll: {
-        open: longOpen,
-        modal: longModal,
-        style: outerScrollStyle,
-        title: "Outer scroll",
-    },
-    innerScroll: {
-        open: innerScrollOpen,
-        modal: innerModal,
-        style: innerScrollStyle,
-        title: "Inner scroll",
-    },
-};
-
-const articleElements: HTMLElement[] = [H1("Modal")];
-
-Object.values(modals).forEach(({ open, modal, style, title }) => {
-    if (title) {
-        articleElements.push(H2(title));
-    }
-    const sources: any = {
-        HTML: HTMLCodeBlock(modal),
-    };
+const modalPanel = (
+    open: HTMLElement,
+    modal: HTMLElement,
+    style?: string,
+) => {
+    const sources: any = { HTML: HTMLCodeBlock(modal) };
     if (style) {
         sources.CSS = CSSCodeBlock(style);
     }
-    articleElements.push(modal);
-    articleElements.push(
+    return [
+        modal,
         ComponentPanel({
             display: ComponentDisplay(open),
-            sources: sources,
+            sources,
         }),
-    );
-});
+    ];
+};
 
-export default articleElements;
+export default [
+    H1("Modal"),
+    Subheading(
+        "A dialog overlay that focuses user attention on a single task or message, blocking interaction with the page behind it."
+    ),
+    H2("Base style"),
+    P(
+        "The base modal is a fixed, full-screen flex overlay with a semi-transparent backdrop. The dialog box inside is a bordered, rounded block with padding."
+    ),
+    Ul(
+        Li(
+            ...inline`The pattern supports both the native ${CodeInline("dialog")} element and a controlled ${CodeInline("div")} with ${CodeInline("data-open")}/${CodeInline("data-closed")} attributes. Focus trapping is only automatic with the native ${CodeInline("dialog")}.`
+        ),
+        Li(
+            "Avoid using the modal for non-blocking messages or lightweight confirmations. For these situations, use a notice instead."
+        )
+    ),
+    ...modalPanel(defaultOpen, defaultModal, modalStyle),
+    H2("Controlled"),
+    P(
+        ...inline`A non-native modal using a ${CodeInline("div")} instead of ${CodeInline("dialog")}. Visibility is toggled via ${CodeInline("data-open")} and ${CodeInline("data-closed")} attributes rather than the native showModal API.`
+    ),
+    ...modalPanel(controlledOpen, controlledModal),
+    H2("Responsive"),
+    P(
+        "Constrains the dialog to a max-width while allowing it to flex with the viewport."
+    ),
+    ...modalPanel(responsiveOpen, responsiveModal, responsiveStyle),
+    H2("Header footer"),
+    P(
+        "Divides the dialog into distinct header, body, and footer sections separated by borders."
+    ),
+    ...modalPanel(headerFooterOpen, headerFooter, headerFooterStyle),
+    H2("Cornered"),
+    P(
+        "Places an absolutely positioned close button in the top-right corner of the dialog."
+    ),
+    ...modalPanel(corneredOpen, corneredModal, corneredStyle),
+    H2("Outer scroll"),
+    P(
+        "When content overflows, the entire overlay scrolls, keeping the dialog at natural height."
+    ),
+    ...modalPanel(longOpen, longModal, outerScrollStyle),
+    H2("Inner scroll"),
+    P(
+        "Constrains the dialog to the viewport height and scrolls only the content section, keeping the title and actions fixed."
+    ),
+    ...modalPanel(innerScrollOpen, innerModal, innerScrollStyle),
+] as HTMLElement[];
