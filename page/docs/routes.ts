@@ -146,6 +146,13 @@ export const articles: ArticleSpec[] = [
             import("/page/docs/articles/getting-started/root"),
     },
     {
+        path: "tokens",
+        title: "Tokens & Resets",
+        section: "Foundation",
+        importArticle: () =>
+            import("/page/docs/articles/tokens/root"),
+    },
+    {
         path: "convention",
         title: "Conventions",
         section: "Foundation",
