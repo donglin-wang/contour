@@ -139,11 +139,11 @@ export const articles: ArticleSpec[] = [
             import("/page/docs/articles/overview/root"),
     },
     {
-        path: "primer",
-        title: "Primer",
+        path: "getting-started",
+        title: "Getting Started",
         section: "Foundation",
         importArticle: () =>
-            import("/page/docs/articles/primer/root"),
+            import("/page/docs/articles/getting-started/root"),
     },
     {
         path: "convention",
@@ -151,6 +151,13 @@ export const articles: ArticleSpec[] = [
         section: "Foundation",
         importArticle: () =>
             import("/page/docs/articles/convention/root"),
+    },
+    {
+        path: "primer",
+        title: "Primer",
+        section: "Foundation",
+        importArticle: () =>
+            import("/page/docs/articles/primer/root"),
     },
 ];
 

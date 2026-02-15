@@ -12,51 +12,41 @@ import {
 export default [
     H1("Overview"),
     Subheading(
-        `Contour is a set of conventions for organizing CSS that helps teams document their design systems, build component libraries, and scale concurrent development without tooling dependencies or specificity conflicts.`,
+        "A naming convention and a set of references for building scalable styling systems with pure CSS - no build step, no framework coupling, and no dependencies.",
     ),
 
-    H2("A CSS-native design system"),
+    H2("Why?"),
     P(
-        `Contour uses plain CSS custom properties and layers to express your design tokens and component styles. Colors, spacing scales, typography, shadows, and borders are all defined as standard custom properties in the base layer, making your entire design system readable and editable without leaving CSS. There is no proprietary configuration format, no token compiler, and no theme object to learn. Your design decisions live where they belong: in stylesheets that any browser can interpret directly.`,
+        "In the current CSS landscape, two extremes dominate. On one end, component-based libraries like Bootstrap and Bulma provide semantic classes with baked-in assumptions. Many offer CSS variables and theming APIs for customization, but the core of these libraries remains opaque and difficult to extend. For teams whose design systems outgrow these pre-built styles, customization becomes a fight against specificity and internal implementation details. In addition, users are always at the mercy of upstream maintainers to preserve backward compatibility.",
     ),
-
-    H2("No runtime, no build step"),
     P(
-        `Every Contour stylesheet is valid CSS that works in any modern browser as-is. There is no JavaScript runtime generating class names, no preprocessor transforming your source files, and no framework-specific binding to adopt. This means your styles are fully transferable. They work the same way whether your project uses React, Vue, a server-rendered template, or a static HTML file. If you move to a different stack tomorrow, your styles come with you unchanged.`,
-    ),
-
-    H2("Scaling with layers and data attributes"),
-    P(
-        `Large teams working in the same codebase inevitably run into specificity conflicts. One developer's override silently breaks another's component. Contour addresses this structurally by organizing all styles into three CSS cascade layers:`,
+        "On the other end, Tailwind offers flexibility on par with vanilla CSS and encourages fast iteration in a component-driven workflow. However, to express a design system and build reusable semantic variations, teams must fall back on techniques that essentially recreate vanilla CSS authoring:",
     ),
     Ul(
         Li(
-            ...inline`${CodeInline("base")} contains design tokens, resets, and global defaults.`,
+            ...inline`Using ${CodeInline("@apply")} rules to package utilities into semantic classes`,
         ),
         Li(
-            ...inline`${CodeInline("pattern")} contains self-contained component styles that consume base tokens.`,
+            "Using JavaScript tools like CVA to manage utility combinations",
+        ),
+    ),
+    P(
+        "These approaches handle specificity well and encourage colocation of style and markup, which feels natural for developers working against a deadline. But they also mean that styling inevitably bleeds into framework and application logic. This is an acceptable tradeoff for teams committed to a single framework. For organizations that need a styling system to work across multiple frameworks and technologies simultaneously, a framework-independent approach is needed.",
+    ),
+    P(
+        "Contour sits between these two extremes. It provides a naming convention and a set of references that demonstrate how a scalable styling system can be built with pure CSS - no build step, no framework coupling, and no dependencies.",
+    ),
+
+    H2("Non-goals"),
+    Ul(
+        Li(
+            ...inline`${"Contour does not optimize for shipping styles as fast as possible. It prioritizes methodical organization of styles - clear layer boundaries, predictable naming, and explicit separation of concerns - over rapid prototyping."}`,
         ),
         Li(
-            ...inline`${CodeInline("variant")} contains modifications and alternate presentations of existing patterns.`,
+            ...inline`${"There is no package to install and no CDN to link. You set up the file structure yourself, write your own tokens, and fully own every line of CSS. Contour provides the conventions and references, not the code."}`,
         ),
-    ),
-    P(
-        `Because the cascade resolves layers in a defined order, a variant will always override a pattern, and a pattern will always override a base style, regardless of selector specificity or source order. Developers working on different components or variants can merge their work without collisions.`,
-    ),
-    P(
-        `Component variations are expressed through data attributes rather than class name combinatorics. A card becomes a profile card by adding a single data-variant attribute. This keeps selector intent explicit and avoids the ambiguity of stacking modifier classes that may interact in unpredictable ways.`,
-    ),
-
-    H2("Clean markup, flexible styles"),
-    P(
-        `Utility-first frameworks push styling decisions into HTML, producing dense clusters of class names that obscure document structure. Component-based libraries like Bootstrap go the other direction, offering pre-packaged designs that are difficult to customize beyond their intended variations.`,
-    ),
-    P(
-        `Contour sits between these extremes. Each element carries one primary class name that identifies what it is, with optional modifier classes or a data attribute to select a specific presentation. The result is markup that reads like a document outline rather than a styling instruction sheet. At the same time, because every visual property traces back to a custom property or a layer-scoped rule, any aspect of any component can be adjusted or extended without fighting the framework.`,
-    ),
-
-    H2("No installation, full ownership"),
-    P(
-        `Contour does not publish packages, provide a CDN link, or manage versions. There is no installation step. Instead, the style files live directly in your project's source directory. You own every line of CSS. You can rename files, delete components you do not use, modify token values, or restructure the folders to fit your project's conventions. When your requirements change, you edit your own code rather than waiting for an upstream release or working around an abstraction you cannot control.`,
+        Li(
+            ...inline`${"Contour assumes fluency with CSS. Concepts like cascade layers, custom property inheritance, and attribute selectors are foundational to how it works, and the documentation does not teach them from first principles."}`,
+        ),
     ),
 ];
