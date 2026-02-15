@@ -140,14 +140,14 @@ export const articles: ArticleSpec[] = [
     },
     {
         path: "primer",
-        title: "CSS Primer",
+        title: "Primer",
         section: "Foundation",
         importArticle: () =>
             import("/page/docs/articles/primer/root"),
     },
     {
         path: "convention",
-        title: "Naming Conventions",
+        title: "Conventions",
         section: "Foundation",
         importArticle: () =>
             import("/page/docs/articles/convention/root"),

@@ -189,7 +189,7 @@ export const ComponentPanel = ({
     display,
     sources = {},
 }: {
-    display: Element;
+    display?: Element;
     sources?: Record<string, Element>;
 }) => {
     const codeBlocks = [];
@@ -200,8 +200,8 @@ export const ComponentPanel = ({
 
         const copyButton = button(
             {
-                class: "trigger",
-                "data-variant": "copy",
+                class: "trigger m-ghost m-square",
+                "data-for": "display-code-copy",
             },
             copyIcon,
             checkIcon,
@@ -221,7 +221,7 @@ export const ComponentPanel = ({
             div(
                 {
                     class: "container",
-                    "data-variant": "code-block",
+                    "data-for": "display-code-section",
                 },
                 div(
                     {
