@@ -37,6 +37,19 @@ export default [
         "Contour sits between these two extremes. It provides a naming convention and a set of references that demonstrate how a scalable styling system can be built with pure CSS - no build step, no framework coupling, and no dependencies.",
     ),
 
+    H2("Goals"),
+    Ul(
+        Li(
+            "No amount of tooling will solve behavioral issues. Contour focuses on guiding developer behavior through convention rather than enforcement. Its naming rules, layer boundaries, and data attribute patterns are designed so that multiple developers can contribute styles concurrently without specificity conflicts or accidental overrides.",
+        ),
+        Li(
+            "You only load what you use. Each token file, pattern, and variant is a standalone CSS file that can be included or omitted independently. Resets are kept to a bare minimum so they never interfere with styles outside of Contour.",
+        ),
+        Li(
+            "No dependencies, no build step. Every file is valid CSS that works directly in a modern browser. There is no preprocessor, no runtime, and no framework binding between your styles and the page.",
+        ),
+    ),
+
     H2("Non-goals"),
     Ul(
         Li(
