@@ -1,11 +1,24 @@
-import modifiers from "/style/variant/trigger/modifiers.css?inline";
-import triggerIcon from "/style/variant/trigger/icon.css?inline";
-import symbolModifiers from "/style/variant/symbol/modifiers.css?inline";
-import tiered from "/style/variant/notice/tiered.css?inline";
-import actionSegmented from "/style/variant/notice/actionSegmented.css?inline";
+import { extractExports, combineStyles, StyleModule } from "/lib/styleUtils";
 
-export default modifiers +
-    symbolModifiers +
-    tiered +
-    actionSegmented +
-    triggerIcon;
+const styleLookup = import.meta.glob<StyleModule>(
+    [
+        "/style/pattern/notice.css",
+        "/style/variant/trigger/modifiers.css",
+        "/style/variant/trigger/icon.css",
+        "/style/variant/symbol/modifiers.css",
+        "/style/variant/notice/tiered.css",
+        "/style/variant/notice/actionSegmented.css",
+    ],
+    { query: "inline", eager: true },
+);
+
+export const [
+    base,
+    triggerModifiers,
+    triggerIcon,
+    symbolModifiers,
+    tiered,
+    actionSegmented,
+] = extractExports(styleLookup);
+
+export default combineStyles(styleLookup);

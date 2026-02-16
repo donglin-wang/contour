@@ -13,10 +13,7 @@ import {
 
 import { tags } from "/lib/tags";
 import { CircleCheck, X } from "/component/symbol";
-import baseStyle from "/style/pattern/notice.css?inline";
-import actionSegmentedStyle from "/style/variant/notice/actionSegmented.css?inline";
-import controlStyle from "/style/variant/notice/control.css?inline";
-import tieredStyle from "/style/variant/notice/tiered.css?inline";
+import { tiered, base, actionSegmented } from "/page/docs/articles/notice/css";
 
 const { div, button, span, img } = tags;
 
@@ -31,7 +28,7 @@ const notices: Record<
             "Successfully uploaded",
             button({ class: "trigger m-ghost", "data-variant": "icon" }, X()),
         ),
-        style: baseStyle
+        style: base.style
     },
     tiered: {
         element: div(
@@ -59,7 +56,7 @@ const notices: Record<
                 ),
             ),
         ),
-        style: tieredStyle,
+        style: tiered.style,
         title: "Tiered",
     },
     tieredControl: {
@@ -96,7 +93,6 @@ const notices: Record<
                 ),
             ),
         ),
-        style: controlStyle,
         title: "Tiered with control",
     },
     actionSegmented: {
@@ -142,7 +138,7 @@ const notices: Record<
                 ),
             ),
         ),
-        style: actionSegmentedStyle,
+        style: actionSegmented.style,
         title: "Action segmented",
     },
     actionSegmentedMultiple: {
@@ -195,7 +191,7 @@ const notices: Record<
                 ),
             ),
         ),
-        style: actionSegmentedStyle,
+        style: actionSegmented.style,
         title: "Action segmented with multiple buttons",
     },
 };
