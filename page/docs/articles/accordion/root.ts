@@ -19,6 +19,7 @@ import {
     Ellipsis,
 } from "/component/symbol";
 
+import linuxImg from "/asset/image/linux.jpg"
 import accordionStyle from "/style/pattern/accordion.css?inline";
 import inlineEndStyle from "/style/variant/accordion/inlineEndIndicator.css?inline";
 import enclosedStyle from "/style/variant/accordion/enclosed.css?inline";
@@ -273,7 +274,7 @@ const character = AccordionContainer(
                 img({
                     class: "media",
                     "data-variant": "accordion-avatar",
-                    src: "/asset/image/linux.jpg",
+                    src: linuxImg,
                     alt: "Linux penguin",
                 }),
                 div(
@@ -312,7 +313,7 @@ const character = AccordionContainer(
                 img({
                     class: "media",
                     "data-variant": "accordion-avatar",
-                    src: "/asset/image/linux.jpg",
+                    src: linuxImg,
                     alt: "Linux penguin",
                 }),
                 div(

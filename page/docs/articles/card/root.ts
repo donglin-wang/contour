@@ -16,6 +16,8 @@ import type { Child } from "/lib/tags";
 import { Heart, MessageSquare, Share, X } from "/component/symbol";
 
 import postStyle from "/style/variant/card/post.css?inline";
+import linuxImg from "/asset/image/linux.jpg";
+import shoeImg from "/asset/image/shoe.png";
 
 const { div, b, span, img, button } = tags;
 
@@ -25,7 +27,7 @@ const CardContainer = (...children: Child[]) =>
             class: "container",
             "data-variant": "card-display",
         },
-        ...children
+        ...children,
     );
 
 const defaultCard = CardContainer(
@@ -36,11 +38,11 @@ const defaultCard = CardContainer(
             { class: "card__section" },
             b("Card body title"),
             span(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-            )
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            ),
         ),
-        div({ class: "card__section" }, "Card footer")
-    )
+        div({ class: "card__section" }, "Card footer"),
+    ),
 );
 
 const post = CardContainer(
@@ -51,7 +53,7 @@ const post = CardContainer(
             img({
                 class: "media",
                 "data-variant": "post-avatar",
-                src: "/asset/image/linux.jpg",
+                src: linuxImg,
                 alt: "Linux penguin",
             }),
             div(
@@ -61,29 +63,32 @@ const post = CardContainer(
                 },
                 span(
                     { class: "text", "data-variant": "post-primary" },
-                    "Linux user"
+                    "Linux user",
                 ),
                 span(
                     { class: "text", "data-variant": "post-secondary" },
-                    "Ottawa, Canada"
-                )
-            )
+                    "Ottawa, Canada",
+                ),
+            ),
         ),
         img({
             class: "media",
             "data-variant": "post-image",
-            src: "/asset/image/shoe.png",
+            src: shoeImg,
             alt: "Linux penguin",
         }),
         div(
             {
                 class: "card__section",
             },
-            b({ class: "text", "data-variant": "post-primary"}, "Card body title"),
+            b(
+                { class: "text", "data-variant": "post-primary" },
+                "Card body title",
+            ),
             span(
                 { class: "text" },
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-            )
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+            ),
         ),
         div(
             {
@@ -95,24 +100,24 @@ const post = CardContainer(
                     class: "trigger m-ghost",
                     "data-variant": "icon",
                 },
-                MessageSquare()
+                MessageSquare(),
             ),
             button(
                 {
                     class: "trigger m-ghost",
                     "data-variant": "icon",
                 },
-                Heart()
+                Heart(),
             ),
             button(
                 {
                     class: "trigger m-ghost",
                     "data-variant": "icon",
                 },
-                Share()
-            )
-        )
-    )
+                Share(),
+            ),
+        ),
+    ),
 );
 
 const product = CardContainer(
@@ -124,7 +129,7 @@ const product = CardContainer(
         img({
             class: "media",
             "data-variant": "post-image",
-            src: "/asset/image/shoe.png",
+            src: shoeImg,
             alt: "Nike shoe",
         }),
         div(
@@ -139,14 +144,14 @@ const product = CardContainer(
                 },
                 span(
                     { class: "text", "data-variant": "product-primary" },
-                    "Nike Air Max 270"
+                    "Nike Air Max 270",
                 ),
                 span(
                     { class: "text", "data-variant": "product-secondary" },
-                    "Women's running shoes"
-                )
+                    "Women's running shoes",
+                ),
             ),
-            span({ class: "text", "data-variant": "product-price" }, "$350")
+            span({ class: "text", "data-variant": "product-price" }, "$350"),
         ),
         div(
             {
@@ -158,16 +163,16 @@ const product = CardContainer(
                     class: "trigger",
                     "data-variant": "product-add-cart",
                 },
-                "Add to cart"
+                "Add to cart",
             ),
             button(
                 {
                     class: "trigger",
                 },
-                Heart()
-            )
-        )
-    )
+                Heart(),
+            ),
+        ),
+    ),
 );
 
 const connect = CardContainer(
@@ -181,7 +186,7 @@ const connect = CardContainer(
                 class: "trigger",
                 "data-variant": "connect-close",
             },
-            X()
+            X(),
         ),
         div(
             {
@@ -191,9 +196,9 @@ const connect = CardContainer(
             img({
                 class: "media",
                 "data-variant": "connect-avatar",
-                src: "/asset/image/linux.jpg",
+                src: linuxImg,
                 alt: "Linux penguin",
-            })
+            }),
         ),
         div(
             {
@@ -202,40 +207,40 @@ const connect = CardContainer(
             },
             span(
                 { class: "text", "data-variant": "connect-name" },
-                "Mr. Penguin"
+                "Mr. Penguin",
             ),
             span(
                 { class: "text", "data-variant": "connect-title" },
-                "Chief linux evangelist"
+                "Chief linux evangelist",
             ),
             span(
                 { class: "text", "data-variant": "connect-company" },
-                "ACME Inc"
-            )
+                "ACME Inc",
+            ),
         ),
         div(
             { class: "card__section", "data-variant": "connect" },
-            button({ class: "trigger", "data-variant": "connect" }, "Connect")
-        )
-    )
+            button({ class: "trigger", "data-variant": "connect" }, "Connect"),
+        ),
+    ),
 );
 
 export default [
     H1("Card"),
     Subheading(
-        "A bordered container that groups related content into distinct sections, used for previews, summaries, and standalone items."
+        "A bordered container that groups related content into distinct sections, used for previews, summaries, and standalone items.",
     ),
     H2("Base style"),
     P(
-        "The base card is a block-level bordered box with rounded corners. Each section is a flex column separated by a bottom border, with the last section's border removed."
+        "The base card is a block-level bordered box with rounded corners. Each section is a flex column separated by a bottom border, with the last section's border removed.",
     ),
     Ul(
         Li(
-            "Sections stack vertically by default. Variants that need horizontal layouts must override flex-direction on individual sections."
+            "Sections stack vertically by default. Variants that need horizontal layouts must override flex-direction on individual sections.",
         ),
         Li(
-            "Avoid using the card for full-page layouts or dense data. Use a table or dedicated page template instead."
-        )
+            "Avoid using the card for full-page layouts or dense data. Use a table or dedicated page template instead.",
+        ),
     ),
     ComponentPanel({
         display: ComponentDisplay(defaultCard),
@@ -245,7 +250,7 @@ export default [
     }),
     H2("Post"),
     P(
-        "A social-media-style card with an avatar header, a full-width image, body text, and a row of icon action buttons."
+        "A social-media-style card with an avatar header, a full-width image, body text, and a row of icon action buttons.",
     ),
     ComponentPanel({
         display: ComponentDisplay(post),
@@ -256,7 +261,7 @@ export default [
     }),
     H2("Product"),
     P(
-        "A commerce-oriented card with a product image, a side-by-side title/price row, and action buttons."
+        "A commerce-oriented card with a product image, a side-by-side title/price row, and action buttons.",
     ),
     ComponentPanel({
         display: ComponentDisplay(product),
@@ -266,7 +271,7 @@ export default [
     }),
     H2("Connect"),
     P(
-        "A centered, profile-style card with an avatar, stacked identity details, and a connect action. Includes an absolutely positioned close button."
+        "A centered, profile-style card with an avatar, stacked identity details, and a connect action. Includes an absolutely positioned close button.",
     ),
     ComponentPanel({
         display: ComponentDisplay(connect),

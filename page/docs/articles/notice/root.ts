@@ -17,6 +17,7 @@ import baseStyle from "/style/pattern/notice.css?inline";
 import actionSegmentedStyle from "/style/variant/notice/actionSegmented.css?inline";
 import controlStyle from "/style/variant/notice/control.css?inline";
 import tieredStyle from "/style/variant/notice/tiered.css?inline";
+import linuxImg from "/asset/image/linux.jpg";
 
 const { div, button, span, img } = tags;
 
@@ -110,7 +111,7 @@ const notices: Record<
                 img({
                     class: "media",
                     "data-variant": "notice-avatar",
-                    src: "/asset/image/linux.jpg",
+                    src: linuxImg,
                     alt: "Linux penguin",
                 }),
             ),
@@ -156,7 +157,7 @@ const notices: Record<
                 img({
                     class: "media",
                     "data-variant": "notice-avatar",
-                    src: "/asset/image/linux.jpg",
+                    src: linuxImg,
                     alt: "Linux penguin",
                 }),
             ),

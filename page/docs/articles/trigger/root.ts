@@ -11,6 +11,8 @@ import {
 
 import { Child, tags } from "/lib/tags";
 import { ChevronRight, House } from "/component/symbol";
+import linuxImg from "/asset/image/linux.jpg";
+
 const { button, div, span, b, img } = tags;
 
 const ButtonsContainer = (...children: Child[]) =>
@@ -19,7 +21,7 @@ const ButtonsContainer = (...children: Child[]) =>
             class: "container",
             "data-variant": "button-display",
         },
-        ...children
+        ...children,
     );
 
 const ArticleControl = (variantSuffix: "prev" | "next", title) =>
@@ -38,42 +40,42 @@ const ArticleControl = (variantSuffix: "prev" | "next", title) =>
                     class: "text",
                     "data-variant": "article-control-primary",
                 },
-                title
+                title,
             ),
             span(
                 {
                     class: "text",
                     "data-variant": "article-control-secondary",
                 },
-                variantSuffix === "prev" ? "Previous" : "Next"
-            )
+                variantSuffix === "prev" ? "Previous" : "Next",
+            ),
         ),
-        ChevronRight({ variant: `article-control-chevron-${variantSuffix}` })
+        ChevronRight({ variant: `article-control-chevron-${variantSuffix}` }),
     );
 
 export default [
     H1("Trigger"),
     Subheading(
-        "A clickable element used for buttons, links, and other interactive controls."
+        "A clickable element used for buttons, links, and other interactive controls.",
     ),
     H2("Base style"),
     P(
-        "The base trigger is a bordered, fit-content flex container with rounded corners and a hover background shift."
+        "The base trigger is a bordered, fit-content flex container with rounded corners and a hover background shift.",
     ),
     Ul(
         Li(
-            "The trigger has no disabled state built in. Add your own disabled styling and aria-disabled handling when needed."
+            "The trigger has no disabled state built in. Add your own disabled styling and aria-disabled handling when needed.",
         ),
         Li(
-            "Avoid using the trigger pattern for non-interactive elements. Use a card or badge instead for static, decorative content."
-        )
+            "Avoid using the trigger pattern for non-interactive elements. Use a card or badge instead for static, decorative content.",
+        ),
     ),
     ComponentPanel({
         display: ComponentDisplay(button({ class: "trigger" }, "Default")),
     }),
     H2("Colored"),
     P(
-        "Semantic color variants for communicating intent. Each replaces the border with a solid background color and matching hover state."
+        "Semantic color variants for communicating intent. Each replaces the border with a solid background color and matching hover state.",
     ),
     ComponentPanel({
         display: ComponentDisplay(
@@ -83,47 +85,47 @@ export default [
                         class: "trigger",
                         "data-variant": "danger",
                     },
-                    "Danger"
+                    "Danger",
                 ),
                 button(
                     {
                         class: "trigger",
                         "data-variant": "warning",
                     },
-                    "Warning"
+                    "Warning",
                 ),
                 button(
                     {
                         class: "trigger",
                         "data-variant": "info",
                     },
-                    "Info"
+                    "Info",
                 ),
                 button(
                     {
                         class: "trigger",
                         "data-variant": "success",
                     },
-                    "Success"
-                )
-            )
+                    "Success",
+                ),
+            ),
         ),
     }),
     H2("Article control"),
     P(
-        "A previous/next navigation trigger with a two-line label and a directional chevron. The prev variant reverses the flex direction."
+        "A previous/next navigation trigger with a two-line label and a directional chevron. The prev variant reverses the flex direction.",
     ),
     ComponentPanel({
         display: ComponentDisplay(
             ButtonsContainer(
                 ArticleControl("prev", "Menu"),
-                ArticleControl("next", "Table")
-            )
+                ArticleControl("next", "Table"),
+            ),
         ),
     }),
     H2("Modifiers"),
     P(
-        "Composable modifier classes that can be combined with the base trigger. Pill adds full rounding, ghost removes the border and background, and they can be stacked."
+        "Composable modifier classes that can be combined with the base trigger. Pill adds full rounding, ghost removes the border and background, and they can be stacked.",
     ),
     ComponentPanel({
         display: ComponentDisplay(
@@ -132,26 +134,26 @@ export default [
                     {
                         class: "trigger m-pill",
                     },
-                    "Pill"
+                    "Pill",
                 ),
                 button(
                     {
                         class: "trigger m-ghost",
                     },
-                    "Ghost"
+                    "Ghost",
                 ),
                 button(
                     {
                         class: "trigger m-pill m-ghost",
                     },
-                    "Pill ghost"
-                )
-            )
+                    "Pill ghost",
+                ),
+            ),
         ),
     }),
     H2("Preview"),
     P(
-        "A card-like trigger with a leading image and a stacked primary/secondary text section."
+        "A card-like trigger with a leading image and a stacked primary/secondary text section.",
     ),
     ComponentPanel({
         display: ComponentDisplay(
@@ -164,7 +166,7 @@ export default [
                     img({
                         class: "media",
                         "data-variant": "preview-trigger",
-                        src: "/asset/image/linux.jpg",
+                        src: linuxImg,
                         alt: "Linux penguin",
                     }),
                     span(
@@ -177,24 +179,22 @@ export default [
                                 class: "text",
                                 "data-variant": "preview-primary",
                             },
-                            "Learn more about installing Linux"
+                            "Learn more about installing Linux",
                         ),
                         span(
                             {
                                 class: "text",
                                 "data-variant": "preview-secondary",
                             },
-                            "5 minutes"
-                        )
-                    )
-                )
-            )
+                            "5 minutes",
+                        ),
+                    ),
+                ),
+            ),
         ),
     }),
     H2("Icon"),
-    P(
-        "A compact trigger sized to fit a single icon, with reduced padding."
-    ),
+    P("A compact trigger sized to fit a single icon, with reduced padding."),
     ComponentPanel({
         display: ComponentDisplay(
             ButtonsContainer(
@@ -203,23 +203,23 @@ export default [
                         class: "trigger",
                         "data-variant": "icon",
                     },
-                    House()
+                    House(),
                 ),
                 button(
                     {
                         class: "trigger",
                         "data-variant": "icon",
                     },
-                    House({class: "symbol m-large"})
+                    House({ class: "symbol m-large" }),
                 ),
                 button(
                     {
                         class: "trigger",
                         "data-variant": "icon",
                     },
-                    House({class: "symbol m-x-large"})
+                    House({ class: "symbol m-x-large" }),
                 ),
-            )
+            ),
         ),
     }),
 ];
