@@ -3,6 +3,7 @@
     :root {
         --top-nav-height: 3rem;
         --main-height: calc(100vh - var(--top-nav-height));
+        --sidebar-compact: 0;
     }
 
     .container[data-for="contour-root"] {
@@ -25,6 +26,7 @@
         position: sticky;
         top: var(--top-nav-height);
         padding: var(--space-4);
+        background-color: var(--background);
     }
 
     .menu[data-variant="sidebar"][data-closed] {
@@ -70,6 +72,22 @@
 
     @media (width <= 85rem) {
         .menu[data-for="article-outline"] {
+            display: none;
+        }
+    }
+
+    @media (width <= 50rem) {
+        :root {
+            --sidebar-compact: 1;
+        }
+
+        .menu[data-variant="sidebar"] {
+            position: fixed;
+            z-index: 1;
+            width: var(--measure-2);
+        }
+
+        .menu[data-variant="sidebar"][data-closed] {
             display: none;
         }
     }

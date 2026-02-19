@@ -11,6 +11,11 @@ import {
 
 const { div, button, nav, main, span } = tags;
 
+const isSidebarCompact = () =>
+    getComputedStyle(document.documentElement)
+        .getPropertyValue("--sidebar-compact")
+        .trim() === "1";
+
 export const createSidebar = (
     articles: {
         path: string;
@@ -19,65 +24,40 @@ export const createSidebar = (
     }[],
     navigateTo: (path: string) => void,
 ) => {
-    const foundationArticles = articles.filter(
-        (a) => a.section === "Foundation",
-    );
-    const patternArticles = articles.filter((a) => a.section === "Patterns");
+    const sidebarLinks = (section: "Foundation" | "Patterns") =>
+        articles
+            .filter((a) => a.section === section)
+            .map((spec) =>
+                Link({
+                    callback: async () => {
+                        navigateTo("/docs/" + spec.path);
+                        if (isSidebarCompact()) {
+                            stateStore.setState({ sidebarOpen: false });
+                        }
+                    },
+                    children: [spec.title],
+                    attributes: {
+                        class: "menu__item",
+                        href: `/docs/${spec.path}`,
+                        "data-variant": "sidebar",
+                    },
+                }),
+            );
 
     const sidebar = div(
         {
             class: "menu",
             "data-variant": "sidebar",
         },
-        span(
-            {
-                class: "menu__title",
-            },
-            "Foundation",
-        ),
+        span({ class: "menu__title" }, "Foundation"),
         div(
-            {
-                class: "menu",
-                "data-variant": "nested",
-            },
-            ...foundationArticles.map((spec) =>
-                Link({
-                    callback: async () => {
-                        navigateTo("/docs/" + spec.path);
-                    },
-                    children: [spec.title],
-                    attributes: {
-                        class: "menu__item",
-                        href: `/docs/${spec.path}`,
-                        "data-variant": "sidebar",
-                    },
-                }),
-            ),
+            { class: "menu", "data-variant": "nested" },
+            ...sidebarLinks("Foundation"),
         ),
-        span(
-            {
-                class: "menu__title",
-            },
-            "Patterns",
-        ),
+        span({ class: "menu__title" }, "Patterns"),
         div(
-            {
-                class: "menu",
-                "data-variant": "nested",
-            },
-            ...patternArticles.map((spec) =>
-                Link({
-                    callback: async () => {
-                        navigateTo("/docs/" + spec.path);
-                    },
-                    children: [spec.title],
-                    attributes: {
-                        class: "menu__item",
-                        href: `/docs/${spec.path}`,
-                        "data-variant": "sidebar",
-                    },
-                }),
-            ),
+            { class: "menu", "data-variant": "nested" },
+            ...sidebarLinks("Patterns"),
         ),
     );
 
@@ -102,6 +82,13 @@ export const createSidebar = (
             openSidebar();
         } else {
             closeSidebar();
+        }
+    });
+
+    const smallScreenQuery = window.matchMedia("(width <= 50rem)");
+    smallScreenQuery.addEventListener("change", (e) => {
+        if (e.matches && stateStore.getState().sidebarOpen) {
+            stateStore.setState({ sidebarOpen: false });
         }
     });
 
@@ -139,7 +126,6 @@ export const createSidebarToggle = () => {
 
     sidebarToggle.addEventListener("click", toggleSidebarState);
     stateStore.subscribe((appState) => {
-        console.log("Setting toggle icon");
         if (appState.sidebarOpen) {
             sidebarToggle.replaceChildren(PanelLeftClose());
         } else {
