@@ -171,13 +171,13 @@ export const articles: ArticleSpec[] = [
 const docRoutes: Route[] = articles.map((article) => ({
     path: `/docs/${article.path}`,
     handler: async () => {
-        const sharedStyle = await importSharedStyle();
-        const articleModule = await article.importArticle();
-        let articleStyle = "";
-        if (article.importStyle) {
-            const articleStyleModule = await article.importStyle();
-            articleStyle = articleStyleModule.default;
-        }
+        const [sharedStyle, articleModule, articleStyleModule] =
+            await Promise.all([
+                importSharedStyle(),
+                article.importArticle(),
+                article.importStyle?.(),
+            ]);
+        const articleStyle = articleStyleModule?.default ?? "";
         await setCurrentStyle(article.path, sharedStyle, articleStyle);
         document.title = article.title;
         return createArticle(articleModule.default);
