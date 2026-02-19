@@ -3,7 +3,6 @@
     :root {
         --top-nav-height: 3rem;
         --main-height: calc(100vh - var(--top-nav-height));
-        --sidebar-compact: 0;
     }
 
     .container[data-for="contour-root"] {
@@ -76,19 +75,9 @@
         }
     }
 
-    @media (width <= 50rem) {
-        :root {
-            --sidebar-compact: 1;
-        }
-
-        .menu[data-variant="sidebar"] {
-            position: fixed;
-            z-index: 1;
-            width: var(--measure-2);
-        }
-
-        .menu[data-variant="sidebar"][data-closed] {
-            display: none;
-        }
+    .menu[data-variant="sidebar"][data-open-overlay] {
+        position: fixed;
+        z-index: 1;
+        width: var(--measure-2);
     }
 }

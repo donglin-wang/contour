@@ -11,10 +11,18 @@ import {
 
 const { div, button, nav, main, span } = tags;
 
-const isSidebarCompact = () =>
-    getComputedStyle(document.documentElement)
-        .getPropertyValue("--sidebar-compact")
-        .trim() === "1";
+const COMPACT_BREAKPOINT = 800;
+let isCompact = document.documentElement.clientWidth <= COMPACT_BREAKPOINT;
+
+const observer = new ResizeObserver((entries) => {
+    const width = entries[0].contentRect.width;
+    const wasCompact = isCompact;
+    isCompact = width <= COMPACT_BREAKPOINT;
+    if (!wasCompact && isCompact && stateStore.getState().sidebarOpen) {
+        stateStore.setState({ sidebarOpen: false });
+    }
+});
+observer.observe(document.documentElement);
 
 export const createSidebar = (
     articles: {
@@ -24,14 +32,14 @@ export const createSidebar = (
     }[],
     navigateTo: (path: string) => void,
 ) => {
-    const sidebarLinks = (section: "Foundation" | "Patterns") =>
+    const getSidebarLinks = (section: "Foundation" | "Patterns") =>
         articles
             .filter((a) => a.section === section)
             .map((spec) =>
                 Link({
                     callback: async () => {
                         navigateTo("/docs/" + spec.path);
-                        if (isSidebarCompact()) {
+                        if (isCompact) {
                             stateStore.setState({ sidebarOpen: false });
                         }
                     },
@@ -52,22 +60,29 @@ export const createSidebar = (
         span({ class: "menu__title" }, "Foundation"),
         div(
             { class: "menu", "data-variant": "nested" },
-            ...sidebarLinks("Foundation"),
+            ...getSidebarLinks("Foundation"),
         ),
         span({ class: "menu__title" }, "Patterns"),
         div(
             { class: "menu", "data-variant": "nested" },
-            ...sidebarLinks("Patterns"),
+            ...getSidebarLinks("Patterns"),
         ),
     );
 
     const openSidebar = () => {
-        sidebar.toggleAttribute("data-open", true);
         sidebar.toggleAttribute("data-closed", false);
+        if (isCompact) {
+            sidebar.toggleAttribute("data-open", false);
+            sidebar.toggleAttribute("data-open-overlay", true);
+        } else {
+            sidebar.toggleAttribute("data-open-overlay", false);
+            sidebar.toggleAttribute("data-open", true);
+        }
     };
 
     const closeSidebar = () => {
         sidebar.toggleAttribute("data-open", false);
+        sidebar.toggleAttribute("data-open-overlay", false);
         sidebar.toggleAttribute("data-closed", true);
     };
 
@@ -82,13 +97,6 @@ export const createSidebar = (
             openSidebar();
         } else {
             closeSidebar();
-        }
-    });
-
-    const smallScreenQuery = window.matchMedia("(width <= 50rem)");
-    smallScreenQuery.addEventListener("change", (e) => {
-        if (e.matches && stateStore.getState().sidebarOpen) {
-            stateStore.setState({ sidebarOpen: false });
         }
     });
 
