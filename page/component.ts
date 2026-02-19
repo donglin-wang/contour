@@ -12,10 +12,16 @@ import {
 const { div, button, nav, main, span } = tags;
 
 export const createSidebar = (
-    articles: { path: string; title: string; section: "Foundation" | "Patterns" }[],
+    articles: {
+        path: string;
+        title: string;
+        section: "Foundation" | "Patterns";
+    }[],
     navigateTo: (path: string) => void,
 ) => {
-    const foundationArticles = articles.filter((a) => a.section === "Foundation");
+    const foundationArticles = articles.filter(
+        (a) => a.section === "Foundation",
+    );
     const patternArticles = articles.filter((a) => a.section === "Patterns");
 
     const sidebar = div(
@@ -27,7 +33,7 @@ export const createSidebar = (
             {
                 class: "menu__title",
             },
-            "Foundation"
+            "Foundation",
         ),
         div(
             {
@@ -52,7 +58,7 @@ export const createSidebar = (
             {
                 class: "menu__title",
             },
-            "Patterns"
+            "Patterns",
         ),
         div(
             {
@@ -221,4 +227,4 @@ export const initializeTheme = () => {
     if (storedTheme) {
         document.body.setAttribute("data-theme", storedTheme);
     }
-}
+};

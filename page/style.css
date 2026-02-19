@@ -17,8 +17,9 @@
         --menu-nested-margin-inline-start: var(--space-4);
 
         height: var(--main-height);
-        flex: 1;
-        max-width: var(--measure-2);
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 var(--measure-2);
         border-inline-end: var(--border-width-1) solid var(--border-color);
         overflow-y: auto;
         position: sticky;
@@ -67,14 +68,8 @@
         overflow-y: auto;
     }
 
-    @media (width <= 65rem) {
-        .menu[data-variant="sidebar"] {
-            display: none;
-        }
-    }
-
     @media (width <= 85rem) {
-        .outline {
+        .menu[data-for="article-outline"] {
             display: none;
         }
     }
