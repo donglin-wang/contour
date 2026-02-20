@@ -1,10 +1,12 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="asset/image/dark-mode-logo.png">
-  <source media="(prefers-color-scheme: light)" srcset="asset/image/light-mode-logo.png">
-  <img alt="Contour" src="asset/image/light-mode-logo.png">
-</picture>
-
-A naming convention and a set of references for building scalable styling systems with pure CSS - no build step, no framework coupling, and no dependencies.
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="asset/image/dark-mode-logo.png">
+    <source media="(prefers-color-scheme: light)" srcset="asset/image/light-mode-logo.png">
+    <img alt="Contour" src="asset/image/light-mode-logo.png">
+  </picture>
+  <br><br>
+  Scalable styling with only CSS.
+</p>
 
 ## Overview
 
