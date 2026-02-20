@@ -1,21 +1,22 @@
-let current: string;
+const loadedKeys = new Set<string>();
 
 export const resetStyle = () => {
     document.adoptedStyleSheets = [];
-    current = "";
+    loadedKeys.clear();
 };
 
-export const setCurrentStyle = async (key: string, ...styleStrings: string[]) => {
-    if (current === key) {
+export const addStyle = async (key: string, ...styleStrings: string[]) => {
+    if (loadedKeys.has(key)) {
         return;
     }
-
-    resetStyle();
 
     const sheet = await new CSSStyleSheet().replace(styleStrings.join(""));
     document.adoptedStyleSheets.push(sheet);
 
-    current = key;
+    loadedKeys.add(key);
 };
 
-export const initializeStyleRegistry = () => (current = "");
+export const initializeStyleRegistry = () => {
+    document.adoptedStyleSheets = [];
+    loadedKeys.clear();
+};

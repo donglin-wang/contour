@@ -1,4 +1,4 @@
-import { setCurrentStyle } from "/store/style";
+import { addStyle } from "/store/style";
 import Article from "/component/article";
 import type { Route } from "/lib/routing";
 
@@ -178,7 +178,7 @@ const docRoutes: Route[] = articles.map((article) => ({
                 article.importStyle?.(),
             ]);
         const articleStyle = articleStyleModule?.default ?? "";
-        await setCurrentStyle(article.path, sharedStyle, articleStyle);
+        await addStyle(article.path, sharedStyle, articleStyle);
         document.title = article.title;
         return createArticle(articleModule.default);
     },

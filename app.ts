@@ -10,6 +10,8 @@ import homeRoutes from "/page/home/routes";
 import docRoutes from "/page/docs/routes";
 import { articles } from "/page/docs/routes";
 import { tags } from "/lib/tags";
+import { addStyle } from "/store/style";
+import scaffoldStyle from "/page/css";
 
 const { div } = tags;
 
@@ -27,6 +29,7 @@ for (const route of [...homeRoutes, ...docRoutes]) {
 const navigateTo = (path: string) => router.navigate(path);
 
 initializeTheme();
+await addStyle("scaffold", scaffoldStyle);
 
 document.body.replaceChildren(
     ...createScaffold(
