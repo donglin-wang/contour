@@ -5,7 +5,7 @@
     <img alt="Contour" src="asset/image/logo.svg" width="400">
   </picture>
   <br><br>
-  Scalable styling with only CSS.
+  <h3 align="center">Scalable styling with only CSS.</h3>
 </p>
 
 ## Overview
