@@ -7,9 +7,10 @@ import {
     Sun,
     Moon,
     House,
+    Github,
 } from "/component/symbol";
 
-const { div, button, nav, main, span } = tags;
+const { div, button, nav, main, span, a } = tags;
 
 const COMPACT_BREAKPOINT = 800;
 let isCompact = document.documentElement.clientWidth <= COMPACT_BREAKPOINT;
@@ -179,6 +180,16 @@ export const createScaffold = (
             {
                 class: "bar__section m-margin-inline-start-auto",
             },
+            a(
+                {
+                    class: "trigger m-ghost",
+                    "data-variant": "icon",
+                    href: "https://github.com/donglin-wang/contour",
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                },
+                Github(),
+            ),
             ThemeToggleTrigger(),
         ),
     ),

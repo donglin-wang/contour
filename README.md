@@ -1,8 +1,8 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="asset/image/dark-mode-logo.png">
-    <source media="(prefers-color-scheme: light)" srcset="asset/image/light-mode-logo.png">
-    <img alt="Contour" src="asset/image/light-mode-logo.png">
+    <source media="(prefers-color-scheme: dark)" srcset="asset/image/logo-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="asset/image/logo-light.svg">
+    <img alt="Contour" src="asset/image/logo.svg" width="400">
   </picture>
   <br><br>
   Scalable styling with only CSS.
