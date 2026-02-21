@@ -4,7 +4,7 @@
     <source media="(prefers-color-scheme: light)" srcset="asset/image/logo-light.svg">
     <img alt="Contour" src="asset/image/logo.svg" width="400">
   </picture>
-  <h3 align="center">Scalable styling with only CSS.</h3>
+  <h3 align="center">Scalable styling with only CSS</h3>
 </p>
 
 ## Overview

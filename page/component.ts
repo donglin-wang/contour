@@ -12,19 +12,6 @@ import {
 
 const { div, button, nav, main, span, a } = tags;
 
-const COMPACT_BREAKPOINT = 800;
-let isCompact = document.documentElement.clientWidth <= COMPACT_BREAKPOINT;
-
-const observer = new ResizeObserver((entries) => {
-    const width = entries[0].contentRect.width;
-    const wasCompact = isCompact;
-    isCompact = width <= COMPACT_BREAKPOINT;
-    if (!wasCompact && isCompact && stateStore.getState().sidebarOpen) {
-        stateStore.setState({ sidebarOpen: false });
-    }
-});
-observer.observe(document.documentElement);
-
 export const createSidebar = (
     articles: {
         path: string;
@@ -40,7 +27,7 @@ export const createSidebar = (
                 Link({
                     callback: async () => {
                         navigateTo("/docs/" + spec.path);
-                        if (isCompact) {
+                        if (stateStore.getState().compactViewport) {
                             stateStore.setState({ sidebarOpen: false });
                         }
                     },
@@ -72,7 +59,7 @@ export const createSidebar = (
 
     const openSidebar = () => {
         sidebar.toggleAttribute("data-closed", false);
-        if (isCompact) {
+        if (stateStore.getState().compactViewport) {
             sidebar.toggleAttribute("data-open", false);
             sidebar.toggleAttribute("data-open-overlay", true);
         } else {

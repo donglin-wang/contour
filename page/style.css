@@ -78,6 +78,7 @@
     .menu[data-variant="sidebar"][data-open-overlay] {
         position: fixed;
         z-index: 1;
-        width: var(--measure-2);
+        width: 100vw;
+        border: none;
     }
 }

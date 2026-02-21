@@ -135,36 +135,31 @@ export const articles: ArticleSpec[] = [
         path: "overview",
         title: "Overview",
         section: "Foundation",
-        importArticle: () =>
-            import("/page/docs/articles/overview/root"),
+        importArticle: () => import("/page/docs/articles/overview/root"),
     },
     {
         path: "getting-started",
         title: "Getting Started",
         section: "Foundation",
-        importArticle: () =>
-            import("/page/docs/articles/getting-started/root"),
-    },
-    {
-        path: "tokens",
-        title: "Tokens & Resets",
-        section: "Foundation",
-        importArticle: () =>
-            import("/page/docs/articles/tokens/root"),
+        importArticle: () => import("/page/docs/articles/getting-started/root"),
     },
     {
         path: "convention",
         title: "Conventions",
         section: "Foundation",
-        importArticle: () =>
-            import("/page/docs/articles/convention/root"),
+        importArticle: () => import("/page/docs/articles/convention/root"),
+    },
+    {
+        path: "tokens",
+        title: "Tokens & Resets",
+        section: "Foundation",
+        importArticle: () => import("/page/docs/articles/tokens/root"),
     },
     {
         path: "primer",
         title: "Primer",
         section: "Foundation",
-        importArticle: () =>
-            import("/page/docs/articles/primer/root"),
+        importArticle: () => import("/page/docs/articles/primer/root"),
     },
 ];
 

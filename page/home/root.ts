@@ -7,7 +7,6 @@ import type { Router } from "/lib/routing";
 const { div, h1, p, span } = tags;
 
 
-
 export default (router: Router) => {
     const displayButton = Link({
         attributes: {
@@ -16,7 +15,9 @@ export default (router: Router) => {
         },
         callback: async () => {
             await router.navigate("/docs/overview");
-            stateStore.setState({sidebarOpen: true});
+            if (!stateStore.getState().compactViewport) {
+                stateStore.setState({sidebarOpen: true});
+            }
         },
         children: ["Get started"],
     });
