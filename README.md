@@ -114,6 +114,7 @@ CSS files for new patterns go in `style/pattern/` and use `@layer pattern`. Vari
 
 ### Short-term
 
+- [ ] Fix broken component displays in narrow viewports
 - [ ] Clean up state management across interactive components (tabs, accordion, modal)
 - [ ] Finalize component APIs — stabilize `TabsSpec`, `AccordionSpec`, and similar interfaces
 - [ ] Reduce boilerplate in `page/docs/component/` display helpers
