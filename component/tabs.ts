@@ -89,7 +89,11 @@ export default function Tabs({
     }
 
     function deleteTab(index: number) {
-        if (index === tabs.length - 1 && index - 1 >= 0 && index === activeIndex) {
+        if (
+            index === tabs.length - 1 &&
+            index - 1 >= 0 &&
+            index === activeIndex
+        ) {
             setActiveTab(index - 1);
         } else if (index === 0 && index + 1 < tabs.length) {
             setActiveTab(index + 1);
