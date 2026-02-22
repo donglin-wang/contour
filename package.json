@@ -1,5 +1,11 @@
 {
+  "type": "module",
+  "scripts": {
+    "lint": "biome check .",
+    "lint:fix": "biome check --fix ."
+  },
   "devDependencies": {
+    "@biomejs/biome": "2.4.4",
     "vite": "^7.3.0"
   }
 }
