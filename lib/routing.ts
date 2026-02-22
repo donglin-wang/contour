@@ -19,9 +19,9 @@ export class Router {
         this.routes.set(route.path, route.handler);
     }
 
-    navigate(path: string): void {
+    async navigate(path: string): Promise<void> {
         window.history.pushState({}, '', path);
-        this.handleRoute();
+        await this.handleRoute();
     }
 
     private async handleRoute(): Promise<void> {

@@ -18,7 +18,7 @@ export const createSidebar = (
         title: string;
         section: "Foundation" | "Patterns";
     }[],
-    navigateTo: (path: string) => void,
+    navigateTo: (path: string) => Promise<void>,
 ) => {
     const getSidebarLinks = (section: "Foundation" | "Patterns") =>
         articles
@@ -26,7 +26,7 @@ export const createSidebar = (
             .map((spec) =>
                 Link({
                     callback: async () => {
-                        navigateTo("/docs/" + spec.path);
+                        await navigateTo("/docs/" + spec.path);
                         if (stateStore.getState().compactViewport) {
                             stateStore.setState({ sidebarOpen: false });
                         }
@@ -132,14 +132,14 @@ export const createSidebarToggle = () => {
     return sidebarToggle;
 };
 
-export const createHomeButton = (navigateTo: (path: string) => void) =>
+export const createHomeButton = (navigateTo: (path: string) => Promise<void>) =>
     Link({
         attributes: {
             class: "trigger m-ghost",
             "data-variant": "icon",
         },
         callback: async () => {
-            navigateTo("/");
+            await navigateTo("/");
             closeSidebar();
         },
         children: [House()],

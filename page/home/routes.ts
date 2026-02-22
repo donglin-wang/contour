@@ -9,7 +9,6 @@ const homeRoutes: Route[] = [
         handler: async (router: Router) => {
             const homeElement = await import("/page/home/root");
             await addStyle("home", homeStyle);
-            document.title = "Home";
             return homeElement.default(router);
         },
     },
