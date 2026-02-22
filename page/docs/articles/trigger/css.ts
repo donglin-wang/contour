@@ -9,6 +9,7 @@ const containerStyle = /*css*/ `
 @layer variant {
     .container[data-variant="button-display"] {
         display: flex;
+        flex-wrap: wrap;
         gap: var(--space-3);
         width: 100%;
         justify-content: center;
