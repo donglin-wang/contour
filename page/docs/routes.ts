@@ -1,6 +1,6 @@
-import { addStyle } from "/store/style";
 import Article from "/component/article";
 import type { Route } from "/lib/routing";
+import { addStyle } from "/store/style";
 
 type ArticleSection = "Foundation" | "Patterns";
 

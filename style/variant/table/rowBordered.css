@@ -2,12 +2,15 @@
     .table[data-variant="row-bordered"] {
         grid-template-columns: repeat(9, max-content);
     }
-    
+
     .table__cell[data-variant^="row-bordered"] {
-        border-block-end: var(--table-body-cell-horizontal-border, var(--border-width-1) solid var(--border-color))
+        border-block-end: var(
+            --table-body-cell-horizontal-border,
+            var(--border-width-1) solid var(--border-color)
+        );
     }
 
-    .table__row[data-variant^="row-bordered-body"]:last-child{
+    .table__row[data-variant^="row-bordered-body"]:last-child {
         --table-body-cell-horizontal-border: none;
     }
 }

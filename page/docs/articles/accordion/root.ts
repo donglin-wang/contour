@@ -1,31 +1,29 @@
+import linuxImg from "/asset/image/linux.jpg";
+import {
+    Bookmark,
+    ChevronDown,
+    Ellipsis,
+    MapPin,
+    Plus,
+} from "/component/symbol";
+import type { Child } from "/lib/tags";
 import { tags } from "/lib/tags";
 import {
     ComponentDisplay,
     ComponentPanel,
+    CSSCodeBlock,
     H1,
     H2,
-    Subheading,
-    P,
-    Ul,
-    Li,
     HTMLCodeBlock,
-    CSSCodeBlock,
+    Li,
+    P,
+    Subheading,
+    Ul,
 } from "/page/docs/component";
-import {
-    ChevronDown,
-    Bookmark,
-    MapPin,
-    Plus,
-    Ellipsis,
-} from "/component/symbol";
-
-import linuxImg from "/asset/image/linux.jpg"
 import accordionStyle from "/style/pattern/accordion.css?inline";
-import inlineEndStyle from "/style/variant/accordion/inlineEndIndicator.css?inline";
-import enclosedStyle from "/style/variant/accordion/enclosed.css?inline";
 import alternativeStyle from "/style/variant/accordion/alternativeIndicator.css?inline";
-
-import type { Child } from "/lib/tags";
+import enclosedStyle from "/style/variant/accordion/enclosed.css?inline";
+import inlineEndStyle from "/style/variant/accordion/inlineEndIndicator.css?inline";
 
 const { summary, details, div, span, img, button } = tags;
 
@@ -35,7 +33,7 @@ const AccordionContainer = (...children: Child[]) =>
             class: "accordion",
             "data-variant": "accordion-display",
         },
-        ...children
+        ...children,
     );
 
 const accordion = AccordionContainer(
@@ -47,11 +45,11 @@ const accordion = AccordionContainer(
                 {
                     class: "accordion__indicator",
                 },
-                ChevronDown()
+                ChevronDown(),
             ),
-            "Does this work?"
+            "Does this work?",
         ),
-        div({ class: "accordion__content" }, "Yes, it does")
+        div({ class: "accordion__content" }, "Yes, it does"),
     ),
     details(
         { class: "accordion__item" },
@@ -61,12 +59,12 @@ const accordion = AccordionContainer(
                 {
                     class: "accordion__indicator",
                 },
-                ChevronDown()
+                ChevronDown(),
             ),
-            "How about stacked together?"
+            "How about stacked together?",
         ),
-        div({ class: "accordion__content" }, "Yes, it does")
-    )
+        div({ class: "accordion__content" }, "Yes, it does"),
+    ),
 );
 
 const alternativeIndicator = AccordionContainer(
@@ -85,11 +83,11 @@ const alternativeIndicator = AccordionContainer(
                     {
                         class: "accordion__indicator",
                     },
-                    Plus()
+                    Plus(),
                 ),
-                "Does this work?"
+                "Does this work?",
             ),
-            div({ class: "accordion__content" }, "Yes, it does")
+            div({ class: "accordion__content" }, "Yes, it does"),
         ),
         details(
             {
@@ -102,13 +100,13 @@ const alternativeIndicator = AccordionContainer(
                     {
                         class: "accordion__indicator",
                     },
-                    Plus()
+                    Plus(),
                 ),
-                "How about stacked together?"
+                "How about stacked together?",
             ),
-            div({ class: "accordion__content" }, "Yes, it does")
-        )
-    )
+            div({ class: "accordion__content" }, "Yes, it does"),
+        ),
+    ),
 );
 
 const withIcon = AccordionContainer(
@@ -120,12 +118,12 @@ const withIcon = AccordionContainer(
                 {
                     class: "accordion__indicator",
                 },
-                ChevronDown()
+                ChevronDown(),
             ),
             MapPin(),
-            "Does this work?"
+            "Does this work?",
         ),
-        div({ class: "accordion__content" }, "Yes, it does")
+        div({ class: "accordion__content" }, "Yes, it does"),
     ),
     details(
         { class: "accordion__item" },
@@ -135,13 +133,13 @@ const withIcon = AccordionContainer(
                 {
                     class: "accordion__indicator",
                 },
-                ChevronDown()
+                ChevronDown(),
             ),
             Bookmark(),
-            "How about stacked together?"
+            "How about stacked together?",
         ),
-        div({ class: "accordion__content" }, "Yes, it does")
-    )
+        div({ class: "accordion__content" }, "Yes, it does"),
+    ),
 );
 
 const inlineEnd = AccordionContainer(
@@ -155,10 +153,10 @@ const inlineEnd = AccordionContainer(
                     class: "accordion__indicator",
                     "data-variant": "inline-end",
                 },
-                ChevronDown()
-            )
+                ChevronDown(),
+            ),
         ),
-        div({ class: "accordion__content" }, "Yes, it does")
+        div({ class: "accordion__content" }, "Yes, it does"),
     ),
     details(
         { class: "accordion__item" },
@@ -170,11 +168,11 @@ const inlineEnd = AccordionContainer(
                     class: "accordion__indicator",
                     "data-variant": "inline-end",
                 },
-                ChevronDown()
-            )
+                ChevronDown(),
+            ),
         ),
-        div({ class: "accordion__content" }, "Yes, it does")
-    )
+        div({ class: "accordion__content" }, "Yes, it does"),
+    ),
 );
 
 const withButton = AccordionContainer(
@@ -188,15 +186,15 @@ const withButton = AccordionContainer(
                     {
                         class: "accordion__indicator",
                     },
-                    ChevronDown()
+                    ChevronDown(),
                 ),
                 "Does this work?",
                 button(
                     { class: "trigger", "data-variant": "accordion-options" },
-                    Ellipsis()
-                )
+                    Ellipsis(),
+                ),
             ),
-            div({ class: "accordion__content" }, "Yes, it does")
+            div({ class: "accordion__content" }, "Yes, it does"),
         ),
         details(
             { class: "accordion__item" },
@@ -206,17 +204,17 @@ const withButton = AccordionContainer(
                     {
                         class: "accordion__indicator",
                     },
-                    ChevronDown()
+                    ChevronDown(),
                 ),
                 "How about stacked together?",
                 button(
                     { class: "trigger", "data-variant": "accordion-options" },
-                    Ellipsis()
-                )
+                    Ellipsis(),
+                ),
             ),
-            div({ class: "accordion__content" }, "Yes, it does")
-        )
-    )
+            div({ class: "accordion__content" }, "Yes, it does"),
+        ),
+    ),
 );
 
 const enclosed = AccordionContainer(
@@ -233,11 +231,11 @@ const enclosed = AccordionContainer(
                     {
                         class: "accordion__indicator",
                     },
-                    ChevronDown()
+                    ChevronDown(),
                 ),
-                "Does this work?"
+                "Does this work?",
             ),
-            div({ class: "accordion__content" }, "Yes, it does")
+            div({ class: "accordion__content" }, "Yes, it does"),
         ),
         details(
             { class: "accordion__item" },
@@ -247,13 +245,13 @@ const enclosed = AccordionContainer(
                     {
                         class: "accordion__indicator",
                     },
-                    ChevronDown()
+                    ChevronDown(),
                 ),
-                "How about stacked together?"
+                "How about stacked together?",
             ),
-            div({ class: "accordion__content" }, "Yes, it does")
-        )
-    )
+            div({ class: "accordion__content" }, "Yes, it does"),
+        ),
+    ),
 );
 
 const character = AccordionContainer(
@@ -269,7 +267,7 @@ const character = AccordionContainer(
                     {
                         class: "accordion__indicator",
                     },
-                    ChevronDown()
+                    ChevronDown(),
                 ),
                 img({
                     class: "media",
@@ -287,18 +285,18 @@ const character = AccordionContainer(
                             class: "text",
                             "data-variant": "character-name",
                         },
-                        "Herman Miller"
+                        "Herman Miller",
                     ),
                     span(
                         {
                             class: "text",
                             "data-variant": "character-description",
                         },
-                        "They make very good chairs"
-                    )
-                )
+                        "They make very good chairs",
+                    ),
+                ),
             ),
-            div({ class: "accordion__content" }, "Yes, it does")
+            div({ class: "accordion__content" }, "Yes, it does"),
         ),
         details(
             { class: "accordion__item" },
@@ -308,7 +306,7 @@ const character = AccordionContainer(
                     {
                         class: "accordion__indicator",
                     },
-                    ChevronDown()
+                    ChevronDown(),
                 ),
                 img({
                     class: "media",
@@ -326,38 +324,38 @@ const character = AccordionContainer(
                             class: "text",
                             "data-variant": "character-name",
                         },
-                        "Herman Miller"
+                        "Herman Miller",
                     ),
                     span(
                         {
                             class: "text",
                             "data-variant": "character-description",
                         },
-                        "They make very good chairs"
-                    )
-                )
+                        "They make very good chairs",
+                    ),
+                ),
             ),
-            div({ class: "accordion__content" }, "Yes, it does")
-        )
-    )
+            div({ class: "accordion__content" }, "Yes, it does"),
+        ),
+    ),
 );
 
 export default [
     H1("Accordion"),
     Subheading(
-        "A vertically stacked set of collapsible sections, built on the native details/summary elements."
+        "A vertically stacked set of collapsible sections, built on the native details/summary elements.",
     ),
     H2("Base style"),
     P(
-        "Each item is a details element separated by a bottom border. The summary row is a flex container with a rotating chevron indicator that turns 180 degrees when open."
+        "Each item is a details element separated by a bottom border. The summary row is a flex container with a rotating chevron indicator that turns 180 degrees when open.",
     ),
     Ul(
         Li(
-            "Because it relies on the native details element, accordions are mutually exclusive."
+            "Because it relies on the native details element, accordions are mutually exclusive.",
         ),
         Li(
-            "Avoid using the accordion for content that users need to compare side by side. Use a tabbed or stacked layout instead."
-        )
+            "Avoid using the accordion for content that users need to compare side by side. Use a tabbed or stacked layout instead.",
+        ),
     ),
     ComponentPanel({
         display: ComponentDisplay(accordion),
@@ -368,7 +366,7 @@ export default [
     }),
     H2("With alternative indicator"),
     P(
-        "Swaps the chevron for a plus icon that rotates 45 degrees into an X when open."
+        "Swaps the chevron for a plus icon that rotates 45 degrees into an X when open.",
     ),
     ComponentPanel({
         display: ComponentDisplay(alternativeIndicator),
@@ -378,9 +376,7 @@ export default [
         },
     }),
     H2("With icon"),
-    P(
-        "Adds a leading icon next to the label in the summary row."
-    ),
+    P("Adds a leading icon next to the label in the summary row."),
     ComponentPanel({
         display: ComponentDisplay(withIcon),
         sources: {
@@ -389,7 +385,7 @@ export default [
     }),
     H2("Indicator at the end"),
     P(
-        "Moves the expand/collapse indicator to the inline-end of the summary row using auto margin."
+        "Moves the expand/collapse indicator to the inline-end of the summary row using auto margin.",
     ),
     ComponentPanel({
         display: ComponentDisplay(inlineEnd),
@@ -400,7 +396,7 @@ export default [
     }),
     H2("With button"),
     P(
-        "Places an action button at the inline-end of the summary row alongside the label. Reuses the inline-end indicator styles for positioning."
+        "Places an action button at the inline-end of the summary row alongside the label. Reuses the inline-end indicator styles for positioning.",
     ),
     ComponentPanel({
         display: ComponentDisplay(withButton),
@@ -410,7 +406,7 @@ export default [
     }),
     H2("Enclosed"),
     P(
-        "Wraps the entire accordion in a rounded border to visually group the items."
+        "Wraps the entire accordion in a rounded border to visually group the items.",
     ),
     ComponentPanel({
         display: ComponentDisplay(enclosed),
@@ -421,7 +417,7 @@ export default [
     }),
     H2("Character"),
     P(
-        "A richer summary row with an avatar image and a stacked name/description section."
+        "A richer summary row with an avatar image and a stacked name/description section.",
     ),
     ComponentPanel({
         display: ComponentDisplay(character),

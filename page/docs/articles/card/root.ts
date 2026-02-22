@@ -1,23 +1,21 @@
+import linuxImg from "/asset/image/linux.jpg";
+import shoeImg from "/asset/image/shoe.png";
+import { Heart, MessageSquare, Share, X } from "/component/symbol";
+import type { Child } from "/lib/tags";
+import { tags } from "/lib/tags";
 import {
     ComponentDisplay,
     ComponentPanel,
     CSSCodeBlock,
     H1,
     H2,
-    Subheading,
-    P,
-    Ul,
-    Li,
     HTMLCodeBlock,
+    Li,
+    P,
+    Subheading,
+    Ul,
 } from "/page/docs/component";
-import { tags } from "/lib/tags";
-
-import type { Child } from "/lib/tags";
-import { Heart, MessageSquare, Share, X } from "/component/symbol";
-
 import postStyle from "/style/variant/card/post.css?inline";
-import linuxImg from "/asset/image/linux.jpg";
-import shoeImg from "/asset/image/shoe.png";
 
 const { div, b, span, img, button } = tags;
 

@@ -1,17 +1,16 @@
 import { Router } from "/lib/routing";
+import { tags } from "/lib/tags";
 import {
-    createScaffold,
     createHomeButton,
+    createScaffold,
     createSidebar,
     createSidebarToggle,
     initializeTheme,
 } from "/page/component";
-import homeRoutes from "/page/home/routes";
-import docRoutes from "/page/docs/routes";
-import { articles } from "/page/docs/routes";
-import { tags } from "/lib/tags";
-import { addStyle } from "/store/style";
 import scaffoldStyle from "/page/css";
+import docRoutes, { articles } from "/page/docs/routes";
+import homeRoutes from "/page/home/routes";
+import { addStyle } from "/store/style";
 
 const { div } = tags;
 

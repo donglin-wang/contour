@@ -4,7 +4,7 @@
         gap: var(--space-2);
         justify-content: space-between;
     }
-    
+
     .card__section[data-variant="product-content"] {
         padding: 0;
         border-bottom: none;

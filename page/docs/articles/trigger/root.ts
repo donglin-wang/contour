@@ -1,17 +1,16 @@
+import linuxImg from "/asset/image/linux.jpg";
+import { ChevronRight, House } from "/component/symbol";
+import { type Child, tags } from "/lib/tags";
 import {
     ComponentDisplay,
     ComponentPanel,
     H1,
     H2,
-    Subheading,
-    P,
-    Ul,
     Li,
+    P,
+    Subheading,
+    Ul,
 } from "/page/docs/component";
-
-import { Child, tags } from "/lib/tags";
-import { ChevronRight, House } from "/component/symbol";
-import linuxImg from "/asset/image/linux.jpg";
 
 const { button, div, span, b, img } = tags;
 

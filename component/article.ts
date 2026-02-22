@@ -1,5 +1,5 @@
+import type { Attributes, Child } from "/lib/tags";
 import { tags } from "/lib/tags";
-import type { Child, Attributes } from "/lib/tags";
 
 export type ArticleSpec = {
     providedChildren?: Child[];
@@ -38,14 +38,21 @@ class Article {
         this.outlineAttributes = outlineAttributes;
         this.outlineItemAttributes = outlineItemAttributes;
 
-        const articleContent = div(this.articleAttributes, ...this.providedChildren);
+        const articleContent = div(
+            this.articleAttributes,
+            ...this.providedChildren,
+        );
 
         const spec = this.populateHeadingIds(articleContent);
         const { outline, lookup } = this.createOutline(spec);
 
         this.outlineLookup = lookup;
 
-        this.root = article(this.articleRootAttributes, articleContent, outline);
+        this.root = article(
+            this.articleRootAttributes,
+            articleContent,
+            outline,
+        );
 
         const options: IntersectionObserverInit = {
             threshold: [0],
@@ -79,13 +86,19 @@ class Article {
     createOutline(spec: { id: string; title: string }[]) {
         const lookup: Record<string, Element> = {};
         for (const { id, title } of spec) {
-            const link = a({ ...this.outlineItemAttributes, href: `#${id}` }, title);
+            const link = a(
+                { ...this.outlineItemAttributes, href: `#${id}` },
+                title,
+            );
             link.addEventListener("click", (e) => {
                 e.preventDefault();
                 const target = document.getElementById(id);
                 if (target) {
                     const offset = 60;
-                    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+                    const top =
+                        target.getBoundingClientRect().top +
+                        window.scrollY -
+                        offset;
                     window.scrollTo({ top, behavior: "smooth" });
                     history.pushState(null, "", `#${id}`);
                 }

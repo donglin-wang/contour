@@ -1,38 +1,41 @@
-export type ShjLanguage = "css" | "html" | "todo" ;
-export type ShjLanguageComponent = ShjToken | ShjCompositeToken | ShjReferenceToken;
+export type ShjLanguage = "css" | "html" | "todo";
+export type ShjLanguageComponent =
+    | ShjToken
+    | ShjCompositeToken
+    | ShjReferenceToken;
 
 export type ShjToken = {
     match: RegExp;
     type: string;
-}
+};
 export type ShjCompositeToken = {
     match: RegExp;
     sub: string | ShjLanguageDefinition | ShjSubTokenFunction;
-}
-export type ShjSubTokenFunction = (code: string) => ShjLanguageComponent
+};
+export type ShjSubTokenFunction = (code: string) => ShjLanguageComponent;
 
 export type ShjReferenceToken = {
     expand: string;
-}
+};
 export type ShjLanguageDefinition = ShjLanguageComponent[];
 
-let nameStartChar =
+const nameStartChar =
         ":A-Z_a-z\u{C0}-\u{D6}\u{D8}-\u{F6}\u{F8}-\u{2FF}\u{370}-\u{37D}\u{37F}-\u{1FFF}\u{200C}-\u{200D}\u{2070}-\u{218F}\u{2C00}-\u{2FEF}\u{3001}-\u{D7FF}\u{F900}-\u{FDCF}\u{FDF0}-\u{FFFD}",
     nameChar =
         nameStartChar + "\\-\\.0-9\u{B7}\u{0300}-\u{036F}\u{203F}-\u{2040}";
 
-let name = `[${nameStartChar}][${nameChar}]*`,
+const name = `[${nameStartChar}][${nameChar}]*`,
     properties = `\\s*(\\s+${name}\\s*(=\\s*([^"']\\S*|("|')(\\\\[^]|(?!\\4)[^])*\\4?)?)?\\s*)*`,
     xmlElement = {
-        match: RegExp(`<[\/!?]?${name}${properties}[\/!?]?>`, "g"),
+        match: RegExp(`<[/!?]?${name}${properties}[/!?]?>`, "g"),
         sub: [
             {
                 type: "var",
-                match: RegExp(`^<[\/!?]?${name}`, "g"),
+                match: RegExp(`^<[/!?]?${name}`, "g"),
                 sub: [
                     {
                         type: "oper",
-                        match: /^<[\/!?]?/g,
+                        match: /^<[/!?]?/g,
                     },
                 ],
             },
@@ -48,7 +51,7 @@ let name = `[${nameStartChar}][${nameChar}]*`,
             },
             {
                 type: "oper",
-                match: /[\/!?]?>/g,
+                match: /[/!?]?>/g,
             },
             {
                 type: "class",
@@ -136,7 +139,7 @@ export const langs: Record<ShjLanguage, ShjLanguageDefinition> = {
         {
             match: RegExp(
                 `<style${properties}>((?!</style>)[^])*</style\\s*>`,
-                "g"
+                "g",
             ),
             sub: [
                 {
@@ -146,7 +149,7 @@ export const langs: Record<ShjLanguage, ShjLanguageDefinition> = {
                 {
                     match: RegExp(
                         `${xmlElement.match}|[^]*(?=</style\\s*>$)`,
-                        "g"
+                        "g",
                     ),
                     sub: "css",
                 },
@@ -156,7 +159,7 @@ export const langs: Record<ShjLanguage, ShjLanguageDefinition> = {
         {
             match: RegExp(
                 `<script${properties}>((?!</script>)[^])*</script\\s*>`,
-                "g"
+                "g",
             ),
             sub: [
                 {
@@ -166,7 +169,7 @@ export const langs: Record<ShjLanguage, ShjLanguageDefinition> = {
                 {
                     match: RegExp(
                         `${xmlElement.match}|[^]*(?=</script\\s*>$)`,
-                        "g"
+                        "g",
                     ),
                     sub: "js",
                 },

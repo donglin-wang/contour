@@ -1,14 +1,14 @@
-import { tags } from "/lib/tags";
 import { Link } from "/component/link";
-import { stateStore } from "/store/state";
 import {
+    Github,
+    House,
+    Moon,
     PanelLeftClose,
     PanelRightClose,
     Sun,
-    Moon,
-    House,
-    Github,
 } from "/component/symbol";
+import { tags } from "/lib/tags";
+import { stateStore } from "/store/state";
 
 const { div, button, nav, main, span, a } = tags;
 
@@ -26,7 +26,7 @@ export const createSidebar = (
             .map((spec) =>
                 Link({
                     callback: async () => {
-                        await navigateTo("/docs/" + spec.path);
+                        await navigateTo(`/docs/${spec.path}`);
                         if (stateStore.getState().compactViewport) {
                             stateStore.setState({ sidebarOpen: false });
                         }

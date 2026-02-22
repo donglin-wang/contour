@@ -1,12 +1,11 @@
-import { tags } from "/lib/tags";
+import { Check, Copy } from "/component/symbol";
 import { formatCSS, formatHTML } from "/lib/highlight/format";
 import { tokenize } from "/lib/highlight/tokenize";
 
 import type { Child } from "/lib/tags";
-import { Moon, Sun, Copy, Check } from "/component/symbol";
+import { tags } from "/lib/tags";
 
-const { h1, h2, h3, h4, h5, h6, p, ul, ol, li, code, div, hr, span, button } =
-    tags;
+const { h1, h2, h3, h4, h5, h6, p, ul, ol, li, code, div, span, button } = tags;
 
 export const H1 = (text: string) =>
     h1(
@@ -117,7 +116,7 @@ export const CodeInline = (text: string) =>
     );
 
 export const HTMLCodeBlock = (element: HTMLElement, usesInner = false) => {
-    const children = [];
+    const children: Child[] = [];
 
     tokenize(
         formatHTML(usesInner ? element.innerHTML : element.outerHTML),
@@ -149,7 +148,7 @@ export const HTMLCodeBlock = (element: HTMLElement, usesInner = false) => {
 };
 
 export const CSSCodeBlock = (styleText: string) => {
-    const children = [];
+    const children: Child[] = [];
 
     tokenize(formatCSS(styleText), "css", (str, type) => {
         if (str) {
@@ -192,7 +191,7 @@ export const ComponentPanel = ({
     display?: Element;
     sources?: Record<string, Element>;
 }) => {
-    const codeBlocks = [];
+    const codeBlocks: Child[] = [];
     Object.entries(sources).forEach(([key, value]) => {
         const copyIcon = Copy();
         const checkIcon = Check();
@@ -236,7 +235,7 @@ export const ComponentPanel = ({
         );
     });
 
-    if (codeBlocks.length === 0) {
+    if (codeBlocks.length === 0 && display) {
         return div(
             {
                 class: "container",
@@ -251,7 +250,7 @@ export const ComponentPanel = ({
             class: "container",
             "data-for": "display",
         },
-        display,
+        ...(display ? [display] : []),
         ...codeBlocks,
     );
 };

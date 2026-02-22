@@ -1,10 +1,6 @@
 abstract class Component extends HTMLElement {
     private initialized: boolean = false;
 
-    constructor() {
-        super();
-    }
-
     initializeOnce() {
         if (this.initialized) {
             return;

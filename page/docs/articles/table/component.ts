@@ -1,9 +1,9 @@
 import { tags } from "/lib/tags";
 
 import type {
-    TableSpec,
     ColumnSpec,
     TableData,
+    TableSpec,
 } from "/page/docs/articles/table/data";
 
 type HeaderDimension = ColumnSpec & {
@@ -18,7 +18,7 @@ const { table, th, thead, td, tbody, tr } = tags;
 
 const populateHeaderWidthDepth = (
     node: HeaderDimension,
-    depth: number
+    depth: number,
 ): [number, HeaderDimension[]] => {
     node.depth = depth;
 
@@ -34,7 +34,7 @@ const populateHeaderWidthDepth = (
     for (const child of node.children) {
         const [childDepth, childLeaves] = populateHeaderWidthDepth(
             child,
-            depth + 1
+            depth + 1,
         );
         leaves.push(...childLeaves);
         maxDepth = Math.max(childDepth, maxDepth);
@@ -65,7 +65,7 @@ export const calculateHeaderDimensions = (tableSpec: TableSpec) => {
 const constructHeaderCellStyle = (
     variant: string,
     width: number,
-    height: number
+    height: number,
 ) => /*css*/ `
 .table__cell[data-variant="${variant}"] {
     grid-column: span ${width};
@@ -74,14 +74,14 @@ const constructHeaderCellStyle = (
 
 export const construcHeaderStyle = (
     dimensions: HeaderDimension[],
-    variantPrefix: string
+    variantPrefix: string,
 ) => {
     const nodes = [...dimensions];
     let style = "";
     while (nodes.length !== 0) {
         const node = nodes.shift();
 
-        if (node.height == 1 && node.width == 1) {
+        if (node.height === 1 && node.width === 1) {
             continue;
         }
 
@@ -99,7 +99,7 @@ export const construcHeaderStyle = (
 
 export const construcTableHeader = (
     tableSpec: TableSpec,
-    variantPrefix: string
+    variantPrefix: string,
 ): { header: HTMLTableSectionElement; columns: ColumnSpec[] } => {
     const rows: Element[][] = [[]];
     const columns: ColumnSpec[] = [];
@@ -108,7 +108,7 @@ export const construcTableHeader = (
         return spec;
     });
 
-    while (queue.length != 0) {
+    while (queue.length !== 0) {
         const info = queue.shift();
 
         if (info.depth - 1 >= rows.length) {
@@ -119,7 +119,7 @@ export const construcTableHeader = (
             columns.push(info);
         }
 
-        let variant = `${variantPrefix}-${
+        const variant = `${variantPrefix}-${
             info.variantSuffix ?? info.accessor ?? info.label
         }`;
 
@@ -129,8 +129,8 @@ export const construcTableHeader = (
                     class: "table__cell",
                     "data-variant": variant,
                 },
-                info.label
-            )
+                info.label,
+            ),
         );
 
         if (info.children) {
@@ -139,8 +139,8 @@ export const construcTableHeader = (
                     (child: ColumnSpec & { depth: number }) => {
                         child.depth = info.depth + 1;
                         return child;
-                    }
-                )
+                    },
+                ),
             );
         }
     }
@@ -156,9 +156,9 @@ export const construcTableHeader = (
                     class: "table__row",
                     "data-variant": variantPrefix,
                 },
-                ...row
-            )
-        )
+                ...row,
+            ),
+        ),
     );
 
     return { header, columns };
@@ -167,7 +167,7 @@ export const construcTableHeader = (
 export const constructTableBody = (
     columns: ColumnSpec[],
     data: TableData,
-    variant: string
+    variant: string,
 ) => {
     const bodyRows = [];
     for (const row of data) {
@@ -182,8 +182,8 @@ export const constructTableBody = (
                         class: "table__cell",
                         "data-variant": variant,
                     },
-                    row[col.accessor]
-                )
+                    row[col.accessor],
+                ),
             );
         }
         bodyRows.push(
@@ -192,8 +192,8 @@ export const constructTableBody = (
                     class: "table__row",
                     "data-variant": variant,
                 },
-                ...rowCells
-            )
+                ...rowCells,
+            ),
         );
     }
 
@@ -202,7 +202,7 @@ export const constructTableBody = (
             class: "table__section",
             "data-variant": variant,
         },
-        ...bodyRows
+        ...bodyRows,
     );
 };
 
@@ -211,14 +211,11 @@ export const constructTable = (
     data: TableData,
     tableVariant,
     headerVariantPrefix,
-    bodyVariant
+    bodyVariant,
 ) => {
     const sections = [];
 
-    const { header, columns } = construcTableHeader(
-        spec,
-        headerVariantPrefix
-    );
+    const { header, columns } = construcTableHeader(spec, headerVariantPrefix);
 
     sections.push(header);
     sections.push(constructTableBody(columns, data, bodyVariant));
@@ -228,6 +225,6 @@ export const constructTable = (
             class: "table",
             "data-variant": tableVariant,
         },
-        ...sections
+        ...sections,
     );
 };

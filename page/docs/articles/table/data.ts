@@ -1,4 +1,4 @@
-import type { Attributes, Primitive } from "/lib/tags";
+import type { Primitive } from "/lib/tags";
 
 export type TableSpec = ColumnSpec[];
 

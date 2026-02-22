@@ -1,22 +1,22 @@
+import { Bookmark, FileCode, MapPin } from "/component/symbol";
 import { tags } from "/lib/tags";
 import {
-    H1,
-    H2,
-    Subheading,
-    P,
-    Ul,
-    Li,
     ComponentDisplay,
     ComponentPanel,
-    HTMLCodeBlock,
     CSSCodeBlock,
+    H1,
+    H2,
+    HTMLCodeBlock,
+    Li,
+    P,
+    Subheading,
+    Ul,
 } from "/page/docs/component";
-import { FileCode, MapPin, Bookmark } from "/component/symbol";
 
 import menuStyle from "/style/pattern/menu.css?inline";
-import shortcutStyle from "/style/variant/menu/shortcut.css?raw";
 import indentedStyle from "/style/variant/menu/indented.css?raw";
 import nestedStyle from "/style/variant/menu/nested.css?raw";
+import shortcutStyle from "/style/variant/menu/shortcut.css?raw";
 
 const { div, kbd, span, hr } = tags;
 
@@ -26,7 +26,7 @@ const MenuContainer = (...children: Element[]) =>
             class: "container",
             "data-for": "menu-framing",
         },
-        ...children
+        ...children,
     );
 
 const defaultMenu = div(
@@ -37,20 +37,20 @@ const defaultMenu = div(
         {
             class: "menu__item",
         },
-        "Item 1"
+        "Item 1",
     ),
     div(
         {
             class: "menu__item",
         },
-        "Item 2"
+        "Item 2",
     ),
     div(
         {
             class: "menu__item",
         },
-        "Item 3"
-    )
+        "Item 3",
+    ),
 );
 
 const withSymbolKBD = div(
@@ -73,9 +73,9 @@ const withSymbolKBD = div(
                     class: "marker",
                     "data-variant": "kbd",
                 },
-                "Ctrl P"
-            )
-        )
+                "Ctrl P",
+            ),
+        ),
     ),
     div(
         {
@@ -93,9 +93,9 @@ const withSymbolKBD = div(
                     class: "marker",
                     "data-variant": "kbd",
                 },
-                "Ctrl C"
-            )
-        )
+                "Ctrl C",
+            ),
+        ),
     ),
     div(
         {
@@ -113,10 +113,10 @@ const withSymbolKBD = div(
                     class: "marker",
                     "data-variant": "kbd",
                 },
-                "Ctrl D"
-            )
-        )
-    )
+                "Ctrl D",
+            ),
+        ),
+    ),
 );
 
 const withTitle = div(
@@ -127,26 +127,26 @@ const withTitle = div(
         {
             class: "menu__title",
         },
-        "Title"
+        "Title",
     ),
     div(
         {
             class: "menu__item",
         },
-        "Item 1"
+        "Item 1",
     ),
     div(
         {
             class: "menu__item",
         },
-        "Item 2"
+        "Item 2",
     ),
     div(
         {
             class: "menu__item",
         },
-        "Item 3"
-    )
+        "Item 3",
+    ),
 );
 
 const indented = div(
@@ -157,29 +157,29 @@ const indented = div(
         {
             class: "menu__title",
         },
-        "Title"
+        "Title",
     ),
     div(
         {
             class: "menu__item",
             "data-variant": "indented",
         },
-        "Item 1"
+        "Item 1",
     ),
     div(
         {
             class: "menu__item",
             "data-variant": "indented",
         },
-        "Item 2"
+        "Item 2",
     ),
     div(
         {
             class: "menu__item",
             "data-variant": "indented",
         },
-        "Item 3"
-    )
+        "Item 3",
+    ),
 );
 
 const nested = div(
@@ -191,13 +191,13 @@ const nested = div(
             {
                 class: "menu__item",
             },
-            "Item 1"
+            "Item 1",
         ),
         div(
             {
                 class: "menu__item",
             },
-            "Item 2"
+            "Item 2",
         ),
         div(
             { class: "menu", "data-variant": "nested" },
@@ -205,13 +205,13 @@ const nested = div(
                 {
                     class: "menu__item",
                 },
-                "Item 1"
+                "Item 1",
             ),
             div(
                 {
                     class: "menu__item",
                 },
-                "Item 2"
+                "Item 2",
             ),
             div(
                 { class: "menu", "data-variant": "nested" },
@@ -219,23 +219,23 @@ const nested = div(
                     {
                         class: "menu__item",
                     },
-                    "Item 1"
+                    "Item 1",
                 ),
                 div(
                     {
                         class: "menu__item",
                     },
-                    "Item 2"
-                )
-            )
+                    "Item 2",
+                ),
+            ),
         ),
         div(
             {
                 class: "menu__item",
             },
-            "Item 3"
-        )
-    )
+            "Item 3",
+        ),
+    ),
 );
 
 const titleNested = div(
@@ -246,7 +246,7 @@ const titleNested = div(
         {
             class: "menu__title",
         },
-        "Title"
+        "Title",
     ),
     div(
         { class: "menu", "data-variant": "nested" },
@@ -254,21 +254,21 @@ const titleNested = div(
             {
                 class: "menu__item",
             },
-            "Item 1"
+            "Item 1",
         ),
         div(
             {
                 class: "menu__item",
             },
-            "Item 2"
+            "Item 2",
         ),
         div(
             {
                 class: "menu__item",
             },
-            "Item 3"
-        )
-    )
+            "Item 3",
+        ),
+    ),
 );
 
 const withDivider = div(
@@ -279,25 +279,25 @@ const withDivider = div(
         {
             class: "menu__title",
         },
-        "Title"
+        "Title",
     ),
     div(
         {
             class: "menu__item",
         },
-        "Item 1"
+        "Item 1",
     ),
     div(
         {
             class: "menu__item",
         },
-        "Item 2"
+        "Item 2",
     ),
     div(
         {
             class: "menu__item",
         },
-        "Item 3"
+        "Item 3",
     ),
     hr({
         class: "boundary",
@@ -306,49 +306,49 @@ const withDivider = div(
         {
             class: "menu__title",
         },
-        "Title"
+        "Title",
     ),
     div(
         {
             class: "menu__item",
         },
-        "Item 1"
+        "Item 1",
     ),
     div(
         {
             class: "menu__item",
         },
-        "Item 2"
+        "Item 2",
     ),
     div(
         {
             class: "menu__item",
         },
-        "Item 3"
-    )
+        "Item 3",
+    ),
 );
 
 export default [
     H1("Menu"),
     Subheading(
-        "A vertical list of actionable items, often used for navigation, command palettes, and context menus."
+        "A vertical list of actionable items, often used for navigation, command palettes, and context menus.",
     ),
     H2("Base style"),
     P(
-        "The base menu is a block-level container with vertical padding. Each item is a flexbox row with hover highlighting and a pointer cursor."
+        "The base menu is a block-level container with vertical padding. Each item is a flexbox row with hover highlighting and a pointer cursor.",
     ),
     Ul(
         Li(
-            "The menu does not manage focus or keyboard navigation. Add your own key handlers if the menu needs to be accessible as a composite widget."
+            "The menu does not manage focus or keyboard navigation. Add your own key handlers if the menu needs to be accessible as a composite widget.",
         ),
         Li(
-            "Avoid using the menu pattern for content that is not actionable. Use a list or card layout instead for displaying static information."
-        )
+            "Avoid using the menu pattern for content that is not actionable. Use a list or card layout instead for displaying static information.",
+        ),
     ),
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(defaultMenu),
-            "display-main-striped"
+            "display-main-striped",
         ),
         sources: {
             HTML: HTMLCodeBlock(defaultMenu),
@@ -356,13 +356,11 @@ export default [
         },
     }),
     H2("Title"),
-    P(
-        "A menu can include a title element to label a group of items."
-    ),
+    P("A menu can include a title element to label a group of items."),
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(withTitle),
-            "display-main-striped"
+            "display-main-striped",
         ),
         sources: {
             HTML: HTMLCodeBlock(withTitle),
@@ -370,12 +368,12 @@ export default [
     }),
     H2("Icon and shortcut"),
     P(
-        "Menu items can display a leading icon and a trailing keyboard shortcut. This variant adds its own shortcut styles."
+        "Menu items can display a leading icon and a trailing keyboard shortcut. This variant adds its own shortcut styles.",
     ),
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(withSymbolKBD),
-            "display-main-striped"
+            "display-main-striped",
         ),
         sources: {
             HTML: HTMLCodeBlock(withSymbolKBD),
@@ -384,12 +382,12 @@ export default [
     }),
     H2("Indented items"),
     P(
-        "Items can be visually indented beneath a title using the indented variant."
+        "Items can be visually indented beneath a title using the indented variant.",
     ),
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(indented),
-            "display-main-striped"
+            "display-main-striped",
         ),
         sources: {
             HTML: HTMLCodeBlock(indented),
@@ -397,13 +395,11 @@ export default [
         },
     }),
     H2("Nested menu"),
-    P(
-        "Menus can be nested to create multi-level hierarchies."
-    ),
+    P("Menus can be nested to create multi-level hierarchies."),
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(nested),
-            "display-main-striped"
+            "display-main-striped",
         ),
         sources: {
             HTML: HTMLCodeBlock(nested),
@@ -412,12 +408,12 @@ export default [
     }),
     H2("Title with children"),
     P(
-        "A title can serve as a heading for a nested group of items, combining the title and nested menu patterns. Reuses the nested menu styles."
+        "A title can serve as a heading for a nested group of items, combining the title and nested menu patterns. Reuses the nested menu styles.",
     ),
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(titleNested),
-            "display-main-striped"
+            "display-main-striped",
         ),
         sources: {
             HTML: HTMLCodeBlock(titleNested),
@@ -425,12 +421,12 @@ export default [
     }),
     H2("Sectioned menu with title"),
     P(
-        "A menu can be divided into distinct sections using a divider, each with its own title."
+        "A menu can be divided into distinct sections using a divider, each with its own title.",
     ),
     ComponentPanel({
         display: ComponentDisplay(
             MenuContainer(withDivider),
-            "display-main-striped"
+            "display-main-striped",
         ),
         sources: {
             HTML: HTMLCodeBlock(withDivider),

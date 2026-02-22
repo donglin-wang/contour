@@ -1,13 +1,13 @@
 import {
+    CodeInline,
+    ComponentPanel,
+    CSSCodeBlock,
     H1,
     H2,
     H3,
+    inline,
     P,
     Subheading,
-    CodeInline,
-    inline,
-    CSSCodeBlock,
-    ComponentPanel,
 } from "/page/docs/component";
 
 export default [

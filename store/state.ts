@@ -23,7 +23,9 @@ class StateStore<T> {
     }
 
     private notify(): void {
-        this.listeners.forEach((listener) => listener(this.state));
+        this.listeners.forEach((listener) => {
+            listener(this.state);
+        });
     }
 }
 
@@ -36,8 +38,7 @@ export interface AppState {
 
 export const stateStore = new StateStore<AppState>({
     sidebarOpen: false,
-    compactViewport:
-        document.documentElement.clientWidth <= COMPACT_BREAKPOINT,
+    compactViewport: document.documentElement.clientWidth <= COMPACT_BREAKPOINT,
 });
 
 const observer = new ResizeObserver((entries) => {

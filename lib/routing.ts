@@ -12,7 +12,7 @@ export class Router {
 
     constructor(container: Element) {
         this.container = container;
-        window.addEventListener('popstate', () => this.handleRoute());
+        window.addEventListener("popstate", () => this.handleRoute());
     }
 
     addRoute(route: Route): void {
@@ -20,21 +20,21 @@ export class Router {
     }
 
     async navigate(path: string): Promise<void> {
-        window.history.pushState({}, '', path);
+        window.history.pushState({}, "", path);
         await this.handleRoute();
     }
 
     private async handleRoute(): Promise<void> {
         const path = window.location.pathname;
-        
+
         let handler = this.routes.get(path);
-        
+
         if (!handler) {
-            handler = this.routes.get('/') || this.routes.get('/home');
+            handler = this.routes.get("/") || this.routes.get("/home");
         }
 
         if (!handler) {
-            console.error('No route handler found for:', path);
+            console.error("No route handler found for:", path);
             return;
         }
 
@@ -46,8 +46,8 @@ export class Router {
             const element = await handler(this);
             this.container.replaceChildren(element);
         } catch (error) {
-            console.error('Error loading route:', error);
-            this.container.textContent = 'Error loading page';
+            console.error("Error loading route:", error);
+            this.container.textContent = "Error loading page";
         }
     }
 

@@ -36,7 +36,7 @@ const buildSVGElement = <T extends keyof SVGElementTagNameMap>(
 ) => {
     const element = document.createElementNS<T>(
         "http://www.w3.org/2000/svg",
-        name
+        name,
     );
 
     populate(element, first, ...rest);
@@ -81,14 +81,14 @@ export const populate = (
 
 export const tags = new Proxy({} as HTMLTags, {
     get(_, prop: keyof HTMLElementTagNameMap) {
-        return (first, ...children) =>
+        return (first: Attributes | Child, ...children: Child[]) =>
             buildHTMLElement(prop, first, ...children);
     },
 });
 
 export const svgTags = new Proxy({} as SVGTags, {
     get(_, prop: keyof SVGElementTagNameMap) {
-        return (first, ...children) =>
+        return (first: Attributes | Child, ...children: Child[]) =>
             buildSVGElement(prop, first, ...children);
     },
 });

@@ -6,7 +6,7 @@
     .text[data-variant="post-secondary"] {
         font-size: var(--font-size-s);
     }
-    
+
     .card__section[data-variant="post-header"] {
         gap: var(--space-3);
         flex-direction: row;

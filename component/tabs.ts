@@ -1,7 +1,6 @@
-import Component from "./base";
-import { tags, populate } from "/lib/tags";
-
 import type { Attributes, Child } from "/lib/tags";
+import { populate, tags } from "/lib/tags";
+import Component from "./base";
 
 const { div } = tags;
 
@@ -86,7 +85,7 @@ class Tabs extends Component {
         tab.addEventListener("click", () => this.setActiveTab(index));
 
         this.resetPositionWidth();
-        
+
         if (tabSpec.selected) {
             this.setActiveTab(index);
         }
@@ -106,7 +105,7 @@ class Tabs extends Component {
 
     resetPositionWidth() {
         this.tabPositions = [];
-        this.tabWidths = []
+        this.tabWidths = [];
 
         for (const tab of this.tabs) {
             const rootLeft = this.getBoundingClientRect().left;

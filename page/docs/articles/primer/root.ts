@@ -1,15 +1,15 @@
+import { tags } from "/lib/tags";
 import {
+    CodeInline,
+    ComponentPanel,
+    CSSCodeBlock,
     H1,
     H2,
+    HTMLCodeBlock,
+    inline,
     P,
     Subheading,
-    CodeInline,
-    inline,
-    CSSCodeBlock,
-    HTMLCodeBlock,
-    ComponentPanel,
 } from "/page/docs/component";
-import { tags } from "/lib/tags";
 
 const { button } = tags;
 

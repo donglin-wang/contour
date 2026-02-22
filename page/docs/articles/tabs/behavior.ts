@@ -7,5 +7,5 @@ export const registerTabsBehavior = (root: HTMLElement) => {
             tab.setAttribute("aria-selected", "true");
         });
     }
-    return root
+    return root;
 };

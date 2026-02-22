@@ -1,11 +1,9 @@
-import { tags } from "/lib/tags";
 import { Link } from "/component/link";
+import type { Router } from "/lib/routing";
+import { tags } from "/lib/tags";
 import { stateStore } from "/store/state";
 
-import type { Router } from "/lib/routing";
-
 const { div, h1, p, span } = tags;
-
 
 export default (router: Router) => {
     const displayButton = Link({
@@ -16,7 +14,7 @@ export default (router: Router) => {
         callback: async () => {
             await router.navigate("/docs/overview");
             if (!stateStore.getState().compactViewport) {
-                stateStore.setState({sidebarOpen: true});
+                stateStore.setState({ sidebarOpen: true });
             }
         },
         children: ["Get started"],
@@ -64,5 +62,5 @@ export default (router: Router) => {
         ),
     );
 
-    return home
+    return home;
 };

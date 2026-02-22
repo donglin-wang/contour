@@ -1,6 +1,5 @@
+import type { Attributes, Child } from "/lib/tags";
 import { tags } from "/lib/tags";
-
-import type { Child, Attributes } from "/lib/tags";
 
 export type LinkSpec = {
     callback?: () => Promise<void>;

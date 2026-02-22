@@ -1,20 +1,20 @@
+import { ContourLogo, Ellipsis, Menu } from "/component/symbol";
+import { tags } from "/lib/tags";
 import {
     ComponentDisplay,
     ComponentPanel,
+    CSSCodeBlock,
     H1,
     H2,
-    Subheading,
-    P,
-    Ul,
-    Li,
-    CSSCodeBlock,
     HTMLCodeBlock,
+    Li,
+    P,
+    Subheading,
+    Ul,
 } from "/page/docs/component";
 import barStyle from "/style/pattern/bar.css?inline";
-import { Ellipsis, Menu, ContourLogo } from "/component/symbol";
-import { tags } from "/lib/tags";
-import topNavStyle from "/style/variant/bar/topNav.css?inline";
 import modifiersStyle from "/style/variant/bar/modifiers.css?inline";
+import topNavStyle from "/style/variant/bar/topNav.css?inline";
 
 const { nav, div, button, span } = tags;
 
@@ -37,7 +37,7 @@ const bars: Record<
                 {
                     class: "bar__section m-gap-3",
                 },
-                ContourLogo({class: "symbol m-x-large"}),
+                ContourLogo({ class: "symbol m-x-large" }),
                 span("Doucmentation"),
                 span("Guides"),
             ),
@@ -78,7 +78,7 @@ const bars: Record<
                 {
                     class: "bar__section m-sandwich-middle",
                 },
-                ContourLogo({class: "symbol m-x-large"}),
+                ContourLogo({ class: "symbol m-x-large" }),
             ),
             div(
                 {
@@ -100,7 +100,9 @@ const bars: Record<
 
 const panel = (key: string) => {
     const { element, style } = bars[key];
-    const sources: any = { HTML: HTMLCodeBlock(element) };
+    const sources: Record<string, HTMLElement> = {
+        HTML: HTMLCodeBlock(element),
+    };
     if (style) {
         sources.CSS = CSSCodeBlock(style);
     }
@@ -113,19 +115,19 @@ const panel = (key: string) => {
 export default [
     H1("Bar"),
     Subheading(
-        "A full-width horizontal strip used for toolbars, navigation headers, and status bars."
+        "A full-width horizontal strip used for toolbars, navigation headers, and status bars.",
     ),
     H2("Base style"),
     P(
-        "The base bar is a full-width flex row with centered alignment and inline/block padding. Sections are flex containers that can be positioned with modifier classes."
+        "The base bar is a full-width flex row with centered alignment and inline/block padding. Sections are flex containers that can be positioned with modifier classes.",
     ),
     Ul(
         Li(
-            "The bar has no fixed height by default. Variants that need a consistent height, such as a sticky top nav, must set it explicitly."
+            "The bar has no fixed height by default. Variants that need a consistent height, such as a sticky top nav, must set it explicitly.",
         ),
         Li(
-            "Avoid using the bar for stacked or multi-row layouts. Use a card or a container with grid layout instead."
-        )
+            "Avoid using the bar for stacked or multi-row layouts. Use a card or a container with grid layout instead.",
+        ),
     ),
     ComponentPanel({
         display: ComponentDisplay(defaultBar, "display-main-striped"),
@@ -136,12 +138,12 @@ export default [
     }),
     H2("Top nav"),
     P(
-        "A sticky navigation bar pinned to the top of the viewport with a fixed height and a bottom border."
+        "A sticky navigation bar pinned to the top of the viewport with a fixed height and a bottom border.",
     ),
     panel("topNav"),
     H2("Sandwich"),
     P(
-        "A three-section layout with start and end sections each taking 50% width, and a non-shrinking center section. Useful for centering a logo between two action areas."
+        "A three-section layout with start and end sections each taking 50% width, and a non-shrinking center section. Useful for centering a logo between two action areas.",
     ),
     panel("sandwich"),
 ];

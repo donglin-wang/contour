@@ -1,12 +1,12 @@
 import {
+    CodeInline,
     H1,
     H2,
-    P,
-    Ul,
-    Li,
-    Subheading,
-    CodeInline,
     inline,
+    Li,
+    P,
+    Subheading,
+    Ul,
 } from "/page/docs/component";
 
 export default [
@@ -26,9 +26,7 @@ export default [
         Li(
             ...inline`Using ${CodeInline("@apply")} rules to package utilities into semantic classes`,
         ),
-        Li(
-            "Using JavaScript tools like CVA to manage utility combinations",
-        ),
+        Li("Using JavaScript tools like CVA to manage utility combinations"),
     ),
     P(
         "These approaches handle specificity well and encourage colocation of style and markup, which feels natural for developers working against a deadline. But they also mean that styling inevitably bleeds into framework and application logic. This is an acceptable tradeoff for teams committed to a single framework. For organizations that need a styling system to work across multiple frameworks and technologies simultaneously, a framework-independent approach is needed.",

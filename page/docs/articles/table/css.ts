@@ -1,14 +1,13 @@
-import { complexPatientSpec } from "/page/docs/articles/table/data";
 import {
-    construcHeaderStyle,
     calculateHeaderDimensions,
+    construcHeaderStyle,
 } from "/page/docs/articles/table/component";
-
+import { complexPatientSpec } from "/page/docs/articles/table/data";
+import columnBorderedStyle from "/style/variant/table/columnBordered.css?inline";
+import columnStickyStyle from "/style/variant/table/columnSticky.css?inline";
 import defaultStyle from "/style/variant/table/default.css?inline";
 import rowBorderedStyle from "/style/variant/table/rowBordered.css?inline";
-import columnBorderedStyle from "/style/variant/table/columnBordered.css?inline";
 import rowStickyStyle from "/style/variant/table/rowSticky.css?inline";
-import columnStickyStyle from "/style/variant/table/columnSticky.css?inline";
 
 const dimensions = calculateHeaderDimensions(complexPatientSpec);
 const headerStyle = construcHeaderStyle(dimensions, "nested-header");

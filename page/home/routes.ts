@@ -1,7 +1,6 @@
+import type { Route, Router } from "/lib/routing";
 import homeStyle from "/page/home/css";
 import { addStyle } from "/store/style";
-
-import type { Route, Router } from "/lib/routing";
 
 const homeRoutes: Route[] = [
     {

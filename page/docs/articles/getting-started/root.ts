@@ -1,17 +1,17 @@
+import { tags } from "/lib/tags";
 import {
+    CodeInline,
+    ComponentPanel,
+    CSSCodeBlock,
     H1,
     H2,
+    HTMLCodeBlock,
+    inline,
     P,
     Subheading,
-    CodeInline,
-    inline,
-    CSSCodeBlock,
-    HTMLCodeBlock,
-    ComponentPanel,
 } from "/page/docs/component";
-import { tags } from "/lib/tags";
 
-const { div, button, span, a } = tags;
+const { button } = tags;
 
 export default [
     H1("Getting Started"),
@@ -87,9 +87,7 @@ style/
     ),
     ComponentPanel({
         sources: {
-            HTML: HTMLCodeBlock(
-                button({ class: "trigger" }, "Click me"),
-            ),
+            HTML: HTMLCodeBlock(button({ class: "trigger" }, "Click me")),
             CSS: CSSCodeBlock(`
 /* style/pattern/trigger.css */
 
@@ -158,7 +156,10 @@ style/
     ComponentPanel({
         sources: {
             HTML: HTMLCodeBlock(
-                button({ class: "trigger", "data-variant": "danger" }, "Delete"),
+                button(
+                    { class: "trigger", "data-variant": "danger" },
+                    "Delete",
+                ),
             ),
             CSS: CSSCodeBlock(`
 /* style/variant/trigger/colored.css */

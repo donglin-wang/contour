@@ -67,7 +67,7 @@
     }
 
     .text[data-for="landing-hero-logo"] {
-        font-family: "RecursiveMonoLinearExtraBold";
+        font-family: "RecursiveMonoLinearExtraBold", monospace;
         padding-block: var(--space);
         padding-inline: var(--space-4);
         border-radius: 5px;
