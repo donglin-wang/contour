@@ -1,0 +1,11 @@
+@layer variant {
+    .tab__indicator[data-variant="underscored"] {
+        position: absolute;
+        bottom: 0;
+        height: 2px;
+        background: var(--text-color-base);
+        transition:
+            left 0.2s ease,
+            width 0.2s ease;
+    }
+}

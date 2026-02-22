@@ -1,6 +1,5 @@
 import type { Attributes, Child } from "/lib/tags";
 import { populate, tags } from "/lib/tags";
-import Component from "./base";
 
 const { div } = tags;
 
@@ -17,105 +16,105 @@ export type TabsSpec = {
     callback?: (index: number) => number;
 };
 
-class Tabs extends Component {
-    rootAttributes: Attributes;
-    tabSpecs: TabSpec[];
-    indicatorAttributes?: Attributes;
-    callback?: (index: number) => number;
+export default function Tabs({
+    rootAttributes = {},
+    tabSpecs = [],
+    indicatorAttributes,
+    callback,
+}: TabsSpec) {
+    const root = div();
+    const tabs: HTMLElement[] = [];
+    const tabPositions: number[] = [];
+    const tabWidths: number[] = [];
+    let indicator: HTMLElement | undefined;
+    let activeIndex: number = 0;
 
-    private tabs: HTMLElement[] = [];
-    private tabPositions: number[] = [];
-    private tabWidths: number[] = [];
-    private indicator?: HTMLElement;
+    populate(root, rootAttributes);
 
-    constructor({
-        rootAttributes = {},
-        tabSpecs = [],
-        indicatorAttributes,
-        callback,
-    }: TabsSpec) {
-        super();
-        this.rootAttributes = rootAttributes;
-        this.tabSpecs = tabSpecs;
-        this.indicatorAttributes = indicatorAttributes;
-        this.callback = callback;
+    if (indicatorAttributes && tabSpecs.length !== 0) {
+        indicator = div(indicatorAttributes);
+        root.appendChild(indicator);
     }
 
-    initialize(): void {
-        populate(this, this.rootAttributes);
-
-        if (this.indicatorAttributes && this.tabSpecs.length !== 0) {
-            this.indicator = div(this.indicatorAttributes);
-            this.appendChild(this.indicator);
-        }
-
-        for (const tabSpec of this.tabSpecs) {
-            this.insertTab(tabSpec);
-        }
-    }
-
-    setActiveTab(index: number) {
-        for (const tab of this.tabs) {
+    function setActiveTab(index: number) {
+        activeIndex = index;
+        for (const tab of tabs) {
             tab.removeAttribute("aria-selected");
         }
 
-        this.tabs[index].setAttribute("aria-selected", "true");
+        tabs[index].setAttribute("aria-selected", "true");
 
-        if (this.indicator) {
-            this.moveIndicator(index);
+        if (indicator) {
+            moveIndicator(index);
         }
 
-        if (this.callback) {
-            this.callback(index);
-        }
-    }
-
-    moveIndicator(index: number) {
-        if (!this.indicator) return;
-        this.indicator.style.left = `${this.tabPositions[index]}px`;
-        this.indicator.style.width = `${this.tabWidths[index]}px`;
-    }
-
-    insertTab(tabSpec: TabSpec) {
-        const tab = div(tabSpec.attributes, ...tabSpec.body);
-        this.appendChild(tab);
-        this.tabs.push(tab);
-
-        const index = this.tabs.length - 1;
-        tab.addEventListener("click", () => this.setActiveTab(index));
-
-        this.resetPositionWidth();
-
-        if (tabSpec.selected) {
-            this.setActiveTab(index);
+        if (callback) {
+            callback(index);
         }
     }
 
-    deleteTab(index: number) {
-        if (index === this.tabs.length - 1 && index - 1 >= 0) {
-            this.setActiveTab(index - 1);
-        } else if (index === 0 && index + 1 < this.tabs.length) {
-            this.setActiveTab(index + 1);
-        }
-
-        this.removeChild(this.tabs[index]);
-        this.tabs.splice(index, 1);
-        this.resetPositionWidth();
+    function moveIndicator(index: number) {
+        if (!indicator) return;
+        indicator.style.left = `${tabPositions[index]}px`;
+        indicator.style.width = `${tabWidths[index]}px`;
     }
 
-    resetPositionWidth() {
-        this.tabPositions = [];
-        this.tabWidths = [];
+    function resetPositionWidth() {
+        tabPositions.length = 0;
+        tabWidths.length = 0;
 
-        for (const tab of this.tabs) {
-            const rootLeft = this.getBoundingClientRect().left;
+        for (const tab of tabs) {
+            const rootLeft = root.getBoundingClientRect().left;
             const tabRect = tab.getBoundingClientRect();
-            this.tabPositions.push(tabRect.left - rootLeft);
-            this.tabWidths.push(tabRect.width);
+            tabPositions.push(tabRect.left - rootLeft);
+            tabWidths.push(tabRect.width);
         }
     }
+
+    function insertTab(tabSpec: TabSpec) {
+        const tab = div(tabSpec.attributes, ...tabSpec.body);
+        root.appendChild(tab);
+        tabs.push(tab);
+
+        const index = tabs.length - 1;
+        tab.addEventListener("click", () => setActiveTab(index));
+
+        resetPositionWidth();
+
+        if (tabs.length === 1) {
+            setActiveTab(0);
+        } else if (tabSpec.selected) {
+            setActiveTab(index);
+        }
+    }
+
+    function deleteTab(index: number) {
+        if (index === tabs.length - 1 && index - 1 >= 0 && index === activeIndex) {
+            setActiveTab(index - 1);
+        } else if (index === 0 && index + 1 < tabs.length) {
+            setActiveTab(index + 1);
+        }
+
+        root.removeChild(tabs[index]);
+        tabs.splice(index, 1);
+        resetPositionWidth();
+    }
+
+    const observer = new ResizeObserver(() => {
+        resetPositionWidth();
+
+        const selected = tabs.findIndex(
+            (tab) => tab.getAttribute("aria-selected") === "true",
+        );
+        if (selected !== -1 && indicator) {
+            moveIndicator(selected);
+        }
+    });
+    observer.observe(root);
+
+    for (const tabSpec of tabSpecs) {
+        insertTab(tabSpec);
+    }
+
+    return { root, insertTab, deleteTab, setActiveTab };
 }
-
-customElements.define("contour-tabs", Tabs);
-
-export default Tabs;

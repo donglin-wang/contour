@@ -110,6 +110,24 @@ To make a new article visible on the site, add an entry to the `articles` array 
 
 CSS files for new patterns go in `style/pattern/` and use `@layer pattern`. Variant files go in `style/variant/<pattern>/` and use `@layer variant`. Token files go in `style/base/` and use `@layer base`.
 
+## To-do
+
+### Short-term
+
+- [ ] Clean up state management across interactive components (tabs, accordion, modal)
+- [ ] Finalize component APIs — stabilize `TabsSpec`, `AccordionSpec`, and similar interfaces
+- [ ] Reduce boilerplate in `page/docs/component/` display helpers
+
+### Medium-term
+
+- [ ] Add CSS linting rules to enforce naming conventions (`m-` modifiers, `__` child elements, `data-variant` selectors)
+- [ ] Improve accessibility: ARIA roles, keyboard navigation, focus management, and screen reader testing
+- [ ] Rewrite documentation in Markdoc for better portability and LLM-friendliness
+
+### Long-term
+
+- [ ] Interactive design system builder — visual tool for composing tokens, patterns, and variants
+
 ## License
 
 [MIT](LICENSE)

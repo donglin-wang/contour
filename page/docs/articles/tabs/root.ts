@@ -1,3 +1,4 @@
+import Tabs from "/component/tabs";
 import { tags } from "/lib/tags";
 import { registerTabsBehavior } from "/page/docs/articles/tabs/behavior";
 import {
@@ -16,6 +17,7 @@ import {
 import defaultStyle from "/style/pattern/tabs.css?inline";
 import backdropStyle from "/style/variant/tabs/backdrop.css?inline";
 import enclosedStyle from "/style/variant/tabs/enclosed.css?inline";
+import indicatorStyle from "/style/variant/tabs/indicators.css?inline";
 import outlinedStyle from "/style/variant/tabs/outlined.css?inline";
 import underscoredStyle from "/style/variant/tabs/underscored.css?inline";
 
@@ -172,6 +174,33 @@ const outlined = registerTabsBehavior(
     ),
 );
 
+const indicatorTabs = Tabs({
+    rootAttributes: {
+        class: "tabs",
+        "data-variant": "underscored",
+        style: "position: relative;",
+    },
+    tabSpecs: [
+        {
+            attributes: { class: "tab" },
+            body: ["Tab 1"],
+            selected: true,
+        },
+        {
+            attributes: { class: "tab" },
+            body: ["Tab 2"],
+        },
+        {
+            attributes: { class: "tab" },
+            body: ["Tab 3"],
+        },
+    ],
+    indicatorAttributes: {
+        class: "tab__indicator",
+        "data-variant": "underscored",
+    },
+});
+
 export default [
     H1("Tabs"),
     Subheading(
@@ -236,6 +265,17 @@ export default [
         sources: {
             HTML: HTMLCodeBlock(outlined),
             CSS: CSSCodeBlock(outlinedStyle),
+        },
+    }),
+    H2("Indicator"),
+    P(
+        "An animated indicator bar slides to follow the selected tab. The indicator position and width are recalculated automatically via ResizeObserver.",
+    ),
+    ComponentPanel({
+        display: ComponentDisplay(indicatorTabs.root),
+        sources: {
+            HTML: HTMLCodeBlock(indicatorTabs.root),
+            CSS: CSSCodeBlock(indicatorStyle),
         },
     }),
 ];
