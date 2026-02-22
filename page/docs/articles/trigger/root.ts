@@ -23,7 +23,7 @@ const ButtonsContainer = (...children: Child[]) =>
         ...children,
     );
 
-const ArticleControl = (variantSuffix: "prev" | "next", title) =>
+const ArticleControl = (variantSuffix: "prev" | "next", title: string) =>
     button(
         {
             class: "trigger",

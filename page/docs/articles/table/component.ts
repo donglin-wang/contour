@@ -38,7 +38,7 @@ const populateHeaderWidthDepth = (
         );
         leaves.push(...childLeaves);
         maxDepth = Math.max(childDepth, maxDepth);
-        node.width += child.width;
+        node.width += child.width ?? 0;
         node.height = 1;
     }
 
@@ -56,7 +56,7 @@ export const calculateHeaderDimensions = (tableSpec: TableSpec) => {
     const [maxDepth, leaves] = populateHeaderWidthDepth(dummyRoot, 0);
 
     for (const leaf of leaves) {
-        leaf.height = maxDepth - leaf.depth + 1;
+        leaf.height = maxDepth - (leaf.depth ?? 0) + 1;
     }
 
     return clone;
@@ -80,6 +80,7 @@ export const construcHeaderStyle = (
     let style = "";
     while (nodes.length !== 0) {
         const node = nodes.shift();
+        if (!node) continue;
 
         if (node.height === 1 && node.width === 1) {
             continue;
@@ -88,7 +89,11 @@ export const construcHeaderStyle = (
         const variant = `${variantPrefix}-${
             node.variantSuffix ?? node.accessor ?? node.label
         }`;
-        style += constructHeaderCellStyle(variant, node.width, node.height);
+        style += constructHeaderCellStyle(
+            variant,
+            node.width ?? 1,
+            node.height ?? 1,
+        );
 
         if (node.children && node.children.length !== 0) {
             nodes.push(...node.children);
@@ -103,13 +108,14 @@ export const construcTableHeader = (
 ): { header: HTMLTableSectionElement; columns: ColumnSpec[] } => {
     const rows: Element[][] = [[]];
     const columns: ColumnSpec[] = [];
-    const queue = tableSpec.map((spec: ColumnSpec & { depth: number }) => {
-        spec.depth = 1;
-        return spec;
-    });
+    const queue: (ColumnSpec & { depth: number })[] = tableSpec.map((spec) => ({
+        ...spec,
+        depth: 1,
+    }));
 
     while (queue.length !== 0) {
         const info = queue.shift();
+        if (!info) continue;
 
         if (info.depth - 1 >= rows.length) {
             rows.push([]);
@@ -135,12 +141,10 @@ export const construcTableHeader = (
 
         if (info.children) {
             queue.push(
-                ...info.children.map(
-                    (child: ColumnSpec & { depth: number }) => {
-                        child.depth = info.depth + 1;
-                        return child;
-                    },
-                ),
+                ...info.children.map((child) => ({
+                    ...child,
+                    depth: info.depth + 1,
+                })),
             );
         }
     }
@@ -209,9 +213,9 @@ export const constructTableBody = (
 export const constructTable = (
     spec: TableSpec,
     data: TableData,
-    tableVariant,
-    headerVariantPrefix,
-    bodyVariant,
+    tableVariant: string,
+    headerVariantPrefix: string,
+    bodyVariant: string,
 ) => {
     const sections = [];
 

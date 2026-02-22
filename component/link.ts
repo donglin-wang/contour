@@ -10,7 +10,7 @@ export type LinkSpec = {
 const { a } = tags;
 
 export const Link = ({
-    callback = null,
+    callback,
     attributes = {},
     children = [],
 }: LinkSpec) => {

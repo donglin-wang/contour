@@ -18,7 +18,6 @@ export type TabsSpec = {
 };
 
 class Tabs extends Component {
-    root: HTMLElement;
     rootAttributes: Attributes;
     tabSpecs: TabSpec[];
     indicatorAttributes?: Attributes;
@@ -72,6 +71,7 @@ class Tabs extends Component {
     }
 
     moveIndicator(index: number) {
+        if (!this.indicator) return;
         this.indicator.style.left = `${this.tabPositions[index]}px`;
         this.indicator.style.width = `${this.tabWidths[index]}px`;
     }
