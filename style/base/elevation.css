@@ -1,0 +1,14 @@
+@layer base {
+    :root {
+        --z-hide: -1;
+        --z-base: 0;
+        --z-dropdown: 111;
+        --z-sticky: 222;
+
+        --z-overlay: 555;
+        --z-modal: 666;
+        --z-popover: 777;
+        --z-toast: 888;
+        --z-tooltip: 999;
+    }
+}
